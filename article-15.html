@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title data-i18n="page.title">Article 15: Bio-Radar &#x2014; Radar Explorer</title>
+
+    <meta
+        name="description"
+        data-i18n-attr="content|page.description"
+        content="Article 15: How does bio-radar monitor breathing and heartbeat without touching the body? A bilingual student-friendly explainer."
+    >
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="article.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                RADAR<span>EXPLORER</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" data-i18n="nav.home">Home</a>
+                <a href="index.html#learn" data-i18n="nav.learn">Learn</a>
+                <a href="articles.html" class="active" data-i18n="nav.articles">Articles</a>
+                <a href="index.html#explore" data-i18n="nav.explore">Explore</a>
+                <a href="index.html#research" data-i18n="nav.research">Research</a>
+                <a href="index.html#about" data-i18n="nav.about">About</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button
+                    class="lang-toggle"
+                    type="button"
+                    aria-label="Switch language"
+                    data-lang-toggle
+                >
+                    <span data-lang-label>&#x4e2d;</span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main class="article-page has-toc">
+
+        <aside class="article-toc" aria-label="Table of contents">
+            <div class="article-toc-inner">
+                <h2 class="article-toc-title" data-i18n="toc.title">On this page</h2>
+                <nav class="article-toc-nav">
+                    <a href="#sec-tiny-movement" data-toc="sec-tiny-movement" ><span class="article-toc-num">01</span><span class="article-toc-label" data-i18n="toc.s1">Tiny body movements</span></a>
+                    <a href="#sec-contactless"    data-toc="sec-contactless"    ><span class="article-toc-num">02</span><span class="article-toc-label" data-i18n="toc.s2">Contactless vs contact</span></a>
+                    <a href="#sec-loop-animation" data-toc="sec-loop-animation" ><span class="article-toc-num">03</span><span class="article-toc-label" data-i18n="toc.s3">Waveform animation</span></a>
+                    <a href="#sec-worked-example" data-toc="sec-worked-example" ><span class="article-toc-num">04</span><span class="article-toc-label" data-i18n="toc.s4">Worked example</span></a>
+                    <a href="#sec-challenges"     data-toc="sec-challenges"     ><span class="article-toc-num">05</span><span class="article-toc-label" data-i18n="toc.s5">Challenges</span></a>
+                    <a href="#sec-applications"   data-toc="sec-applications"   ><span class="article-toc-num">06</span><span class="article-toc-label" data-i18n="toc.s6">Applications</span></a>
+                </nav>
+            </div>
+        </aside>
+
+        <section class="article-hero">
+            <h1 class="article-title" data-i18n="article.title">
+                Bio-Radar
+            </h1>
+
+            <div class="article-meta">
+                <span class="article-author" data-i18n="article.author">
+                    By Editorial
+                </span>
+                <span class="article-meta-sep">&#xb7;</span>
+                <time class="article-date" data-i18n="article.date">
+                    Oct 12, 2024
+                </time>
+            </div>
+
+            <p class="article-subtitle" data-i18n="article.subtitle">
+                Monitoring breathing and heartbeat without ever touching the body — how does that work?
+            </p>
+        </section>
+
+
+        <section class="article-section article-body">
+            <p data-i18n="article.p1"></p>
+            <p data-i18n="article.p2"></p>
+            <p data-i18n="article.p3"></p>
+            <p data-i18n="article.p4"></p>
+        </section>
+
+
+        <section class="article-summary-block">
+            <span class="summary-label" data-i18n="article.summaryLabel">
+                ONE-LINE SUMMARY
+            </span>
+            <p class="summary-line" data-i18n="article.summary"></p>
+        </section>
+
+
+        <!-- Visual 1: Tiny body movements -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual1.num">01</span> / <span data-i18n="visual1.name">TINY BODY MOVEMENTS</span>
+            </div>
+
+            <h2 data-i18n="visual1.title">Breathing and Heartbeat Are Tiny But Real</h2>
+
+            <p class="article-intro" data-i18n="visual1.intro"></p>
+
+            <figure class="article-figure">
+                <svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig1-title">
+                    <title id="fig1-title" data-i18n="fig1.title">Chest-wall micro-movements</title>
+
+                    <rect x="0" y="0" width="800" height="280" fill="#0F1A1F"/>
+
+                    <!-- Radar antenna on left -->
+                    <g transform="translate(120, 140)">
+                        <rect x="-22" y="-12" width="44" height="24" fill="#58C4DD"/>
+                        <rect x="-6" y="-22" width="12" height="10" fill="#58C4DD"/>
+                        <text x="0" y="40" text-anchor="middle" fill="#58C4DD"
+                              font-size="13" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig1.radar">BIO-RADAR</text>
+                    </g>
+
+                    <!-- Beam -->
+                    <line x1="142" y1="140" x2="640" y2="140" stroke="#58C4DD" stroke-width="1" stroke-dasharray="3 3"/>
+                    <polygon points="142,130 640,140 142,150" fill="rgba(88,196,221,0.18)" stroke="#58C4DD" stroke-width="1"/>
+
+                    <!-- Person on right -->
+                    <g transform="translate(560, 140)">
+                        <!-- Head -->
+                        <circle cx="0" cy="-60" r="14" fill="#FFD93D"/>
+                        <!-- Body -->
+                        <rect x="-22" y="-46" width="44" height="60" rx="4" fill="#FFD93D" opacity="0.85"/>
+                        <!-- Chest (animated displacement visualization) -->
+                        <line x1="-22" y1="-20" x2="22" y2="-20" stroke="#FF6B6B" stroke-width="2"/>
+                        <text x="0" y="-26" text-anchor="middle" fill="#FF6B6B"
+                              font-size="11" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig1.chest">CHEST</text>
+                        <!-- Movement arrows -->
+                        <line x1="0" y1="-10" x2="0" y2="0" stroke="#7CFC00" stroke-width="1"/>
+                        <polygon points="0,0 -3,-6 3,-6" fill="#7CFC00"/>
+                        <text x="0" y="14" text-anchor="middle" fill="#7CFC00"
+                              font-size="10" font-family="Menlo, monospace"
+                              data-i18n="fig1.delta">~5 mm</text>
+                    </g>
+
+                    <!-- Echo arrow -->
+                    <line x1="560" y1="142" x2="142" y2="142" stroke="#FF6B6B" stroke-width="1.5" stroke-dasharray="4 3"/>
+                    <polygon points="142,142 150,138 150,146" fill="#FF6B6B"/>
+
+                    <!-- Annotation box -->
+                    <g transform="translate(400, 50)">
+                        <rect x="-140" y="-22" width="280" height="44" rx="6"
+                              fill="#0f1a1f" stroke="#888" stroke-width="1"/>
+                        <text x="0" y="-3" text-anchor="middle" fill="#888"
+                              font-size="11" font-family="Menlo, monospace"
+                              data-i18n="fig1.line1">breathing + heartbeat</text>
+                        <text x="0" y="14" text-anchor="middle" fill="#FFD93D"
+                              font-size="13" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig1.line2">echo phase shift &#x2192; vital signs</text>
+                    </g>
+                </svg>
+
+                <figcaption data-i18n="visual1.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 2: Contactless vs contact -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual2.num">02</span> / <span data-i18n="visual2.name">CONTACTLESS VS CONTACT</span>
+            </div>
+
+            <h2 data-i18n="visual2.title">Like a Contactless Stethoscope</h2>
+
+            <p class="article-intro" data-i18n="visual2.intro"></p>
+
+            <figure class="article-figure">
+                <div class="analogy-grid">
+
+                    <!-- Contact stethoscope -->
+                    <figure class="analogy-panel">
+                        <div class="analogy-tag" data-i18n="visual2.left.tag">CONTACT</div>
+                        <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0" y="0" width="320" height="200" fill="#0a1216"/>
+                            <!-- Patient -->
+                            <g transform="translate(220, 70)">
+                                <circle cx="0" cy="0" r="14" fill="#FFD93D"/>
+                                <rect x="-22" y="14" width="44" height="80" rx="4" fill="#FFD93D" opacity="0.85"/>
+                            </g>
+                            <!-- Doctor -->
+                            <g transform="translate(80, 130)">
+                                <circle cx="0" cy="0" r="12" fill="#7CFC00"/>
+                                <rect x="-18" y="12" width="36" height="40" rx="12" fill="#7CFC00" opacity="0.85"/>
+                            </g>
+                            <!-- Stethoscope touching chest -->
+                            <path d="M 80 100 Q 160 90 220 100" fill="none" stroke="#FF6B6B" stroke-width="2"/>
+                            <circle cx="220" cy="100" r="6" fill="#FF6B6B"/>
+                            <text x="150" y="80" text-anchor="middle" fill="#FF6B6B"
+                                  font-size="11" font-family="Menlo, monospace" font-weight="bold"
+                                  data-i18n="visual2.left.touch">touches the body</text>
+                            <text x="160" y="185" text-anchor="middle" fill="#888"
+                                  font-size="11" font-family="Menlo, monospace"
+                                  data-i18n="visual2.left.label">stethoscope</text>
+                        </svg>
+                    </figure>
+
+                    <div class="analogy-equals">&#x21;</div>
+
+                    <!-- Bio-radar -->
+                    <figure class="analogy-panel">
+                        <div class="analogy-tag" data-i18n="visual2.right.tag">CONTACTLESS</div>
+                        <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0" y="0" width="320" height="200" fill="#0a1216"/>
+                            <!-- Patient -->
+                            <g transform="translate(220, 70)">
+                                <circle cx="0" cy="0" r="14" fill="#FFD93D"/>
+                                <rect x="-22" y="14" width="44" height="80" rx="4" fill="#FFD93D" opacity="0.85"/>
+                            </g>
+                            <!-- Bio-radar module -->
+                            <g transform="translate(70, 100)">
+                                <rect x="-20" y="-14" width="40" height="28" fill="#58C4DD" rx="2"/>
+                                <rect x="-6" y="-22" width="12" height="8" fill="#58C4DD"/>
+                                <text x="0" y="40" text-anchor="middle" fill="#58C4DD"
+                                      font-size="11" font-family="Menlo, monospace" font-weight="bold"
+                                      data-i18n="visual2.right.radar">BIO-RADAR</text>
+                            </g>
+                            <!-- Beam -->
+                            <line x1="92" y1="100" x2="198" y2="100" stroke="#58C4DD" stroke-width="1.5" stroke-dasharray="4 3"/>
+                            <polygon points="92,95 198,100 92,105" fill="rgba(88,196,221,0.2)" stroke="#58C4DD" stroke-width="1"/>
+                            <text x="140" y="85" text-anchor="middle" fill="#7CFC00"
+                                  font-size="11" font-family="Menlo, monospace" font-weight="bold"
+                                  data-i18n="visual2.right.noTouch">no contact</text>
+                            <text x="160" y="185" text-anchor="middle" fill="#888"
+                                  font-size="11" font-family="Menlo, monospace"
+                                  data-i18n="visual2.right.label">bio-radar module</text>
+                        </svg>
+                    </figure>
+                </div>
+
+                <figcaption data-i18n="visual2.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 3: Manim animation -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual3.num">03</span> / <span data-i18n="visual3.name">ANIMATION: PHASE WAVEFORM</span>
+            </div>
+
+            <h2 data-i18n="visual3.title">Watch the Waveform Track Each Breath and Heartbeat</h2>
+
+            <p class="article-intro" data-i18n="visual3.intro"></p>
+
+            <figure class="article-figure">
+                <div class="video-wrap" id="radar-anim-wrap">
+                    <video
+                        id="radar-loop-video"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                        data-video-en="manim/media/videos/script/480p15/RadarArticle15.en.mp4"
+                        data-video-zh="manim/media/videos/script/480p15/RadarArticle15.zh.mp4"
+                        data-poster-en="manim/media/images/radar-article15-poster.png"
+                        data-poster-zh="manim/media/images/radar-article15-poster.png"
+                    >
+                        <p data-i18n="visual3.fallback"></p>
+                    </video>
+
+                    <div class="video-captions">
+                        <span data-i18n="visual3.cc1">1. SEND &#x2014; radar emits a continuous microwave toward the body</span>
+                        <span data-i18n="visual3.cc2">2. SHIFT &#x2014; chest wall moves a few millimeters with each breath</span>
+                        <span data-i18n="visual3.cc3">3. PHASE &#x2014; the echo phase shifts by tiny amounts</span>
+                        <span data-i18n="visual3.cc4">4. EXTRACT &#x2014; signal processing pulls out breathing and heartbeat</span>
+                    </div>
+                </div>
+
+                <figcaption data-i18n="visual3.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 4: Worked example -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual4.md">04</span> / <span data-i18n="visual4.name">WORKED EXAMPLE</span>
+            </div>
+
+            <h2 data-i18n="visual4.title">A 5 mm Breath, a Phase Shift of 120&#xb0;</h2>
+
+            <p class="article-intro" data-i18n="visual4.intro"></p>
+
+            <figure class="article-figure">
+                <div class="example-card">
+                    <div class="example-row">
+                        <span class="example-label" data-i18n="visual4.row1.label">Chest displacement &#x0394;d</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row1.value">5 mm</span>
+                    </div>
+                    <div class="example-row">
+                        <span class="example-label" data-i18n="visual4.row2.label">Wavelength &#x03bb; (24 GHz)</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row2.value">12.5 mm</span>
+                    </div>
+                    <div class="example-row example-row-formula">
+                        <span class="example-label" data-i18n="visual4.row3.label">Phase shift</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row3.formula">4&#x03c0; &#x0394;d / &#x03bb;</span>
+                    </div>
+                    <div class="example-row example-row-result">
+                        <span class="example-label" data-i18n="visual4.row4.label">Phase shift</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row4.value">&#x2248; 288&#xb0;</span>
+                    </div>
+                </div>
+
+                <figcaption data-i18n="visual4.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 5: Challenges -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual5.num">05</span> / <span data-i18n="visual5.name">CHALLENGES</span>
+            </div>
+
+            <h2 data-i18n="visual5.title">The Signals Are Weak and Hard to Read</h2>
+
+            <p class="article-intro" data-i18n="visual5.intro"></p>
+
+            <figure class="article-figure">
+                <svg viewBox="0 0 800 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig5-title">
+                    <title id="fig5-title" data-i18n="fig5.title">Challenges of bio-radar</title>
+
+                    <rect x="0" y="0" width="800" height="260" fill="#0F1A1F"/>
+
+                    <!-- Three challenge cards -->
+                    <g transform="translate(40, 30)">
+                        <rect x="0" y="0" width="220" height="200" rx="6"
+                              fill="#0a1216" stroke="#FF6B6B" stroke-width="1"/>
+                        <text x="110" y="36" text-anchor="middle" fill="#FF6B6B"
+                              font-size="13" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig5.card1.tag">WEAK SIGNAL</text>
+                        <text x="110" y="68" text-anchor="middle" fill="#FFD93D"
+                              font-size="11" font-family="Menlo, monospace"
+                              data-i18n="fig5.card1.unit">~ 5 mm chest</text>
+                        <text x="110" y="86" text-anchor="middle" fill="#888"
+                              font-size="11" font-family="Menlo, monospace"
+                              data-i18n="fig5.card1.sub">&#x2248; 0.00000001 s delay</text>
+                        <text x="110" y="160" text-anchor="middle" fill="#FFD93D"
+                              font-size="36" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig5.card1.num">&#x03bc;m</text>
+                        <text x="110" y="184" text-anchor="middle" fill="#888"
+                              font-size="10" font-family="Menlo, monospace"
+                              data-i18n="fig5.card1.scale">scale</text>
+                    </g>
+
+                    <g transform="translate(290, 30)">
+                        <rect x="0" y="0" width="220" height="200" rx="6"
+                              fill="#0a1216" stroke="#FFD93D" stroke-width="1"/>
+                        <text x="110" y="36" text-anchor="middle" fill="#FFD93D"
+                              font-size="13" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig5.card2.tag">NOISE &amp; CLUTTER</text>
+                        <text x="110" y="68" text-anchor="middle" fill="#FFD93D"
+                              font-size="11" font-family="Menlo, monospace"
+                              data-i18n="fig5.card2.unit">random motion</text>
+                        <text x="110" y="86" text-anchor="middle" fill="#888"
+                              font-size="11" font-family="Menlo, monospace"
+                              data-i18n="fig5.card2.sub">furniture, fans, walking</text>
+                        <text x="110" y="160" text-anchor="middle" fill="#FF6B6B"
+                              font-size="32" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig5.card2.num">SNR</text>
+                        <text x="110" y="184" text-anchor="middle" fill="#888"
+                              font-size="10" font-family="Menlo, monospace"
+                              data-i18n="fig5.card2.scale">low</text>
+                    </g>
+
+                    <g transform="translate(540, 30)">
+                        <rect x="0" y="0" width="220" height="200" rx="6"
+                              fill="#0a1216" stroke="#7CFC00" stroke-width="1"/>
+                        <text x="110" y="36" text-anchor="middle" fill="#7CFC00"
+                              font-size="13" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig5.card3.tag">MULTI-PATH</text>
+                        <text x="110" y="68" text-anchor="middle" fill="#FFD93D"
+                              font-size="11" font-family="Menlo, monospace"
+                              data-i18n="fig5.card3.unit">wall reflections</text>
+                        <text x="110" y="86" text-anchor="middle" fill="#888"
+                              font-size="11" font-family="Menlo, monospace"
+                              data-i18n="fig5.card3.sub">echoes from room clutter</text>
+                        <text x="110" y="160" text-anchor="middle" fill="#7CFC00"
+                              font-size="36" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig5.card3.num">&#x2248; mm</text>
+                        <text x="110" y="184" text-anchor="middle" fill="#888"
+                              font-size="10" font-family="Menlo, monospace"
+                              data-i18n="fig5.card3.scale">careful geometry</text>
+                    </g>
+                </svg>
+
+                <figcaption data-i18n="visual5.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 6: Applications -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual6.num">06</span> / <span data-i18n="visual6.name">APPLICATIONS</span>
+            </div>
+
+            <h2 data-i18n="visual6.title">Where Bio-Radar Is Used Today</h2>
+
+            <p class="article-intro" data-i18n="visual6.intro"></p>
+
+            <figure class="article-figure">
+                <div class="application-grid">
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app1.tag">HEALTHCARE</div>
+                        <h3 data-i18n="visual6.app1.title">Hospital Patient Monitoring</h3>
+                        <p data-i18n="visual6.app1.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app2.tag">ELDERLY CARE</div>
+                        <h3 data-i18n="visual6.app2.title">Sleep &amp; Fall Detection</h3>
+                        <p data-i18n="visual6.app2.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app3.tag">SEARCH &amp; RESCUE</div>
+                        <h3 data-i18n="visual6.app3.title">Trapped Survivors</h3>
+                        <p data-i18n="visual6.app3.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app4.tag">INFANT CARE</div>
+                        <h3 data-i18n="visual6.app4.title">SIDS Prevention</h3>
+                        <p data-i18n="visual6.app4.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app5.tag">DRIVER MONITORING</div>
+                        <h3 data-i18n="visual6.app5.title">Fatigue Detection</h3>
+                        <p data-i18n="visual6.app5.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app6.tag">PSYCHOLOGY</div>
+                        <h3 data-i18n="visual6.app6.title">Stress &amp; Emotion</h3>
+                        <p data-i18n="visual6.app6.desc"></p>
+                    </div>
+
+                </div>
+
+                <figcaption data-i18n="visual6.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <section class="article-summary-block">
+            <span class="summary-label" data-i18n="article.summaryLabel">
+                ONE-LINE SUMMARY
+            </span>
+            <p class="summary-line" data-i18n="article.summary"></p>
+        </section>
+
+
+        <footer class="article-footer">
+            <a href="articles.html" class="article-back" data-i18n="article.back">&#x2190; Back to Articles</a>
+            <span class="article-meta" data-i18n="article.meta">Student Research &#xb7; 2024</span>
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+    <script src="article-15.js"></script>
+
+</body>
+</html>

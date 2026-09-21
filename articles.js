@@ -55,6 +55,10 @@ const ARTICLES_I18N = {
         "row.14.desc":  "A small antenna that pretends to be a huge one — imaging from satellites and aircraft.",
         "row.14.date":  "Sept 21, 2024",
 
+        "row.15.title": "Bio-Radar",
+        "row.15.desc":  "Contactless breathing and heartbeat monitoring for healthcare and rescue.",
+        "row.15.date":  "Oct 12, 2024",
+
         "row.10.title": "How Phased Arrays Steer a Beam",
         "row.10.desc":  "Electronic beam steering without moving parts.",
         "row.10.date":  "Dec 4, 2025",
@@ -109,6 +113,10 @@ const ARTICLES_I18N = {
         "row.14.title": "\u5408\u6210\u5b54\u5f84\u96f7\u8fbe",
         "row.14.desc":  "\u5c0f\u5929\u7ebf\u4eff\u5192\u6210\u5de8\u5929\u7ebf\u2014\u2014\u4ece\u536b\u661f\u548c\u98de\u673a\u62cd\u9ad8\u6e05\u96f7\u8fbe\u56fe\u3002",
         "row.14.date":  "2024.09.21",
+
+        "row.15.title": "\u751f\u7269\u96f7\u8fbe",
+        "row.15.desc":  "\u975e\u63a5\u89e6\u5f0f\u76d1\u6d4b\u547c\u5438\u548c\u5fc3\u8df3\uff0c\u7528\u4e8e\u533b\u7597\u4e0e\u6551\u63f4\u3002",
+        "row.15.date":  "2024.10.12",
 
         "row.10.title": "\u76f8\u63a7\u9635\u5982\u4f55\u8f6c\u5411\u6ce2\u675f",
         "row.10.desc":  "\u4e0d\u7528\u673a\u68b0\u8f6c\u52a8\u5c31\u80fd\u6539\u53d8\u6ce2\u675f\u65b9\u5411\u3002",
