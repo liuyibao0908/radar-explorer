@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title data-i18n="page.title">Articles — Radar Explorer</title>
+
+    <meta
+        name="description"
+        data-i18n-attr="content|page.description"
+        content="A growing collection of bilingual radar explainers, written for student researchers."
+    >
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="articles.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header class="navbar">
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                RADAR<span>EXPLORER</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" data-i18n="nav.home">Home</a>
+                <a href="index.html#learn" data-i18n="nav.learn">Learn</a>
+                <a href="articles.html" class="active" data-i18n="nav.articles">Articles</a>
+                <a href="index.html#explore" data-i18n="nav.explore">Explore</a>
+                <a href="index.html#research" data-i18n="nav.research">Research</a>
+                <a href="index.html#about" data-i18n="nav.about">About</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button
+                    class="lang-toggle"
+                    type="button"
+                    aria-label="Switch language"
+                    data-lang-toggle
+                >
+                    <span data-lang-label>中</span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- =========================
+         PAGE
+    ========================== -->
+
+    <main class="articles-page">
+
+        <header class="articles-header">
+            <div class="articles-eyebrow" data-i18n="articles.eyebrow">
+                ARTICLES
+            </div>
+
+            <h1 class="articles-title" data-i18n="articles.title">
+                Articles
+            </h1>
+
+            <p class="articles-subtitle" data-i18n="articles.subtitle">
+                Bilingual radar explainers, diagrams and animations — built for student research.
+            </p>
+        </header>
+
+
+        <!-- Search bar -->
+        <section class="articles-controls">
+            <form
+                class="articles-search"
+                role="search"
+                onsubmit="return false"
+                aria-label="Article search"
+            >
+                <span class="articles-search-icon" aria-hidden="true">⌕</span>
+                <input
+                    type="search"
+                    id="articles-search-input"
+                    data-i18n-attr="placeholder|articles.search.placeholder"
+                    placeholder="Search by title…"
+                    autocomplete="off"
+                >
+                <button
+                    type="button"
+                    class="articles-search-clear"
+                    id="articles-search-clear"
+                    aria-label="Clear search"
+                >×</button>
+                <button
+                    type="submit"
+                    class="articles-search-btn"
+                    id="articles-search-btn"
+                >
+                    <span data-i18n="articles.search.btn">Search</span>
+                </button>
+            </form>
+
+            <div class="articles-filters" role="group" aria-label="Year filter">
+                <span class="articles-filter-label" data-i18n="articles.filter.year">
+                    Year:
+                </span>
+                <button type="button" class="articles-filter active" data-year="all">
+                    <span data-i18n="articles.filter.all">All</span>
+                </button>
+                <button type="button" class="articles-filter" data-year="2026">2026</button>
+                <button type="button" class="articles-filter" data-year="2025">2025</button>
+            </div>
+        </section>
+
+
+        <!-- Article list -->
+        <section class="articles-list-section">
+
+            <div class="articles-list-meta">
+                <span class="articles-count" id="articles-count">4</span>
+                <span class="articles-count-label" data-i18n="articles.countLabel">articles</span>
+            </div>
+
+            <ol class="articles-list" id="articles-list">
+
+                <!-- Article 11 — live, linked -->
+                <li class="article-row" data-year="2026">
+                    <a href="article-11.html" class="article-row-link">
+                        <div class="article-row-main">
+                            <h2 class="article-row-title" data-i18n="row.11.title">Why Can Radar See Aircraft?</h2>
+                            <p class="article-row-desc" data-i18n="row.11.desc">A radar has no eyes. So how can it find aircraft in the sky?</p>
+                            <time class="article-row-time" datetime="2026-09-19" data-i18n="row.11.date">Sept 19, 2026</time>
+                        </div>
+                        <div class="article-row-arrow" aria-hidden="true">→</div>
+                    </a>
+                </li>
+
+                <!-- Article 12 — live, linked -->
+                <li class="article-row" data-year="2026">
+                    <a href="article-12.html" class="article-row-link">
+                        <div class="article-row-main">
+                            <h2 class="article-row-title" data-i18n="row.12.title">How Does Radar Calculate Distance?</h2>
+                            <p class="article-row-desc" data-i18n="row.12.desc">A radar screen shows how far away a target is. How does it calculate that?</p>
+                            <time class="article-row-time" datetime="2026-09-20" data-i18n="row.12.date">Sept 20, 2026</time>
+                        </div>
+                        <div class="article-row-arrow" aria-hidden="true">→</div>
+                    </a>
+                </li>
+
+                <!-- Article 13 — live, linked -->
+                <li class="article-row" data-year="2026">
+                    <a href="article-13.html" class="article-row-link">
+                        <div class="article-row-main">
+                            <h2 class="article-row-title" data-i18n="row.13.title">How Does Radar Know the Direction?</h2>
+                            <p class="article-row-desc" data-i18n="row.13.desc">Direction comes from antenna beams &#x2014; mechanical scan vs phased array.</p>
+                            <time class="article-row-time" datetime="2026-09-21" data-i18n="row.13.date">Sept 21, 2026</time>
+                        </div>
+                        <div class="article-row-arrow" aria-hidden="true">→</div>
+                    </a>
+                </li>
+
+                <!-- Placeholder (visual-only, "coming soon") -->
+                <li class="article-row article-row-coming" data-year="2025">
+                    <div class="article-row-link">
+                        <div class="article-row-main">
+                            <h2 class="article-row-title" data-i18n="row.10.title">How Phased Arrays Steer a Beam</h2>
+                            <p class="article-row-desc" data-i18n="row.10.desc">Electronic beam steering without moving parts.</p>
+                            <time class="article-row-time" datetime="2025-12-04" data-i18n="row.10.date">Dec 4, 2025</time>
+                        </div>
+                        <div class="article-row-status" data-i18n="articles.coming">COMING SOON</div>
+                    </div>
+                </li>
+
+                <li class="article-row article-row-coming" data-year="2025">
+                    <div class="article-row-link">
+                        <div class="article-row-main">
+                            <h2 class="article-row-title" data-i18n="row.9.title">Why Antennas Are Shaped Like That</h2>
+                            <p class="article-row-desc" data-i18n="row.9.desc">Parabolic dishes, horns and the math behind them.</p>
+                            <time class="article-row-time" datetime="2025-08-21" data-i18n="row.9.date">Aug 21, 2025</time>
+                        </div>
+                        <div class="article-row-status" data-i18n="articles.coming">COMING SOON</div>
+                    </div>
+                </li>
+
+            </ol>
+
+            <!-- Empty state -->
+            <div class="articles-empty" id="articles-empty" hidden>
+                <p data-i18n="articles.empty">No articles match your search.</p>
+            </div>
+
+        </section>
+
+
+        <footer class="articles-footer">
+            <a href="index.html" class="article-back" data-i18n="articles.back">← Back to Radar Explorer</a>
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+    <script src="articles.js"></script>
+
+</body>
+</html>

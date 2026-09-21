@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Radar Explorer</title>
+    <title data-i18n="page.title">Radar Explorer</title>
 
     <meta
         name="description"
+        data-i18n-attr="content|page.description"
         content="An interactive student research project exploring radar technology."
     >
 
@@ -28,29 +29,44 @@
             </a>
 
             <nav class="nav-links">
-                <a href="#learn">Learn</a>
-                <a href="#explore">Explore</a>
-                <a href="#research">Research</a>
-                <a href="#about">About</a>
-            </nav>
+                            <a href="index.html" data-i18n="nav.home">Home</a>
+                            <a href="#learn" data-i18n="nav.learn">Learn</a>
+                            <a href="articles.html" data-i18n="nav.articles">Articles</a>
+                            <a href="#explore" data-i18n="nav.explore">Explore</a>
+                            <a href="#research" data-i18n="nav.research">Research</a>
+                            <a href="#about" data-i18n="nav.about">About</a>
+                        </nav>
 
-            <button
-                class="menu-button"
-                aria-label="Open menu"
-                aria-expanded="false"
-            >
-                ☰
-            </button>
+                        <div class="nav-actions">
+                            <button
+                                class="lang-toggle"
+                                type="button"
+                                aria-label="Switch language"
+                                data-lang-toggle
+                            >
+                                <span data-lang-label>中</span>
+                            </button>
 
-        </div>
+                            <button
+                                class="menu-button"
+                                aria-label="Open menu"
+                                aria-expanded="false"
+                            >
+                                ☰
+                            </button>
+                        </div>
 
-        <div class="mobile-nav">
-            <a href="#learn">Learn</a>
-            <a href="#explore">Explore</a>
-            <a href="#research">Research</a>
-            <a href="#about">About</a>
-        </div>
-    </header>
+                    </div>
+
+                    <div class="mobile-nav">
+                        <a href="index.html" data-i18n="nav.home">Home</a>
+                        <a href="#learn" data-i18n="nav.learn">Learn</a>
+                        <a href="articles.html" data-i18n="nav.articles">Articles</a>
+                        <a href="#explore" data-i18n="nav.explore">Explore</a>
+                        <a href="#research" data-i18n="nav.research">Research</a>
+                        <a href="#about" data-i18n="nav.about">About</a>
+                    </div>
+                </header>
 
 
     <main>
@@ -109,10 +125,10 @@
 
                 <div class="hero-status">
                     <span class="status-dot"></span>
-                    SYSTEM ONLINE
+                    <span data-i18n="hero.status">SYSTEM ONLINE</span>
                 </div>
 
-                <p class="eyebrow">
+                <p class="eyebrow" data-i18n="hero.eyebrow">
                     A STUDENT RESEARCH PROJECT
                 </p>
 
@@ -120,17 +136,17 @@
                     RADAR
                 </h1>
 
-                <h2>
+                <h2 data-i18n="hero.title">
                     Seeing the Invisible
                 </h2>
 
-                <p class="hero-description">
+                <p class="hero-description" data-i18n="hero.description">
                     Explore the science, technology, and applications
                     behind radar — from electromagnetic waves to
                     modern sensing systems.
                 </p>
 
-                <a href="#learn" class="primary-button">
+                <a href="#learn" class="primary-button" data-i18n="hero.cta">
                     START EXPLORING
                 </a>
 
@@ -141,17 +157,17 @@
             <div class="radar-readout">
 
                 <div>
-                    <span>RANGE</span>
+                    <span data-i18n="readout.range">RANGE</span>
                     <strong id="range-value">24.8 km</strong>
                 </div>
 
                 <div>
-                    <span>TARGETS</span>
+                    <span data-i18n="readout.targets">TARGETS</span>
                     <strong id="target-count">04</strong>
                 </div>
 
                 <div>
-                    <span>STATUS</span>
+                    <span data-i18n="readout.status">STATUS</span>
                     <strong id="radar-status">SCANNING</strong>
                 </div>
 
@@ -159,7 +175,7 @@
 
 
             <div class="scroll-indicator">
-                <span>SCROLL TO EXPLORE</span>
+                <span data-i18n="hero.scroll">SCROLL TO EXPLORE</span>
                 <div></div>
             </div>
 
@@ -173,14 +189,14 @@
         <section id="learn" class="section introduction">
 
             <div class="section-label">
-                01 / LEARN
+                <span data-i18n="learn.labelNum">01</span> / <span data-i18n="learn.labelName">LEARN</span>
             </div>
 
-            <h2>
+            <h2 data-i18n="learn.title">
                 What Is Radar?
             </h2>
 
-            <p class="section-intro">
+            <p class="section-intro" data-i18n="learn.intro">
                 Radar is a sensing technology that uses electromagnetic
                 waves to detect objects, measure distance, determine
                 direction, and track movement.
@@ -199,11 +215,11 @@
                         ↗
                     </div>
 
-                    <h3>
+                    <h3 data-i18n="learn.f1.title">
                         Transmit
                     </h3>
 
-                    <p>
+                    <p data-i18n="learn.f1.text">
                         Radar sends electromagnetic waves into
                         the environment.
                     </p>
@@ -221,11 +237,11 @@
                         ◌
                     </div>
 
-                    <h3>
+                    <h3 data-i18n="learn.f2.title">
                         Reflect
                     </h3>
 
-                    <p>
+                    <p data-i18n="learn.f2.text">
                         Objects reflect part of the transmitted
                         energy back toward the radar.
                     </p>
@@ -243,11 +259,11 @@
                         ↓
                     </div>
 
-                    <h3>
+                    <h3 data-i18n="learn.f3.title">
                         Receive
                     </h3>
 
-                    <p>
+                    <p data-i18n="learn.f3.text">
                         The radar receives the reflected signal,
                         known as an echo.
                     </p>
@@ -265,11 +281,11 @@
                         ≋
                     </div>
 
-                    <h3>
+                    <h3 data-i18n="learn.f4.title">
                         Calculate
                     </h3>
 
-                    <p>
+                    <p data-i18n="learn.f4.text">
                         Signal processing turns the echo into
                         useful information.
                     </p>
@@ -288,14 +304,14 @@
         <section class="section radar-process-section">
 
             <div class="section-label">
-                02 / HOW IT WORKS
+                <span data-i18n="how.labelNum">02</span> / <span data-i18n="how.labelName">HOW IT WORKS</span>
             </div>
 
-            <h2>
+            <h2 data-i18n="how.title">
                 How Does Radar Work?
             </h2>
 
-            <p class="section-intro">
+            <p class="section-intro" data-i18n="how.intro">
                 Radar works by transmitting electromagnetic waves,
                 receiving their echoes, and processing the returned
                 signals to determine where objects are and how they move.
@@ -310,11 +326,11 @@
                         01
                     </div>
 
-                    <h3>
+                    <h3 data-i18n="how.s1.title">
                         Transmit
                     </h3>
 
-                    <p>
+                    <p data-i18n="how.s1.text">
                         The radar sends a pulse of electromagnetic
                         energy into the environment.
                     </p>
@@ -333,11 +349,11 @@
                         02
                     </div>
 
-                    <h3>
+                    <h3 data-i18n="how.s2.title">
                         Reflect
                     </h3>
 
-                    <p>
+                    <p data-i18n="how.s2.text">
                         When the waves encounter an object,
                         part of the energy is reflected back.
                     </p>
@@ -356,11 +372,11 @@
                         03
                     </div>
 
-                    <h3>
+                    <h3 data-i18n="how.s3.title">
                         Receive
                     </h3>
 
-                    <p>
+                    <p data-i18n="how.s3.text">
                         The radar antenna receives the reflected
                         signal, known as an echo.
                     </p>
@@ -379,11 +395,11 @@
                         04
                     </div>
 
-                    <h3>
+                    <h3 data-i18n="how.s4.title">
                         Calculate
                     </h3>
 
-                    <p>
+                    <p data-i18n="how.s4.text">
                         Signal processing converts the echo into
                         information about distance, direction,
                         and motion.
@@ -396,7 +412,7 @@
 
             <div class="radar-formula">
 
-                <div class="formula-label">
+                <div class="formula-label" data-i18n="how.formulaLabel">
                     DISTANCE MEASUREMENT
                 </div>
 
@@ -404,7 +420,7 @@
                     R = <span>ct</span> / 2
                 </div>
 
-                <p>
+                <p data-i18n="how.formulaText">
                     The distance to a target can be estimated from
                     the time it takes for a radar signal to travel
                     to the target and return.
@@ -422,14 +438,14 @@
         <section class="section anatomy-section">
 
             <div class="section-label">
-                03 / RADAR ANATOMY
+                <span data-i18n="anatomy.labelNum">03</span> / <span data-i18n="anatomy.labelName">RADAR ANATOMY</span>
             </div>
 
-            <h2>
+            <h2 data-i18n="anatomy.title">
                 Explore the Radar System
             </h2>
 
-            <p class="section-intro">
+            <p class="section-intro" data-i18n="anatomy.intro">
                 A radar system is made of multiple components that work
                 together to transmit signals, receive echoes, process data,
                 and present useful information.
@@ -449,7 +465,7 @@
                             data-part="antenna"
                         >
                             <span class="part-marker"></span>
-                            ANTENNA
+                            <span data-i18n="anatomy.part.antenna">ANTENNA</span>
                         </button>
 
 
@@ -460,7 +476,7 @@
                                 data-part="transmitter"
                             >
                                 <span class="part-marker"></span>
-                                TRANSMITTER
+                                <span data-i18n="anatomy.part.transmitter">TRANSMITTER</span>
                             </button>
 
                             <button
@@ -468,7 +484,7 @@
                                 data-part="receiver"
                             >
                                 <span class="part-marker"></span>
-                                RECEIVER
+                                <span data-i18n="anatomy.part.receiver">RECEIVER</span>
                             </button>
 
                             <button
@@ -476,7 +492,7 @@
                                 data-part="processor"
                             >
                                 <span class="part-marker"></span>
-                                SIGNAL PROCESSOR
+                                <span data-i18n="anatomy.part.processor">SIGNAL PROCESSOR</span>
                             </button>
 
                             <button
@@ -484,7 +500,7 @@
                                 data-part="display"
                             >
                                 <span class="part-marker"></span>
-                                DISPLAY
+                                <span data-i18n="anatomy.part.display">DISPLAY</span>
                             </button>
 
                         </div>
@@ -496,7 +512,7 @@
 
                 <div class="anatomy-info">
 
-                    <div class="info-label">
+                    <div class="info-label" data-i18n="anatomy.infoLabel">
                         SELECT A COMPONENT
                     </div>
 
@@ -514,7 +530,7 @@
                     <div class="info-details">
 
                         <div>
-                            <span>FUNCTION</span>
+                            <span data-i18n="anatomy.fnLabel">FUNCTION</span>
 
                             <strong id="anatomy-function">
                                 Transmission & Reception
@@ -522,7 +538,7 @@
                         </div>
 
                         <div>
-                            <span>ROLE</span>
+                            <span data-i18n="anatomy.roleLabel">ROLE</span>
 
                             <strong id="anatomy-role">
                                 Sends and receives electromagnetic waves.
@@ -545,14 +561,14 @@
         <section class="section applications-section">
 
             <div class="section-label">
-                04 / RADAR AROUND US
+                <span data-i18n="apps.labelNum">04</span> / <span data-i18n="apps.labelName">RADAR AROUND US</span>
             </div>
 
-            <h2>
+            <h2 data-i18n="apps.title">
                 Radar Around Us
             </h2>
 
-            <p class="section-intro">
+            <p class="section-intro" data-i18n="apps.intro">
                 Radar is not a single technology.
                 Different radar systems are designed for
                 different environments, measurements, and purposes.
@@ -567,11 +583,11 @@
                 >
                     <span class="application-number">01</span>
 
-                    <h3>
+                    <h3 data-i18n="apps.card.weather.title">
                         Weather Radar
                     </h3>
 
-                    <p>
+                    <p data-i18n="apps.card.weather.text">
                         Observing precipitation and atmospheric motion.
                     </p>
                 </button>
@@ -583,11 +599,11 @@
                 >
                     <span class="application-number">02</span>
 
-                    <h3>
+                    <h3 data-i18n="apps.card.automotive.title">
                         Automotive Radar
                     </h3>
 
-                    <p>
+                    <p data-i18n="apps.card.automotive.text">
                         Detecting vehicles, objects, and movement around cars.
                     </p>
                 </button>
@@ -599,11 +615,11 @@
                 >
                     <span class="application-number">03</span>
 
-                    <h3>
+                    <h3 data-i18n="apps.card.aviation.title">
                         Air Traffic Radar
                     </h3>
 
-                    <p>
+                    <p data-i18n="apps.card.aviation.text">
                         Tracking aircraft and supporting air traffic management.
                     </p>
                 </button>
@@ -615,11 +631,11 @@
                 >
                     <span class="application-number">04</span>
 
-                    <h3>
+                    <h3 data-i18n="apps.card.marine.title">
                         Marine Radar
                     </h3>
 
-                    <p>
+                    <p data-i18n="apps.card.marine.text">
                         Helping ships detect objects and navigate safely.
                     </p>
                 </button>
@@ -631,11 +647,11 @@
                 >
                     <span class="application-number">05</span>
 
-                    <h3>
+                    <h3 data-i18n="apps.card.speed.title">
                         Speed Radar
                     </h3>
 
-                    <p>
+                    <p data-i18n="apps.card.speed.text">
                         Measuring the velocity of moving objects.
                     </p>
                 </button>
@@ -647,11 +663,11 @@
                 >
                     <span class="application-number">06</span>
 
-                    <h3>
+                    <h3 data-i18n="apps.card.gpr.title">
                         Ground-Penetrating Radar
                     </h3>
 
-                    <p>
+                    <p data-i18n="apps.card.gpr.text">
                         Investigating structures and materials beneath the surface.
                     </p>
                 </button>
@@ -663,11 +679,11 @@
                 >
                     <span class="application-number">07</span>
 
-                    <h3>
+                    <h3 data-i18n="apps.card.sar.title">
                         Synthetic Aperture Radar
                     </h3>
 
-                    <p>
+                    <p data-i18n="apps.card.sar.text">
                         Creating detailed images of Earth's surface.
                     </p>
                 </button>
@@ -679,11 +695,11 @@
                 >
                     <span class="application-number">08</span>
 
-                    <h3>
+                    <h3 data-i18n="apps.card.space.title">
                         Space Radar
                     </h3>
 
-                    <p>
+                    <p data-i18n="apps.card.space.text">
                         Using radar from space to observe Earth and its environment.
                     </p>
                 </button>
@@ -693,7 +709,7 @@
 
             <div class="application-detail">
 
-                <div class="application-detail-label">
+                <div class="application-detail-label" data-i18n="apps.detailLabel">
                     SELECTED APPLICATION
                 </div>
 
@@ -711,7 +727,7 @@
                 <div class="application-meta">
 
                     <div>
-                        <span>USED FOR</span>
+                        <span data-i18n="apps.useLabel">USED FOR</span>
 
                         <strong id="application-use">
                             Rainfall & Storm Monitoring
@@ -719,7 +735,7 @@
                     </div>
 
                     <div>
-                        <span>KEY IDEA</span>
+                        <span data-i18n="apps.principleLabel">KEY IDEA</span>
 
                         <strong id="application-principle">
                             Reflected signals reveal information about precipitation.
@@ -740,14 +756,14 @@
         <section id="explore" class="section explore-section">
 
             <div class="section-label">
-                05 / EXPLORE
+                <span data-i18n="explore.labelNum">05</span> / <span data-i18n="explore.labelName">EXPLORE</span>
             </div>
 
-            <h2>
+            <h2 data-i18n="explore.title">
                 Go Deeper
             </h2>
 
-            <p class="section-intro">
+            <p class="section-intro" data-i18n="explore.intro">
                 Radar technology connects physics, engineering,
                 signal processing, and real-world applications.
                 Explore some of the topics behind modern radar systems.
@@ -760,11 +776,11 @@
 
                     <span>01</span>
 
-                    <h3>
+                    <h3 data-i18n="explore.t1.title">
                         Radar Components
                     </h3>
 
-                    <p>
+                    <p data-i18n="explore.t1.text">
                         Antennas, transmitters, receivers,
                         signal processors, and more.
                     </p>
@@ -780,11 +796,11 @@
 
                     <span>02</span>
 
-                    <h3>
+                    <h3 data-i18n="explore.t2.title">
                         Radar Types
                     </h3>
 
-                    <p>
+                    <p data-i18n="explore.t2.text">
                         Explore different radar systems
                         and the environments they are designed for.
                     </p>
@@ -800,11 +816,11 @@
 
                     <span>03</span>
 
-                    <h3>
+                    <h3 data-i18n="explore.t3.title">
                         Phased Array Radar
                     </h3>
 
-                    <p>
+                    <p data-i18n="explore.t3.text">
                         Learn how electronic beam steering
                         changes modern radar systems.
                     </p>
@@ -820,11 +836,11 @@
 
                     <span>04</span>
 
-                    <h3>
+                    <h3 data-i18n="explore.t4.title">
                         Radar & Weather
                     </h3>
 
-                    <p>
+                    <p data-i18n="explore.t4.text">
                         Discover how radar helps us observe
                         rain, storms, and severe weather.
                     </p>
@@ -851,22 +867,22 @@
                 <div class="research-content">
 
                     <div class="section-label">
-                        06 / RESEARCH
+                        <span data-i18n="research.labelNum">06</span> / <span data-i18n="research.labelName">RESEARCH</span>
                     </div>
 
-                    <h2>
+                    <h2 data-i18n="research.title">
                         From Curiosity<br>
                         to Research
                     </h2>
 
-                    <p>
+                    <p data-i18n="research.text">
                         This website is a student-led exploration of radar
                         technology. The project combines scientific research,
                         visual explanations, and web design to communicate
                         complex ideas in an accessible way.
                     </p>
 
-                    <a href="#" class="secondary-button">
+                    <a href="articles.html" class="secondary-button" data-i18n="research.cta">
                         VIEW RESEARCH NOTES
                     </a>
 
@@ -876,32 +892,32 @@
                 <div class="research-panel">
 
                     <div class="research-panel-header">
-                        <span>PROJECT LOG</span>
+                        <span data-i18n="research.logLabel">PROJECT LOG</span>
                         <span>2026</span>
                     </div>
 
                     <div class="research-line">
                         <span>01</span>
-                        <strong>Radar Fundamentals</strong>
-                        <small>COMPLETE</small>
+                        <strong data-i18n="research.l1.title">Radar Fundamentals</strong>
+                        <small data-i18n="research.status.complete">COMPLETE</small>
                     </div>
 
                     <div class="research-line">
                         <span>02</span>
-                        <strong>Radar Applications</strong>
-                        <small>COMPLETE</small>
+                        <strong data-i18n="research.l2.title">Radar Applications</strong>
+                        <small data-i18n="research.status.complete">COMPLETE</small>
                     </div>
 
                     <div class="research-line">
                         <span>03</span>
-                        <strong>Modern Radar Systems</strong>
-                        <small>IN PROGRESS</small>
+                        <strong data-i18n="research.l3.title">Modern Radar Systems</strong>
+                        <small data-i18n="research.status.progress">IN PROGRESS</small>
                     </div>
 
                     <div class="research-line">
                         <span>04</span>
-                        <strong>Future Technologies</strong>
-                        <small>PLANNED</small>
+                        <strong data-i18n="research.l4.title">Future Technologies</strong>
+                        <small data-i18n="research.status.planned">PLANNED</small>
                     </div>
 
                 </div>
@@ -918,14 +934,14 @@
         <section id="about" class="section about-section">
 
             <div class="section-label">
-                07 / ABOUT
+                <span data-i18n="about.labelNum">07</span> / <span data-i18n="about.labelName">ABOUT</span>
             </div>
 
-            <h2>
+            <h2 data-i18n="about.title">
                 About This Project
             </h2>
 
-            <p>
+            <p data-i18n="about.text">
                 Radar Explorer is an educational project designed to
                 investigate how radar works, where it is used, and how
                 radar technology continues to evolve.
@@ -935,22 +951,22 @@
             <div class="about-facts">
 
                 <div>
-                    <span>PROJECT TYPE</span>
-                    <strong>Student Research</strong>
+                    <span data-i18n="about.f1.label">PROJECT TYPE</span>
+                    <strong data-i18n="about.f1.value">Student Research</strong>
                 </div>
 
                 <div>
-                    <span>FOCUS</span>
-                    <strong>Radar Technology</strong>
+                    <span data-i18n="about.f2.label">FOCUS</span>
+                    <strong data-i18n="about.f2.value">Radar Technology</strong>
                 </div>
 
                 <div>
-                    <span>FORMAT</span>
-                    <strong>Interactive Web Project</strong>
+                    <span data-i18n="about.f3.label">FORMAT</span>
+                    <strong data-i18n="about.f3.value">Interactive Web Project</strong>
                 </div>
 
                 <div>
-                    <span>YEAR</span>
+                    <span data-i18n="about.f4.label">YEAR</span>
                     <strong>2026</strong>
                 </div>
 
@@ -975,7 +991,7 @@
                     RADAR EXPLORER
                 </strong>
 
-                <p>
+                <p data-i18n="footer.tagline">
                     Understanding the technology that helps us
                     see the invisible.
                 </p>
@@ -985,7 +1001,7 @@
 
             <div class="footer-right">
 
-                <p>
+                <p data-i18n="footer.kind">
                     Student Research Project
                 </p>
 

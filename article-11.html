@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title data-i18n="page.title">Article 11: Why Can Radar See Aircraft? — Radar Explorer</title>
+
+    <meta
+        name="description"
+        data-i18n-attr="content|page.description"
+        content="Article 11: Why can radar see aircraft? A student-friendly bilingual explainer with diagrams and animation."
+    >
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="article.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header class="navbar">
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                RADAR<span>EXPLORER</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" data-i18n="nav.home">Home</a>
+                <a href="index.html#learn" data-i18n="nav.learn">Learn</a>
+                <a href="articles.html" data-i18n="nav.articles">Articles</a>
+                <a href="index.html#explore" data-i18n="nav.explore">Explore</a>
+                <a href="index.html#research" data-i18n="nav.research">Research</a>
+                <a href="index.html#about" data-i18n="nav.about">About</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button
+                    class="lang-toggle"
+                    type="button"
+                    aria-label="Switch language"
+                    data-lang-toggle
+                >
+                    <span data-lang-label>中</span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- =========================
+         ARTICLE 11
+    ========================== -->
+
+    <main class="article-page has-toc">
+        <!-- Sidebar TOC -->
+        <aside class="article-toc" aria-label="Table of contents">
+                <div class="article-toc-inner">
+                    <h2 class="article-toc-title" data-i18n="toc.title">On this page</h2>
+                    <nav class="article-toc-nav">
+                        <a href="#sec-wave-reflection"  data-toc="sec-wave-reflection"  ><span class="article-toc-num">01</span><span class="article-toc-label" data-i18n="toc.s1">Radar wave reflection</span></a>
+                        <a href="#sec-echo-analogy"     data-toc="sec-echo-analogy"     ><span class="article-toc-num">02</span><span class="article-toc-label" data-i18n="toc.s2">Echo in a valley</span></a>
+                        <a href="#sec-loop-animation"   data-toc="sec-loop-animation"   ><span class="article-toc-num">03</span><span class="article-toc-label" data-i18n="toc.s3">The radar loop</span></a>
+                        <a href="#sec-signal-vs-clutter" data-toc="sec-signal-vs-clutter"><span class="article-toc-num">04</span><span class="article-toc-label" data-i18n="toc.s4">Signal vs clutter</span></a>
+                        <a href="#sec-process-recap"    data-toc="sec-process-recap"    ><span class="article-toc-num">05</span><span class="article-toc-label" data-i18n="toc.s5">Process recap</span></a>
+                        <a href="#sec-limitations"      data-toc="sec-limitations"      ><span class="article-toc-num">06</span><span class="article-toc-label" data-i18n="toc.s6">Limitations</span></a>
+                    </nav>
+                </div>
+            </aside>
+
+
+        <!-- Hero -->
+        <section class="article-hero">
+            <h1 class="article-title" data-i18n="article.title">
+                Why Can Radar See Aircraft?
+            </h1>
+
+            <div class="article-meta">
+                <span class="article-author" data-i18n="article.author">
+                    By Editorial
+                </span>
+                <span class="article-meta-sep">·</span>
+                <time class="article-date" data-i18n="article.date">
+                    Sept 19, 2026
+                </time>
+            </div>
+
+            <p class="article-subtitle" data-i18n="article.subtitle">
+                A radar has no eyes. So how can it find aircraft in the sky?
+            </p>
+        </section>
+
+
+        <!-- Intro paragraphs (single language at a time) -->
+        <section class="article-section article-body">
+            <p data-i18n="article.p1"></p>
+            <p data-i18n="article.p2"></p>
+            <p data-i18n="article.p3"></p>
+            <p data-i18n="article.p4"></p>
+        </section>
+
+
+        <!-- One-line summary -->
+        <section class="article-summary-block">
+            <span class="summary-label" data-i18n="article.summaryLabel">
+                ONE-LINE SUMMARY
+            </span>
+            <p class="summary-line" data-i18n="article.summary"></p>
+        </section>
+
+
+        <!-- Visual 1: Main reflection diagram -->
+        <section id="sec-wave-reflection" class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual1.num">01</span> / <span data-i18n="visual1.name">RADAR WAVE REFLECTION</span>
+            </div>
+
+            <h2 data-i18n="visual1.title">How a Radar Wave Bounces Off an Aircraft</h2>
+
+            <p class="article-intro" data-i18n="visual1.intro">
+                The radar sends out radio waves. These waves travel through the air and bounce off an aircraft. The wave that comes back is called an "echo."
+            </p>
+
+            <figure class="article-figure">
+                <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig1-title">
+                    <title id="fig1-title" data-i18n="fig1.title">Radar wave reflecting off an aircraft</title>
+
+                    <defs>
+                        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1f2a30" stroke-width="1"/>
+                        </pattern>
+                    </defs>
+
+                    <rect x="0" y="0" width="800" height="360" fill="url(#grid)"/>
+
+                    <line x1="0" y1="300" x2="800" y2="300" stroke="#2a3a40" stroke-width="1" stroke-dasharray="3 4"/>
+
+                    <!-- Radar unit -->
+                    <g transform="translate(120, 230)">
+                        <rect x="-22" y="-18" width="44" height="36" fill="#0f1a1f" stroke="#58C4DD" stroke-width="2"/>
+                        <line x1="-14" y1="-18" x2="0" y2="-30" stroke="#58C4DD" stroke-width="2"/>
+                        <line x1="14" y1="-18" x2="0" y2="-30" stroke="#58C4DD" stroke-width="2"/>
+                        <circle cx="0" cy="-30" r="3" fill="#58C4DD"/>
+                        <text class="svg-label" x="0" y="50" text-anchor="middle" fill="#58C4DD" font-size="14" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig1.radar">RADAR</text>
+                    </g>
+
+                    <!-- Outgoing wave -->
+                    <g class="wave-out">
+                        <path d="M 140 200 Q 200 180 260 200" stroke="#7CFC00" stroke-width="2.5" fill="none" opacity="0.9"/>
+                        <path d="M 175 200 Q 235 180 295 200" stroke="#7CFC00" stroke-width="2.5" fill="none" opacity="0.7"/>
+                        <path d="M 210 200 Q 270 180 330 200" stroke="#7CFC00" stroke-width="2.5" fill="none" opacity="0.5"/>
+                        <path d="M 245 200 Q 305 180 365 200" stroke="#7CFC00" stroke-width="2.5" fill="none" opacity="0.3"/>
+                        <text class="svg-label" x="260" y="170" fill="#7CFC00" font-size="13" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig1.wave">RADIO WAVE</text>
+                    </g>
+
+                    <!-- Aircraft -->
+                    <g transform="translate(610, 200)">
+                        <ellipse cx="0" cy="0" rx="60" ry="9" fill="#FFD93D"/>
+                        <path d="M -10 0 L 8 -22 L 14 0 L 8 22 Z" fill="#FFD93D" opacity="0.85"/>
+                        <path d="M -42 0 L -56 -16 L -42 -16 Z" fill="#FFD93D"/>
+                        <ellipse cx="48" cy="0" rx="14" ry="5" fill="#fff" opacity="0.4"/>
+                        <text class="svg-label" x="0" y="40" text-anchor="middle" fill="#FFD93D" font-size="14" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig1.aircraft">AIRCRAFT</text>
+                    </g>
+
+                    <!-- Echo wave -->
+                    <g class="wave-back">
+                        <path d="M 555 200 Q 615 220 675 200" stroke="#FF6B6B" stroke-width="2.5" fill="none" opacity="0.9"/>
+                        <path d="M 520 200 Q 580 220 640 200" stroke="#FF6B6B" stroke-width="2.5" fill="none" opacity="0.7"/>
+                        <path d="M 485 200 Q 545 220 605 200" stroke="#FF6B6B" stroke-width="2.5" fill="none" opacity="0.5"/>
+                        <path d="M 450 200 Q 510 220 570 200" stroke="#FF6B6B" stroke-width="2.5" fill="none" opacity="0.3"/>
+                        <text class="svg-label" x="500" y="245" fill="#FF6B6B" font-size="13" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig1.echo">ECHO</text>
+                    </g>
+
+                    <line x1="350" y1="320" x2="450" y2="320" stroke="#2a3a40" stroke-width="1" stroke-dasharray="2 3"/>
+                    <text class="svg-label" x="400" y="345" text-anchor="middle" fill="#888" font-size="11" font-family="Menlo, monospace"
+                          data-i18n="fig1.distance">distance</text>
+                </svg>
+
+                <figcaption data-i18n="visual1.caption">
+                    Radar sends out a radio wave. The wave hits the aircraft and bounces back as an echo.
+                </figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 2: Echo vs Radar analogy -->
+        <section id="sec-echo-analogy" class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual2.num">02</span> / <span data-i18n="visual2.name">ANALOGY: ECHO IN A VALLEY</span>
+            </div>
+
+            <h2 data-i18n="visual2.title">Like an Echo in a Valley</h2>
+
+            <p class="article-intro" data-i18n="visual2.intro">
+                Think of shouting in a valley — when you hear an echo, you know there is a hill or a wall ahead. Radar works the same way.
+            </p>
+
+            <div class="analogy-grid">
+                <!-- Echo panel -->
+                <figure class="analogy-panel">
+                    <div class="analogy-tag" data-i18n="visual2.left.tag">SOUND ECHO</div>
+                    <svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="mtnGrad" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#3a4a55"/>
+                                <stop offset="100%" stop-color="#1f2a30"/>
+                            </linearGradient>
+                        </defs>
+                        <line x1="0" y1="180" x2="360" y2="180" stroke="#3a4a55" stroke-width="1.5"/>
+                        <path d="M 240 180 L 290 70 L 360 180 Z" fill="url(#mtnGrad)" stroke="#58C4DD" stroke-width="1.5"/>
+                        <g transform="translate(60, 145)">
+                            <circle cx="0" cy="-10" r="6" fill="#EAEAEA"/>
+                            <line x1="0" y1="-4" x2="0" y2="14" stroke="#EAEAEA" stroke-width="2"/>
+                            <line x1="0" y1="2" x2="-7" y2="10" stroke="#EAEAEA" stroke-width="2"/>
+                            <line x1="0" y1="2" x2="7" y2="10" stroke="#EAEAEA" stroke-width="2"/>
+                            <line x1="0" y1="14" x2="-5" y2="26" stroke="#EAEAEA" stroke-width="2"/>
+                            <line x1="0" y1="14" x2="5" y2="26" stroke="#EAEAEA" stroke-width="2"/>
+                        </g>
+                        <g class="echo-out">
+                            <circle cx="80" cy="135" r="10" fill="none" stroke="#FFD93D" stroke-width="1.5" opacity="0.9"/>
+                            <circle cx="80" cy="135" r="20" fill="none" stroke="#FFD93D" stroke-width="1.5" opacity="0.5"/>
+                        </g>
+                        <g class="echo-back">
+                            <circle cx="260" cy="135" r="10" fill="none" stroke="#FF6B6B" stroke-width="1.5" opacity="0.9"/>
+                            <circle cx="260" cy="135" r="20" fill="none" stroke="#FF6B6B" stroke-width="1.5" opacity="0.5"/>
+                        </g>
+                        <text class="svg-label" x="60" y="210" text-anchor="middle" fill="#888" font-size="11" font-family="Menlo, monospace"
+                              data-i18n="fig2.you">YOU</text>
+                        <text class="svg-label" x="295" y="210" text-anchor="middle" fill="#888" font-size="11" font-family="Menlo, monospace"
+                              data-i18n="fig2.wall">WALL</text>
+                    </svg>
+                </figure>
+
+                <div class="analogy-equals">=</div>
+
+                <!-- Radar panel -->
+                <figure class="analogy-panel">
+                    <div class="analogy-tag" data-i18n="visual2.right.tag">RADAR ECHO</div>
+                    <svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0" y1="180" x2="360" y2="180" stroke="#3a4a55" stroke-width="1.5"/>
+                        <g transform="translate(290, 130)">
+                            <ellipse cx="0" cy="0" rx="35" ry="6" fill="#FFD93D"/>
+                            <path d="M -8 0 L 4 -14 L 8 0 L 4 14 Z" fill="#FFD93D" opacity="0.85"/>
+                            <path d="M -25 0 L -36 -10 L -25 -10 Z" fill="#FFD93D"/>
+                        </g>
+                        <g transform="translate(60, 145)">
+                            <rect x="-15" y="-12" width="30" height="24" fill="#0f1a1f" stroke="#58C4DD" stroke-width="1.5"/>
+                            <line x1="-8" y1="-12" x2="0" y2="-22" stroke="#58C4DD" stroke-width="1.5"/>
+                            <line x1="8" y1="-12" x2="0" y2="-22" stroke="#58C4DD" stroke-width="1.5"/>
+                        </g>
+                        <g class="radar-out">
+                            <path d="M 90 135 Q 130 120 170 135" stroke="#7CFC00" stroke-width="2" fill="none" opacity="0.9"/>
+                            <path d="M 130 135 Q 170 120 210 135" stroke="#7CFC00" stroke-width="2" fill="none" opacity="0.6"/>
+                        </g>
+                        <g class="radar-back">
+                            <path d="M 270 135 Q 230 150 190 135" stroke="#FF6B6B" stroke-width="2" fill="none" opacity="0.9"/>
+                            <path d="M 230 135 Q 190 150 150 135" stroke="#FF6B6B" stroke-width="2" fill="none" opacity="0.6"/>
+                        </g>
+                        <text class="svg-label" x="60" y="210" text-anchor="middle" fill="#888" font-size="11" font-family="Menlo, monospace"
+                              data-i18n="fig2.radar">RADAR</text>
+                        <text class="svg-label" x="295" y="210" text-anchor="middle" fill="#888" font-size="11" font-family="Menlo, monospace"
+                              data-i18n="fig2.aircraft">AIRCRAFT</text>
+                    </svg>
+                </figure>
+            </div>
+
+            <figcaption data-i18n="visual2.caption">
+                Both sides show the same physics: send → hit wall or aircraft → bounce back.
+            </figcaption>
+        </section>
+
+
+        <!-- Visual 3: Manim-rendered animation. Source at
+     manim/script.py; rendered at -ql (480p, 15fps). -->
+<section id="sec-loop-animation" class="article-section">
+    <div class="section-label">
+        <span data-i18n="visual3.num">03</span> / <span data-i18n="visual3.name">ANIMATION: SEND → REFLECT → RECEIVE → DECIDE</span>
+    </div>
+
+    <h2 data-i18n="visual3.title">Watch the Radar Loop in Motion</h2>
+
+    <p class="article-intro" data-i18n="visual3.intro">
+        Each radar cycle has four steps: send a wave, let it reflect off a target, receive the echo, and decide what was detected. The loop then repeats — many times per second.
+    </p>
+
+    <figure class="article-figure">
+            <div class="video-wrap" id="radar-anim-wrap">
+                <video
+                    id="radar-loop-video"
+                    autoplay
+                    loop
+                    muted
+                    playsinline
+                    data-video-en="manim/media/videos/script/480p15/RadarArticle11.en.mp4"
+                    data-video-zh="manim/media/videos/script/480p15/RadarArticle11.zh.mp4"
+                    data-poster-en="manim/media/images/radar-article11-poster.png"
+                    data-poster-zh="manim/media/images/radar-article11-poster.png"
+                >
+                    <p data-i18n="visual3.fallback">
+                        Your browser does not support embedded video. The animation shows: radar sends a wave �\x86\x92 wave hits aircraft �\x86\x92 echo returns �\x86\x92 radar measures distance, direction and speed.
+                    </p>
+                </video>
+
+                <div class="video-captions">
+                    <span data-i18n="visual3.cc1">1. SEND �\x80\x94 radar emits a radio wave</span>
+                    <span data-i18n="visual3.cc2">2. REFLECT �\x80\x94 wave bounces off the aircraft</span>
+                    <span data-i18n="visual3.cc3">3. RECEIVE �\x80\x94 radar catches the echo</span>
+                    <span data-i18n="visual3.cc4">4. DECIDE �\x80\x94 distance, direction, speed</span>
+                </div>
+            </div>
+
+            <figcaption data-i18n="visual3.caption">
+                The radar cycle. The animation loops automatically �\x80\x94 the loop is the point.
+            </figcaption>
+        </figure>
+    </section>
+
+
+<!-- Visual 4: Signal vs Clutter -->
+        <section id="sec-signal-vs-clutter" class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual4.num">04</span> / <span data-i18n="visual4.name">SIGNAL vs CLUTTER</span>
+            </div>
+
+            <h2 data-i18n="visual4.title">Strong Echo vs Background Clutter</h2>
+
+            <p class="article-intro" data-i18n="visual4.intro">
+                Weather, ground, and sea waves also reflect waves. They create "clutter" that the radar must filter out — only real targets like aircraft stay clear.
+            </p>
+
+            <figure class="article-figure">
+                <svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig4-title">
+                    <title id="fig4-title" data-i18n="fig4.title">Aircraft echo vs clutter sources</title>
+
+                    <rect x="0" y="0" width="800" height="320" fill="#0f1a1f"/>
+
+                    <g transform="translate(100, 200)">
+                        <rect x="-22" y="-18" width="44" height="36" fill="#0f1a1f" stroke="#58C4DD" stroke-width="2"/>
+                        <line x1="-14" y1="-18" x2="0" y2="-30" stroke="#58C4DD" stroke-width="2"/>
+                        <line x1="14" y1="-18" x2="0" y2="-30" stroke="#58C4DD" stroke-width="2"/>
+                        <circle cx="0" cy="-30" r="3" fill="#58C4DD"/>
+                        <text class="svg-label" x="0" y="50" text-anchor="middle" fill="#58C4DD" font-size="13" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig4.radar">RADAR</text>
+                    </g>
+
+                    <g transform="translate(540, 130)">
+                        <ellipse cx="0" cy="0" rx="50" ry="8" fill="#7CFC00"/>
+                        <path d="M -8 0 L 4 -18 L 8 0 L 4 18 Z" fill="#7CFC00" opacity="0.9"/>
+                        <path d="M -32 0 L -45 -12 L -32 -12 Z" fill="#7CFC00"/>
+                        <line x1="-440" y1="40" x2="-50" y2="0" stroke="#7CFC00" stroke-width="2" opacity="0.7"/>
+                        <line x1="-50" y1="0" x2="-440" y2="40" stroke="#7CFC00" stroke-width="2" opacity="0.7" stroke-dasharray="4 3"/>
+                        <text class="svg-label" x="0" y="40" text-anchor="middle" fill="#7CFC00" font-size="13" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig4.aircraft">AIRCRAFT — STRONG ECHO</text>
+                    </g>
+
+                    <g transform="translate(540, 240)">
+                        <ellipse cx="0" cy="0" rx="55" ry="14" fill="#5a6a7a" opacity="0.8"/>
+                        <ellipse cx="-25" cy="-4" rx="20" ry="10" fill="#5a6a7a" opacity="0.8"/>
+                        <ellipse cx="20" cy="-6" rx="22" ry="11" fill="#5a6a7a" opacity="0.8"/>
+                        <line x1="-20" y1="6" x2="-22" y2="14" stroke="#5a6a7a" stroke-width="1"/>
+                        <line x1="-5" y1="8" x2="-7" y2="16" stroke="#5a6a7a" stroke-width="1"/>
+                        <line x1="10" y1="6" x2="8" y2="14" stroke="#5a6a7a" stroke-width="1"/>
+                        <line x1="25" y1="8" x2="23" y2="16" stroke="#5a6a7a" stroke-width="1"/>
+                        <text class="svg-label" x="0" y="32" text-anchor="middle" fill="#888" font-size="12" font-family="Menlo, monospace"
+                              data-i18n="fig4.rain">RAIN — CLUTTER</text>
+                    </g>
+
+                    <g transform="translate(720, 270)">
+                        <line x1="-30" y1="0" x2="30" y2="0" stroke="#888" stroke-width="2"/>
+                        <path d="M -25 -2 L -20 -8 L -15 -2 L -10 -8 L -5 -2 L 0 -8 L 5 -2 L 10 -8 L 15 -2 L 20 -8 L 25 -2"
+                              stroke="#888" stroke-width="1.5" fill="none"/>
+                        <text class="svg-label" x="0" y="22" text-anchor="middle" fill="#888" font-size="12" font-family="Menlo, monospace"
+                              data-i18n="fig4.ground">GROUND — CLUTTER</text>
+                    </g>
+
+                    <g transform="translate(280, 285)">
+                        <path d="M -35 0 Q -28 -4 -21 0 T -7 0 T 7 0 T 21 0 T 35 0" stroke="#4a6878" stroke-width="2" fill="none"/>
+                        <path d="M -35 5 Q -28 1 -21 5 T -7 5 T 7 5 T 21 5 T 35 5" stroke="#4a6878" stroke-width="1.5" fill="none" opacity="0.7"/>
+                        <text class="svg-label" x="0" y="22" text-anchor="middle" fill="#4a6878" font-size="12" font-family="Menlo, monospace"
+                              data-i18n="fig4.sea">SEA — CLUTTER</text>
+                    </g>
+
+                    <g transform="translate(50, 40)">
+                        <line x1="0" y1="0" x2="20" y2="0" stroke="#7CFC00" stroke-width="2.5"/>
+                        <text class="svg-label" x="28" y="4" fill="#7CFC00" font-size="12" font-family="Menlo, monospace"
+                              data-i18n="fig4.legend.target">real target</text>
+                        <line x1="0" y1="22" x2="20" y2="22" stroke="#888" stroke-width="2"/>
+                        <text class="svg-label" x="28" y="26" fill="#888" font-size="12" font-family="Menlo, monospace"
+                              data-i18n="fig4.legend.clutter">clutter — filter out</text>
+                    </g>
+                </svg>
+
+                <figcaption data-i18n="visual4.caption">
+                    Strong echoes (aircraft) are kept; weak echoes (rain, ground, sea) are filtered as clutter.
+                </figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Process recap -->
+        <section id="sec-process-recap" class="article-section">
+            <div class="section-label">
+                <span data-i18n="process.num">05</span> / <span data-i18n="process.name">PROCESS RECAP</span>
+            </div>
+
+            <h2 data-i18n="process.title">The Radar Flow, in Four Steps</h2>
+
+            <p class="article-intro" data-i18n="process.intro">
+                Whether you are detecting a single aircraft or scanning the whole sky, every radar cycle follows the same four-step flow.
+            </p>
+
+            <ol class="process-list">
+                <li>
+                    <span class="process-num">01</span>
+                    <strong data-i18n="process.s1.t">SEND</strong>
+                    <span data-i18n="process.s1.d">The radar emits a pulse of electromagnetic energy.</span>
+                </li>
+                <li>
+                    <span class="process-num">02</span>
+                    <strong data-i18n="process.s2.t">REFLECT</strong>
+                    <span data-i18n="process.s2.d">The wave hits an object and part of the energy bounces back.</span>
+                </li>
+                <li>
+                    <span class="process-num">03</span>
+                    <strong data-i18n="process.s3.t">RECEIVE</strong>
+                    <span data-i18n="process.s3.d">The radar antenna picks up the echo.</span>
+                </li>
+                <li>
+                    <span class="process-num">04</span>
+                    <strong data-i18n="process.s4.t">DECIDE</strong>
+                    <span data-i18n="process.s4.d">Distance, direction and speed are measured and reported.</span>
+                </li>
+            </ol>
+        </section>
+
+
+        <!-- Limitations -->
+        <section id="sec-limitations" class="article-section">
+            <div class="section-label">
+                <span data-i18n="limits.num">06</span> / <span data-i18n="limits.name">LIMITATIONS</span>
+            </div>
+
+            <h2 data-i18n="limits.title">When Radar Cannot See</h2>
+
+            <p class="article-intro" data-i18n="limits.intro">
+                A radar doesn't just "see" — it also measures distance, direction, and speed. If a target is too small, too far, or reflects too weakly, the radar may not see it.
+            </p>
+
+            <div class="limit-grid">
+                <div class="limit-card">
+                    <div class="limit-icon">↘</div>
+                    <h3 data-i18n="limits.l1.t">Too Small</h3>
+                    <p data-i18n="limits.l1.d">A tiny drone or a bird may not return enough echo to be detected at long range.</p>
+                </div>
+                <div class="limit-card">
+                    <div class="limit-icon">→</div>
+                    <h3 data-i18n="limits.l2.t">Too Far</h3>
+                    <p data-i18n="limits.l2.d">Beyond the radar's maximum range, echoes become too weak to distinguish from noise.</p>
+                </div>
+                <div class="limit-card">
+                    <div class="limit-icon">≋</div>
+                    <h3 data-i18n="limits.l3.t">Too Weak</h3>
+                    <p data-i18n="limits.l3.d">Materials that don't reflect radio waves well — like stealth coatings — can hide a target.</p>
+                </div>
+                <div class="limit-card">
+                    <div class="limit-icon">⚡</div>
+                    <h3 data-i18n="limits.l4.t">Buried in Clutter</h3>
+                    <p data-i18n="limits.l4.d">If the echo is hidden inside strong clutter, the radar must filter very carefully to find it.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Final summary -->
+        <section class="article-summary-block">
+            <span class="summary-label" data-i18n="article.summaryLabel">
+                ONE-LINE SUMMARY
+            </span>
+            <p class="summary-line" data-i18n="article.summary">
+                Radar finds aircraft by send-reflect-receive. The stronger the echo, the easier to find.
+            </p>
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="article-footer">
+            <a href="index.html" class="article-back" data-i18n="article.back">← Back to Radar Explorer</a>
+            <span class="article-meta" data-i18n="article.meta">Student Research · 2026</span>
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+    <script src="article.js"></script>
+
+</body>
+</html>

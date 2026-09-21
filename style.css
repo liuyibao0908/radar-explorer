@@ -13,7 +13,7 @@ html {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Microsoft YaHei", "微软雅黑", Arial, Helvetica, sans-serif;
     background: #06111f;
     color: #eaf7f0;
     line-height: 1.6;
@@ -108,7 +108,7 @@ button {
 .nav-links a {
     color: var(--muted-light);
 
-    font-size: 13px;
+    font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 1.2px;
 
@@ -130,6 +130,36 @@ button {
     font-size: 25px;
 
     cursor: pointer;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.lang-toggle {
+    background: none;
+    border: 1px solid rgba(80, 255, 130, 0.35);
+    border-radius: 4px;
+
+    color: var(--green);
+
+    font-family: inherit;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+
+    padding: 6px 10px;
+
+    cursor: pointer;
+
+    transition: background 0.2s, border-color 0.2s;
+    }
+
+.lang-toggle:hover {
+    background: rgba(80, 255, 130, 0.08);
+    border-color: var(--green);
 }
 
 .mobile-nav {
