@@ -53,7 +53,7 @@ const ARTICLES_I18N = {
 
         "row.14.title": "Synthetic Aperture Radar",
         "row.14.desc":  "A small antenna that pretends to be a huge one — imaging from satellites and aircraft.",
-        "row.14.date":  "Sept 22, 2026",
+        "row.14.date":  "Sept 21, 2024",
 
         "row.10.title": "How Phased Arrays Steer a Beam",
         "row.10.desc":  "Electronic beam steering without moving parts.",
@@ -108,7 +108,7 @@ const ARTICLES_I18N = {
 
         "row.14.title": "\u5408\u6210\u5b54\u5f84\u96f7\u8fbe",
         "row.14.desc":  "\u5c0f\u5929\u7ebf\u4eff\u5192\u6210\u5de8\u5929\u7ebf\u2014\u2014\u4ece\u536b\u661f\u548c\u98de\u673a\u62cd\u9ad8\u6e05\u96f7\u8fbe\u56fe\u3002",
-        "row.14.date":  "2026.09.22",
+        "row.14.date":  "2024.09.21",
 
         "row.10.title": "\u76f8\u63a7\u9635\u5982\u4f55\u8f6c\u5411\u6ce2\u675f",
         "row.10.desc":  "\u4e0d\u7528\u673a\u68b0\u8f6c\u52a8\u5c31\u80fd\u6539\u53d8\u6ce2\u675f\u65b9\u5411\u3002",
