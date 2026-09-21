@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title data-i18n="page.title">Article 14: Synthetic Aperture Radar &#x2014; Radar Explorer</title>
+
+    <meta
+        name="description"
+        data-i18n-attr="content|page.description"
+        content="Article 14: How does synthetic aperture radar (SAR) produce high-resolution images from a moving platform? A bilingual student-friendly explainer."
+    >
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="article.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                RADAR<span>EXPLORER</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" data-i18n="nav.home">Home</a>
+                <a href="index.html#learn" data-i18n="nav.learn">Learn</a>
+                <a href="articles.html" class="active" data-i18n="nav.articles">Articles</a>
+                <a href="index.html#explore" data-i18n="nav.explore">Explore</a>
+                <a href="index.html#research" data-i18n="nav.research">Research</a>
+                <a href="index.html#about" data-i18n="nav.about">About</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button
+                    class="lang-toggle"
+                    type="button"
+                    aria-label="Switch language"
+                    data-lang-toggle
+                >
+                    <span data-lang-label>&#x4e2d;</span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main class="article-page has-toc">
+
+        <aside class="article-toc" aria-label="Table of contents">
+            <div class="article-toc-inner">
+                <h2 class="article-toc-title" data-i18n="toc.title">On this page</h2>
+                <nav class="article-toc-nav">
+                    <a href="#sec-small-vs-big"   data-toc="sec-small-vs-big"   ><span class="article-toc-num">01</span><span class="article-toc-label" data-i18n="toc.s1">Small antenna, big aperture</span></a>
+                    <a href="#sec-how-it-works"   data-toc="sec-how-it-works"   ><span class="article-toc-num">02</span><span class="article-toc-label" data-i18n="toc.s2">How SAR works</span></a>
+                    <a href="#sec-loop-animation" data-toc="sec-loop-animation" ><span class="article-toc-num">03</span><span class="article-toc-label" data-i18n="toc.s3">Aperture-synthesis animation</span></a>
+                    <a href="#sec-worked-example" data-toc="sec-worked-example" ><span class="article-toc-num">04</span><span class="article-toc-label" data-i18n="toc.s4">Worked example</span></a>
+                    <a href="#sec-insar"          data-toc="sec-insar"          ><span class="article-toc-num">05</span><span class="article-toc-label" data-i18n="toc.s5">Interferometric SAR</span></a>
+                    <a href="#sec-applications"   data-toc="sec-applications"   ><span class="article-toc-num">06</span><span class="article-toc-label" data-i18n="toc.s6">Applications</span></a>
+                </nav>
+            </div>
+        </aside>
+
+        <section class="article-hero">
+            <h1 class="article-title" data-i18n="article.title">
+                Synthetic Aperture Radar
+            </h1>
+
+            <div class="article-meta">
+                <span class="article-author" data-i18n="article.author">
+                    By Editorial
+                </span>
+                <span class="article-meta-sep">&#xb7;</span>
+                <time class="article-date" data-i18n="article.date">
+                    Sept 22, 2026
+                </time>
+            </div>
+
+            <p class="article-subtitle" data-i18n="article.subtitle">
+                How do satellites and aircraft take radar images so sharp? With a small antenna that pretends to be a huge one.
+            </p>
+        </section>
+
+
+        <section class="article-section article-body">
+            <p data-i18n="article.p1"></p>
+            <p data-i18n="article.p2"></p>
+            <p data-i18n="article.p3"></p>
+            <p data-i18n="article.p4"></p>
+        </section>
+
+
+        <section class="article-summary-block">
+            <span class="summary-label" data-i18n="article.summaryLabel">
+                ONE-LINE SUMMARY
+            </span>
+            <p class="summary-line" data-i18n="article.summary"></p>
+        </section>
+
+
+        <!-- Visual 1: Small antenna vs big antenna -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual1.num">01</span> / <span data-i18n="visual1.name">SMALL VS BIG APERTURE</span>
+            </div>
+
+            <h2 data-i18n="visual1.title">A Small Antenna That Pretends to Be Huge</h2>
+
+            <p class="article-intro" data-i18n="visual1.intro"></p>
+
+            <figure class="article-figure">
+                <svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig1-title">
+                    <title id="fig1-title" data-i18n="fig1.title">Small vs big antenna</title>
+
+                    <rect x="0" y="0" width="800" height="280" fill="#0F1A1F"/>
+
+                    <!-- Big real antenna on left -->
+                    <g transform="translate(60, 140)">
+                        <rect x="0" y="-90" width="14" height="180" fill="#FF6B6B" stroke="#FF6B6B" stroke-width="2"/>
+                        <rect x="-3" y="90" width="20" height="8" fill="#888"/>
+                        <text x="7" y="120" text-anchor="middle" fill="#FF6B6B"
+                              font-size="11" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig1.real">REAL ANTENNA</text>
+                        <text x="7" y="138" text-anchor="middle" fill="#888"
+                              font-size="10" font-family="Menlo, monospace"
+                              data-i18n="fig1.realLen">L = 100 m</text>
+                        <text x="7" y="156" text-anchor="middle" fill="#888"
+                              font-size="10" font-family="Menlo, monospace"
+                              data-i18n="fig1.realRes">&#x0394;R &#x2248; 1.5 m</text>
+                    </g>
+
+                    <!-- Big beam (real) -->
+                    <path d="M 70 140 L 740 50 L 740 230 Z"
+                          fill="rgba(255,107,107,0.10)" stroke="#FF6B6B"
+                          stroke-width="1" stroke-dasharray="3 3"/>
+
+                    <!-- Small SAR antenna on right -->
+                    <g transform="translate(450, 140)">
+                        <rect x="-7" y="-12" width="14" height="24" fill="#7CFC00" stroke="#7CFC00" stroke-width="2"/>
+                        <text x="0" y="40" text-anchor="middle" fill="#7CFC00"
+                              font-size="11" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig1.small">SAR ANTENNA</text>
+                        <text x="0" y="56" text-anchor="middle" fill="#888"
+                              font-size="10" font-family="Menlo, monospace"
+                              data-i18n="fig1.smallLen">L = 2 m</text>
+                    </g>
+
+                    <!-- Synthesized aperture trail -->
+                    <line x1="350" y1="140" x2="550" y2="140"
+                          stroke="#7CFC00" stroke-width="3" stroke-opacity="0.7"/>
+                    <line x1="350" y1="130" x2="550" y2="130" stroke="#7CFC00" stroke-width="1" stroke-dasharray="2 2"/>
+                    <line x1="350" y1="150" x2="550" y2="150" stroke="#7CFC00" stroke-width="1" stroke-dasharray="2 2"/>
+                    <text x="450" y="180" text-anchor="middle" fill="#7CFC00"
+                          font-size="11" font-family="Menlo, monospace" font-weight="bold"
+                          data-i18n="fig1.synthArc">synthesized aperture &#x2248; 200 m</text>
+                    <text x="450" y="200" text-anchor="middle" fill="#888"
+                          font-size="10" font-family="Menlo, monospace"
+                          data-i18n="fig1.synthRes">&#x0394;R &#x2248; 1.5 m</text>
+
+                    <!-- Labels at top -->
+                    <text x="160" y="25" fill="#888"
+                          font-size="11" font-family="Menlo, monospace"
+                          data-i18n="fig1.leftNote">hard to carry on a satellite</text>
+                    <text x="460" y="25" fill="#888"
+                          font-size="11" font-family="Menlo, monospace"
+                          data-i18n="fig1.rightNote">flies around, pretends to be huge</text>
+                </svg>
+
+                <figcaption data-i18n="visual1.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 2: How SAR works -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual2.num">02</span> / <span data-i18n="visual2.name">HOW SAR WORKS</span>
+            </div>
+
+            <h2 data-i18n="visual2.title">Track, Pulse, Combine</h2>
+
+            <p class="article-intro" data-i18n="visual2.intro"></p>
+
+            <figure class="article-figure">
+                <div class="analogy-grid">
+
+                    <!-- Step 1 -->
+                    <figure class="analogy-panel">
+                        <div class="analogy-tag" data-i18n="visual2.left.tag">1. PULSE</div>
+                        <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0" y="0" width="320" height="180" fill="#0a1216"/>
+                            <!-- Aircraft at left -->
+                            <g transform="translate(60, 30)">
+                                <polygon points="0,0 -16,-4 -16,4" fill="#58C4DD"/>
+                                <polygon points="0,0 14,-2 14,2" fill="#58C4DD"/>
+                                <polygon points="0,0 -2,8 -2,-8" fill="#58C4DD"/>
+                                <text x="0" y="-12" text-anchor="middle" fill="#58C4DD"
+                                      font-size="11" font-family="Menlo, monospace" font-weight="bold"
+                                      data-i18n="visual2.left.aircraft">SATELLITE</text>
+                            </g>
+                            <!-- Pulse going down -->
+                            <polygon points="60,38 280,80 280,100 60,42"
+                                     fill="rgba(88,196,221,0.2)" stroke="#58C4DD"
+                                     stroke-width="1" stroke-dasharray="3 3"/>
+                            <line x1="60" y1="40" x2="280" y2="90" stroke="#58C4DD" stroke-width="1.5"/>
+                            <!-- Ground point -->
+                            <line x1="20" y1="160" x2="300" y2="160" stroke="#444" stroke-width="1"/>
+                            <rect x="170" y="150" width="20" height="10" fill="#FFD93D"/>
+                            <text x="180" y="148" text-anchor="middle" fill="#FFD93D"
+                                  font-size="10" font-family="Menlo, monospace" font-weight="bold"
+                                  data-i18n="visual2.left.ground">GROUND</text>
+                        </svg>
+                    </figure>
+
+                    <div class="analogy-equals">&#x21;</div>
+
+                    <!-- Step 2 -->
+                    <figure class="analogy-panel">
+                        <div class="analogy-tag" data-i18n="visual2.right.tag">2. MOVE & COMBINE</div>
+                        <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0" y="0" width="320" height="180" fill="#0a1216"/>
+                            <!-- Three satellite positions -->
+                            <g transform="translate(60, 30)">
+                                <polygon points="0,0 -8,-2 -8,2" fill="#7CFC00"/>
+                                <text x="0" y="-6" text-anchor="middle" fill="#7CFC00"
+                                      font-size="10" font-family="Menlo, monospace" font-weight="bold">t1</text>
+                            </g>
+                            <g transform="translate(160, 30)">
+                                <polygon points="0,0 -8,-2 -8,2" fill="#7CFC00"/>
+                                <text x="0" y="-6" text-anchor="middle" fill="#7CFC00"
+                                      font-size="10" font-family="Menlo, monospace" font-weight="bold">t2</text>
+                            </g>
+                            <g transform="translate(260, 30)">
+                                <polygon points="0,0 -8,-2 -8,2" fill="#7CFC00"/>
+                                <text x="0" y="-6" text-anchor="middle" fill="#7CFC00"
+                                      font-size="10" font-family="Menlo, monospace" font-weight="bold">t3</text>
+                            </g>
+                            <!-- Three pulses meeting at one point -->
+                            <line x1="60" y1="32" x2="160" y2="150" stroke="#7CFC00" stroke-width="1" stroke-dasharray="2 2"/>
+                            <line x1="160" y1="32" x2="160" y2="150" stroke="#7CFC00" stroke-width="1" stroke-dasharray="2 2"/>
+                            <line x1="260" y1="32" x2="160" y2="150" stroke="#7CFC00" stroke-width="1" stroke-dasharray="2 2"/>
+                            <!-- Ground point -->
+                            <line x1="20" y1="160" x2="300" y2="160" stroke="#444" stroke-width="1"/>
+                            <circle cx="160" cy="150" r="10" fill="#FFD93D"/>
+                            <text x="160" y="138" text-anchor="middle" fill="#FFD93D"
+                                  font-size="10" font-family="Menlo, monospace" font-weight="bold"
+                                  data-i18n="visual2.right.combine">COMBINE 3 ECHOES</text>
+                        </svg>
+                    </figure>
+                </div>
+
+                <figcaption data-i18n="visual2.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 3: Manim animation -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual3.num">03</span> / <span data-i18n="visual3.name">ANIMATION: APERTURE SYNTHESIS</span>
+            </div>
+
+            <h2 data-i18n="visual3.title">Watch the Aperture Grow as the Radar Moves</h2>
+
+            <p class="article-intro" data-i18n="visual3.intro"></p>
+
+            <figure class="article-figure">
+                <div class="video-wrap" id="radar-anim-wrap">
+                    <video
+                        id="radar-loop-video"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                        data-video-en="manim/media/videos/script/480p15/RadarArticle14.en.mp4"
+                        data-video-zh="manim/media/videos/script/480p15/RadarArticle14.zh.mp4"
+                        data-poster-en="manim/media/images/radar-article14-poster.png"
+                        data-poster-zh="manim/media/images/radar-article14-poster.png"
+                    >
+                        <p data-i18n="visual3.fallback"></p>
+                    </video>
+
+                    <div class="video-captions">
+                        <span data-i18n="visual3.cc1">1. PULSE &#x2014; radar sends a chirp toward the ground</span>
+                        <span data-i18n="visual3.cc2">2. ECHO &#x2014; ground reflects a tiny piece back</span>
+                        <span data-i18n="visual3.cc3">3. MOVE &#x2014; radar shifts a few meters and pulses again</span>
+                        <span data-i18n="visual3.cc4">4. COMBINE &#x2014; echoes from many positions are stacked = one big aperture</span>
+                    </div>
+                </div>
+
+                <figcaption data-i18n="visual3.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 4: Worked example -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual4.num">04</span> / <span data-i18n="visual4.name">WORKED EXAMPLE</span>
+            </div>
+
+            <h2 data-i18n="visual4.title">A 2 m Antenna, a 200 m Aperture</h2>
+
+            <p class="article-intro" data-i18n="visual4.intro"></p>
+
+            <figure class="article-figure">
+                <div class="example-card">
+                    <div class="example-row">
+                        <span class="example-label" data-i18n="visual4.row1.label">Real antenna length L</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row1.value">2 m</span>
+                    </div>
+                    <div class="example-row">
+                        <span class="example-label" data-i18n="visual4.row2.label">Synthesized length L<sub>s</sub></span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row2.value">200 m</span>
+                    </div>
+                    <div class="example-row example-row-formula">
+                        <span class="example-label" data-i18n="visual4.row3.label">Azimuth resolution</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row3.formula">D / 2</span>
+                    </div>
+                    <div class="example-row example-row-result">
+                        <span class="example-label" data-i18n="visual4.row4.label">Resolution gain</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row4.value">100 &#xd7; sharper</span>
+                    </div>
+                </div>
+
+                <figcaption data-i18n="visual4.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 5: InSAR -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual5.num">05</span> / <span data-i18n="visual5.name">INTERFEROMETRIC SAR (INSAR)</span>
+            </div>
+
+            <h2 data-i18n="visual5.title">Two Passes, One Height Map</h2>
+
+            <p class="article-intro" data-i18n="visual5.intro"></p>
+
+            <figure class="article-figure">
+                <svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig5-title">
+                    <title id="fig5-title" data-i18n="fig5.title">InSAR two-pass geometry</title>
+
+                    <rect x="0" y="0" width="800" height="280" fill="#0F1A1F"/>
+
+                    <!-- Pass 1 satellite -->
+                    <g transform="translate(220, 50)">
+                        <polygon points="0,0 -14,-3 -14,3" fill="#7CFC00"/>
+                        <polygon points="0,0 14,-3 14,3" fill="#7CFC00"/>
+                        <polygon points="0,0 -2,7 -2,-7" fill="#7CFC00"/>
+                        <text x="0" y="-10" text-anchor="middle" fill="#7CFC00"
+                              font-size="11" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig5.pass1">PASS 1</text>
+                        <text x="0" y="22" text-anchor="middle" fill="#7CFC00"
+                              font-size="10" font-family="Menlo, monospace">t = 0</text>
+                    </g>
+
+                    <!-- Pass 2 satellite -->
+                    <g transform="translate(580, 65)">
+                        <polygon points="0,0 -14,-3 -14,3" fill="#FFD93D"/>
+                        <polygon points="0,0 14,-3 14,3" fill="#FFD93D"/>
+                        <polygon points="0,0 -2,7 -2,-7" fill="#FFD93D"/>
+                        <text x="0" y="-10" text-anchor="middle" fill="#FFD93D"
+                              font-size="11" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig5.pass2">PASS 2</text>
+                        <text x="0" y="22" text-anchor="middle" fill="#FFD93D"
+                              font-size="10" font-family="Menlo, monospace">t = 11 days</text>
+                    </g>
+
+                    <!-- Ground line -->
+                    <line x1="40" y1="220" x2="760" y2="220" stroke="#888" stroke-width="1"/>
+                    <text x="50" y="240" fill="#888"
+                          font-size="10" font-family="Menlo, monospace"
+                          data-i18n="fig5.ground">GROUND</text>
+
+                    <!-- Mountain peaks -->
+                    <polygon points="320,220 360,160 400,220" fill="#3a4a55" stroke="#888" stroke-width="1"/>
+                    <polygon points="430,220 470,150 510,220" fill="#3a4a55" stroke="#888" stroke-width="1"/>
+
+                    <!-- Pass 1 radar line to peak -->
+                    <line x1="220" y1="58" x2="360" y2="160" stroke="#7CFC00" stroke-width="1.5" stroke-dasharray="3 2"/>
+                    <!-- Pass 2 radar line to peak -->
+                    <line x1="580" y1="73" x2="360" y2="160" stroke="#FFD93D" stroke-width="1.5" stroke-dasharray="3 2"/>
+
+                    <!-- Phase difference annotation -->
+                    <g transform="translate(380, 110)">
+                        <text x="0" y="0" text-anchor="middle" fill="#FF6B6B"
+                              font-size="11" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig5.dphi">&#x0394;&#x03c6;</text>
+                        <text x="0" y="16" text-anchor="middle" fill="#FF6B6B"
+                              font-size="10" font-family="Menlo, monospace"
+                              data-i18n="fig5.hmap">&#x2192; height map</text>
+                    </g>
+
+                    <!-- Caption at bottom -->
+                    <text x="400" y="265" text-anchor="middle" fill="#888"
+                          font-size="10" font-family="Menlo, monospace"
+                          data-i18n="fig5.bottom">same area, two passes &#x2192; tiny phase difference &#x2192; terrain elevation</text>
+                </svg>
+
+                <figcaption data-i18n="visual5.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 6: Applications -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual6.num">06</span> / <span data-i18n="visual6.name">APPLICATIONS</span>
+            </div>
+
+            <h2 data-i18n="visual6.title">Where SAR Is Used Today</h2>
+
+            <p class="article-intro" data-i18n="visual6.intro"></p>
+
+            <figure class="article-figure">
+                <div class="application-grid">
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app1.tag">DISASTER MONITORING</div>
+                        <h3 data-i18n="visual6.app1.title">Floods &amp; Earthquakes</h3>
+                        <p data-i18n="visual6.app1.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app2.tag">MAPPING</div>
+                        <h3 data-i18n="visual6.app2.title">Terrain &amp; DEM</h3>
+                        <p data-i18n="visual6.app2.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app3.tag">OCEAN SURVEILLANCE</div>
+                        <h3 data-i18n="visual6.app3.title">Ships &amp; Oil Spills</h3>
+                        <p data-i18n="visual6.app3.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app4.tag">MILITARY / RECON</div>
+                        <h3 data-i18n="visual6.app4.title">All-Day Reconnaissance</h3>
+                        <p data-i18n="visual6.app4.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app5.tag">AGRICULTURE</div>
+                        <h3 data-i18n="visual6.app5.title">Crop &amp; Soil</h3>
+                        <p data-i18n="visual6.app5.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app6.tag">GLACIOLOGY</div>
+                        <h3 data-i18n="visual6.app6.title">Ice &amp; Glacier Flow</h3>
+                        <p data-i18n="visual6.app6.desc"></p>
+                    </div>
+
+                </div>
+
+                <figcaption data-i18n="visual6.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <section class="article-summary-block">
+            <span class="summary-label" data-i18n="article.summaryLabel">
+                ONE-LINE SUMMARY
+            </span>
+            <p class="summary-line" data-i18n="article.summary"></p>
+        </section>
+
+
+        <footer class="article-footer">
+            <a href="articles.html" class="article-back" data-i18n="article.back">&#x2190; Back to Articles</a>
+            <span class="article-meta" data-i18n="article.meta">Student Research &#xb7; 2026</span>
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+    <script src="article-14.js"></script>
+
+</body>
+</html>

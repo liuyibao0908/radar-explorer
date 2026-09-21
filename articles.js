@@ -48,8 +48,12 @@ const ARTICLES_I18N = {
         "row.12.date":  "Sept 20, 2026",
 
         "row.13.title": "How Does Radar Know the Direction?",
-        "row.13.desc":  "Direction comes from antenna beams &#x2014; mechanical scan vs phased array.",
+        "row.13.desc":  "Direction comes from antenna beams — mechanical scan vs phased array.",
         "row.13.date":  "Sept 21, 2026",
+
+        "row.14.title": "Synthetic Aperture Radar",
+        "row.14.desc":  "A small antenna that pretends to be a huge one — imaging from satellites and aircraft.",
+        "row.14.date":  "Sept 22, 2026",
 
         "row.10.title": "How Phased Arrays Steer a Beam",
         "row.10.desc":  "Electronic beam steering without moving parts.",
@@ -101,6 +105,10 @@ const ARTICLES_I18N = {
         "row.13.title": "\u96f7\u8fbe\u600e\u4e48\u77e5\u9053\u65b9\u5411\uff1f",
         "row.13.desc":  "\u96f7\u8fbe\u9760\u5929\u7ebf\u6ce2\u675f\u6307\u5411\u5224\u65ad\u65b9\u5411\u2014\u2014\u673a\u68b0\u626b\u63cf\u4e0e\u76f8\u63a7\u9635\u3002",
         "row.13.date":  "2026.09.21",
+
+        "row.14.title": "\u5408\u6210\u5b54\u5f84\u96f7\u8fbe",
+        "row.14.desc":  "\u5c0f\u5929\u7ebf\u4eff\u5192\u6210\u5de8\u5929\u7ebf\u2014\u2014\u4ece\u536b\u661f\u548c\u98de\u673a\u62cd\u9ad8\u6e05\u96f7\u8fbe\u56fe\u3002",
+        "row.14.date":  "2026.09.22",
 
         "row.10.title": "\u76f8\u63a7\u9635\u5982\u4f55\u8f6c\u5411\u6ce2\u675f",
         "row.10.desc":  "\u4e0d\u7528\u673a\u68b0\u8f6c\u52a8\u5c31\u80fd\u6539\u53d8\u6ce2\u675f\u65b9\u5411\u3002",
