@@ -59,6 +59,10 @@ const ARTICLES_I18N = {
         "row.15.desc":  "Contactless breathing and heartbeat monitoring for healthcare and rescue.",
         "row.15.date":  "Oct 12, 2024",
 
+        "row.16.title": "Astronomical Radar",
+        "row.16.desc":  "Radar that studies planets, asteroids, and space debris millions of km away.",
+        "row.16.date":  "Sept 5, 2024",
+
         "row.10.title": "How Phased Arrays Steer a Beam",
         "row.10.desc":  "Electronic beam steering without moving parts.",
         "row.10.date":  "Dec 4, 2025",
@@ -117,6 +121,10 @@ const ARTICLES_I18N = {
         "row.15.title": "\u751f\u7269\u96f7\u8fbe",
         "row.15.desc":  "\u975e\u63a5\u89e6\u5f0f\u76d1\u6d4b\u547c\u5438\u548c\u5fc3\u8df3\uff0c\u7528\u4e8e\u533b\u7597\u4e0e\u6551\u63f4\u3002",
         "row.15.date":  "2024.10.12",
+
+        "row.16.title": "\u5929\u6587\u96f7\u8fbe",
+        "row.16.desc":  "\u96f7\u8fbe\u7814\u7a76\u884c\u661f\u3001\u5c0f\u884c\u661f\u548c\u592a\u7a7a\u788e\u7247\uff0c\u8ddd\u79bb\u8fbe\u6570\u5343\u4e07\u516c\u91cc\u3002",
+        "row.16.date":  "2024.09.05",
 
         "row.10.title": "\u76f8\u63a7\u9635\u5982\u4f55\u8f6c\u5411\u6ce2\u675f",
         "row.10.desc":  "\u4e0d\u7528\u673a\u68b0\u8f6c\u52a8\u5c31\u80fd\u6539\u53d8\u6ce2\u675f\u65b9\u5411\u3002",
