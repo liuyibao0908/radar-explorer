@@ -63,6 +63,10 @@ const ARTICLES_I18N = {
         "row.16.desc":  "Radar that studies planets, asteroids, and space debris millions of km away.",
         "row.16.date":  "Sept 5, 2024",
 
+        "row.17.title": "Ground-Penetrating Radar",
+        "row.17.desc":  "See what is buried under the ground without digging: pipes, tombs, voids.",
+        "row.17.date":  "June 5, 2025",
+
         "row.10.title": "How Phased Arrays Steer a Beam",
         "row.10.desc":  "Electronic beam steering without moving parts.",
         "row.10.date":  "Dec 4, 2025",
@@ -125,6 +129,10 @@ const ARTICLES_I18N = {
         "row.16.title": "\u5929\u6587\u96f7\u8fbe",
         "row.16.desc":  "\u96f7\u8fbe\u7814\u7a76\u884c\u661f\u3001\u5c0f\u884c\u661f\u548c\u592a\u7a7a\u788e\u7247\uff0c\u8ddd\u79bb\u8fbe\u6570\u5343\u4e07\u516c\u91cc\u3002",
         "row.16.date":  "2024.09.05",
+
+        "row.17.title": "\u5730\u8d28\u96f7\u8fbe",
+        "row.17.desc":  "\u4e0d\u6316\u5f00\u5730\u9762\uff0c\u770b\u5230\u57cb\u5728\u5730\u4e0b\u7684\u7ba1\u7ebf\u3001\u53e4\u5899\u4e0e\u7a7a\u6d1e\u3002",
+        "row.17.date":  "2025.06.05",
 
         "row.10.title": "\u76f8\u63a7\u9635\u5982\u4f55\u8f6c\u5411\u6ce2\u675f",
         "row.10.desc":  "\u4e0d\u7528\u673a\u68b0\u8f6c\u52a8\u5c31\u80fd\u6539\u53d8\u6ce2\u675f\u65b9\u5411\u3002",
