@@ -75,6 +75,10 @@ const ARTICLES_I18N = {
         "row.19.desc":  "How police speed guns measure car velocity using the Doppler effect.",
         "row.19.date":  "Oct 19, 2025",
 
+        "row.20.title": "Marine Radar",
+        "row.20.desc":  "Ships' PPI scopes for collision avoidance in fog and at night.",
+        "row.20.date":  "Apr 9, 2026",
+
         "row.10.title": "How Phased Arrays Steer a Beam",
         "row.10.desc":  "Electronic beam steering without moving parts.",
         "row.10.date":  "Dec 4, 2025",
@@ -149,6 +153,10 @@ const ARTICLES_I18N = {
         "row.19.title": "\u6d4b\u901f\u96f7\u8fbe",
         "row.19.desc":  "\u4ea4\u8b66\u6d4b\u901f\u67aa\u600e\u4e48\u7528\u591a\u666e\u52d2\u6548\u5e94\u6d4b\u51fa\u8f66\u901f\u3002",
         "row.19.date":  "2025.10.19",
+
+        "row.20.title": "\u822a\u6d77\u96f7\u8fbe",
+        "row.20.desc":  "\u96f7\u8fbe\u5708\u5c4f\u5e55\u5e2e\u8239\u5728\u5916\u3001\u591c\u3001\u96fe\u4e2d\u907f\u514d\u649e\u8231\u3002",
+        "row.20.date":  "2026.04.09",
 
         "row.10.title": "\u76f8\u63a7\u9635\u5982\u4f55\u8f6c\u5411\u6ce2\u675f",
         "row.10.desc":  "\u4e0d\u7528\u673a\u68b0\u8f6c\u52a8\u5c31\u80fd\u6539\u53d8\u6ce2\u675f\u65b9\u5411\u3002",
