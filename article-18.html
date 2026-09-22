@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title data-i18n="page.title">Article 18: Through-Wall Radar &#x2014; Radar Explorer</title>
+
+    <meta
+        name="description"
+        data-i18n-attr="content|page.description"
+        content="Article 18: How does through-wall radar detect life signs behind walls? A bilingual student-friendly explainer."
+    >
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="article.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                RADAR<span>EXPLORER</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" data-i18n="nav.home">Home</a>
+                <a href="index.html#learn" data-i18n="nav.learn">Learn</a>
+                <a href="articles.html" class="active" data-i18n="nav.articles">Articles</a>
+                <a href="index.html#explore" data-i18n="nav.explore">Explore</a>
+                <a href="index.html#research" data-i18n="nav.research">Research</a>
+                <a href="index.html#about" data-i18n="nav.about">About</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button
+                    class="lang-toggle"
+                    type="button"
+                    aria-label="Switch language"
+                    data-lang-toggle
+                >
+                    <span data-lang-label>&#x4e2d;</span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main class="article-page has-toc">
+
+        <aside class="article-toc" aria-label="Table of contents">
+            <div class="article-toc-inner">
+                <h2 class="article-toc-title" data-i18n="toc.title">On this page</h2>
+                <nav class="article-toc-nav">
+                    <a href="#sec-behind-wall" data-toc="sec-behind-wall" ><span class="article-toc-num">01</span><span class="article-toc-label" data-i18n="toc.s1">Behind the wall</span></a>
+                    <a href="#sec-vital-signs" data-toc="sec-vital-signs" ><span class="article-toc-num">02</span><span class="article-toc-label" data-i18n="toc.s2">Vital signs behind</span></a>
+                    <a href="#sec-loop-animation" data-toc="sec-loop-animation" ><span class="article-toc-num">03</span><span class="article-toc-label" data-i18n="toc.s3">Rubble-scan animation</span></a>
+                    <a href="#sec-worked-example" data-toc="sec-worked-example" ><span class="article-toc-num">04</span><span class="article-toc-label" data-i18n="toc.s4">Worked example</span></a>
+                    <a href="#sec-wall-trade" data-toc="sec-wall-trade" ><span class="article-toc-num">05</span><span class="article-toc-label" data-i18n="toc.s5">Wall trade-off</span></a>
+                    <a href="#sec-applications" data-toc="sec-applications" ><span class="article-toc-num">06</span><span class="article-toc-label" data-i18n="toc.s6">Applications</span></a>
+                </nav>
+            </div>
+        </aside>
+
+        <section class="article-hero">
+            <h1 class="article-title" data-i18n="article.title">
+                Through-Wall Radar
+            </h1>
+
+            <div class="article-meta">
+                <span class="article-author" data-i18n="article.author">
+                    By Editorial
+                </span>
+                <span class="article-meta-sep">&#xb7;</span>
+                <time class="article-date" data-i18n="article.date">
+                    July 19, 2025
+                </time>
+            </div>
+
+            <p class="article-subtitle" data-i18n="article.subtitle">
+                How do you know if someone is alive behind a wall of rubble? Through-wall radar listens for their breathing.
+            </p>
+        </section>
+
+
+        <section class="article-section article-body">
+            <p data-i18n="article.p1"></p>
+            <p data-i18n="article.p2"></p>
+            <p data-i18n="article.p3"></p>
+            <p data-i18n="article.p4"></p>
+        </section>
+
+
+        <section class="article-summary-block">
+            <span class="summary-label" data-i18n="article.summaryLabel">
+                ONE-LINE SUMMARY
+            </span>
+            <p class="summary-line" data-i18n="article.summary"></p>
+        </section>
+
+
+        <!-- Visual 1: Behind the wall -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual1.num">01</span> / <span data-i18n="visual1.name">BEHIND THE WALL</span>
+            </div>
+
+            <h2 data-i18n="visual1.title">Microwaves Slip Through Walls</h2>
+
+            <p class="article-intro" data-i18n="visual1.intro"></p>
+
+            <figure class="article-figure">
+                <svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig1-title">
+                    <title id="fig1-title" data-i18n="fig1.title">Through-wall radar scenario</title>
+
+                    <defs>
+                        <pattern id="bricks" x="0" y="0" width="40" height="20" patternUnits="userSpaceOnUse">
+                            <rect width="40" height="20" fill="#5a3a20"/>
+                            <line x1="0" y1="0" x2="40" y2="0" stroke="#3a2410" stroke-width="1.5"/>
+                            <line x1="20" y1="0" x2="20" y2="10" stroke="#3a2410" stroke-width="1"/>
+                            <line x1="0" y1="10" x2="40" y2="10" stroke="#3a2410" stroke-width="1"/>
+                            <line x1="20" y1="10" x2="20" y2="20" stroke="#3a2410" stroke-width="1.5"/>
+                        </pattern>
+                    </defs>
+
+                    <!-- Sky -->
+                    <rect x="0" y="0" width="800" height="80" fill="#0F1A1F"/>
+                    <text x="60" y="40" fill="#888" font-size="11"
+                          font-family="Menlo, monospace"
+                          data-i18n="fig1.air">AIR (rescuer side)</text>
+
+                    <!-- Rubble/debris left -->
+                    <g transform="translate(0, 80)">
+                        <polygon points="0,0 100,0 110,90 0,150" fill="#3a2410"/>
+                        <polygon points="60,0 150,0 165,80 75,90" fill="#5a3a20"/>
+                        <polygon points="120,0 200,0 220,100 130,80" fill="#3a2410"/>
+                    </g>
+
+                    <!-- Wall -->
+                    <rect x="320" y="60" width="160" height="260" fill="url(#bricks)"/>
+                    <line x1="320" y1="60" x2="320" y2="320" stroke="#FFD93D" stroke-width="2"/>
+                    <line x1="480" y1="60" x2="480" y2="320" stroke="#FFD93D" stroke-width="2"/>
+                    <text x="400" y="40" text-anchor="middle" fill="#FFD93D"
+                          font-size="12" font-family="Menlo, monospace" font-weight="bold"
+                          data-i18n="fig1.wall">CONCRETE WALL</text>
+
+                    <!-- Rescuer + radar on left -->
+                    <g transform="translate(140, 220)">
+                        <!-- person -->
+                        <circle cx="0" cy="-12" r="9" fill="#7CFC00"/>
+                        <rect x="-9" y="-3" width="18" height="30" rx="4" fill="#7CFC00" opacity="0.85"/>
+                        <text x="0" y="36" text-anchor="middle" fill="#7CFC00"
+                              font-size="11" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig1.rescuer">RESCUER</text>
+                    </g>
+                    <g transform="translate(280, 220)">
+                        <rect x="-26" y="-12" width="52" height="22" rx="3"
+                              fill="#58C4DD" stroke="#FFD93D" stroke-width="2"/>
+                        <circle cx="-12" cy="-1" r="3" fill="#0F1A1F"/>
+                        <circle cx="0"   cy="-1" r="3" fill="#0F1A1F"/>
+                        <circle cx="12"  cy="-1" r="3" fill="#0F1A1F"/>
+                        <text x="0" y="32" text-anchor="middle" fill="#58C4DD"
+                              font-size="11" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig1.twr">TW-RADAR</text>
+                    </g>
+
+                    <!-- Beam through wall -->
+                    <line x1="306" y1="220" x2="540" y2="200" stroke="#58C4DD" stroke-width="2" stroke-dasharray="4 3"/>
+                    <line x1="540" y1="200" x2="306" y2="220" stroke="#FF6B6B" stroke-width="2" stroke-dasharray="4 3"/>
+                    <polygon points="306,220 314,216 314,224" fill="#FF6B6B"/>
+                    <text x="430" y="180" text-anchor="middle" fill="#7CFC00"
+                          font-size="11" font-family="Menlo, monospace" font-weight="bold"
+                          data-i18n="fig1.beam">microwaves \x21d2</text>
+
+                    <!-- Survivor behind wall -->
+                    <g transform="translate(640, 220)">
+                        <!-- person sitting -->
+                        <circle cx="0" cy="-12" r="9" fill="#FFD93D"/>
+                        <rect x="-10" y="-3" width="20" height="30" rx="4" fill="#FFD93D" opacity="0.85"/>
+                        <text x="0" y="36" text-anchor="middle" fill="#FFD93D"
+                              font-size="11" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig1.survivor">SURVIVOR</text>
+                        <!-- breathing indicator -->
+                        <path d="M -16 -8 q 4 -4 8 0 q 4 4 8 0" fill="none" stroke="#7CFC00" stroke-width="1.5"/>
+                        <text x="0" y="-20" text-anchor="middle" fill="#7CFC00"
+                              font-size="9" font-family="Menlo, monospace"
+                              data-i18n="fig1.breath">breathing</text>
+                    </g>
+
+                    <!-- Bottom note -->
+                    <text x="400" y="305" text-anchor="middle" fill="#888"
+                          font-size="11" font-family="Menlo, monospace"
+                          data-i18n="fig1.bottom">radar \x21d2 wall \x21d2 survivor &#x2014; echo carries tiny breathing motion</text>
+                </svg>
+
+                <figcaption data-i18n="visual1.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 2: Vital signs -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual2.num">02</span> / <span data-i18n="visual2.name">VITAL SIGNS BEHIND</span>
+            </div>
+
+            <h2 data-i18n="visual2.title">Tiny Chest Movements Are the Signal</h2>
+
+            <p class="article-intro" data-i18n="visual2.intro"></p>
+
+            <figure class="article-figure">
+                <svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig2-title">
+                    <title id="fig2-title" data-i18n="fig2.title">Signal pattern</title>
+
+                    <rect x="0" y="0" width="800" height="280" fill="#0F1A1F"/>
+
+                    <!-- Axis -->
+                    <line x1="80" y1="180" x2="760" y2="180" stroke="#888" stroke-width="1"/>
+                    <line x1="80" y1="180" x2="80" y2="60" stroke="#888" stroke-width="1"/>
+
+                    <!-- Clutter baseline -->
+                    <path d="M 80 175 Q 110 172 140 178 Q 170 174 200 178"
+                          fill="none" stroke="#888" stroke-width="1" stroke-dasharray="2 2" opacity="0.6"/>
+                    <text x="60" y="190" text-anchor="end" fill="#888"
+                          font-size="10" font-family="Menlo, monospace"
+                          data-i18n="fig2.clutter">clutter</text>
+
+                    <!-- Breathing waveform (large, low freq) -->
+                    <path d="M 80 180
+                             Q 100 100 120 180
+                             Q 140 100 160 180
+                             Q 180 100 200 180
+                             Q 220 100 240 180
+                             Q 260 100 280 180
+                             Q 300 100 320 180
+                             Q 340 100 360 180
+                             Q 380 100 400 180
+                             Q 420 100 440 180
+                             Q 460 100 480 180
+                             Q 500 100 520 180
+                             Q 540 100 560 180
+                             Q 580 100 600 180
+                             Q 620 100 640 180
+                             Q 660 100 680 180
+                             Q 700 100 720 180
+                             Q 740 100 760 180"
+                          fill="none" stroke="#7CFC00" stroke-width="2"/>
+                    <text x="420" y="100" text-anchor="middle" fill="#7CFC00"
+                          font-size="12" font-family="Menlo, monospace" font-weight="bold"
+                          data-i18n="fig2.breathLabel">breathing (~5 mm, ~0.3 Hz)</text>
+
+                    <!-- Heartbeat waveform (small, fast) on top -->
+                    <path d="M 80 180
+                             l 5 -2 l 5 8 l 5 -14 l 5 6 l 5 -2
+                             l 5 -2 l 5 8 l 5 -14 l 5 6 l 5 -2
+                             l 5 -2 l 5 8 l 5 -14 l 5 6 l 5 -2
+                             l 5 -2 l 5 8 l 5 -14 l 5 6 l 5 -2"
+                          fill="none" stroke="#FF6B6B" stroke-width="1.5"/>
+                    <text x="420" y="160" text-anchor="middle" fill="#FF6B6B"
+                          font-size="12" font-family="Menlo, monospace" font-weight="bold"
+                          data-i18n="fig2.heartLabel">heartbeat (~0.5 mm, ~1.2 Hz)</text>
+
+                    <!-- Time axis label -->
+                    <text x="400" y="220" text-anchor="middle" fill="#888"
+                          font-size="11" font-family="Menlo, monospace"
+                          data-i18n="fig2.time">time \x2192</text>
+                    <text x="50" y="120" text-anchor="middle" fill="#888"
+                          font-size="10" font-family="Menlo, monospace"
+                          transform="rotate(-90 50 120)"
+                          data-i18n="fig2.amplitude">amplitude</text>
+                </svg>
+
+                <figcaption data-i18n="visual2.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 3: Manim animation -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual3.num">03</span> / <span data-i18n="visual3.name">ANIMATION: RUBBLE SCAN</span>
+            </div>
+
+            <h2 data-i18n="visual3.title">Watch the Beam Sweep Through Rubble</h2>
+
+            <p class="article-intro" data-i18n="visual3.intro"></p>
+
+            <figure class="article-figure">
+                <div class="video-wrap" id="radar-anim-wrap">
+                    <video
+                        id="radar-loop-video"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                        data-video-en="manim/media/videos/script/480p15/RadarArticle18.en.mp4"
+                        data-video-zh="manim/media/videos/script/480p15/RadarArticle18.zh.mp4"
+                        data-poster-en="manim/media/images/radar-article18-poster.png"
+                        data-poster-zh="manim/media/images/radar-article18-poster.png"
+                    >
+                        <p data-i18n="visual3.fallback"></p>
+                    </video>
+
+                    <div class="video-captions">
+                        <span data-i18n="visual3.cc1">1. SCAN &#x2014; through-wall radar emits UWB pulses toward rubble</span>
+                        <span data-i18n="visual3.cc2">2. PASS &#x2014; microwaves slip through concrete, wood, drywall</span>
+                        <span data-i18n="visual3.cc3">3. ECHO &#x2014; chest micro-motion modulates the returned signal</span>
+                        <span data-i18n="visual3.cc4">4. LOCATE &#x2014; processing extracts breathing and heartbeat</span>
+                    </div>
+                </div>
+
+                <figcaption data-i18n="visual3.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 4: Worked example -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual4.num">04</span> / <span data-i18n="visual4.name">WORKED EXAMPLE</span>
+            </div>
+
+            <h2 data-i18n="visual4.title">A Concrete Wall 20 cm, Loss &#x2248; 15 dB</h2>
+
+            <p class="article-intro" data-i18n="visual4.intro"></p>
+
+            <figure class="article-figure">
+                <div class="example-card">
+                    <div class="example-row">
+                        <span class="example-label" data-i18n="visual4.row1.label">Wall thickness d</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row1.value">0.20 m</span>
+                    </div>
+                    <div class="example-row">
+                        <span class="example-label" data-i18n="visual4.row2.label">Concrete attenuation</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row2.value">~ 12 dB / 0.1 m</span>
+                    </div>
+                    <div class="example-row example-row-formula">
+                        <span class="example-label" data-i18n="visual4.row3.label">Total one-way loss</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row3.formula">&#x2248; 24 dB</span>
+                    </div>
+                    <div class="example-row example-row-result">
+                        <span class="example-label" data-i18n="visual4.row4.label">Round-trip loss</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row4.value">&#x2248; 48 dB</span>
+                    </div>
+                </div>
+
+                <figcaption data-i18n="visual4.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 5: Wall trade-off -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual5.num">05</span> / <span data-i18n="visual5.name">WALL TRADE-OFF</span>
+            </div>
+
+            <h2 data-i18n="visual5.title">Walls Block Different Amounts</h2>
+
+            <p class="article-intro" data-i18n="visual5.intro"></p>
+
+            <figure class="article-figure">
+                <svg viewBox="0 0 800 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig5-title">
+                    <title id="fig5-title" data-i18n="fig5.title">Wall materials and penetration</title>
+
+                    <rect x="0" y="0" width="800" height="260" fill="#0F1A1F"/>
+
+                    <!-- Four material columns -->
+                    <!-- Wood -->
+                    <g transform="translate(40, 30)">
+                        <rect x="0" y="0" width="170" height="180" rx="8"
+                              fill="#0a1216" stroke="#7CFC00" stroke-width="1"/>
+                        <text x="85" y="28" text-anchor="middle" fill="#7CFC00"
+                              font-size="13" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig5.wood.tag">WOOD</text>
+                        <text x="85" y="58" text-anchor="middle" fill="#FFD93D"
+                              font-size="11" font-family="Menlo, monospace"
+                              data-i18n="fig5.wood.loss">~ 3 dB / 0.1 m</text>
+                        <text x="85" y="100" text-anchor="middle" fill="#7CFC00"
+                              font-size="11" font-family="Menlo, monospace"
+                              data-i18n="fig5.wood.use">good: walls</text>
+                        <text x="85" y="118" text-anchor="middle" fill="#7CFC00"
+                              font-size="11" font-family="Menlo, monospace"
+                              data-i18n="fig5.wood.use2">floors</text>
+                        <text x="85" y="146" text-anchor="middle" fill="#FFD93D"
+                              font-size="32" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig5.wood.bar">| | | |</text>
+                    </g>
+
+                    <!-- Drywall -->
+                    <g transform="translate(230, 30)">
+                        <rect x="0" y="0" width="170" height="180" rx="8"
+                              fill="#0a1216" stroke="#FFD93D" stroke-width="1"/>
+                        <text x="85" y="28" text-anchor="middle" fill="#FFD93D"
+                              font-size="13" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig5.dry.tag">DRYWALL</text>
+                        <text x="85" y="58" text-anchor="middle" fill="#FFD93D"
+                              font-size="11" font-family="Menlo, monospace"
+                              data-i18n="fig5.dry.loss">~ 5 dB / 0.1 m</text>
+                        <text x="85" y="100" text-anchor="middle" fill="#7CFC00"
+                              font-size="11" font-family="Menlo, monospace"
+                              data-i18n="fig5.dry.use">good: indoor</text>
+                        <text x="85" y="118" text-anchor="middle" fill="#7CFC00"
+                              font-size="11" font-family="Menlo, monospace"
+                              data-i18n="fig5.dry.use2">office walls</text>
+                        <text x="85" y="146" text-anchor="middle" fill="#FFD93D"
+                              font-size="32" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig5.dry.bar">| | | |</text>
+                    </g>
+
+                    <!-- Concrete -->
+                    <g transform="translate(420, 30)">
+                        <rect x="0" y="0" width="170" height="180" rx="8"
+                              fill="#0a1216" stroke="#FF6B6B" stroke-width="1"/>
+                        <text x="85" y="28" text-anchor="middle" fill="#FF6B6B"
+                              font-size="13" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig5.conc.tag">CONCRETE</text>
+                        <text x="85" y="58" text-anchor="middle" fill="#FFD93D"
+                              font-size="11" font-family="Menlo, monospace"
+                              data-i18n="fig5.conc.loss">~ 12 dB / 0.1 m</text>
+                        <text x="85" y="100" text-anchor="middle" fill="#FFD93D"
+                              font-size="11" font-family="Menlo, monospace"
+                              data-i18n="fig5.conc.use">limited: walls</text>
+                        <text x="85" y="118" text-anchor="middle" fill="#FFD93D"
+                              font-size="11" font-family="Menlo, monospace"
+                              data-i18n="fig5.conc.use2">low-res</text>
+                        <text x="85" y="146" text-anchor="middle" fill="#FF6B6B"
+                              font-size="32" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig5.conc.bar">| |</text>
+                    </g>
+
+                    <!-- Rebar/reinforced -->
+                    <g transform="translate(610, 30)">
+                        <rect x="0" y="0" width="170" height="180" rx="8"
+                              fill="#0a1216" stroke="#FF6B6B" stroke-width="1.5"/>
+                        <text x="85" y="28" text-anchor="middle" fill="#FF6B6B"
+                              font-size="13" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig5.rebar.tag">REBAR CONCRETE</text>
+                        <text x="85" y="58" text-anchor="middle" fill="#FF6B6B"
+                              font-size="11" font-family="Menlo, monospace"
+                              data-i18n="fig5.rebar.loss">~ 20 dB / 0.1 m</text>
+                        <text x="85" y="100" text-anchor="middle" fill="#888"
+                              font-size="11" font-family="Menlo, monospace"
+                              data-i18n="fig5.rebar.use">very hard</text>
+                        <text x="85" y="118" text-anchor="middle" fill="#888"
+                              font-size="11" font-family="Menlo, monospace"
+                              data-i18n="fig5.rebar.use2">rebar scatters</text>
+                        <text x="85" y="146" text-anchor="middle" fill="#FF6B6B"
+                              font-size="32" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig5.rebar.bar">|</text>
+                    </g>
+
+                    <!-- Trade-off axis -->
+                    <text x="400" y="240" text-anchor="middle" fill="#888"
+                          font-size="11" font-family="Menlo, monospace"
+                          data-i18n="fig5.note">penetration gets harder as walls get denser and rebar shows up</text>
+                </svg>
+
+                <figcaption data-i18n="visual5.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 6: Applications -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual6.num">06</span> / <span data-i18n="visual6.name">APPLICATIONS</span>
+            </div>
+
+            <h2 data-i18n="visual6.title">Where Through-Wall Radar Is Used</h2>
+
+            <p class="article-intro" data-i18n="visual6.intro"></p>
+
+            <figure class="article-figure">
+                <div class="application-grid">
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app1.tag">SEARCH &amp; RESCUE</div>
+                        <h3 data-i18n="visual6.app1.title">Earthquake &amp; Collapse</h3>
+                        <p data-i18n="visual6.app1.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app2.tag">POLICE &amp; SWAT</div>
+                        <h3 data-i18n="visual6.app2.title">Hostage / Standoff</h3>
+                        <p data-i18n="visual6.app2.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app3.tag">FIREFIGHTING</div>
+                        <h3 data-i18n="visual6.app3.title">Smoke-Filled Rooms</h3>
+                        <p data-i18n="visual6.app3.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app4.tag">BORDER SECURITY</div>
+                        <h3 data-i18n="visual6.app4.title">Vehicle Checkpoints</h3>
+                        <p data-i18n="visual6.app4.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app5.tag">ELDERLY CARE</div>
+                        <h3 data-i18n="visual6.app5.title">Fall Detection</h3>
+                        <p data-i18n="visual6.app5.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app6.tag">URBAN COMBAT</div>
+                        <h3 data-i18n="visual6.app6.title">Room Clearing</h3>
+                        <p data-i18n="visual6.app6.desc"></p>
+                    </div>
+
+                </div>
+
+                <figcaption data-i18n="visual6.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <section class="article-summary-block">
+            <span class="summary-label" data-i18n="article.summaryLabel">
+                ONE-LINE SUMMARY
+            </span>
+            <p class="summary-line" data-i18n="article.summary"></p>
+        </section>
+
+
+        <footer class="article-footer">
+            <a href="articles.html" class="article-back" data-i18n="article.back">&#x2190; Back to Articles</a>
+            <span class="article-meta" data-i18n="article.meta">Student Research &#xb7; 2025</span>
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+    <script src="article-18.js"></script>
+
+</body>
+</html>

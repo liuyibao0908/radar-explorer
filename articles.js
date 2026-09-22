@@ -67,6 +67,10 @@ const ARTICLES_I18N = {
         "row.17.desc":  "See what is buried under the ground without digging: pipes, tombs, voids.",
         "row.17.date":  "June 5, 2025",
 
+        "row.18.title": "Through-Wall Radar",
+        "row.18.desc":  "Detecting life signs behind rubble and walls during rescue and security.",
+        "row.18.date":  "July 19, 2025",
+
         "row.10.title": "How Phased Arrays Steer a Beam",
         "row.10.desc":  "Electronic beam steering without moving parts.",
         "row.10.date":  "Dec 4, 2025",
@@ -133,6 +137,10 @@ const ARTICLES_I18N = {
         "row.17.title": "\u5730\u8d28\u96f7\u8fbe",
         "row.17.desc":  "\u4e0d\u6316\u5f00\u5730\u9762\uff0c\u770b\u5230\u57cb\u5728\u5730\u4e0b\u7684\u7ba1\u7ebf\u3001\u53e4\u5899\u4e0e\u7a7a\u6d1e\u3002",
         "row.17.date":  "2025.06.05",
+
+        "row.18.title": "\u7a7f\u5899\u96f7\u8fbe",
+        "row.18.desc":  "\u5728\u6551\u63f4\u4e0e\u5b89\u9632\u4e2d\u63a2\u6d4b\u788e\u5743\u4e0e\u5899\u58c1\u540e\u7684\u751f\u547d\u4f53\u5f81\u3002",
+        "row.18.date":  "2025.07.19",
 
         "row.10.title": "\u76f8\u63a7\u9635\u5982\u4f55\u8f6c\u5411\u6ce2\u675f",
         "row.10.desc":  "\u4e0d\u7528\u673a\u68b0\u8f6c\u52a8\u5c31\u80fd\u6539\u53d8\u6ce2\u675f\u65b9\u5411\u3002",
