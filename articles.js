@@ -71,6 +71,10 @@ const ARTICLES_I18N = {
         "row.18.desc":  "Detecting life signs behind rubble and walls during rescue and security.",
         "row.18.date":  "July 19, 2025",
 
+        "row.19.title": "Speed Radar",
+        "row.19.desc":  "How police speed guns measure car velocity using the Doppler effect.",
+        "row.19.date":  "Oct 19, 2025",
+
         "row.10.title": "How Phased Arrays Steer a Beam",
         "row.10.desc":  "Electronic beam steering without moving parts.",
         "row.10.date":  "Dec 4, 2025",
@@ -141,6 +145,10 @@ const ARTICLES_I18N = {
         "row.18.title": "\u7a7f\u5899\u96f7\u8fbe",
         "row.18.desc":  "\u5728\u6551\u63f4\u4e0e\u5b89\u9632\u4e2d\u63a2\u6d4b\u788e\u5743\u4e0e\u5899\u58c1\u540e\u7684\u751f\u547d\u4f53\u5f81\u3002",
         "row.18.date":  "2025.07.19",
+
+        "row.19.title": "\u6d4b\u901f\u96f7\u8fbe",
+        "row.19.desc":  "\u4ea4\u8b66\u6d4b\u901f\u67aa\u600e\u4e48\u7528\u591a\u666e\u52d2\u6548\u5e94\u6d4b\u51fa\u8f66\u901f\u3002",
+        "row.19.date":  "2025.10.19",
 
         "row.10.title": "\u76f8\u63a7\u9635\u5982\u4f55\u8f6c\u5411\u6ce2\u675f",
         "row.10.desc":  "\u4e0d\u7528\u673a\u68b0\u8f6c\u52a8\u5c31\u80fd\u6539\u53d8\u6ce2\u675f\u65b9\u5411\u3002",
