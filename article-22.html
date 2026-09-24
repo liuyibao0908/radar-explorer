@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title data-i18n="page.title">Article 22: Automotive Radar &#x2014; Radar Explorer</title>
+
+    <meta
+        name="description"
+        data-i18n-attr="content|page.description"
+        content="Article 22: How does automotive radar power adaptive cruise control and emergency braking? A bilingual student-friendly explainer."
+    >
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="article.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                RADAR<span>EXPLORER</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" data-i18n="nav.home">Home</a>
+                <a href="index.html#learn" data-i18n="nav.learn">Learn</a>
+                <a href="articles.html" class="active" data-i18n="nav.articles">Articles</a>
+                <a href="index.html#explore" data-i18n="nav.explore">Explore</a>
+                <a href="index.html#research" data-i18n="nav.research">Research</a>
+                <a href="index.html#about" data-i18n="nav.about">About</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button
+                    class="lang-toggle"
+                    type="button"
+                    aria-label="Switch language"
+                    data-lang-toggle
+                >
+                    <span data-lang-label>&#x4e2d;</span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main class="article-page has-toc">
+
+        <aside class="article-toc" aria-label="Table of contents">
+            <div class="article-toc-inner">
+                <h2 class="article-toc-title" data-i18n="toc.title">On this page</h2>
+                <nav class="article-toc-nav">
+                    <a href="#sec-mounted"        data-toc="sec-mounted"        ><span class="article-toc-num">01</span><span class="article-toc-label" data-i18n="toc.s1">Where it sits on the car</span></a>
+                    <a href="#sec-fmcw"           data-toc="sec-fmcw"           ><span class="article-toc-num">02</span><span class="article-toc-label" data-i18n="toc.s2">FMCW chirp</span></a>
+                    <a href="#sec-loop-animation"  data-toc="sec-loop-animation"  ><span class="article-toc-num">03</span><span class="article-toc-label" data-i18n="toc.s3">Range & velocity animation</span></a>
+                    <a href="#sec-worked-example"  data-toc="sec-worked-example"  ><span class="article-toc-num">04</span><span class="article-toc-label" data-i18n="toc.s4">Worked example</span></a>
+                    <a href="#sec-functions"       data-toc="sec-functions"       ><span class="article-toc-num">05</span><span class="article-toc-label" data-i18n="toc.s5">What it does</span></a>
+                    <a href="#sec-applications"    data-toc="sec-applications"    ><span class="article-toc-num">06</span><span class="article-toc-label" data-i18n="toc.s6">Applications</span></a>
+                </nav>
+            </div>
+        </aside>
+
+        <section class="article-hero">
+            <h1 class="article-title" data-i18n="article.title">
+                Automotive Radar
+            </h1>
+
+            <div class="article-meta">
+                <span class="article-author" data-i18n="article.author">
+                    By Editorial
+                </span>
+                <span class="article-meta-sep">&#xb7;</span>
+                <time class="article-date" data-i18n="article.date">
+                    May 12, 2026
+                </time>
+            </div>
+
+            <p class="article-subtitle" data-i18n="article.subtitle">
+                Why can today's cars brake and cruise on their own? Because of a small millimeter-wave radar behind the bumper.
+            </p>
+        </section>
+
+
+        <section class="article-section article-body">
+            <p data-i18n="article.p1"></p>
+            <p data-i18n="article.p2"></p>
+            <p data-i18n="article.p3"></p>
+            <p data-i18n="article.p4"></p>
+        </section>
+
+
+        <section class="article-summary-block">
+            <span class="summary-label" data-i18n="article.summaryLabel">
+                ONE-LINE SUMMARY
+            </span>
+            <p class="summary-line" data-i18n="article.summary"></p>
+        </section>
+
+
+        <!-- Visual 1: Where it sits on the car -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual1.num">01</span> / <span data-i18n="visual1.name">WHERE IT SITS ON THE CAR</span>
+            </div>
+
+            <h2 data-i18n="visual1.title">A Small Box Hidden Behind the Bumper</h2>
+
+            <p class="article-intro" data-i18n="visual1.intro"></p>
+
+            <figure class="article-figure">
+                <svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig1-title">
+                    <title id="fig1-title" data-i18n="fig1.title">Car radar positions</title>
+
+                    <defs>
+                        <linearGradient id="skyGrad2" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%"  stop-color="#0a2540"/>
+                            <stop offset="100%" stop-color="#152040"/>
+                        </linearGradient>
+                    </defs>
+
+                    <!-- Sky / road background -->
+                    <rect x="0" y="0" width="800" height="220" fill="url(#skyGrad2)"/>
+                    <rect x="0" y="220" width="800" height="100" fill="#1f1f1f"/>
+
+                    <!-- Road dashes -->
+                    <line x1="40"  y1="260" x2="120" y2="260" stroke="#FFD93D" stroke-width="3"/>
+                    <line x1="180" y1="260" x2="260" y2="260" stroke="#FFD93D" stroke-width="3"/>
+                    <line x1="320" y1="260" x2="400" y2="260" stroke="#FFD93D" stroke-width="3"/>
+                    <line x1="460" y1="260" x2="540" y2="260" stroke="#FFD93D" stroke-width="3"/>
+                    <line x1="600" y1="260" x2="680" y2="260" stroke="#FFD93D" stroke-width="3"/>
+
+                    <!-- Our car (center) -->
+                    <g transform="translate(400, 200)">
+                        <!-- Body -->
+                        <path d="M -100 30 L -100 -10 Q -90 -45 -50 -55 L 60 -55 Q 100 -45 110 -10 L 110 30 L -100 30 Z"
+                              fill="#4a6fbf" stroke="#58C4DD" stroke-width="2"/>
+                        <!-- Windshield -->
+                        <path d="M -45 -45 L -10 -55 L 50 -55 L 80 -45 L 75 -10 L -45 -10 Z"
+                              fill="#0F1A1F" opacity="0.6"/>
+                        <!-- Wheels -->
+                        <circle cx="-65" cy="35" r="14" fill="#222"/>
+                        <circle cx="-65" cy="35" r="6" fill="#888"/>
+                        <circle cx="65"  cy="35" r="14" fill="#222"/>
+                        <circle cx="65"  cy="35" r="6" fill="#888"/>
+                        <text x="0" y="60" text-anchor="middle" fill="#4a6fbf"
+                              font-size="11" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig1.car">our car</text>
+                    </g>
+
+                    <!-- Front center radar -->
+                    <g transform="translate(515, 160)">
+                        <rect x="-10" y="-6" width="20" height="12" rx="2" fill="#FF6B6B" stroke="#FFD93D" stroke-width="1.5"/>
+                        <text x="0" y="-14" text-anchor="middle" fill="#FF6B6B"
+                              font-size="10" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig1.front">front</text>
+                        <!-- Beam forward -->
+                        <polygon points="0,6 220,80 220,100 0,18"
+                                 fill="rgba(255,107,107,0.15)"
+                                 stroke="#FF6B6B" stroke-width="1" stroke-dasharray="3 2"/>
+                    </g>
+
+                    <!-- Rear corner radar (left) -->
+                    <g transform="translate(310, 220)">
+                        <rect x="-8" y="-5" width="16" height="10" rx="2" fill="#7CFC00" stroke="#FFD93D" stroke-width="1.5"/>
+                        <text x="0" y="-12" text-anchor="middle" fill="#7CFC00"
+                              font-size="9" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig1.corner">corner</text>
+                        <polygon points="-8,-5 -100,-50 -100,-30 -8,5"
+                                 fill="rgba(124,252,0,0.15)"
+                                 stroke="#7CFC00" stroke-width="1" stroke-dasharray="3 2"/>
+                    </g>
+
+                    <!-- Side mirror radar (right) -->
+                    <g transform="translate(470, 145)">
+                        <rect x="-6" y="-4" width="12" height="8" rx="2" fill="#7CFC00" stroke="#FFD93D" stroke-width="1.5"/>
+                        <text x="0" y="-10" text-anchor="middle" fill="#7CFC00"
+                              font-size="9" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig1.blind">blind</text>
+                        <polygon points="6,4 100,-30 100,-10 6,-4"
+                                 fill="rgba(124,252,0,0.15)"
+                                 stroke="#7CFC00" stroke-width="1" stroke-dasharray="3 2"/>
+                    </g>
+
+                    <!-- Target car ahead -->
+                    <g transform="translate(720, 200)">
+                        <path d="M -50 18 L -50 -5 Q -45 -25 -25 -30 L 30 -30 Q 50 -25 55 -5 L 55 18 L -50 18 Z"
+                              fill="#888" stroke="#FFD93D" stroke-width="1.5"/>
+                        <circle cx="-30" cy="22" r="8" fill="#222"/>
+                        <circle cx="30"  cy="22" r="8" fill="#222"/>
+                        <text x="0" y="40" text-anchor="middle" fill="#888"
+                              font-size="11" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig1.target">target</text>
+                    </g>
+
+                    <!-- Caption -->
+                    <text x="400" y="305" text-anchor="middle" fill="#888"
+                          font-size="11" font-family="Menlo, monospace"
+                          data-i18n="fig1.bottom">long-range front radar + corner + blind-spot &#x21d2; 360&#xb0; sensing</text>
+                </svg>
+
+                <figcaption data-i18n="visual1.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 2: FMCW chirp -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual2.num">02</span> / <span data-i18n="visual2.name">FMCW CHIRP</span>
+            </div>
+
+            <h2 data-i18n="visual2.title">Frequency Chirp Measures Range and Speed</h2>
+
+            <p class="article-intro" data-i18n="visual2.intro"></p>
+
+            <figure class="article-figure">
+                <svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig2-title">
+                    <title id="fig2-title" data-i18n="fig2.title">FMCW chirp timing diagram</title>
+
+                    <rect x="0" y="0" width="800" height="280" fill="#0F1A1F"/>
+
+                    <!-- Time axis label -->
+                    <text x="60" y="160" fill="#FFD93D" font-size="11"
+                          font-family="Menlo, monospace" font-weight="bold"
+                          data-i18n="fig2.tx">TX</text>
+                    <text x="60" y="60" fill="#7CFC00" font-size="11"
+                          font-family="Menlo, monospace" font-weight="bold"
+                          data-i18n="fig2.rx">RX</text>
+
+                    <!-- Time axis -->
+                    <line x1="120" y1="120" x2="760" y2="120" stroke="#888" stroke-width="1"/>
+                    <polygon points="760,120 752,116 752,124" fill="#888"/>
+                    <text x="765" y="124" fill="#888" font-size="11"
+                          font-family="Menlo, monospace">t</text>
+
+                    <!-- TX chirp (sawtooth ramp) -->
+                    <polyline points="120,170 200,170 200,150 280,150 280,170 360,170 360,150 440,150 440,170 520,170 520,150 600,150 600,170 680,170"
+                              fill="none" stroke="#FFD93D" stroke-width="2"/>
+                    <text x="680" y="190" fill="#FFD93D" font-size="10"
+                          font-family="Menlo, monospace"
+                          data-i18n="fig2.label">frequency</text>
+
+                    <!-- RX chirp (delayed) -->
+                    <polyline points="200,90 280,90 280,70 360,70 360,90 440,90 440,70 520,70 520,90 600,90 600,70 680,70 680,90 760,90"
+                              fill="none" stroke="#7CFC00" stroke-width="2"/>
+
+                    <!-- Time delay t_arrow -->
+                    <line x1="120" y1="170" x2="120" y2="70" stroke="#FF6B6B" stroke-width="1.5" stroke-dasharray="3 2"/>
+                    <polygon points="120,70 116,80 124,80" fill="#FF6B6B"/>
+                    <text x="100" y="125" fill="#FF6B6B" font-size="10" font-family="Menlo, monospace"
+                          data-i18n="fig2.delay">t</text>
+
+                    <!-- Beat frequency (interfering two signals) -->
+                    <polyline points="200,90 200,170 280,90 280,170 360,90 360,170 440,90 440,170 520,90 520,170 600,90 600,170"
+                              fill="none" stroke="#FFD93D" stroke-width="0" opacity="0.0"/>
+                    <line x1="200" y1="220" x2="200" y2="240" stroke="#FFD93D" stroke-width="1"/>
+                    <line x1="360" y1="220" x2="360" y2="240" stroke="#FFD93D" stroke-width="1"/>
+                    <line x1="200" y1="230" x2="360" y2="230" stroke="#FFD93D" stroke-width="2"/>
+                    <text x="280" y="255" text-anchor="middle" fill="#FFD93D" font-size="11"
+                          font-family="Menlo, monospace" font-weight="bold"
+                          data-i18n="fig2.beat">beat f_b &#x2192; range</text>
+
+                    <!-- Bottom -->
+                    <text x="400" y="278" text-anchor="middle" fill="#888"
+                          font-size="11" font-family="Menlo, monospace"
+                          data-i18n="fig2.bottom">time delay &#x2192; range &#xb7; Doppler shift &#x2192; speed</text>
+                </svg>
+
+                <figcaption data-i18n="visual2.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 3: Manim animation -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual3.num">03</span> / <span data-i18n="visual3.name">ANIMATION: RANGE & VELOCITY</span>
+            </div>
+
+            <h2 data-i18n="visual3.title">Watch the Range and Speed Build Up</h2>
+
+            <p class="article-intro" data-i18n="visual3.intro"></p>
+
+            <figure class="article-figure">
+                <div class="video-wrap" id="radar-anim-wrap">
+                    <video
+                        id="radar-loop-video"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                        data-video-en="manim/media/videos/script/480p15/RadarArticle22.en.mp4"
+                        data-video-zh="manim/media/videos/script/480p15/RadarArticle22.zh.mp4"
+                        data-poster-en="manim/media/images/radar-article22-poster.png"
+                        data-poster-zh="manim/media/images/radar-article22-poster.png"
+                    >
+                        <p data-i18n="visual3.fallback"></p>
+                    </video>
+
+                    <div class="video-captions">
+                        <span data-i18n="visual3.cc1">1. CHIRP &#x2014; radar sweeps frequency 76&#x2013;77 GHz</span>
+                        <span data-i18n="visual3.cc2">2. ECHO &#x2014; car ahead reflects back, delayed</span>
+                        <span data-i18n="visual3.cc3">3. BEAT &#x2014; mixed signal gives range</span>
+                        <span data-i18n="visual3.cc4">4. BRAKE &#x2014; close range &#x2192; automatic emergency brake</span>
+                    </div>
+                </div>
+
+                <figcaption data-i18n="visual3.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 4: Worked example -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual4.num">04</span> / <span data-i18n="visual4.name">WORKED EXAMPLE</span>
+            </div>
+
+            <h2 data-i18n="visual4.title">A Car 50 m Ahead, Echo in 333 ns</h2>
+
+            <p class="article-intro" data-i18n="visual4.intro"></p>
+
+            <figure class="article-figure">
+                <div class="example-card">
+                    <div class="example-row">
+                        <span class="example-label" data-i18n="visual4.row1.label">Distance R</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row1.value">50 m</span>
+                    </div>
+                    <div class="example-row">
+                        <span class="example-label" data-i18n="visual4.row2.label">Round-trip 2R</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row2.value">100 m</span>
+                    </div>
+                    <div class="example-row example-row-formula">
+                        <span class="example-label" data-i18n="visual4.row3.label">Echo time</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row3.formula">2R / c</span>
+                    </div>
+                    <div class="example-row example-row-result">
+                        <span class="example-label" data-i18n="visual4.row4.label">Echo time</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row4.value">&#x2248; 333 ns</span>
+                    </div>
+                </div>
+
+                <figcaption data-i18n="visual4.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 5: What it does -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual5.num">05</span> / <span data-i18n="visual5.name">WHAT IT DOES</span>
+            </div>
+
+            <h2 data-i18n="visual5.title">Three Functions from One Sensor</h2>
+
+            <p class="article-intro" data-i18n="visual5.intro"></p>
+
+            <figure class="article-figure">
+                <div class="application-grid">
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app1.tag">ADAPTIVE CRUISE</div>
+                        <h3 data-i18n="visual5.app1.title">Maintain Distance</h3>
+                        <p data-i18n="visual5.app1.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app2.tag">AEB</div>
+                        <h3 data-i18n="visual5.app2.title">Auto Emergency Brake</h3>
+                        <p data-i18n="visual5.app2.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app3.tag">BLIND SPOT</div>
+                        <h3 data-i18n="visual5.app3.title">Side & Rear Alerts</h3>
+                        <p data-i18n="visual5.app3.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app4.tag">LANE CHANGE</div>
+                        <h3 data-i18n="visual5.app4.title">Cross-Traffic Warning</h3>
+                        <p data-i18n="visual5.app4.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app5.tag">PARKING</div>
+                        <h3 data-i18n="visual5.app5.title">Reverse & Park Assist</h3>
+                        <p data-i18n="visual5.app5.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app6.tag">FUSION</div>
+                        <h3 data-i18n="visual5.app6.title">Sensor Fusion</h3>
+                        <p data-i18n="visual5.app6.desc"></p>
+                    </div>
+
+                </div>
+
+                <figcaption data-i18n="visual5.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 6: Applications -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual6.num">06</span> / <span data-i18n="visual6.name">APPLICATIONS</span>
+            </div>
+
+            <h2 data-i18n="visual6.title">Where Automotive Radar Is Used</h2>
+
+            <p class="article-intro" data-i18n="visual6.intro"></p>
+
+            <figure class="article-figure">
+                <div class="application-grid">
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app1.tag">PASSENGER CARS</div>
+                        <h3 data-i18n="visual6.app1.title">Adaptive Cruise &amp; AEB</h3>
+                        <p data-i18n="visual6.app1.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app2.tag">TRUCKS</div>
+                        <h3 data-i18n="visual6.app2.title">Convoy Safety</h3>
+                        <p data-i18n="visual6.app2.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app3.tag">DRONES</div>
+                        <h3 data-i18n="visual6.app3.title">Obstacle Avoidance</h3>
+                        <p data-i18n="visual6.app3.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app4.tag">ROBOTS</div>
+                        <h3 data-i18n="visual6.app4.title">Warehouse Navigation</h3>
+                        <p data-i18n="visual6.app4.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app5.tag">E-SCOOTERS</div>
+                        <h3 data-i18n="visual6.app5.title">Small Vehicle Safety</h3>
+                        <p data-i18n="visual6.app5.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app6.tag">CHIPS</div>
+                        <h3 data-i18n="visual6.app6.title">Cheap mmWave ICs</h3>
+                        <p data-i18n="visual6.app6.desc"></p>
+                    </div>
+
+                </div>
+
+                <figcaption data-i18n="visual6.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <section class="article-summary-block">
+            <span class="summary-label" data-i18n="article.summaryLabel">
+                ONE-LINE SUMMARY
+            </span>
+            <p class="summary-line" data-i18n="article.summary"></p>
+        </section>
+
+
+        <footer class="article-footer">
+            <a href="articles.html" class="article-back" data-i18n="article.back">&#x2190; Back to Articles</a>
+            <span class="article-meta" data-i18n="article.meta">Student Research &#xb7; 2026</span>
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+    <script src="article-22.js"></script>
+
+</body>
+</html>

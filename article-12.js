@@ -1,8 +1,16 @@
 /* =========================
+
    ARTICLE 12 — How Does Radar Calculate Distance?
 
    Single-language layout. At any moment the page shows
    only the active language, switched by the global toggle.
+
+   IMPORTANT: this whole file is wrapped in an IIFE because
+   <script> tags share the same top-level scope, and a
+   previous copy of this file collided with `script.js`'s
+   `const STORAGE_KEY`. The IIFE keeps our internal `const`s
+   private.
+
 ========================= */
 (function() {
 
@@ -256,7 +264,6 @@ const ARTICLE_I18N = {
 
 };
 
-
 const STORAGE_KEY = "radar-explorer.lang";
 let articleLang = "en";
 
@@ -284,7 +291,6 @@ function t(key) {
     return key;
 }
 
-
 function applyI18n() {
     document.documentElement.lang = articleLang;
 
@@ -304,7 +310,6 @@ function applyI18n() {
     }
 }
 
-
 function setLanguage(lang) {
     if (lang !== "en" && lang !== "zh") return;
     articleLang = lang;
@@ -313,7 +318,6 @@ function setLanguage(lang) {
     applyFilter();
 }
 
-
 function hookLangToggle() {
     const btn = document.querySelector("[data-lang-toggle]");
     if (!btn) return;
@@ -321,7 +325,6 @@ function hookLangToggle() {
         setLanguage(articleLang === "zh" ? "en" : "zh");
     });
 }
-
 
 /* =========================
    VIDEO: bilingual src + autoplay
@@ -339,7 +342,6 @@ function pickVideoSource(v) {
     if (poster) v.poster = poster;
     try { v.load(); } catch (e) { /* ignore */ }
 }
-
 
 function keepVideoPlaying() {
     const v = document.getElementById("radar-loop-video");
@@ -363,7 +365,6 @@ function keepVideoPlaying() {
     } catch (e) { /* ignore */ }
 }
 
-
 function hookVideoLangSync() {
     const v = document.getElementById("radar-loop-video");
     if (!v) return;
@@ -377,7 +378,6 @@ function hookVideoLangSync() {
         }
     });
 }
-
 
 /* =========================
    SCROLL-SPY for the TOC
@@ -415,7 +415,6 @@ function initTocScrollSpy() {
     }
 }
 
-
 /* =========================
    Search and filter (kept for
    compatibility with index,
@@ -424,7 +423,6 @@ function initTocScrollSpy() {
 ========================= */
 
 function applyFilter() { /* no-op on article pages */ }
-
 
 document.addEventListener("DOMContentLoaded", () => {
     applyI18n();

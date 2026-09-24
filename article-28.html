@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title data-i18n="page.title">Article 28: What Is an Element? &#x2014; Radar Explorer</title>
+
+    <meta
+        name="description"
+        data-i18n-attr="content|page.description"
+        content="Article 28: What is an element in a phased array, and why does its count and spacing matter? A bilingual student-friendly explainer."
+    >
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="article.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                RADAR<span>EXPLORER</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" data-i18n="nav.home">Home</a>
+                <a href="index.html#learn" data-i18n="nav.learn">Learn</a>
+                <a href="articles.html" class="active" data-i18n="nav.articles">Articles</a>
+                <a href="index.html#explore" data-i18n="nav.explore">Explore</a>
+                <a href="index.html#research" data-i18n="nav.research">Research</a>
+                <a href="index.html#about" data-i18n="nav.about">About</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button
+                    class="lang-toggle"
+                    type="button"
+                    aria-label="Switch language"
+                    data-lang-toggle
+                >
+                    <span data-lang-label>&#x4e2d;</span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main class="article-page has-toc">
+
+        <aside class="article-toc" aria-label="Table of contents">
+            <div class="article-toc-inner">
+                <h2 class="article-toc-title" data-i18n="toc.title">On this page</h2>
+                <nav class="article-toc-nav">
+                    <a href="#sec-element"        data-toc="sec-element"        ><span class="article-toc-num">01</span><span class="article-toc-label" data-i18n="toc.s1">What is an element?</span></a>
+                    <a href="#sec-arrangements"   data-toc="sec-arrangements"   ><span class="article-toc-num">02</span><span class="article-toc-label" data-i18n="toc.s2">How elements are arranged</span></a>
+                    <a href="#sec-loop-animation" data-toc="sec-loop-animation" ><span class="article-toc-num">03</span><span class="article-toc-label" data-i18n="toc.s3">Element count &amp; spacing animation</span></a>
+                    <a href="#sec-worked-example" data-toc="sec-worked-example" ><span class="article-toc-num">04</span><span class="article-toc-label" data-i18n="toc.s4">Worked example</span></a>
+                    <a href="#sec-grating"        data-toc="sec-grating"        ><span class="article-toc-num">05</span><span class="article-toc-label" data-i18n="toc.s5">Active vs passive, grating lobes</span></a>
+                    <a href="#sec-applications"   data-toc="sec-applications"   ><span class="article-toc-num">06</span><span class="article-toc-label" data-i18n="toc.s6">Applications</span></a>
+                </nav>
+            </div>
+        </aside>
+
+        <section class="article-hero">
+            <h1 class="article-title" data-i18n="article.title">
+                What Is an Element?
+            </h1>
+
+            <div class="article-meta">
+                <span class="article-author" data-i18n="article.author">
+                    By Editorial
+                </span>
+                <span class="article-meta-sep">&#xb7;</span>
+                <time class="article-date" data-i18n="article.date">
+                    Jan 30, 2026
+                </time>
+            </div>
+
+            <p class="article-subtitle" data-i18n="article.subtitle">
+                A phased array is built from many small pieces. The piece is called an element.
+            </p>
+        </section>
+
+
+        <section class="article-section article-body">
+            <p data-i18n="article.p1"></p>
+            <p data-i18n="article.p2"></p>
+            <p data-i18n="article.p3"></p>
+            <p data-i18n="article.p4"></p>
+        </section>
+
+
+        <section class="article-summary-block">
+            <span class="summary-label" data-i18n="article.summaryLabel">
+                ONE-LINE SUMMARY
+            </span>
+            <p class="summary-line" data-i18n="article.summary"></p>
+        </section>
+
+
+        <!-- Visual 1: What is an element -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual1.num">01</span> / <span data-i18n="visual1.name">WHAT IS AN ELEMENT?</span>
+            </div>
+
+            <h2 data-i18n="visual1.title">One Small Antenna With a Big Job</h2>
+
+            <p class="article-intro" data-i18n="visual1.intro"></p>
+
+            <figure class="article-figure">
+                <svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig1-title">
+                    <title id="fig1-title" data-i18n="fig1.title">Single element</title>
+
+                    <rect x="0" y="0" width="800" height="280" fill="#0F1A1F"/>
+
+                    <!-- Single element: a small patch antenna -->
+                    <g transform="translate(400, 140)">
+                        <!-- substrate -->
+                        <rect x="-50" y="-30" width="100" height="60" rx="4" fill="#152040" stroke="#54A0FF" stroke-width="2"/>
+                        <!-- patch -->
+                        <rect x="-25" y="-15" width="50" height="30" fill="#54A0FF"/>
+                        <!-- feed line -->
+                        <line x1="0" y1="15" x2="0" y2="55" stroke="#FFD93D" stroke-width="2"/>
+                        <circle cx="0" cy="55" r="4" fill="#FFD93D"/>
+
+                        <!-- radiating wave arcs -->
+                        <path d="M 60 -15 a 25 25 0 1 0 50 0 a 25 25 0 1 0 -50 0 Z"
+                              fill="none" stroke="#FFD93D" stroke-width="1" opacity="0.7"/>
+                        <path d="M 90 -25 a 50 50 0 1 0 100 0 a 50 50 0 1 0 -100 0 Z"
+                              fill="none" stroke="#FFD93D" stroke-width="1" opacity="0.5"/>
+                        <path d="M 120 -35 a 75 75 0 1 0 150 0 a 75 75 0 1 0 -150 0 Z"
+                              fill="none" stroke="#FFD93D" stroke-width="1" opacity="0.3"/>
+
+                        <!-- label -->
+                        <text x="0" y="-50" text-anchor="middle" fill="#54A0FF"
+                              font-size="12" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig1.el">element</text>
+                    </g>
+
+                    <text x="400" y="262" text-anchor="middle" fill="#888"
+                          font-size="11" font-family="Menlo, monospace"
+                          data-i18n="fig1.bottom">half-wavelength patch antenna</text>
+                </svg>
+
+                <figcaption data-i18n="visual1.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 2: Arrangements -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual2.num">02</span> / <span data-i18n="visual2.name">ARRANGEMENTS</span>
+            </div>
+
+            <h2 data-i18n="visual2.title">Lines, Grids, and Circles</h2>
+
+            <p class="article-intro" data-i18n="visual2.intro"></p>
+
+            <figure class="article-figure">
+                <svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig2-title">
+                    <title id="fig2-title" data-i18n="fig2.title">Element arrangements</title>
+
+                    <rect x="0" y="0" width="800" height="320" fill="#0F1A1F"/>
+
+                    <!-- Linear array (top) -->
+                    <text x="120" y="35" fill="#FFD93D" font-size="13" font-family="Menlo, monospace" font-weight="bold"
+                          data-i18n="fig2.line">LINEAR</text>
+                    <g transform="translate(120, 60)">
+                        <circle cx="-60" cy="0" r="6" fill="#54A0FF" stroke="#FFD93D" stroke-width="1.5"/>
+                        <circle cx="-30" cy="0" r="6" fill="#54A0FF" stroke="#FFD93D" stroke-width="1.5"/>
+                        <circle cx="0" cy="0" r="6" fill="#54A0FF" stroke="#FFD93D" stroke-width="1.5"/>
+                        <circle cx="30" cy="0" r="6" fill="#54A0FF" stroke="#FFD93D" stroke-width="1.5"/>
+                        <circle cx="60" cy="0" r="6" fill="#54A0FF" stroke="#FFD93D" stroke-width="1.5"/>
+                    </g>
+
+                    <!-- Planar array (middle) -->
+                    <text x="400" y="135" fill="#FFD93D" font-size="13" font-family="Menlo, monospace" font-weight="bold"
+                          data-i18n="fig2.planar">PLANAR</text>
+                    <g transform="translate(400, 175)">
+                        <circle cx="-45" cy="-25" r="5" fill="#54A0FF" stroke="#FFD93D" stroke-width="1"/>
+                        <circle cx="-15" cy="-25" r="5" fill="#54A0FF" stroke="#FFD93D" stroke-width="1"/>
+                        <circle cx="15" cy="-25" r="5" fill="#54A0FF" stroke="#FFD93D" stroke-width="1"/>
+                        <circle cx="45" cy="-25" r="5" fill="#54A0FF" stroke="#FFD93D" stroke-width="1"/>
+                        <circle cx="-45" cy="0" r="5" fill="#54A0FF" stroke="#FFD93D" stroke-width="1"/>
+                        <circle cx="-15" cy="0" r="5" fill="#54A0FF" stroke="#FFD93D" stroke-width="1"/>
+                        <circle cx="15" cy="0" r="5" fill="#54A0FF" stroke="#FFD93D" stroke-width="1"/>
+                        <circle cx="45" cy="0" r="5" fill="#54A0FF" stroke="#FFD93D" stroke-width="1"/>
+                        <circle cx="-45" cy="25" r="5" fill="#54A0FF" stroke="#FFD93D" stroke-width="1"/>
+                        <circle cx="-15" cy="25" r="5" fill="#54A0FF" stroke="#FFD93D" stroke-width="1"/>
+                        <circle cx="15" cy="25" r="5" fill="#54A0FF" stroke="#FFD93D" stroke-width="1"/>
+                        <circle cx="45" cy="25" r="5" fill="#54A0FF" stroke="#FFD93D" stroke-width="1"/>
+                    </g>
+
+                    <!-- Circular array (right) -->
+                    <text x="680" y="135" fill="#FFD93D" font-size="13" font-family="Menlo, monospace" font-weight="bold"
+                          data-i18n="fig2.circle">CIRCULAR</text>
+                    <g transform="translate(680, 175)">
+                        <circle cx="0" cy="-40" r="5" fill="#54A0FF" stroke="#FFD93D" stroke-width="1"/>
+                        <circle cx="28" cy="-28" r="5" fill="#54A0FF" stroke="#FFD93D" stroke-width="1"/>
+                        <circle cx="40" cy="0" r="5" fill="#54A0FF" stroke="#FFD93D" stroke-width="1"/>
+                        <circle cx="28" cy="28" r="5" fill="#54A0FF" stroke="#FFD93D" stroke-width="1"/>
+                        <circle cx="0" cy="40" r="5" fill="#54A0FF" stroke="#FFD93D" stroke-width="1"/>
+                        <circle cx="-28" cy="28" r="5" fill="#54A0FF" stroke="#FFD93D" stroke-width="1"/>
+                        <circle cx="-40" cy="0" r="5" fill="#54A0FF" stroke="#FFD93D" stroke-width="1"/>
+                        <circle cx="-28" cy="-28" r="5" fill="#54A0FF" stroke="#FFD93D" stroke-width="1"/>
+                    </g>
+
+                    <text x="400" y="305" text-anchor="middle" fill="#888" font-size="11"
+                          font-family="Menlo, monospace"
+                          data-i18n="fig2.bottom">linear: 1D steer &#xb7; planar: 2D steer &#xb7; circular: 360&#xb0; steer</text>
+                </svg>
+
+                <figcaption data-i18n="visual2.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 3: Manim animation -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual3.num">03</span> / <span data-i18n="visual3.name">ANIMATION: COUNT &amp; SPACING</span>
+            </div>
+
+            <h2 data-i18n="visual3.title">Watch More Elements Make a Narrower Beam</h2>
+
+            <p class="article-intro" data-i18n="visual3.intro"></p>
+
+            <figure class="article-figure">
+                <div class="video-wrap" id="radar-anim-wrap">
+                    <video
+                        id="radar-loop-video"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                        data-video-en="manim/media/videos/script/480p15/RadarArticle28.en.mp4"
+                        data-video-zh="manim/media/videos/script/480p15/RadarArticle28.zh.mp4"
+                        data-poster-en="manim/media/images/radar-article28-poster.png"
+                        data-poster-zh="manim/media/images/radar-article28-poster.png"
+                    >
+                        <p data-i18n="visual3.fallback"></p>
+                    </video>
+
+                    <div class="video-captions">
+                        <span data-i18n="visual3.cc1">1. FEW &#x2014; 4 elements make a wide, fuzzy beam</span>
+                        <span data-i18n="visual3.cc2">2. MORE &#x2014; 8 elements make a tighter beam</span>
+                        <span data-i18n="visual3.cc3">3. MANY &#x2014; 16 elements make a sharp pencil beam</span>
+                        <span data-i18n="visual3.cc4">4. SPACING &#x2014; spacing too wide &#x2192; grating lobes</span>
+                    </div>
+                </div>
+
+                <figcaption data-i18n="visual3.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 4: Worked example -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual4.num">04</span> / <span data-i18n="visual4.name">WORKED EXAMPLE</span>
+            </div>
+
+            <h2 data-i18n="visual4.title">Half-Wavelength Spacing at 10 GHz</h2>
+
+            <p class="article-intro" data-i18n="visual4.intro"></p>
+
+            <figure class="article-figure">
+                <div class="example-card">
+                    <div class="example-row">
+                        <span class="example-label" data-i18n="visual4.row1.label">Frequency f</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row1.value">10 GHz</span>
+                    </div>
+                    <div class="example-row">
+                        <span class="example-label" data-i18n="visual4.row2.label">Wavelength &#x03bb;</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row2.value">3 cm</span>
+                    </div>
+                    <div class="example-row example-row-formula">
+                        <span class="example-label" data-i18n="visual4.row3.label">Spacing d</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row3.formula">&#x03bb; / 2</span>
+                    </div>
+                    <div class="example-row example-row-result">
+                        <span class="example-label" data-i18n="visual4.row4.label">Element pitch</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row4.value">&#x2248; 1.5 cm</span>
+                    </div>
+                </div>
+
+                <figcaption data-i18n="visual4.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 5: Active vs passive -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual5.num">05</span> / <span data-i18n="visual5.name">ACTIVE VS PASSIVE</span>
+            </div>
+
+            <h2 data-i18n="visual5.title">Who Owns the Transmitter?</h2>
+
+            <p class="article-intro" data-i18n="visual5.intro"></p>
+
+            <figure class="article-figure">
+                <div class="application-grid">
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app1.tag">ACTIVE</div>
+                        <h3 data-i18n="visual5.app1.title">Active (AESA)</h3>
+                        <p data-i18n="visual5.app1.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app2.tag">PASSIVE</div>
+                        <h3 data-i18n="visual5.app2.title">Passive (PESA)</h3>
+                        <p data-i18n="visual5.app2.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app3.tag">SPACING</div>
+                        <h3 data-i18n="visual5.app3.title">Half-Wavelength Rule</h3>
+                        <p data-i18n="visual5.app3.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app4.tag">GRATING</div>
+                        <h3 data-i18n="visual5.app4.title">Grating Lobes</h3>
+                        <p data-i18n="visual5.app4.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app5.tag">POLARIZATION</div>
+                        <h3 data-i18n="visual5.app5.title">Polarization Diversity</h3>
+                        <p data-i18n="visual5.app5.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app6.tag">FAILURE</div>
+                        <h3 data-i18n="visual5.app6.title">Element Failure</h3>
+                        <p data-i18n="visual5.app6.desc"></p>
+                    </div>
+
+                </div>
+
+                <figcaption data-i18n="visual5.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 6: Applications -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual6.num">06</span> / <span data-i18n="visual6.name">APPLICATIONS</span>
+            </div>
+
+            <h2 data-i18n="visual6.title">Where Elements Show Up</h2>
+
+            <p class="article-intro" data-i18n="visual6.intro"></p>
+
+            <figure class="article-figure">
+                <div class="application-grid">
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app1.tag">F-35</div>
+                        <h3 data-i18n="visual6.app1.title">AN/APG-81 Radar</h3>
+                        <p data-i18n="visual6.app1.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app2.tag">5G</div>
+                        <h3 data-i18n="visual6.app2.title">64-Element Base Station</h3>
+                        <p data-i18n="visual6.app2.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app3.tag">CAR</div>
+                        <h3 data-i18n="visual6.app3.title">77 GHz Radar Chip</h3>
+                        <p data-i18n="visual6.app3.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app4.tag">WEATHER</div>
+                        <h3 data-i18n="visual6.app4.title">PAR Antenna</h3>
+                        <p data-i18n="visual6.app4.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app5.tag">SATELLITE</div>
+                        <h3 data-i18n="visual6.app5.title">Direct-Broadcast SAT</h3>
+                        <p data-i18n="visual6.app5.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app6.tag">MEDICAL</div>
+                        <h3 data-i18n="visual6.app6.title">Ultrasound Probe</h3>
+                        <p data-i18n="visual6.app6.desc"></p>
+                    </div>
+
+                </div>
+
+                <figcaption data-i18n="visual6.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <section class="article-summary-block">
+            <span class="summary-label" data-i18n="article.summaryLabel">
+                ONE-LINE SUMMARY
+            </span>
+            <p class="summary-line" data-i18n="article.summary"></p>
+        </section>
+
+
+        <footer class="article-footer">
+            <a href="articles.html" class="article-back" data-i18n="article.back">&#x2190; Back to Articles</a>
+            <span class="article-meta" data-i18n="article.meta">Student Research &#xb7; 2026</span>
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+    <script src="article-28.js"></script>
+
+</body>
+</html>

@@ -83,13 +83,33 @@ const ARTICLES_I18N = {
         "row.21.desc":  "National radar networks stitching together rain maps for forecasts.",
         "row.21.date":  "Dec 5, 2025",
 
-        "row.10.title": "How Phased Arrays Steer a Beam",
-        "row.10.desc":  "Electronic beam steering without moving parts.",
-        "row.10.date":  "Dec 4, 2025",
+        "row.22.title": "Automotive Radar",
+        "row.22.desc":  "Millimeter-wave radars behind the bumper powering adaptive cruise and AEB.",
+        "row.22.date":  "May 12, 2026",
 
-        "row.9.title":  "Why Antennas Are Shaped Like That",
-        "row.9.desc":   "Parabolic dishes, horns and the math behind them.",
-        "row.9.date":   "Aug 21, 2025"
+        "row.24.title": "Why Bats and Radar Are So Similar",
+        "row.24.desc":  "Echolocation in nature and how humans borrowed the trick to build radar.",
+        "row.24.date":  "Aug 11, 2026",
+
+        "row.25.title": "Is Radar Afraid of Stealth?",
+        "row.25.desc":  "Stealth shapes, absorbing materials, and how radar fights back.",
+        "row.25.date":  "Mar 19, 2026",
+
+        "row.26.title": "What Is a Phased Array?",
+        "row.26.desc":  "Many small antennas steering a beam electronically by phase.",
+        "row.26.date":  "Aug 10, 2026",
+
+        "row.27.title": "Why Is It Called Phase Control?",
+        "row.27.desc":  "What phase really means and how it steers the beam.",
+        "row.27.date":  "Apr 22, 2026",
+
+        "row.28.title": "What Is an Element?",
+        "row.28.desc":  "The building block of a phased array: spacing, count, and active vs passive.",
+        "row.28.date":  "Jan 30, 2026",
+
+        "row.29.title": "How Does the Beam Scan Electronically?",
+        "row.29.desc":  "Changing the phase difference between elements steers the beam with no moving parts.",
+        "row.29.date":  "Feb 18, 2026",
     },
 
     zh: {
@@ -166,17 +186,36 @@ const ARTICLES_I18N = {
         "row.21.desc":  "\u5168\u56fd\u96f7\u8fbe\u7f51\u7edc\u62fc\u51fa\u964d\u96e8\u56fe\uff0c\u4f9b\u5929\u6c14\u9884\u62a5\u4f7f\u7528\u3002",
         "row.21.date":  "2025.12.05",
 
-        "row.10.title": "\u76f8\u63a7\u9635\u5982\u4f55\u8f6c\u5411\u6ce2\u675f",
-        "row.10.desc":  "\u4e0d\u7528\u673a\u68b0\u8f6c\u52a8\u5c31\u80fd\u6539\u53d8\u6ce2\u675f\u65b9\u5411\u3002",
-        "row.10.date":  "2025.12.04",
+        "row.22.title": "\u6c7d\u8f66\u96f7\u8fbe",
+        "row.22.desc":  "\u4fdd\u9669\u6746\u540e\u7684\u6beb\u7c73\u6ce2\u96f7\u8fbe\u9a71\u52a8\u81ea\u9002\u5e94\u5de1\u822a\u548c\u81ea\u52a8\u7d27\u6025\u5239\u8f66\u3002",
+        "row.22.date":  "2026.05.12",
 
-        "row.9.title":  "\u5929\u7ebf\u4e3a\u4ec0\u4e48\u662f\u8fd9\u4e2a\u5f62\u72b6",
-        "row.9.desc":   "\u629b\u7269\u9762\u3001\u5583\u53ed\u5929\u7ebf\uff0c\u4ee5\u53ca\u80cc\u540e\u7684\u6570\u5b66\u3002",
-        "row.9.date":   "2025.08.21"
+        "row.24.title": "\u4e3a\u4ec0\u4e48\u8bf4\u8759\u8760\u548c\u96f7\u8fbe\u662f\u4e00\u56de\u4e8b\uff1f",
+        "row.24.desc":  "\u56de\u58f0\u5b9a\u4f4d\u7684\u81ea\u7136\u539f\u7406\uff0c\u4ee5\u53ca\u4eba\u7c7b\u5982\u4f55\u501f\u9274\u5b83\u53d1\u660e\u4e86\u96f7\u8fbe\u3002",
+        "row.24.date":  "2026.08.11",
+
+        "row.25.title": "\u96f7\u8fbe\u6015\u4e0d\u6015\u9690\u8eab\uff1f",
+        "row.25.desc":  "\u9690\u8eab\u5916\u5f62\u3001\u5438\u6ce2\u6750\u6599\uff0c\u4ee5\u53ca\u96f7\u8fbe\u5982\u4f55\u53cd\u51fb\u3002",
+        "row.25.date":  "2026.03.19",
+
+        "row.26.title": "\u4ec0\u4e48\u662f\u76f8\u63a7\u9635\uff1f",
+        "row.26.desc":  "\u5f88\u591a\u5c0f\u5929\u7ebf\u5728\u4e00\u8d77\u5de5\u4f5c\uff0c\u9760\u76f8\u4f4d\u63a7\u5236\u6ce2\u675f\u65b9\u5411\u3002",
+        "row.26.date":  "2026.08.10",
+
+        "row.27.title": "\u4e3a\u4ec0\u4e48\u53eb\u201c\u76f8\u4f4d\u201d\u63a7\u5236\uff1f",
+        "row.27.desc":  "\u76f8\u4f4d\u5230\u5e95\u662f\u4ec0\u4e48\uff0c\u4ee5\u53ca\u5b83\u5982\u4f55\u6539\u53d8\u6ce2\u675f\u65b9\u5411\u3002",
+        "row.27.date":  "2026.04.22",
+
+        "row.28.title": "\u9635\u5143\u662f\u4ec0\u4e48\uff1f",
+        "row.28.desc":  "\u76f8\u63a7\u9635\u7684\u57fa\u672c\u7816\u5757\uff1a\u95f4\u8ddd\u3001\u6570\u91cf\u3001\u6709\u6e90 vs \u65e0\u6e90\u3002",
+        "row.28.date":  "2026.01.30",
+
+        "row.29.title": "波束怎么“电子扫描”",
+        "row.29.desc":  "改变阵元之间的相位差，波束方向就改变。",
+        "row.29.date":  "2026.02.18"
     }
 
 };
-
 
 const ARTICLES_LANG_KEY = "radar-explorer.lang";
 let articleLang = "en";
@@ -190,7 +229,6 @@ try {
         articleLang = nav.startsWith("zh") ? "zh" : "en";
     }
 } catch (e) { /* fall back to en */ }
-
 
 function tA(key) {
     const dict = ARTICLES_I18N[articleLang] || ARTICLES_I18N.en;
@@ -207,7 +245,6 @@ function tA(key) {
     }
     return key;
 }
-
 
 function applyArticlesI18n() {
     document.documentElement.lang = articleLang;
@@ -236,7 +273,6 @@ function applyArticlesI18n() {
     }
 }
 
-
 function setArticlesLanguage(lang) {
     if (lang !== "en" && lang !== "zh") return;
     articleLang = lang;
@@ -246,7 +282,6 @@ function setArticlesLanguage(lang) {
     applyFilter();
 }
 
-
 function hookLangToggle() {
     const btn = document.querySelector("[data-lang-toggle]");
     if (!btn) return;
@@ -254,7 +289,6 @@ function hookLangToggle() {
         setArticlesLanguage(articleLang === "zh" ? "en" : "zh");
     });
 }
-
 
 /* =========================
    SEARCH + YEAR FILTER
@@ -264,7 +298,6 @@ const state = {
     query: "",
     year: "all",
 };
-
 
 function applyFilter() {
     const list = document.getElementById("articles-list");
@@ -293,7 +326,6 @@ function applyFilter() {
     // Sync count-label pluralisation is skipped for simplicity;
     // "articles" / "\u7bc7" both look fine as singular/plural.
 }
-
 
 function initSearch() {
     const input = document.getElementById("articles-search-input");
@@ -340,7 +372,6 @@ function initSearch() {
     updateClearVisibility();
 }
 
-
 function initYearFilter() {
     const buttons = document.querySelectorAll(".articles-filter");
     buttons.forEach(btn => {
@@ -352,7 +383,6 @@ function initYearFilter() {
         });
     });
 }
-
 
 document.addEventListener("DOMContentLoaded", () => {
     applyArticlesI18n();

@@ -1,4 +1,5 @@
 /* =========================
+
    ARTICLE 13 — How Does Radar Know the Direction?
 
    Single-language layout. At any moment the page shows
@@ -9,8 +10,8 @@
    previous copy of this file collided with `script.js`'s
    `const STORAGE_KEY`. The IIFE keeps our internal `const`s
    private.
-========================= */
 
+========================= */
 (function() {
 
 const ARTICLE_I18N = {
@@ -286,7 +287,6 @@ function t(key) {
     return key;
 }
 
-
 function applyI18n() {
     document.documentElement.lang = articleLang;
 
@@ -306,14 +306,12 @@ function applyI18n() {
     }
 }
 
-
 function setLanguage(lang) {
     if (lang !== "en" && lang !== "zh") return;
     articleLang = lang;
     try { window.localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
     applyI18n();
 }
-
 
 function hookLangToggle() {
     const btn = document.querySelector("[data-lang-toggle]");
@@ -322,7 +320,6 @@ function hookLangToggle() {
         setLanguage(articleLang === "zh" ? "en" : "zh");
     });
 }
-
 
 /* =========================
    VIDEO: bilingual src + autoplay
@@ -340,7 +337,6 @@ function pickVideoSource(v) {
     if (poster) v.poster = poster;
     try { v.load(); } catch (e) { /* ignore */ }
 }
-
 
 function keepVideoPlaying() {
     const v = document.getElementById("radar-loop-video");
@@ -364,7 +360,6 @@ function keepVideoPlaying() {
     } catch (e) { /* ignore */ }
 }
 
-
 function hookVideoLangSync() {
     const v = document.getElementById("radar-loop-video");
     if (!v) return;
@@ -378,7 +373,6 @@ function hookVideoLangSync() {
         }
     });
 }
-
 
 /* =========================
    SCROLL-SPY for the TOC
@@ -415,7 +409,6 @@ function initTocScrollSpy() {
         sections.forEach(s => io.observe(s));
     }
 }
-
 
 document.addEventListener("DOMContentLoaded", () => {
     applyI18n();
