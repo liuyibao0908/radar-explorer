@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title data-i18n="page.title">Article 24: Why Are Bats and Radar So Similar? &#x2014; Radar Explorer</title>
+
+    <meta
+        name="description"
+        data-i18n-attr="content|page.description"
+        content="Article 24: How does bat echolocation work, and why does it look so much like radar? A bilingual student-friendly explainer."
+    >
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="article.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                RADAR<span>EXPLORER</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" data-i18n="nav.home">Home</a>
+                <a href="index.html#learn" data-i18n="nav.learn">Learn</a>
+                <a href="articles.html" class="active" data-i18n="nav.articles">Articles</a>
+                <a href="index.html#explore" data-i18n="nav.explore">Explore</a>
+                <a href="index.html#research" data-i18n="nav.research">Research</a>
+                <a href="index.html#about" data-i18n="nav.about">About</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button
+                    class="lang-toggle"
+                    type="button"
+                    aria-label="Switch language"
+                    data-lang-toggle
+                >
+                    <span data-lang-label>&#x4e2d;</span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main class="article-page has-toc">
+
+        <aside class="article-toc" aria-label="Table of contents">
+            <div class="article-toc-inner">
+                <h2 class="article-toc-title" data-i18n="toc.title">On this page</h2>
+                <nav class="article-toc-nav">
+                    <a href="#sec-bat"          data-toc="sec-bat"          ><span class="article-toc-num">01</span><span class="article-toc-label" data-i18n="toc.s1">How a bat sees with sound</span></a>
+                    <a href="#sec-compare"      data-toc="sec-compare"      ><span class="article-toc-num">02</span><span class="article-toc-label" data-i18n="toc.s2">Bat vs radar</span></a>
+                    <a href="#sec-loop-animation" data-toc="sec-loop-animation"><span class="article-toc-num">03</span><span class="article-toc-label" data-i18n="toc.s3">Echo loop animation</span></a>
+                    <a href="#sec-worked-example" data-toc="sec-worked-example"><span class="article-toc-num">04</span><span class="article-toc-label" data-i18n="toc.s4">Worked example</span></a>
+                    <a href="#sec-differences"  data-toc="sec-differences"  ><span class="article-toc-num">05</span><span class="article-toc-label" data-i18n="toc.s5">Differences</span></a>
+                    <a href="#sec-applications" data-toc="sec-applications" ><span class="article-toc-num">06</span><span class="article-toc-label" data-i18n="toc.s6">Applications</span></a>
+                </nav>
+            </div>
+        </aside>
+
+        <section class="article-hero">
+            <h1 class="article-title" data-i18n="article.title">
+                Why Are Bats and Radar So Similar?
+            </h1>
+
+            <div class="article-meta">
+                <span class="article-author" data-i18n="article.author">
+                    By Editorial
+                </span>
+                <span class="article-meta-sep">&#xb7;</span>
+                <time class="article-date" data-i18n="article.date">
+                    Aug 11, 2026
+                </time>
+            </div>
+
+            <p class="article-subtitle" data-i18n="article.subtitle">
+                Bats fly in total darkness without hitting walls. How? With sound &#x2014; and the trick is almost identical to radar.
+            </p>
+        </section>
+
+
+        <section class="article-section article-body">
+            <p data-i18n="article.p1"></p>
+            <p data-i18n="article.p2"></p>
+            <p data-i18n="article.p3"></p>
+            <p data-i18n="article.p4"></p>
+        </section>
+
+
+        <section class="article-summary-block">
+            <span class="summary-label" data-i18n="article.summaryLabel">
+                ONE-LINE SUMMARY
+            </span>
+            <p class="summary-line" data-i18n="article.summary"></p>
+        </section>
+
+
+        <!-- Visual 1: How a bat sees with sound -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual1.num">01</span> / <span data-i18n="visual1.name">HOW A BAT SEES WITH SOUND</span>
+            </div>
+
+            <h2 data-i18n="visual1.title">A Tiny Mouth, A Burst of Ultrasound</h2>
+
+            <p class="article-intro" data-i18n="visual1.intro"></p>
+
+            <figure class="article-figure">
+                <svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig1-title">
+                    <title id="fig1-title" data-i18n="fig1.title">Bat echolocation</title>
+
+                    <rect x="0" y="0" width="800" height="280" fill="#0F1A1F"/>
+
+                    <!-- Sky gradient -->
+                    <defs>
+                        <linearGradient id="caveGrad" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%"  stop-color="#0a1626"/>
+                            <stop offset="100%" stop-color="#152040"/>
+                        </linearGradient>
+                    </defs>
+                    <rect x="0" y="0" width="800" height="240" fill="url(#caveGrad)"/>
+                    <rect x="0" y="240" width="800" height="40" fill="#1f1f1f"/>
+
+                    <!-- Bat (stylised) -->
+                    <g transform="translate(160, 140)">
+                        <ellipse cx="0" cy="0" rx="22" ry="12" fill="#888" stroke="#FFD93D" stroke-width="1.5"/>
+                        <path d="M -22 0 Q -50 -15 -70 -5 Q -55 5 -22 5 Z"
+                              fill="#888" stroke="#FFD93D" stroke-width="1.2"/>
+                        <path d="M 22 0 Q 50 -15 70 -5 Q 55 5 22 5 Z"
+                              fill="#888" stroke="#FFD93D" stroke-width="1.2"/>
+                        <path d="M -8 -10 L -14 -25 L -2 -10 Z" fill="#888" stroke="#FFD93D" stroke-width="1.2"/>
+                        <path d="M 8 -10 L 14 -25 L 2 -10 Z" fill="#888" stroke="#FFD93D" stroke-width="1.2"/>
+                        <ellipse cx="22" cy="2" rx="3" ry="2" fill="#FF6B6B"/>
+                        <text x="0" y="35" text-anchor="middle" fill="#FFD93D"
+                              font-size="11" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig1.bat">bat</text>
+                    </g>
+
+                    <!-- Ultrasound waves -->
+                    <path d="M 200 140 m 30 0 a 30 30 0 1 0 60 0 a 30 30 0 1 0 -60 0 Z"
+                          fill="none" stroke="#54A0FF" stroke-width="1.5" opacity="0.8"/>
+                    <path d="M 200 140 m 60 0 a 60 60 0 1 0 120 0 a 60 60 0 1 0 -120 0 Z"
+                          fill="none" stroke="#54A0FF" stroke-width="1.5" opacity="0.6"/>
+                    <path d="M 200 140 m 90 0 a 90 90 0 1 0 180 0 a 90 90 0 1 0 -180 0 Z"
+                          fill="none" stroke="#54A0FF" stroke-width="1.5" opacity="0.4"/>
+                    <path d="M 200 140 m 120 0 a 120 120 0 1 0 240 0 a 120 120 0 1 0 -240 0 Z"
+                          fill="none" stroke="#54A0FF" stroke-width="1.5" opacity="0.2"/>
+
+                    <!-- Moth -->
+                    <g transform="translate(450, 130)">
+                        <ellipse cx="0" cy="0" rx="12" ry="6" fill="#FFD93D"/>
+                        <path d="M -12 0 Q -28 -10 -34 0 Q -28 10 -12 0 Z" fill="#FFD93D" opacity="0.7"/>
+                        <path d="M 12 0 Q 28 -10 34 0 Q 28 10 12 0 Z" fill="#FFD93D" opacity="0.7"/>
+                        <text x="0" y="25" text-anchor="middle" fill="#FFD93D"
+                              font-size="10" font-family="Menlo, monospace"
+                              data-i18n="fig1.moth">moth</text>
+                    </g>
+
+                    <!-- Wall (right) -->
+                    <g transform="translate(680, 140)">
+                        <rect x="-20" y="-100" width="40" height="200" fill="#444" stroke="#888" stroke-width="1"/>
+                        <line x1="-20" y1="-100" x2="20" y2="100" stroke="#888" stroke-width="0.8"/>
+                        <line x1="20" y1="-100" x2="-20" y2="100" stroke="#888" stroke-width="0.8"/>
+                        <text x="0" y="120" text-anchor="middle" fill="#888"
+                              font-size="10" font-family="Menlo, monospace"
+                              data-i18n="fig1.wall">wall</text>
+                    </g>
+
+                    <!-- Echo waves back -->
+                    <path d="M 470 130 m 30 0 a 30 30 0 1 1 -60 0 a 30 30 0 1 1 60 0 Z"
+                          fill="none" stroke="#7CFC00" stroke-width="1.2" opacity="0.5"/>
+                    <path d="M 470 130 m 60 0 a 60 60 0 1 1 -120 0 a 60 60 0 1 1 120 0 Z"
+                          fill="none" stroke="#7CFC00" stroke-width="1.2" opacity="0.3"/>
+
+                    <text x="400" y="262" text-anchor="middle" fill="#888"
+                          font-size="11" font-family="Menlo, monospace"
+                          data-i18n="fig1.bottom">blue: outgoing &#xb7; green: echo returning to bat's ears</text>
+                </svg>
+
+                <figcaption data-i18n="visual1.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 2: Bat vs radar comparison -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual2.num">02</span> / <span data-i18n="visual2.name">BAT VS RADAR</span>
+            </div>
+
+            <h2 data-i18n="visual2.title">Same Recipe, Different Ingredients</h2>
+
+            <p class="article-intro" data-i18n="visual2.intro"></p>
+
+            <figure class="article-figure">
+                <svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig2-title">
+                    <title id="fig2-title" data-i18n="fig2.title">Bat vs radar comparison</title>
+
+                    <rect x="0" y="0" width="800" height="320" fill="#0F1A1F"/>
+
+                    <line x1="400" y1="40" x2="400" y2="280" stroke="#888" stroke-width="1"/>
+
+                    <text x="200" y="60" text-anchor="middle" fill="#FFD93D"
+                          font-size="16" font-family="Menlo, monospace" font-weight="bold"
+                          data-i18n="fig2.bat.title">BAT</text>
+
+                    <g font-family="Menlo, monospace" font-size="12" fill="#fff">
+                        <text x="200" y="100" text-anchor="middle" data-i18n="fig2.bat.send">send: mouth clicks</text>
+                        <text x="200" y="125" text-anchor="middle" data-i18n="fig2.bat.wave">wave: ultrasound</text>
+                        <text x="200" y="150" text-anchor="middle" data-i18n="fig2.bat.freq">freq: ~50 kHz</text>
+                        <text x="200" y="175" text-anchor="middle" data-i18n="fig2.bat.speed">speed: 340 m/s</text>
+                        <text x="200" y="200" text-anchor="middle" data-i18n="fig2.bat.recv">receive: ears</text>
+                        <text x="200" y="225" text-anchor="middle" data-i18n="fig2.bat.proc">process: brain</text>
+                        <text x="200" y="250" text-anchor="middle" data-i18n="fig2.bat.range">range: ~10 m</text>
+                    </g>
+
+                    <text x="600" y="60" text-anchor="middle" fill="#54A0FF"
+                          font-size="16" font-family="Menlo, monospace" font-weight="bold"
+                          data-i18n="fig2.radar.title">RADAR</text>
+
+                    <g font-family="Menlo, monospace" font-size="12" fill="#fff">
+                        <text x="600" y="100" text-anchor="middle" data-i18n="fig2.radar.send">send: antenna pulse</text>
+                        <text x="600" y="125" text-anchor="middle" data-i18n="fig2.radar.wave">wave: radio</text>
+                        <text x="600" y="150" text-anchor="middle" data-i18n="fig2.radar.freq">freq: 1&#x2013;40 GHz</text>
+                        <text x="600" y="175" text-anchor="middle" data-i18n="fig2.radar.speed">speed: 3 &#xd7; 10&#x2078; m/s</text>
+                        <text x="600" y="200" text-anchor="middle" data-i18n="fig2.radar.recv">receive: antenna</text>
+                        <text x="600" y="225" text-anchor="middle" data-i18n="fig2.radar.proc">process: computer</text>
+                        <text x="600" y="250" text-anchor="middle" data-i18n="fig2.radar.range">range: km to Mm</text>
+                    </g>
+
+                    <text x="400" y="305" text-anchor="middle" fill="#888"
+                          font-size="12" font-family="Menlo, monospace"
+                          data-i18n="fig2.bottom">send &#x2192; reflect &#x2192; receive &#x2192; decide</text>
+                </svg>
+
+                <figcaption data-i18n="visual2.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 3: Manim animation -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual3.num">03</span> / <span data-i18n="visual3.name">ANIMATION: ECHO LOOP</span>
+            </div>
+
+            <h2 data-i18n="visual3.title">Watch an Echo Travel Out and Back</h2>
+
+            <p class="article-intro" data-i18n="visual3.intro"></p>
+
+            <figure class="article-figure">
+                <div class="video-wrap" id="radar-anim-wrap">
+                    <video
+                        id="radar-loop-video"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                        data-video-en="manim/media/videos/script/480p15/RadarArticle24.en.mp4"
+                        data-video-zh="manim/media/videos/script/480p15/RadarArticle24.zh.mp4"
+                        data-poster-en="manim/media/images/radar-article24-poster.png"
+                        data-poster-zh="manim/media/images/radar-article24-poster.png"
+                    >
+                        <p data-i18n="visual3.fallback"></p>
+                    </video>
+
+                    <div class="video-captions">
+                        <span data-i18n="visual3.cc1">1. SEND &#x2014; bat / radar emits a burst</span>
+                        <span data-i18n="visual3.cc2">2. TRAVEL &#x2014; wave spreads through air</span>
+                        <span data-i18n="visual3.cc3">3. HIT &#x2014; insect / target reflects the wave</span>
+                        <span data-i18n="visual3.cc4">4. HEAR &#x2014; bat / radar hears the echo</span>
+                    </div>
+                </div>
+
+                <figcaption data-i18n="visual3.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 4: Worked example -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual4.num">04</span> / <span data-i18n="visual4.name">WORKED EXAMPLE</span>
+            </div>
+
+            <h2 data-i18n="visual4.title">A Moth 3 m Away, Echo in 17 ms</h2>
+
+            <p class="article-intro" data-i18n="visual4.intro"></p>
+
+            <figure class="article-figure">
+                <div class="example-card">
+                    <div class="example-row">
+                        <span class="example-label" data-i18n="visual4.row1.label">Distance R</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row1.value">3 m</span>
+                    </div>
+                    <div class="example-row">
+                        <span class="example-label" data-i18n="visual4.row2.label">Round-trip 2R</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row2.value">6 m</span>
+                    </div>
+                    <div class="example-row example-row-formula">
+                        <span class="example-label" data-i18n="visual4.row3.label">Echo time</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row3.formula">2R / v</span>
+                    </div>
+                    <div class="example-row example-row-result">
+                        <span class="example-label" data-i18n="visual4.row4.label">Echo time</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row4.value">&#x2248; 17.6 ms</span>
+                    </div>
+                </div>
+
+                <figcaption data-i18n="visual4.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 5: Differences -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual5.num">05</span> / <span data-i18n="visual5.name">DIFFERENCES</span>
+            </div>
+
+            <h2 data-i18n="visual5.title">Sound vs Radio: Three Real Differences</h2>
+
+            <p class="article-intro" data-i18n="visual5.intro"></p>
+
+            <figure class="article-figure">
+                <div class="application-grid">
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app1.tag">MEDIUM</div>
+                        <h3 data-i18n="visual5.app1.title">Sound Needs Air</h3>
+                        <p data-i18n="visual5.app1.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app2.tag">SPEED</div>
+                        <h3 data-i18n="visual5.app2.title">Radar Is a Million Times Faster</h3>
+                        <p data-i18n="visual5.app2.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app3.tag">RANGE</div>
+                        <h3 data-i18n="visual5.app3.title">Radar Sees Much Farther</h3>
+                        <p data-i18n="visual5.app3.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app4.tag">SIZE</div>
+                        <h3 data-i18n="visual5.app4.title">Different Scales</h3>
+                        <p data-i18n="visual5.app4.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app5.tag">CLUTTER</div>
+                        <h3 data-i18n="visual5.app5.title">Bats Hear Only the Echo</h3>
+                        <p data-i18n="visual5.app5.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app6.tag">AI</div>
+                        <h3 data-i18n="visual5.app6.title">Different Brains</h3>
+                        <p data-i18n="visual5.app6.desc"></p>
+                    </div>
+
+                </div>
+
+                <figcaption data-i18n="visual5.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 6: Applications -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual6.num">06</span> / <span data-i18n="visual6.name">APPLICATIONS</span>
+            </div>
+
+            <h2 data-i18n="visual6.title">Other Animals & Machines That Echolocate</h2>
+
+            <p class="article-intro" data-i18n="visual6.intro"></p>
+
+            <figure class="article-figure">
+                <div class="application-grid">
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app1.tag">DOLPHINS</div>
+                        <h3 data-i18n="visual6.app1.title">Dolphins & Whales</h3>
+                        <p data-i18n="visual6.app1.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app2.tag">SONAR</div>
+                        <h3 data-i18n="visual6.app2.title">Submarine Sonar</h3>
+                        <p data-i18n="visual6.app2.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app3.tag">OILBIRDS</div>
+                        <h3 data-i18n="visual6.app3.title">Oilbirds & Swiftlets</h3>
+                        <p data-i18n="visual6.app3.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app4.tag">MEDICAL</div>
+                        <h3 data-i18n="visual6.app4.title">Ultrasound Imaging</h3>
+                        <p data-i18n="visual6.app4.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app5.tag">PARKING</div>
+                        <h3 data-i18n="visual6.app5.title">Car Reverse Buzzer</h3>
+                        <p data-i18n="visual6.app5.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app6.tag">ROBOTS</div>
+                        <h3 data-i18n="visual6.app6.title">Robot Sonar</h3>
+                        <p data-i18n="visual6.app6.desc"></p>
+                    </div>
+
+                </div>
+
+                <figcaption data-i18n="visual6.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <section class="article-summary-block">
+            <span class="summary-label" data-i18n="article.summaryLabel">
+                ONE-LINE SUMMARY
+            </span>
+            <p class="summary-line" data-i18n="article.summary"></p>
+        </section>
+
+
+        <footer class="article-footer">
+            <a href="articles.html" class="article-back" data-i18n="article.back">&#x2190; Back to Articles</a>
+            <span class="article-meta" data-i18n="article.meta">Student Research &#xb7; 2026</span>
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+    <script src="article-24.js"></script>
+
+</body>
+</html>

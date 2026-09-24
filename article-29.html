@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title data-i18n="page.title">Article 29: How Does the Beam Scan Electronically? &#x2014; Radar Explorer</title>
+
+    <meta
+        name="description"
+        data-i18n-attr="content|page.description"
+        content="Article 29: How a phased array steers its beam electronically by changing the phase difference between elements. A bilingual student-friendly explainer."
+    >
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="article.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                RADAR<span>EXPLORER</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" data-i18n="nav.home">Home</a>
+                <a href="index.html#learn" data-i18n="nav.learn">Learn</a>
+                <a href="articles.html" class="active" data-i18n="nav.articles">Articles</a>
+                <a href="index.html#explore" data-i18n="nav.explore">Explore</a>
+                <a href="index.html#research" data-i18n="nav.research">Research</a>
+                <a href="index.html#about" data-i18n="nav.about">About</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button
+                    class="lang-toggle"
+                    type="button"
+                    aria-label="Switch language"
+                    data-lang-toggle
+                >
+                    <span data-lang-label>&#x4e2d;</span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main class="article-page has-toc">
+
+        <aside class="article-toc" aria-label="Table of contents">
+            <div class="article-toc-inner">
+                <h2 class="article-toc-title" data-i18n="toc.title">On this page</h2>
+                <nav class="article-toc-nav">
+                    <a href="#sec-scanning"        data-toc="sec-scanning"        ><span class="article-toc-num">01</span><span class="article-toc-label" data-i18n="toc.s1">What electronic scanning is</span></a>
+                    <a href="#sec-phase-diff"      data-toc="sec-phase-diff"      ><span class="article-toc-num">02</span><span class="article-toc-label" data-i18n="toc.s2">Phase difference steers the beam</span></a>
+                    <a href="#sec-loop-animation"  data-toc="sec-loop-animation"  ><span class="article-toc-num">03</span><span class="article-toc-label" data-i18n="toc.s3">Beam scanning animation</span></a>
+                    <a href="#sec-worked-example"  data-toc="sec-worked-example"  ><span class="article-toc-num">04</span><span class="article-toc-label" data-i18n="toc.s4">Worked example</span></a>
+                    <a href="#sec-compare"         data-toc="sec-compare"         ><span class="article-toc-num">05</span><span class="article-toc-label" data-i18n="toc.s5">Mechanical vs electronic</span></a>
+                    <a href="#sec-applications"    data-toc="sec-applications"    ><span class="article-toc-num">06</span><span class="article-toc-label" data-i18n="toc.s6">Applications</span></a>
+                </nav>
+            </div>
+        </aside>
+
+        <section class="article-hero">
+            <h1 class="article-title" data-i18n="article.title">
+                How Does the Beam Scan Electronically?
+            </h1>
+
+            <div class="article-meta">
+                <span class="article-author" data-i18n="article.author">
+                    By Editorial
+                </span>
+                <span class="article-meta-sep">&#xb7;</span>
+                <time class="article-date" data-i18n="article.date">
+                    Feb 18, 2026
+                </time>
+            </div>
+
+            <p class="article-subtitle" data-i18n="article.subtitle">
+                The antenna never moves. Only the timing of the waves changes.
+            </p>
+        </section>
+
+
+        <section class="article-section article-body">
+            <p data-i18n="article.p1"></p>
+            <p data-i18n="article.p2"></p>
+            <p data-i18n="article.p3"></p>
+            <p data-i18n="article.p4"></p>
+        </section>
+
+
+        <section class="article-summary-block">
+            <span class="summary-label" data-i18n="article.summaryLabel">
+                ONE-LINE SUMMARY
+            </span>
+            <p class="summary-line" data-i18n="article.summary"></p>
+        </section>
+
+
+        <!-- Visual 1: What electronic scanning is -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual1.num">01</span> / <span data-i18n="visual1.name">ELECTRONIC SCANNING</span>
+            </div>
+
+            <h2 data-i18n="visual1.title">Steering Without Moving</h2>
+
+            <p class="article-intro" data-i18n="visual1.intro"></p>
+
+            <figure class="article-figure">
+                <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig1-title">
+                    <title id="fig1-title" data-i18n="fig1.title">Mechanical dish compared with a flat array</title>
+
+                    <rect x="0" y="0" width="800" height="300" fill="#0F1A1F"/>
+
+                    <!-- LEFT: mechanical dish that physically rotates -->
+                    <text x="190" y="32" text-anchor="middle" fill="#888" font-size="12"
+                          font-family="Menlo, monospace" data-i18n="fig1.left">MECHANICAL</text>
+
+                    <g transform="translate(190, 165)">
+                        <!-- pedestal -->
+                        <rect x="-8" y="45" width="16" height="50" fill="#2A3A46"/>
+                        <rect x="-45" y="95" width="90" height="10" rx="3" fill="#2A3A46"/>
+                        <!-- dish -->
+                        <path d="M -70 -55 a 80 80 0 0 0 0 110" fill="none" stroke="#54A0FF" stroke-width="4"/>
+                        <circle cx="-8" cy="0" r="7" fill="#FFD93D"/>
+                        <!-- feed horn -->
+                        <line x1="-8" y1="0" x2="-70" y2="0" stroke="#FFD93D" stroke-width="2"/>
+                        <!-- rotation arrow -->
+                        <path d="M 30 -68 a 78 78 0 0 1 52 34" fill="none" stroke="#FF6B6B"
+                              stroke-width="2" stroke-dasharray="6 4"/>
+                        <polygon points="84,-36 78,-24 92,-26" fill="#FF6B6B"/>
+                        <text x="72" y="-56" fill="#FF6B6B" font-size="11"
+                              font-family="Menlo, monospace" data-i18n="fig1.spin">turns</text>
+                    </g>
+
+                    <text x="190" y="285" text-anchor="middle" fill="#FF6B6B" font-size="11"
+                          font-family="Menlo, monospace" data-i18n="fig1.leftnote">whole dish rotates &#xb7; seconds</text>
+
+                    <!-- divider -->
+                    <line x1="400" y1="26" x2="400" y2="274" stroke="#22323C" stroke-width="1"/>
+
+                    <!-- RIGHT: flat array, static, beam jumps -->
+                    <text x="610" y="32" text-anchor="middle" fill="#888" font-size="12"
+                          font-family="Menlo, monospace" data-i18n="fig1.right">ELECTRONIC</text>
+
+                    <g transform="translate(610, 215)">
+                        <!-- static panel -->
+                        <rect x="-110" y="0" width="220" height="22" rx="4" fill="#152040" stroke="#54A0FF" stroke-width="2"/>
+                        <!-- element dots -->
+                        <circle cx="-88" cy="11" r="3" fill="#54A0FF"/>
+                        <circle cx="-66" cy="11" r="3" fill="#54A0FF"/>
+                        <circle cx="-44" cy="11" r="3" fill="#54A0FF"/>
+                        <circle cx="-22" cy="11" r="3" fill="#54A0FF"/>
+                        <circle cx="0"   cy="11" r="3" fill="#54A0FF"/>
+                        <circle cx="22"  cy="11" r="3" fill="#54A0FF"/>
+                        <circle cx="44"  cy="11" r="3" fill="#54A0FF"/>
+                        <circle cx="66"  cy="11" r="3" fill="#54A0FF"/>
+                        <circle cx="88"  cy="11" r="3" fill="#54A0FF"/>
+
+                        <!-- three beams at different angles, all from the same static panel -->
+                        <path d="M 0 -4 L 0 -160" stroke="#FFD93D" stroke-width="3" opacity="0.95"/>
+                        <path d="M 0 -4 L 110 -120" stroke="#FFD93D" stroke-width="2" opacity="0.55"/>
+                        <path d="M 0 -4 L -110 -120" stroke="#FFD93D" stroke-width="2" opacity="0.55"/>
+
+                        <circle cx="0" cy="-160" r="5" fill="#FFD93D"/>
+                        <circle cx="110" cy="-120" r="4" fill="#FFD93D" opacity="0.55"/>
+                        <circle cx="-110" cy="-120" r="4" fill="#FFD93D" opacity="0.55"/>
+                    </g>
+
+                    <text x="610" y="285" text-anchor="middle" fill="#FFD93D" font-size="11"
+                          font-family="Menlo, monospace" data-i18n="fig1.rightnote">panel stays still &#xb7; beam jumps in milliseconds</text>
+                </svg>
+
+                <figcaption data-i18n="visual1.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 2: Phase difference -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual2.num">02</span> / <span data-i18n="visual2.name">PHASE DIFFERENCE</span>
+            </div>
+
+            <h2 data-i18n="visual2.title">A Tilted Wavefront</h2>
+
+            <p class="article-intro" data-i18n="visual2.intro"></p>
+
+            <figure class="article-figure">
+                <svg viewBox="0 0 800 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig2-title">
+                    <title id="fig2-title" data-i18n="fig2.title">Phase shift per element tilts the wavefront</title>
+
+                    <rect x="0" y="0" width="800" height="330" fill="#0F1A1F"/>
+
+                    <!-- element row -->
+                    <g transform="translate(80, 255)">
+                        <circle cx="0"   cy="0" r="7" fill="#54A0FF"/>
+                        <circle cx="64"  cy="0" r="7" fill="#54A0FF"/>
+                        <circle cx="128" cy="0" r="7" fill="#54A0FF"/>
+                        <circle cx="192" cy="0" r="7" fill="#54A0FF"/>
+                        <circle cx="256" cy="0" r="7" fill="#54A0FF"/>
+                        <circle cx="320" cy="0" r="7" fill="#54A0FF"/>
+                        <circle cx="384" cy="0" r="7" fill="#54A0FF"/>
+                        <circle cx="448" cy="0" r="7" fill="#54A0FF"/>
+
+                        <!-- feed lines -->
+                        <line x1="0" y1="7" x2="0" y2="40" stroke="#2A3A46" stroke-width="2"/>
+                        <line x1="64" y1="7" x2="64" y2="40" stroke="#2A3A46" stroke-width="2"/>
+                        <line x1="128" y1="7" x2="128" y2="40" stroke="#2A3A46" stroke-width="2"/>
+                        <line x1="192" y1="7" x2="192" y2="40" stroke="#2A3A46" stroke-width="2"/>
+                        <line x1="256" y1="7" x2="256" y2="40" stroke="#2A3A46" stroke-width="2"/>
+                        <line x1="320" y1="7" x2="320" y2="40" stroke="#2A3A46" stroke-width="2"/>
+                        <line x1="384" y1="7" x2="384" y2="40" stroke="#2A3A46" stroke-width="2"/>
+                        <line x1="448" y1="7" x2="448" y2="40" stroke="#2A3A46" stroke-width="2"/>
+                    </g>
+
+                    <!-- per-element phase labels: a growing delay -->
+                    <text x="80"  y="312" text-anchor="middle" fill="#FFD93D" font-size="10" font-family="Menlo, monospace" data-i18n="fig2.p0">0&#xb0;</text>
+                    <text x="144" y="312" text-anchor="middle" fill="#FFD93D" font-size="10" font-family="Menlo, monospace" data-i18n="fig2.p1">45&#xb0;</text>
+                    <text x="208" y="312" text-anchor="middle" fill="#FFD93D" font-size="10" font-family="Menlo, monospace" data-i18n="fig2.p2">90&#xb0;</text>
+                    <text x="272" y="312" text-anchor="middle" fill="#FFD93D" font-size="10" font-family="Menlo, monospace" data-i18n="fig2.p3">135&#xb0;</text>
+                    <text x="336" y="312" text-anchor="middle" fill="#FFD93D" font-size="10" font-family="Menlo, monospace" data-i18n="fig2.p4">180&#xb0;</text>
+                    <text x="400" y="312" text-anchor="middle" fill="#FFD93D" font-size="10" font-family="Menlo, monospace" data-i18n="fig2.p5">225&#xb0;</text>
+                    <text x="464" y="312" text-anchor="middle" fill="#FFD93D" font-size="10" font-family="Menlo, monospace" data-i18n="fig2.p6">270&#xb0;</text>
+                    <text x="528" y="312" text-anchor="middle" fill="#FFD93D" font-size="10" font-family="Menlo, monospace" data-i18n="fig2.p7">315&#xb0;</text>
+
+                    <!-- tilted wavefront (perpendicular to the steered beam) -->
+                    <line x1="60"  y1="205" x2="548" y2="95" stroke="#FFD93D" stroke-width="3"/>
+
+                    <!-- beam direction arrow, perpendicular to wavefront -->
+                    <path d="M 152 250 L 420 -20" stroke="#FF6B6B" stroke-width="2" stroke-dasharray="7 5" fill="none"/>
+                    <polygon points="420,-20 412,-10 426,-14" fill="#FF6B6B"/>
+                    <text x="432" y="30" fill="#FF6B6B" font-size="12" font-family="Menlo, monospace"
+                          data-i18n="fig2.beam">beam</text>
+
+                    <!-- angle arc -->
+                    <path d="M 152 164 A 96 96 0 0 1 200 148" fill="none" stroke="#54A0FF" stroke-width="1.5"/>
+                    <text x="212" y="140" fill="#54A0FF" font-size="12" font-family="Menlo, monospace"
+                          data-i18n="fig2.theta">&#x3b8;</text>
+
+                    <text x="400" y="34" text-anchor="middle" fill="#888" font-size="11"
+                          font-family="Menlo, monospace" data-i18n="fig2.top">same frequency, staggered start time</text>
+                </svg>
+
+                <figcaption data-i18n="visual2.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 3: Manim animation -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual3.num">03</span> / <span data-i18n="visual3.name">ANIMATION: BEAM SCANNING</span>
+            </div>
+
+            <h2 data-i18n="visual3.title">Watch the Beam Sweep Without Moving</h2>
+
+            <p class="article-intro" data-i18n="visual3.intro"></p>
+
+            <figure class="article-figure">
+                <div class="video-wrap" id="radar-anim-wrap">
+                    <video
+                        id="radar-loop-video"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                        data-video-en="manim/media/videos/script/480p15/RadarArticle29.en.mp4"
+                        data-video-zh="manim/media/videos/script/480p15/RadarArticle29.zh.mp4"
+                        data-poster-en="manim/media/images/radar-article29-poster.png"
+                        data-poster-zh="manim/media/images/radar-article29-poster.png"
+                    >
+                        <p data-i18n="visual3.fallback"></p>
+                    </video>
+
+                    <div class="video-captions">
+                        <span data-i18n="visual3.cc1">1. FLAT &#x2014; equal phase, beam points straight ahead</span>
+                        <span data-i18n="visual3.cc2">2. TILT &#x2014; a small phase step tilts the wavefront</span>
+                        <span data-i18n="visual3.cc3">3. SWEEP &#x2014; ramping the step sweeps the beam across the sky</span>
+                        <span data-i18n="visual3.cc4">4. MULTI &#x2014; several phase sets make several beams at once</span>
+                    </div>
+                </div>
+
+                <figcaption data-i18n="visual3.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 4: Worked example -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual4.num">04</span> / <span data-i18n="visual4.name">WORKED EXAMPLE</span>
+            </div>
+
+            <h2 data-i18n="visual4.title">A 90&#xb0; Step Tilts the Beam 30&#xb0;</h2>
+
+            <p class="article-intro" data-i18n="visual4.intro"></p>
+
+            <figure class="article-figure">
+                <div class="example-card">
+                    <div class="example-row">
+                        <span class="example-label" data-i18n="visual4.row1.label">Frequency f</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row1.value">10 GHz</span>
+                    </div>
+                    <div class="example-row">
+                        <span class="example-label" data-i18n="visual4.row2.label">Wavelength &#x03bb;</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row2.value">3 cm</span>
+                    </div>
+                    <div class="example-row">
+                        <span class="example-label" data-i18n="visual4.row3.label">Element spacing d</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row3.value">&#x03bb; / 2 = 1.5 cm</span>
+                    </div>
+                    <div class="example-row example-row-formula">
+                        <span class="example-label" data-i18n="visual4.row4.label">Phase step &#x394;&#x3c6;</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row4.formula">90&#xb0;</span>
+                    </div>
+                    <div class="example-row example-row-result">
+                        <span class="example-label" data-i18n="visual4.row5.label">Beam angle &#x3b8;</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row5.value">30&#xb0;</span>
+                    </div>
+                </div>
+
+                <figcaption data-i18n="visual4.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 5: Mechanical vs electronic -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual5.num">05</span> / <span data-i18n="visual5.name">MECHANICAL VS ELECTRONIC</span>
+            </div>
+
+            <h2 data-i18n="visual5.title">Seconds vs Milliseconds</h2>
+
+            <p class="article-intro" data-i18n="visual5.intro"></p>
+
+            <figure class="article-figure">
+                <div class="application-grid">
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app1.tag">SPEED</div>
+                        <h3 data-i18n="visual5.app1.title">Milliseconds, Not Seconds</h3>
+                        <p data-i18n="visual5.app1.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app2.tag">RANDOM ACCESS</div>
+                        <h3 data-i18n="visual5.app2.title">Jump Anywhere Instantly</h3>
+                        <p data-i18n="visual5.app2.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app3.tag">MULTI-BEAM</div>
+                        <h3 data-i18n="visual5.app3.title">Many Beams at Once</h3>
+                        <p data-i18n="visual5.app3.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app4.tag">DWELL TIME</div>
+                        <h3 data-i18n="visual5.app4.title">Longer Look Per Target</h3>
+                        <p data-i18n="visual5.app4.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app5.tag">WEAR</div>
+                        <h3 data-i18n="visual5.app5.title">No Moving Parts</h3>
+                        <p data-i18n="visual5.app5.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app6.tag">COST</div>
+                        <h3 data-i18n="visual5.app6.title">More Electronics, Less Mechanics</h3>
+                        <p data-i18n="visual5.app6.desc"></p>
+                    </div>
+
+                </div>
+
+                <figcaption data-i18n="visual5.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 6: Applications -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual6.num">06</span> / <span data-i18n="visual6.name">APPLICATIONS</span>
+            </div>
+
+            <h2 data-i18n="visual6.title">Where Electronic Scanning Shows Up</h2>
+
+            <p class="article-intro" data-i18n="visual6.intro"></p>
+
+            <figure class="article-figure">
+                <div class="application-grid">
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app1.tag">AIR DEFENCE</div>
+                        <h3 data-i18n="visual6.app1.title">AESA Fire Control</h3>
+                        <p data-i18n="visual6.app1.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app2.tag">WEATHER</div>
+                        <h3 data-i18n="visual6.app2.title">Phased-Array Weather Radar</h3>
+                        <p data-i18n="visual6.app2.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app3.tag">5G</div>
+                        <h3 data-i18n="visual6.app3.title">Beam Steering in Mobile Networks</h3>
+                        <p data-i18n="visual6.app3.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app4.tag">AUTOMOTIVE</div>
+                        <h3 data-i18n="visual6.app4.title">Scanning the Road Ahead</h3>
+                        <p data-i18n="visual6.app4.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app5.tag">SATELLITE</div>
+                        <h3 data-i18n="visual6.app5.title">Tracking LEO Passes</h3>
+                        <p data-i18n="visual6.app5.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app6.tag">MEDICAL</div>
+                        <h3 data-i18n="visual6.app6.title">Ultrasound Sweeping</h3>
+                        <p data-i18n="visual6.app6.desc"></p>
+                    </div>
+
+                </div>
+
+                <figcaption data-i18n="visual6.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <section class="article-summary-block">
+            <span class="summary-label" data-i18n="article.summaryLabel">
+                ONE-LINE SUMMARY
+            </span>
+            <p class="summary-line" data-i18n="article.summary"></p>
+        </section>
+
+
+        <footer class="article-footer">
+            <a href="articles.html" class="article-back" data-i18n="article.back">&#x2190; Back to Articles</a>
+            <span class="article-meta" data-i18n="article.meta">Student Research &#xb7; 2026</span>
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+    <script src="article-29.js"></script>
+
+</body>
+</html>

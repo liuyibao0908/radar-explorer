@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title data-i18n="page.title">Article 25: Is Radar Afraid of Stealth? &#x2014; Radar Explorer</title>
+
+    <meta
+        name="description"
+        data-i18n-attr="content|page.description"
+        content="Article 25: How does stealth make radar blind, and how do radars fight back? A bilingual student-friendly explainer."
+    >
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="article.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                RADAR<span>EXPLORER</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" data-i18n="nav.home">Home</a>
+                <a href="index.html#learn" data-i18n="nav.learn">Learn</a>
+                <a href="articles.html" class="active" data-i18n="nav.articles">Articles</a>
+                <a href="index.html#explore" data-i18n="nav.explore">Explore</a>
+                <a href="index.html#research" data-i18n="nav.research">Research</a>
+                <a href="index.html#about" data-i18n="nav.about">About</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button
+                    class="lang-toggle"
+                    type="button"
+                    aria-label="Switch language"
+                    data-lang-toggle
+                >
+                    <span data-lang-label>&#x4e2d;</span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main class="article-page has-toc">
+
+        <aside class="article-toc" aria-label="Table of contents">
+            <div class="article-toc-inner">
+                <h2 class="article-toc-title" data-i18n="toc.title">On this page</h2>
+                <nav class="article-toc-nav">
+                    <a href="#sec-methods"        data-toc="sec-methods"        ><span class="article-toc-num">01</span><span class="article-toc-label" data-i18n="toc.s1">Three stealth methods</span></a>
+                    <a href="#sec-shape"          data-toc="sec-shape"          ><span class="article-toc-num">02</span><span class="article-toc-label" data-i18n="toc.s2">Special shapes</span></a>
+                    <a href="#sec-loop-animation" data-toc="sec-loop-animation" ><span class="article-toc-num">03</span><span class="article-toc-label" data-i18n="toc.s3">Stealth vs radar animation</span></a>
+                    <a href="#sec-worked-example" data-toc="sec-worked-example" ><span class="article-toc-num">04</span><span class="article-toc-label" data-i18n="toc.s4">Worked example</span></a>
+                    <a href="#sec-countermeasures" data-toc="sec-countermeasures"><span class="article-toc-num">05</span><span class="article-toc-label" data-i18n="toc.s5">Counter-measures</span></a>
+                    <a href="#sec-applications"  data-toc="sec-applications"  ><span class="article-toc-num">06</span><span class="article-toc-label" data-i18n="toc.s6">Applications</span></a>
+                </nav>
+            </div>
+        </aside>
+
+        <section class="article-hero">
+            <h1 class="article-title" data-i18n="article.title">
+                Is Radar Afraid of Stealth?
+            </h1>
+
+            <div class="article-meta">
+                <span class="article-author" data-i18n="article.author">
+                    By Editorial
+                </span>
+                <span class="article-meta-sep">&#xb7;</span>
+                <time class="article-date" data-i18n="article.date">
+                    Mar 19, 2026
+                </time>
+            </div>
+
+            <p class="article-subtitle" data-i18n="article.subtitle">
+                Can stealth aircraft make radar completely blind? Not really &#x2014; stealth only makes the echo very weak.
+            </p>
+        </section>
+
+
+        <section class="article-section article-body">
+            <p data-i18n="article.p1"></p>
+            <p data-i18n="article.p2"></p>
+            <p data-i18n="article.p3"></p>
+            <p data-i18n="article.p4"></p>
+        </section>
+
+
+        <section class="article-summary-block">
+            <span class="summary-label" data-i18n="article.summaryLabel">
+                ONE-LINE SUMMARY
+            </span>
+            <p class="summary-line" data-i18n="article.summary"></p>
+        </section>
+
+
+        <!-- Visual 1: Three stealth methods -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual1.num">01</span> / <span data-i18n="visual1.name">THREE STEALTH METHODS</span>
+            </div>
+
+            <h2 data-i18n="visual1.title">Three Ways to Hide from Radar</h2>
+
+            <p class="article-intro" data-i18n="visual1.intro"></p>
+
+            <figure class="article-figure">
+                <svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig1-title">
+                    <title id="fig1-title" data-i18n="fig1.title">Stealth triangle</title>
+
+                    <rect x="0" y="0" width="800" height="280" fill="#0F1A1F"/>
+
+                    <!-- Big triangle -->
+                    <polygon points="400,40 760,250 40,250"
+                             fill="rgba(255,107,107,0.06)"
+                             stroke="#FF6B6B" stroke-width="2"/>
+                    <text x="400" y="30" text-anchor="middle" fill="#FF6B6B"
+                          font-size="14" font-family="Menlo, monospace" font-weight="bold"
+                          data-i18n="fig1.center">stealth</text>
+
+                    <!-- 1. Shape -->
+                    <g transform="translate(180, 230)">
+                        <circle r="34" fill="rgba(255,211,61,0.18)"
+                                stroke="#FFD93D" stroke-width="2"/>
+                        <text x="0" y="-2" text-anchor="middle" fill="#FFD93D"
+                              font-size="13" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig1.m1.num">01</text>
+                        <text x="0" y="18" text-anchor="middle" fill="#FFD93D"
+                              font-size="11" font-family="Menlo, monospace"
+                              data-i18n="fig1.m1.name">shape</text>
+                    </g>
+
+                    <!-- 2. Absorber -->
+                    <g transform="translate(400, 230)">
+                        <circle r="34" fill="rgba(124,252,0,0.18)"
+                                stroke="#7CFC00" stroke-width="2"/>
+                        <text x="0" y="-2" text-anchor="middle" fill="#7CFC00"
+                              font-size="13" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig1.m2.num">02</text>
+                        <text x="0" y="18" text-anchor="middle" fill="#7CFC00"
+                              font-size="11" font-family="Menlo, monospace"
+                              data-i18n="fig1.m2.name">absorber</text>
+                    </g>
+
+                    <!-- 3. Less emission -->
+                    <g transform="translate(620, 230)">
+                        <circle r="34" fill="rgba(84,160,255,0.18)"
+                                stroke="#54A0FF" stroke-width="2"/>
+                        <text x="0" y="-2" text-anchor="middle" fill="#54A0FF"
+                              font-size="13" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig1.m3.num">03</text>
+                        <text x="0" y="18" text-anchor="middle" fill="#54A0FF"
+                              font-size="11" font-family="Menlo, monospace"
+                              data-i18n="fig1.m3.name">silent</text>
+                    </g>
+
+                    <text x="400" y="270" text-anchor="middle" fill="#888"
+                          font-size="11" font-family="Menlo, monospace"
+                          data-i18n="fig1.bottom">shape + absorber + emission control &#x21d2; tiny echo</text>
+                </svg>
+
+                <figcaption data-i18n="visual1.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 2: Special shapes -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual2.num">02</span> / <span data-i18n="visual2.name">SPECIAL SHAPES</span>
+            </div>
+
+            <h2 data-i18n="visual2.title">Bounce the Wave to Another Direction</h2>
+
+            <p class="article-intro" data-i18n="visual2.intro"></p>
+
+            <figure class="article-figure">
+                <svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig2-title">
+                    <title id="fig2-title" data-i18n="fig2.title">Stealth shape reflection</title>
+
+                    <rect x="0" y="0" width="800" height="280" fill="#0F1A1F"/>
+
+                    <!-- Radar dish on left -->
+                    <g transform="translate(80, 140)">
+                        <polygon points="-20,15 20,15 0,-15"
+                                 fill="#FFD93D" stroke="#FFD93D" stroke-width="1"/>
+                        <line x1="0" y1="15" x2="0" y2="40"
+                              stroke="#FFD93D" stroke-width="3"/>
+                        <text x="0" y="-20" text-anchor="middle" fill="#FFD93D"
+                              font-size="11" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig2.radar">radar</text>
+                    </g>
+
+                    <!-- Incoming wave -->
+                    <line x1="105" y1="140" x2="280" y2="140"
+                          stroke="#FFD93D" stroke-width="2" stroke-dasharray="6 3"/>
+                    <polygon points="280,140 270,135 270,145" fill="#FFD93D"/>
+
+                    <!-- Stealth airplane -->
+                    <g transform="translate(420, 140)">
+                        <path d="M -120 0 L -50 -25 L 50 -25 L 120 0 L 50 25 L -50 25 Z"
+                              fill="#333" stroke="#FFD93D" stroke-width="1.5"/>
+                        <ellipse cx="20" cy="0" rx="30" ry="8"
+                                 fill="#111" stroke="#FFD93D" stroke-width="0.8"/>
+                        <text x="0" y="50" text-anchor="middle" fill="#888"
+                              font-size="11" font-family="Menlo, monospace"
+                              data-i18n="fig2.stealth">stealth jet</text>
+                    </g>
+
+                    <!-- Reflected wave going UP -->
+                    <line x1="500" y1="115" x2="700" y2="40"
+                          stroke="#FF6B6B" stroke-width="2" stroke-dasharray="6 3"/>
+                    <polygon points="700,40 690,42 696,52" fill="#FF6B6B"/>
+                    <text x="720" y="55" fill="#FF6B6B"
+                          font-size="11" font-family="Menlo, monospace" font-weight="bold"
+                          data-i18n="fig2.away">reflected away</text>
+
+                    <text x="80" y="245" fill="#888" font-size="11"
+                          font-family="Menlo, monospace"
+                          data-i18n="fig2.note">no return &#x2192; radar sees nothing</text>
+
+                    <text x="400" y="270" text-anchor="middle" fill="#888"
+                          font-size="11" font-family="Menlo, monospace"
+                          data-i18n="fig2.bottom">faceted shape &#x21d2; energy goes up, not back</text>
+                </svg>
+
+                <figcaption data-i18n="visual2.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 3: Manim animation -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual3.num">03</span> / <span data-i18n="visual3.name">ANIMATION: STEALTH VS RADAR</span>
+            </div>
+
+            <h2 data-i18n="visual3.title">Watch the Wave Bounce Off a Stealth Shape</h2>
+
+            <p class="article-intro" data-i18n="visual3.intro"></p>
+
+            <figure class="article-figure">
+                <div class="video-wrap" id="radar-anim-wrap">
+                    <video
+                        id="radar-loop-video"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                        data-video-en="manim/media/videos/script/480p15/RadarArticle25.en.mp4"
+                        data-video-zh="manim/media/videos/script/480p15/RadarArticle25.zh.mp4"
+                        data-poster-en="manim/media/images/radar-article25-poster.png"
+                        data-poster-zh="manim/media/images/radar-article25-poster.png"
+                    >
+                        <p data-i18n="visual3.fallback"></p>
+                    </video>
+
+                    <div class="video-captions">
+                        <span data-i18n="visual3.cc1">1. SEND &#x2014; radar dish fires a beam at the target</span>
+                        <span data-i18n="visual3.cc2">2. SHAPE &#x2014; faceted surface bounces it sideways</span>
+                        <span data-i18n="visual3.cc3">3. NOTHING &#x2014; radar sees almost zero return</span>
+                        <span data-i18n="visual3.cc4">4. COUNTER &#x2014; long wavelength pierces through</span>
+                    </div>
+                </div>
+
+                <figcaption data-i18n="visual3.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 4: Worked example -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual4.num">04</span> / <span data-i18n="visual4.name">WORKED EXAMPLE</span>
+            </div>
+
+            <h2 data-i18n="visual4.title">Radar Cross Section Shrinks 1000 Times</h2>
+
+            <p class="article-intro" data-i18n="visual4.intro"></p>
+
+            <figure class="article-figure">
+                <div class="example-card">
+                    <div class="example-row">
+                        <span class="example-label" data-i18n="visual4.row1.label">Normal jet RCS</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row1.value">1 m&#xb2;</span>
+                    </div>
+                    <div class="example-row">
+                        <span class="example-label" data-i18n="visual4.row2.label">Stealth jet RCS</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row2.value">0.001 m&#xb2;</span>
+                    </div>
+                    <div class="example-row example-row-formula">
+                        <span class="example-label" data-i18n="visual4.row3.label">Echo reduction</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row3.formula">&#x2212;30 dB</span>
+                    </div>
+                    <div class="example-row example-row-result">
+                        <span class="example-label" data-i18n="visual4.row4.label">Detection range</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row4.value">&#xd7; 0.18</span>
+                    </div>
+                </div>
+
+                <figcaption data-i18n="visual4.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 5: Counter-measures -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual5.num">05</span> / <span data-i18n="visual5.name">COUNTER-MEASURES</span>
+            </div>
+
+            <h2 data-i18n="visual5.title">How Radar Fights Back</h2>
+
+            <p class="article-intro" data-i18n="visual5.intro"></p>
+
+            <figure class="article-figure">
+                <div class="application-grid">
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app1.tag">POWER</div>
+                        <h3 data-i18n="visual5.app1.title">More Power</h3>
+                        <p data-i18n="visual5.app1.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app2.tag">NETWORK</div>
+                        <h3 data-i18n="visual5.app2.title">Bistatic / Network</h3>
+                        <p data-i18n="visual5.app2.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app3.tag">VHF/UHF</div>
+                        <h3 data-i18n="visual5.app3.title">Long-Wave Radar</h3>
+                        <p data-i18n="visual5.app3.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app4.tag">PASSIVE</div>
+                        <h3 data-i18n="visual5.app4.title">Listen, Don't Send</h3>
+                        <p data-i18n="visual5.app4.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app5.tag">QUIET</div>
+                        <h3 data-i18n="visual5.app5.title">Silent Radar</h3>
+                        <p data-i18n="visual5.app5.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app6.tag">AI</div>
+                        <h3 data-i18n="visual5.app6.title">Smart Tracking</h3>
+                        <p data-i18n="visual5.app6.desc"></p>
+                    </div>
+
+                </div>
+
+                <figcaption data-i18n="visual5.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 6: Applications -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual6.num">06</span> / <span data-i18n="visual6.name">APPLICATIONS</span>
+            </div>
+
+            <h2 data-i18n="visual6.title">Stealth and Anti-Stealth in Real Life</h2>
+
+            <p class="article-intro" data-i18n="visual6.intro"></p>
+
+            <figure class="article-figure">
+                <div class="application-grid">
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app1.tag">FIGHTERS</div>
+                        <h3 data-i18n="visual6.app1.title">F-22, F-35, J-20</h3>
+                        <p data-i18n="visual6.app1.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app2.tag">BOMBERS</div>
+                        <h3 data-i18n="visual6.app2.title">B-2, B-21</h3>
+                        <p data-i18n="visual6.app2.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app3.tag">SHIPS</div>
+                        <h3 data-i18n="visual6.app3.title">Stealth Frigates</h3>
+                        <p data-i18n="visual6.app3.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app4.tag">DRONES</div>
+                        <h3 data-i18n="visual6.app4.title">Stealth UAV</h3>
+                        <p data-i18n="visual6.app4.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app5.tag">SHIP RADAR</div>
+                        <h3 data-i18n="visual6.app5.title">Sea-Based Radar</h3>
+                        <p data-i18n="visual6.app5.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app6.tag">EW</div>
+                        <h3 data-i18n="visual6.app6.title">Electronic Warfare</h3>
+                        <p data-i18n="visual6.app6.desc"></p>
+                    </div>
+
+                </div>
+
+                <figcaption data-i18n="visual6.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <section class="article-summary-block">
+            <span class="summary-label" data-i18n="article.summaryLabel">
+                ONE-LINE SUMMARY
+            </span>
+            <p class="summary-line" data-i18n="article.summary"></p>
+        </section>
+
+
+        <footer class="article-footer">
+            <a href="articles.html" class="article-back" data-i18n="article.back">&#x2190; Back to Articles</a>
+            <span class="article-meta" data-i18n="article.meta">Student Research &#xb7; 2026</span>
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+    <script src="article-25.js"></script>
+
+</body>
+</html>

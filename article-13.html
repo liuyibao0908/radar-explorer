@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title data-i18n="page.title">Article 13: How Does Radar Know the Direction? &#x2014; Radar Explorer</title>
+
+    <meta
+        name="description"
+        data-i18n-attr="content|page.description"
+        content="Article 13: How does radar know the direction? A bilingual student-friendly explainer of antenna beams, mechanical scan, and phased arrays."
+    >
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="article.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                RADAR<span>EXPLORER</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" data-i18n="nav.home">Home</a>
+                <a href="index.html#learn" data-i18n="nav.learn">Learn</a>
+                <a href="articles.html" class="active" data-i18n="nav.articles">Articles</a>
+                <a href="index.html#explore" data-i18n="nav.explore">Explore</a>
+                <a href="index.html#research" data-i18n="nav.research">Research</a>
+                <a href="index.html#about" data-i18n="nav.about">About</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button
+                    class="lang-toggle"
+                    type="button"
+                    aria-label="Switch language"
+                    data-lang-toggle
+                >
+                    <span data-lang-label>&#x4e2d;</span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main class="article-page has-toc">
+
+        <aside class="article-toc" aria-label="Table of contents">
+                <div class="article-toc-inner">
+                    <h2 class="article-toc-title" data-i18n="toc.title">On this page</h2>
+                    <nav class="article-toc-nav">
+                        <a href="#sec-antenna-beam"        data-toc="sec-antenna-beam"        ><span class="article-toc-num">01</span><span class="article-toc-label" data-i18n="toc.s1">The antenna beam</span></a>
+                        <a href="#sec-mechanical-phased"   data-toc="sec-mechanical-phased"   ><span class="article-toc-num">02</span><span class="article-toc-label" data-i18n="toc.s2">Mechanical vs phased-array</span></a>
+                        <a href="#sec-loop-animation"     data-toc="sec-loop-animation"     ><span class="article-toc-num">03</span><span class="article-toc-label" data-i18n="toc.s3">Beam-sweep animation</span></a>
+                        <a href="#sec-worked-example"     data-toc="sec-worked-example"     ><span class="article-toc-num">04</span><span class="article-toc-label" data-i18n="toc.s4">Worked example</span></a>
+                        <a href="#sec-narrow-vs-wide"     data-toc="sec-narrow-vs-wide"     ><span class="article-toc-num">05</span><span class="article-toc-label" data-i18n="toc.s5">Narrow vs wide beams</span></a>
+                        <a href="#sec-azimuth-elevation"  data-toc="sec-azimuth-elevation"  ><span class="article-toc-num">06</span><span class="article-toc-label" data-i18n="toc.s6">Azimuth and elevation</span></a>
+                    </nav>
+                </div>
+            </aside>
+
+        <section class="article-hero">
+            <h1 class="article-title" data-i18n="article.title">
+                How Does Radar Know the Direction?
+            </h1>
+
+            <div class="article-meta">
+                <span class="article-author" data-i18n="article.author">
+                    By Editorial
+                </span>
+                <span class="article-meta-sep">&#xb7;</span>
+                <time class="article-date" data-i18n="article.date">
+                    Sept 21, 2026
+                </time>
+            </div>
+
+            <p class="article-subtitle" data-i18n="article.subtitle">
+                A radar needs to know not only how far, but also where. How does it find the direction?
+            </p>
+        </section>
+
+
+        <section class="article-section article-body">
+            <p data-i18n="article.p1"></p>
+            <p data-i18n="article.p2"></p>
+            <p data-i18n="article.p3"></p>
+            <p data-i18n="article.p4"></p>
+        </section>
+
+
+        <section class="article-summary-block">
+            <span class="summary-label" data-i18n="article.summaryLabel">
+                ONE-LINE SUMMARY
+            </span>
+            <p class="summary-line" data-i18n="article.summary"></p>
+        </section>
+
+
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual1.num">01</span> / <span data-i18n="visual1.name">THE ANTENNA BEAM</span>
+            </div>
+
+            <h2 data-i18n="visual1.title">The Antenna Focuses Waves into a Narrow Beam</h2>
+
+            <p class="article-intro" data-i18n="visual1.intro"></p>
+
+            <figure class="article-figure">
+                <svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig1-title">
+                    <title id="fig1-title" data-i18n="fig1.title">Antenna beam diagram</title>
+
+                    <defs>
+                        <pattern id="grid13" width="40" height="40" patternUnits="userSpaceOnUse">
+                            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a252a" stroke-width="1"/>
+                        </pattern>
+                        <radialGradient id="beamGrad13" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(140,160)">
+                            <stop offset="0%"  stop-color="#58C4DD" stop-opacity="0.45"/>
+                            <stop offset="100%" stop-color="#58C4DD" stop-opacity="0"/>
+                        </radialGradient>
+                    </defs>
+
+                    <rect x="0" y="0" width="800" height="320" fill="url(#grid13)"/>
+
+                    <g transform="translate(140, 160)">
+                        <rect x="-26" y="-22" width="52" height="44"
+                              fill="#0f1a1f" stroke="#58C4DD" stroke-width="2"/>
+                        <line x1="-16" y1="-22" x2="0"  y2="-36"
+                              stroke="#58C4DD" stroke-width="2"/>
+                        <line x1="16"  y1="-22" x2="0"  y2="-36"
+                              stroke="#58C4DD" stroke-width="2"/>
+                        <circle cx="0" cy="-36" r="4" fill="#58C4DD"/>
+                        <text class="svg-label" x="0" y="56" text-anchor="middle"
+                              fill="#58C4DD" font-size="13"
+                              font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig1.radar">RADAR</text>
+                    </g>
+
+                    <polygon points="140,160 700,40 700,280"
+                             fill="url(#beamGrad13)"
+                             stroke="#58C4DD" stroke-width="1" stroke-dasharray="3 3" opacity="0.8"/>
+
+                    <line x1="140" y1="160" x2="700" y2="160"
+                          stroke="#58C4DD" stroke-width="1" stroke-dasharray="4 4" opacity="0.6"/>
+
+                    <g transform="translate(560, 160)">
+                        <ellipse cx="0" cy="0" rx="36" ry="6" fill="#FFD93D"/>
+                        <path d="M -10 0 L 8 -16 L 14 0 L 8 16 Z"
+                              fill="#FFD93D" opacity="0.85"/>
+                        <path d="M -42 0 L -56 -10 L -42 -10 Z" fill="#FFD93D"/>
+                        <text class="svg-label" x="0" y="-26" text-anchor="middle"
+                              fill="#FFD93D" font-size="13"
+                              font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig1.target">TARGET</text>
+                    </g>
+
+                    <text class="svg-label" x="420" y="100" text-anchor="middle"
+                          fill="#58C4DD" font-size="13"
+                          font-family="Menlo, monospace" font-weight="bold"
+                          data-i18n="fig1.beam">BEAM DIRECTION</text>
+
+                    <g transform="translate(420, 290)">
+                        <text class="svg-label" x="0" y="0" text-anchor="middle"
+                              fill="#888" font-size="12"
+                              font-family="Menlo, monospace"
+                              data-i18n="fig1.width">beam width &#x3b8;</text>
+                    </g>
+                </svg>
+
+                <figcaption data-i18n="visual1.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual2.num">02</span> / <span data-i18n="visual2.name">MECHANICAL VS PHASED-ARRAY</span>
+            </div>
+
+            <h2 data-i18n="visual2.title">Two Ways to Sweep the Beam</h2>
+
+            <p class="article-intro" data-i18n="visual2.intro"></p>
+
+            <figure class="article-figure">
+                <div class="analogy-grid">
+
+                    <figure class="analogy-panel">
+                        <div class="analogy-tag" data-i18n="visual2.left.tag">MECHANICAL SCAN</div>
+                        <svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="148" y="160" width="64" height="40"
+                                  fill="#0f1a1f" stroke="#58C4DD" stroke-width="1.5"/>
+                            <line x1="180" y1="160" x2="180" y2="80"
+                                  stroke="#58C4DD" stroke-width="2"/>
+                            <line x1="180" y1="80" x2="240" y2="40"
+                                  stroke="#58C4DD" stroke-width="2.5"/>
+                            <circle cx="240" cy="40" r="4" fill="#58C4DD"/>
+                            <path d="M 240 40 A 200 200 0 0 1 90 110"
+                                  fill="none" stroke="#7CFC00" stroke-width="1.5" stroke-dasharray="4 3"/>
+                            <path d="M 130 60 A 130 130 0 0 1 220 30"
+                                  fill="none" stroke="#FFD93D" stroke-width="2"/>
+                            <polygon points="220,30 215,40 230,38"
+                                     fill="#FFD93D"/>
+                            <text x="180" y="120" text-anchor="middle"
+                                  fill="#FFD93D" font-size="13"
+                                  font-family="Menlo, monospace" font-weight="bold"
+                                  data-i18n="visual2.left.motor">&#x2190; motor &#x2192;</text>
+                        </svg>
+                    </figure>
+
+                    <div class="analogy-equals">=</div>
+
+                    <figure class="analogy-panel">
+                        <div class="analogy-tag" data-i18n="visual2.right.tag">PHASED ARRAY</div>
+                        <svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="100" y="140" width="160" height="22"
+                                  fill="#0f1a1f" stroke="#58C4DD" stroke-width="1.5"/>
+                            <g fill="#58C4DD">
+                                <circle cx="120" cy="151" r="3"/>
+                                <circle cx="140" cy="151" r="3"/>
+                                <circle cx="160" cy="151" r="3"/>
+                                <circle cx="180" cy="151" r="3"/>
+                                <circle cx="200" cy="151" r="3"/>
+                                <circle cx="220" cy="151" r="3"/>
+                                <circle cx="240" cy="151" r="3"/>
+                            </g>
+                            <line x1="120" y1="140" x2="265" y2="50"
+                                  stroke="#7CFC00" stroke-width="1.5" stroke-dasharray="4 3"/>
+                            <line x1="240" y1="140" x2="285" y2="60"
+                                  stroke="#7CFC00" stroke-width="1.5" stroke-dasharray="4 3"/>
+                            <polygon points="285,60 270,55 275,72"
+                                     fill="#7CFC00"/>
+                            <text x="180" y="110" text-anchor="middle"
+                                  fill="#7CFC00" font-size="13"
+                                  font-family="Menlo, monospace" font-weight="bold"
+                                  data-i18n="visual2.right.phase">phase shift &#x2192;</text>
+                            <text x="180" y="195" text-anchor="middle"
+                                  fill="#FFD93D" font-size="11"
+                                  font-family="Menlo, monospace"
+                                  data-i18n="visual2.right.noMove">NO MOVING PARTS</text>
+                        </svg>
+                    </figure>
+                </div>
+
+                <figcaption data-i18n="visual2.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual3.num">03</span> / <span data-i18n="visual3.name">ANIMATION: BEAM SWEEPS AND LOCKS</span>
+            </div>
+
+            <h2 data-i18n="visual3.title">Watch the Beam Sweep Across the Sky</h2>
+
+            <p class="article-intro" data-i18n="visual3.intro"></p>
+
+            <figure class="article-figure">
+                <div class="video-wrap" id="radar-anim-wrap">
+                    <video
+                        id="radar-loop-video"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                        data-video-en="manim/media/videos/script/480p15/RadarArticle13.en.mp4"
+                        data-video-zh="manim/media/videos/script/480p15/RadarArticle13.zh.mp4"
+                        data-poster-en="manim/media/images/radar-article13-poster.png"
+                        data-poster-zh="manim/media/images/radar-article13-poster.png"
+                    >
+                        <p data-i18n="visual3.fallback"></p>
+                    </video>
+
+                    <div class="video-captions">
+                        <span data-i18n="visual3.cc1">1. SWEEP &#x2014; beam rotates to scan</span>
+                        <span data-i18n="visual3.cc2">2. DETECT &#x2014; echo arrives when beam hits a target</span>
+                        <span data-i18n="visual3.cc3">3. LOCATE &#x2014; direction = current beam angle</span>
+                        <span data-i18n="visual3.cc4">4. REPORT &#x2014; range + direction = 3D position</span>
+                    </div>
+                </div>
+
+                <figcaption data-i18n="visual3.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual4.num">04</span> / <span data-i18n="visual4.name">WORKED EXAMPLE</span>
+            </div>
+
+            <h2 data-i18n="visual4.title">If the Beam is 2&#xb0; Wide, How Accurate Is the Direction?</h2>
+
+            <p class="article-intro" data-i18n="visual4.intro"></p>
+
+            <figure class="article-figure">
+                <div class="example-card">
+                    <div class="example-row">
+                        <span class="example-label" data-i18n="visual4.row1.label">Beam width &#x3b8;</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row1.value">2&#xb0;</span>
+                    </div>
+                    <div class="example-row">
+                        <span class="example-label" data-i18n="visual4.row2.label">Target range R</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row2.value">100 km</span>
+                    </div>
+                    <div class="example-row example-row-formula">
+                        <span class="example-label" data-i18n="visual4.row3.label">Cross-range error</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row3.formula">R &#xd7; tan(&#x3b8;/2)</span>
+                    </div>
+                    <div class="example-row example-row-result">
+                        <span class="example-label" data-i18n="visual4.row4.label">Cross-range error</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row4.value">1.75 km</span>
+                    </div>
+                </div>
+
+                <figcaption data-i18n="visual4.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual5.num">05</span> / <span data-i18n="visual5.name">NARROW VS WIDE BEAMS</span>
+            </div>
+
+            <h2 data-i18n="visual5.title">Narrow Beams Mean Better Accuracy but Less Coverage</h2>
+
+            <p class="article-intro" data-i18n="visual5.intro"></p>
+
+            <figure class="article-figure">
+                <svg viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig5-title">
+                    <title id="fig5-title" data-i18n="fig5.title">Narrow vs wide beam trade-off</title>
+
+                    <rect x="0" y="0" width="800" height="240" fill="#0f1a1f"/>
+
+                    <g transform="translate(0, 0)">
+                        <rect x="0" y="0" width="400" height="240"
+                              fill="#0a1216" stroke="#888" stroke-width="1"/>
+                        <polygon points="120,200 380,30 380,170"
+                                 fill="rgba(255,107,107,0.1)" stroke="#FF6B6B" stroke-width="1.5"/>
+                        <g transform="translate(310, 110)">
+                            <circle cx="0" cy="0" r="8" fill="#FFD93D"/>
+                            <line x1="-15" y1="0" x2="15" y2="0" stroke="#FFD93D" stroke-width="1"/>
+                            <text x="0" y="22" text-anchor="middle" fill="#888"
+                                  font-size="10" font-family="Menlo, monospace">&#xb1;10&#xb0;</text>
+                        </g>
+                        <text x="200" y="40" text-anchor="middle" fill="#FF6B6B"
+                              font-size="14" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig5.left.label">WIDE BEAM</text>
+                        <text x="200" y="60" text-anchor="middle" fill="#888"
+                              font-size="11" font-family="Menlo, monospace"
+                              data-i18n="fig5.left.note">coarse direction</text>
+                    </g>
+
+                    <g transform="translate(400, 0)">
+                        <rect x="0" y="0" width="400" height="240"
+                              fill="#0a1216" stroke="#888" stroke-width="1"/>
+                        <polygon points="120,200 360,140 360,180"
+                                 fill="rgba(124,252,0,0.1)" stroke="#7CFC00" stroke-width="1.5"/>
+                        <g transform="translate(340, 160)">
+                            <circle cx="0" cy="0" r="8" fill="#FFD93D"/>
+                            <line x1="-15" y1="0" x2="15" y2="0" stroke="#FFD93D" stroke-width="1"/>
+                            <text x="0" y="22" text-anchor="middle" fill="#888"
+                                  font-size="10" font-family="Menlo, monospace">&#xb1;1&#xb0;</text>
+                        </g>
+                        <text x="200" y="40" text-anchor="middle" fill="#7CFC00"
+                              font-size="14" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig5.right.label">NARROW BEAM</text>
+                        <text x="200" y="60" text-anchor="middle" fill="#888"
+                              font-size="11" font-family="Menlo, monospace"
+                              data-i18n="fig5.right.note">precise direction</text>
+                    </g>
+                </svg>
+
+                <figcaption data-i18n="visual5.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual6.num">06</span> / <span data-i18n="visual6.name">AZIMUTH AND ELEVATION</span>
+            </div>
+
+            <h2 data-i18n="visual6.title">Azimuth and Elevation: 3D Direction</h2>
+
+            <p class="article-intro" data-i18n="visual6.intro"></p>
+
+            <figure class="article-figure">
+                <svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig6-title">
+                    <title id="fig6-title" data-i18n="fig6.title">Azimuth and elevation</title>
+
+                    <rect x="0" y="0" width="800" height="280" fill="#0f1a1f"/>
+
+                    <line x1="60" y1="220" x2="740" y2="220" stroke="#2a3a40" stroke-width="1" stroke-dasharray="3 4"/>
+
+                    <g transform="translate(140, 220)">
+                        <rect x="-22" y="-22" width="44" height="22"
+                              fill="#0f1a1f" stroke="#58C4DD" stroke-width="2"/>
+                        <circle cx="0" cy="-22" r="3" fill="#58C4DD"/>
+                        <text x="0" y="14" text-anchor="middle" fill="#58C4DD"
+                              font-size="12" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig6.radar">RADAR</text>
+                    </g>
+
+                    <line x1="140" y1="220" x2="540" y2="100" fill="none"
+                          stroke="#7CFC00" stroke-width="2" marker-end="url(#arr136a)"/>
+                    <defs>
+                        <marker id="arr136a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+                            <path d="M 0 0 L 10 5 L 0 10 z" fill="#7CFC00"/>
+                        </marker>
+                    </defs>
+                    <path d="M 280 220 A 140 140 0 0 0 232 130"
+                          fill="none" stroke="#FFD93D" stroke-width="1" stroke-dasharray="3 3"/>
+                    <text x="265" y="170" fill="#FFD93D" font-size="13"
+                          font-family="Menlo, monospace" font-weight="bold"
+                          data-i18n="fig6.azim">AZIMUTH</text>
+
+                    <g transform="translate(540, 100)">
+                        <ellipse cx="0" cy="0" rx="30" ry="5" fill="#FFD93D"/>
+                        <path d="M -10 0 L 4 -12 L 8 0 L 4 12 Z" fill="#FFD93D" opacity="0.85"/>
+                        <text x="0" y="-14" text-anchor="middle" fill="#FFD93D"
+                              font-size="12" font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig6.target">TARGET</text>
+                    </g>
+
+                    <path d="M 200 220 A 60 60 0 0 0 240 178"
+                          fill="none" stroke="#FF6B6B" stroke-width="1" stroke-dasharray="3 3"/>
+                    <text x="225" y="200" fill="#FF6B6B" font-size="13"
+                          font-family="Menlo, monospace" font-weight="bold"
+                          data-i18n="fig6.elev">ELEV.</text>
+
+                    <text x="280" y="260" fill="#7CFC00" font-size="13"
+                          font-family="Menlo, monospace" font-weight="bold"
+                          data-i18n="fig6.leftLabel">horizontal &#x2192; azimuth</text>
+                    <text x="540" y="260" fill="#FF6B6B" font-size="13"
+                          font-family="Menlo, monospace" font-weight="bold"
+                          data-i18n="fig6.upLabel">vertical &#x2192; elevation</text>
+                </svg>
+
+                <figcaption data-i18n="visual6.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <section class="article-summary-block">
+            <span class="summary-label" data-i18n="article.summaryLabel">
+                ONE-LINE SUMMARY
+            </span>
+            <p class="summary-line" data-i18n="article.summary"></p>
+        </section>
+
+
+        <footer class="article-footer">
+            <a href="articles.html" class="article-back" data-i18n="article.back">&#x2190; Back to Articles</a>
+            <span class="article-meta" data-i18n="article.meta">Student Research &#xb7; 2026</span>
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+    <script src="article-13.js"></script>
+
+</body>
+</html>
