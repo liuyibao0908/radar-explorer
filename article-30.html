@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title data-i18n="page.title">Article 30: Passive vs Active Phased Array &#x2014; Radar Explorer</title>
+
+    <meta
+        name="description"
+        data-i18n-attr="content|page.description"
+        content="Article 30: What is the difference between a passive phased array (PESA) and an active phased array (AESA)? A bilingual student-friendly explainer."
+    >
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="article.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                RADAR<span>EXPLORER</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" data-i18n="nav.home">Home</a>
+                <a href="index.html#learn" data-i18n="nav.learn">Learn</a>
+                <a href="articles.html" class="active" data-i18n="nav.articles">Articles</a>
+                <a href="index.html#explore" data-i18n="nav.explore">Explore</a>
+                <a href="index.html#research" data-i18n="nav.research">Research</a>
+                <a href="index.html#about" data-i18n="nav.about">About</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button
+                    class="lang-toggle"
+                    type="button"
+                    aria-label="Switch language"
+                    data-lang-toggle
+                >
+                    <span data-lang-label>&#x4e2d;</span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main class="article-page has-toc">
+
+        <aside class="article-toc" aria-label="Table of contents">
+            <div class="article-toc-inner">
+                <h2 class="article-toc-title" data-i18n="toc.title">On this page</h2>
+                <nav class="article-toc-nav">
+                    <a href="#sec-overview"       data-toc="sec-overview"       ><span class="article-toc-num">01</span><span class="article-toc-label" data-i18n="toc.s1">The two flavours</span></a>
+                    <a href="#sec-structure"       data-toc="sec-structure"       ><span class="article-toc-num">02</span><span class="article-toc-label" data-i18n="toc.s2">Anatomy of PESA and AESA</span></a>
+                    <a href="#sec-loop-animation"  data-toc="sec-loop-animation"  ><span class="article-toc-num">03</span><span class="article-toc-label" data-i18n="toc.s3">Signal path animation</span></a>
+                    <a href="#sec-worked-example"  data-toc="sec-worked-example"  ><span class="article-toc-num">04</span><span class="article-toc-label" data-i18n="toc.s4">Trade-off example</span></a>
+                    <a href="#sec-tradeoffs"       data-toc="sec-tradeoffs"       ><span class="article-toc-num">05</span><span class="article-toc-label" data-i18n="toc.s5">Pros, cons, failure</span></a>
+                    <a href="#sec-applications"    data-toc="sec-applications"    ><span class="article-toc-num">06</span><span class="article-toc-label" data-i18n="toc.s6">Where each shows up</span></a>
+                </nav>
+            </div>
+        </aside>
+
+        <section class="article-hero">
+            <h1 class="article-title" data-i18n="article.title">
+                Passive vs Active Phased Array
+            </h1>
+
+            <div class="article-meta">
+                <span class="article-author" data-i18n="article.author">
+                    By Editorial
+                </span>
+                <span class="article-meta-sep">&#xb7;</span>
+                <time class="article-date" data-i18n="article.date">
+                    Oct 4, 2026
+                </time>
+            </div>
+
+            <p class="article-subtitle" data-i18n="article.subtitle">
+                Same antenna face. Transmitter lives in two very different places.
+            </p>
+        </section>
+
+
+        <section class="article-section article-body">
+            <p data-i18n="article.p1"></p>
+            <p data-i18n="article.p2"></p>
+            <p data-i18n="article.p3"></p>
+            <p data-i18n="article.p4"></p>
+        </section>
+
+
+        <section class="article-summary-block">
+            <span class="summary-label" data-i18n="article.summaryLabel">
+                ONE-LINE SUMMARY
+            </span>
+            <p class="summary-line" data-i18n="article.summary"></p>
+        </section>
+
+
+        <!-- Visual 1: Overview / the two flavours -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual1.num">01</span> / <span data-i18n="visual1.name">TWO FLAVOURS</span>
+            </div>
+
+            <h2 data-i18n="visual1.title">One Antenna Face, Two Architectures</h2>
+
+            <p class="article-intro" data-i18n="visual1.intro"></p>
+
+            <figure class="article-figure">
+                <svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig1-title">
+                    <title id="fig1-title" data-i18n="fig1.title">PESA (left) vs AESA (right)</title>
+
+                    <rect x="0" y="0" width="800" height="280" fill="#0F1A1F"/>
+
+                    <!-- LEFT: PESA -->
+                    <text x="195" y="34" text-anchor="middle" fill="#888" font-size="13"
+                          font-family="Menlo, monospace" data-i18n="fig1.pesa">PASSIVE (PESA)</text>
+
+                    <g transform="translate(195, 200)">
+                        <!-- element row -->
+                        <circle cx="-90" cy="0" r="6" fill="#54A0FF" stroke="#FFD93D" stroke-width="1"/>
+                        <circle cx="-60" cy="0" r="6" fill="#54A0FF" stroke="#FFD93D" stroke-width="1"/>
+                        <circle cx="-30" cy="0" r="6" fill="#54A0FF" stroke="#FFD93D" stroke-width="1"/>
+                        <circle cx="0"   cy="0" r="6" fill="#54A0FF" stroke="#FFD93D" stroke-width="1"/>
+                        <circle cx="30"  cy="0" r="6" fill="#54A0FF" stroke="#FFD93D" stroke-width="1"/>
+                        <circle cx="60"  cy="0" r="6" fill="#54A0FF" stroke="#FFD93D" stroke-width="1"/>
+                        <circle cx="90"  cy="0" r="6" fill="#54A0FF" stroke="#FFD93D" stroke-width="1"/>
+
+                        <!-- feed lines down to the single transmitter -->
+                        <line x1="-90" y1="6" x2="-90" y2="40" stroke="#2A3A46" stroke-width="1"/>
+                        <line x1="-60" y1="6" x2="-60" y2="40" stroke="#2A3A46" stroke-width="1"/>
+                        <line x1="-30" y1="6" x2="-30" y2="40" stroke="#2A3A46" stroke-width="1"/>
+                        <line x1="0"   y1="6" x2="0"   y2="40" stroke="#2A3A46" stroke-width="1"/>
+                        <line x1="30"  y1="6" x2="30"  y2="40" stroke="#2A3A46" stroke-width="1"/>
+                        <line x1="60"  y1="6" x2="60"  y2="40" stroke="#2A3A46" stroke-width="1"/>
+                        <line x1="90"  y1="6" x2="90"  y2="40" stroke="#2A3A46" stroke-width="1"/>
+
+                        <!-- phase shifters (small boxes between element and feed line) -->
+                        <rect x="-94" y="-6" width="8" height="6" fill="#FFD93D" opacity="0.7"/>
+                        <rect x="-64" y="-6" width="8" height="6" fill="#FFD93D" opacity="0.7"/>
+                        <rect x="-34" y="-6" width="8" height="6" fill="#FFD93D" opacity="0.7"/>
+                        <rect x="-4"  y="-6" width="8" height="6" fill="#FFD93D" opacity="0.7"/>
+                        <rect x="26"  y="-6" width="8" height="6" fill="#FFD93D" opacity="0.7"/>
+                        <rect x="56"  y="-6" width="8" height="6" fill="#FFD93D" opacity="0.7"/>
+                        <rect x="86"  y="-6" width="8" height="6" fill="#FFD93D" opacity="0.7"/>
+
+                        <!-- central transmitter box -->
+                        <rect x="-35" y="40" width="70" height="22" rx="3"
+                              fill="#152040" stroke="#FF6B6B" stroke-width="2"/>
+                        <text x="0" y="56" text-anchor="middle" fill="#FF6B6B" font-size="11"
+                              font-family="Menlo, monospace" data-i18n="fig1.tx">1 TRANSMITTER</text>
+                    </g>
+
+                    <text x="195" y="265" text-anchor="middle" fill="#888" font-size="11"
+                          font-family="Menlo, monospace"
+                          data-i18n="fig1.pesanote">central TX &#xb7; shared feed network</text>
+
+                    <!-- divider -->
+                    <line x1="400" y1="22" x2="400" y2="258" stroke="#22323C" stroke-width="1"/>
+
+                    <!-- RIGHT: AESA -->
+                    <text x="605" y="34" text-anchor="middle" fill="#888" font-size="13"
+                          font-family="Menlo, monospace" data-i18n="fig1.aesa">ACTIVE (AESA)</text>
+
+                    <g transform="translate(605, 200)">
+                        <!-- elements with T/R modules integrated -->
+                        <g>
+                            <circle cx="-90" cy="0" r="9" fill="#54A0FF" stroke="#FFD93D" stroke-width="1.5"/>
+                            <rect x="-94" y="-5" width="8" height="6" fill="#FFD93D"/>
+                        </g>
+                        <g>
+                            <circle cx="-60" cy="0" r="9" fill="#54A0FF" stroke="#FFD93D" stroke-width="1.5"/>
+                            <rect x="-64" y="-5" width="8" height="6" fill="#FFD93D"/>
+                        </g>
+                        <g>
+                            <circle cx="-30" cy="0" r="9" fill="#54A0FF" stroke="#FFD93D" stroke-width="1.5"/>
+                            <rect x="-34" y="-5" width="8" height="6" fill="#FFD93D"/>
+                        </g>
+                        <g>
+                            <circle cx="0" cy="0" r="9" fill="#54A0FF" stroke="#FFD93D" stroke-width="1.5"/>
+                            <rect x="-4" y="-5" width="8" height="6" fill="#FFD93D"/>
+                        </g>
+                        <g>
+                            <circle cx="30" cy="0" r="9" fill="#54A0FF" stroke="#FFD93D" stroke-width="1.5"/>
+                            <rect x="26" y="-5" width="8" height="6" fill="#FFD93D"/>
+                        </g>
+                        <g>
+                            <circle cx="60" cy="0" r="9" fill="#54A0FF" stroke="#FFD93D" stroke-width="1.5"/>
+                            <rect x="56" y="-5" width="8" height="6" fill="#FFD93D"/>
+                        </g>
+                        <g>
+                            <circle cx="90" cy="0" r="9" fill="#54A0FF" stroke="#FFD93D" stroke-width="1.5"/>
+                            <rect x="86" y="-5" width="8" height="6" fill="#FFD93D"/>
+                        </g>
+
+                        <!-- "no central transmitter" crossed out -->
+                        <rect x="-30" y="42" width="60" height="16" rx="3"
+                              fill="none" stroke="#FF6B6B" stroke-width="1.5"
+                              stroke-dasharray="4 3" opacity="0.6"/>
+                        <line x1="-32" y1="44" x2="32" y2="58" stroke="#FF6B6B" stroke-width="1.5"/>
+                        <line x1="32" y1="44" x2="-32" y2="58" stroke="#FF6B6B" stroke-width="1.5"/>
+                        <text x="0" y="55" text-anchor="middle" fill="#FF6B6B" font-size="10"
+                              font-family="Menlo, monospace" data-i18n="fig1.notx">NO CENTRAL TX</text>
+                    </g>
+
+                    <text x="605" y="265" text-anchor="middle" fill="#888" font-size="11"
+                          font-family="Menlo, monospace"
+                          data-i18n="fig1.aesanote">T/R module in every element</text>
+                </svg>
+
+                <figcaption data-i18n="visual1.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 2: Anatomy -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual2.num">02</span> / <span data-i18n="visual2.name">ANATOMY</span>
+            </div>
+
+            <h2 data-i18n="visual2.title">Where the Energy Goes</h2>
+
+            <p class="article-intro" data-i18n="visual2.intro"></p>
+
+            <figure class="article-figure">
+                <svg viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig2-title">
+                    <title id="fig2-title" data-i18n="fig2.title">Signal path PESA vs AESA</title>
+
+                    <rect x="0" y="0" width="800" height="340" fill="#0F1A1F"/>
+
+                    <!-- LEFT: PESA path (top-down with one shared TX) -->
+                    <text x="200" y="30" text-anchor="middle" fill="#FFD93D" font-size="12"
+                          font-family="Menlo, monospace" data-i18n="fig2.path.pesa">PESA PATH</text>
+
+                    <!-- central TX -->
+                    <rect x="160" y="50" width="80" height="36" rx="4" fill="#152040" stroke="#FF6B6B" stroke-width="2"/>
+                    <text x="200" y="72" text-anchor="middle" fill="#FF6B6B" font-size="11"
+                          font-family="Menlo, monospace" data-i18n="fig2.txlabel">TX</text>
+
+                    <!-- splitter -->
+                    <circle cx="200" cy="120" r="8" fill="#54A0FF" stroke="#FFD93D" stroke-width="1.5"/>
+                    <line x1="200" y1="86" x2="200" y2="112" stroke="#FFD93D" stroke-width="2"/>
+                    <text x="200" y="142" text-anchor="middle" fill="#54A0FF" font-size="9"
+                          font-family="Menlo, monospace" data-i18n="fig2.splitter">splitter</text>
+
+                    <!-- distribution tree -->
+                    <line x1="200" y1="128" x2="100" y2="180" stroke="#FFD93D" stroke-width="1.5"/>
+                    <line x1="200" y1="128" x2="200" y2="180" stroke="#FFD93D" stroke-width="1.5"/>
+                    <line x1="200" y1="128" x2="300" y2="180" stroke="#FFD93D" stroke-width="1.5"/>
+
+                    <!-- phase shifters -->
+                    <rect x="88"  y="178" width="24" height="14" rx="2" fill="#FFD93D" opacity="0.8"/>
+                    <text x="100" y="189" text-anchor="middle" fill="#0F1A1F" font-size="9"
+                          font-family="Menlo, monospace" font-weight="bold" data-i18n="fig2.phase">P</text>
+                    <rect x="188" y="178" width="24" height="14" rx="2" fill="#FFD93D" opacity="0.8"/>
+                    <text x="200" y="189" text-anchor="middle" fill="#0F1A1F" font-size="9"
+                          font-family="Menlo, monospace" font-weight="bold" data-i18n="fig2.phase">P</text>
+                    <rect x="288" y="178" width="24" height="14" rx="2" fill="#FFD93D" opacity="0.8"/>
+                    <text x="300" y="189" text-anchor="middle" fill="#0F1A1F" font-size="9"
+                          font-family="Menlo, monospace" font-weight="bold" data-i18n="fig2.phase">P</text>
+
+                    <!-- elements -->
+                    <circle cx="100" cy="220" r="9" fill="#54A0FF" stroke="#FFD93D" stroke-width="1.5"/>
+                    <circle cx="200" cy="220" r="9" fill="#54A0FF" stroke="#FFD93D" stroke-width="1.5"/>
+                    <circle cx="300" cy="220" r="9" fill="#54A0FF" stroke="#FFD93D" stroke-width="1.5"/>
+
+                    <!-- labels -->
+                    <text x="200" y="250" text-anchor="middle" fill="#FFD93D" font-size="10"
+                          font-family="Menlo, monospace" data-i18n="fig2.pesacost">more feed loss &#xb7; single point of failure</text>
+
+                    <text x="200" y="295" text-anchor="middle" fill="#888" font-size="11"
+                          font-family="Menlo, monospace" data-i18n="fig2.pesarow">1 TX &#x2192; splitter &#x2192; phase shifters &#x2192; elements</text>
+
+                    <!-- divider -->
+                    <line x1="400" y1="20" x2="400" y2="320" stroke="#22323C" stroke-width="1"/>
+
+                    <!-- RIGHT: AESA path -->
+                    <text x="600" y="30" text-anchor="middle" fill="#FFD93D" font-size="12"
+                          font-family="Menlo, monospace" data-i18n="fig2.path.aesa">AESA PATH</text>
+
+                    <!-- each element has its own T/R module -->
+                    <g>
+                        <rect x="465" y="120" width="60" height="60" rx="4" fill="#152040" stroke="#FFD93D" stroke-width="2"/>
+                        <text x="495" y="148" text-anchor="middle" fill="#FFD93D" font-size="10"
+                              font-family="Menlo, monospace" data-i18n="fig2.tr">T/R</text>
+                        <text x="495" y="165" text-anchor="middle" fill="#FFD93D" font-size="10"
+                              font-family="Menlo, monospace" data-i18n="fig2.tr">+P</text>
+                        <circle cx="495" cy="220" r="9" fill="#54A0FF" stroke="#FFD93D" stroke-width="1.5"/>
+                    </g>
+                    <g>
+                        <rect x="570" y="120" width="60" height="60" rx="4" fill="#152040" stroke="#FFD93D" stroke-width="2"/>
+                        <text x="600" y="148" text-anchor="middle" fill="#FFD93D" font-size="10"
+                              font-family="Menlo, monospace" data-i18n="fig2.tr">T/R</text>
+                        <text x="600" y="165" text-anchor="middle" fill="#FFD93D" font-size="10"
+                              font-family="Menlo, monospace" data-i18n="fig2.tr">+P</text>
+                        <circle cx="600" cy="220" r="9" fill="#54A0FF" stroke="#FFD93D" stroke-width="1.5"/>
+                    </g>
+                    <g>
+                        <rect x="675" y="120" width="60" height="60" rx="4" fill="#152040" stroke="#FFD93D" stroke-width="2"/>
+                        <text x="705" y="148" text-anchor="middle" fill="#FFD93D" font-size="10"
+                              font-family="Menlo, monospace" data-i18n="fig2.tr">T/R</text>
+                        <text x="705" y="165" text-anchor="middle" fill="#FFD93D" font-size="10"
+                              font-family="Menlo, monospace" data-i18n="fig2.tr">+P</text>
+                        <circle cx="705" cy="220" r="9" fill="#54A0FF" stroke="#FFD93D" stroke-width="1.5"/>
+                    </g>
+
+                    <!-- T/R module connectivity to the common digital backplane -->
+                    <line x1="495" y1="180" x2="495" y2="280" stroke="#54A0FF" stroke-width="1" stroke-dasharray="3 3"/>
+                    <line x1="600" y1="180" x2="600" y2="280" stroke="#54A0FF" stroke-width="1" stroke-dasharray="3 3"/>
+                    <line x1="705" y1="180" x2="705" y2="280" stroke="#54A0FF" stroke-width="1" stroke-dasharray="3 3"/>
+                    <rect x="475" y="278" width="250" height="20" rx="3" fill="#152040" stroke="#54A0FF" stroke-width="1.5"/>
+                    <text x="600" y="293" text-anchor="middle" fill="#54A0FF" font-size="10"
+                          font-family="Menlo, monospace" data-i18n="fig2.bus">DIGITAL CONTROL BUS</text>
+
+                    <text x="600" y="320" text-anchor="middle" fill="#888" font-size="11"
+                          font-family="Menlo, monospace"
+                          data-i18n="fig2.aesarow">T/R in element &#x2192; shared digital control</text>
+                </svg>
+
+                <figcaption data-i18n="visual2.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 3: Manim animation -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual3.num">03</span> / <span data-i18n="visual3.name">ANIMATION: SIGNAL FLOW</span>
+            </div>
+
+            <h2 data-i18n="visual3.title">One Transmitter, or One Per Element</h2>
+
+            <p class="article-intro" data-i18n="visual3.intro"></p>
+
+            <figure class="article-figure">
+                <div class="video-wrap" id="radar-anim-wrap">
+                    <video
+                        id="radar-loop-video"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                        data-video-en="manim/media/videos/script/480p15/RadarArticle30.en.mp4"
+                        data-video-zh="manim/media/videos/script/480p15/RadarArticle30.zh.mp4"
+                        data-poster-en="manim/media/images/radar-article30-poster.png"
+                        data-poster-zh="manim/media/images/radar-article30-poster.png"
+                    >
+                        <p data-i18n="visual3.fallback"></p>
+                    </video>
+
+                    <div class="video-captions">
+                        <span data-i18n="visual3.cc1">1. PESA  --  one transmitter feeds every element through a splitter</span>
+                        <span data-i18n="visual3.cc2">2. LIMIT  --  the splitter adds loss and a single point of failure</span>
+                        <span data-i18n="visual3.cc3">3. AESA  --  each element carries its own transmit and receive module</span>
+                        <span data-i18n="visual3.cc4">4. ROBUST  --  one element failing barely dents the beam</span>
+                    </div>
+                </div>
+
+                <figcaption data-i18n="visual3.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 4: Trade-off example -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual4.num">04</span> / <span data-i18n="visual4.name">WORKED EXAMPLE</span>
+            </div>
+
+            <h2 data-i18n="visual4.title">One Element Out of a Thousand</h2>
+
+            <p class="article-intro" data-i18n="visual4.intro"></p>
+
+            <figure class="article-figure">
+                <div class="example-card">
+                    <div class="example-row">
+                        <span class="example-label" data-i18n="visual4.row1.label">Elements in face</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row1.value">1,000</span>
+                    </div>
+                    <div class="example-row">
+                        <span class="example-label" data-i18n="visual4.row2.label">Elements failed</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row2.value">10 (1%)</span>
+                    </div>
+                    <div class="example-row example-row-formula">
+                        <span class="example-label" data-i18n="visual4.row3.label">PESA output</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row3.formula">0%</span>
+                    </div>
+                    <div class="example-row example-row-result">
+                        <span class="example-label" data-i18n="visual4.row4.label">AESA output</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row4.value">~99%</span>
+                    </div>
+                </div>
+
+                <figcaption data-i18n="visual4.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 5: Trade-offs -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual5.num">05</span> / <span data-i18n="visual5.name">PROS, CONS, FAILURE</span>
+            </div>
+
+            <h2 data-i18n="visual5.title">Where Each Architecture Pays Off</h2>
+
+            <p class="article-intro" data-i18n="visual5.intro"></p>
+
+            <figure class="article-figure">
+                <div class="application-grid">
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app1.tag">PESA PLUS</div>
+                        <h3 data-i18n="visual5.app1.title">Cheaper to Build</h3>
+                        <p data-i18n="visual5.app1.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app2.tag">PESA MINUS</div>
+                        <h3 data-i18n="visual5.app2.title">Single Point of Failure</h3>
+                        <p data-i18n="visual5.app2.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app3.tag">AESA PLUS</div>
+                        <h3 data-i18n="visual5.app3.title">Built-In Redundancy</h3>
+                        <p data-i18n="visual5.app3.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app4.tag">AESA MINUS</div>
+                        <h3 data-i18n="visual5.app4.title">Higher Cost, Higher Cooling</h3>
+                        <p data-i18n="visual5.app4.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app5.tag">WAVEFORM</div>
+                        <h3 data-i18n="visual5.app5.title">Waveform Diversity</h3>
+                        <p data-i18n="visual5.app5.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app6.tag">SPECTRUM</div>
+                        <h3 data-i18n="visual5.app6.title">Wide Bandwidth</h3>
+                        <p data-i18n="visual5.app6.desc"></p>
+                    </div>
+
+                </div>
+
+                <figcaption data-i18n="visual5.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 6: Applications -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual6.num">06</span> / <span data-i18n="visual6.name">APPLICATIONS</span>
+            </div>
+
+            <h2 data-i18n="visual6.title">Where Each Type Lives Today</h2>
+
+            <p class="article-intro" data-i18n="visual6.intro"></p>
+
+            <figure class="article-figure">
+                <div class="application-grid">
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app1.tag">MILITARY</div>
+                        <h3 data-i18n="visual6.app1.title">Fighter AESA</h3>
+                        <p data-i18n="visual6.app1.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app2.tag">AIR DEFENCE</div>
+                        <h3 data-i18n="visual6.app2.title">AEGIS Destroyer Radar</h3>
+                        <p data-i18n="visual6.app2.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app3.tag">EARLY</div>
+                        <h3 data-i18n="visual6.app3.title">SPY-1 (PESA)</h3>
+                        <p data-i18n="visual6.app3.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app4.tag">WEATHER</div>
+                        <h3 data-i18n="visual6.app4.title">TDWR and PAR</h3>
+                        <p data-i18n="visual6.app4.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app5.tag">COMMERCIAL</div>
+                        <h3 data-i18n="visual6.app5.title">5G Massive MIMO</h3>
+                        <p data-i18n="visual6.app5.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app6.tag">AUTOMOTIVE</div>
+                        <h3 data-i18n="visual6.app6.title">77GHz Imaging Chip</h3>
+                        <p data-i18n="visual6.app6.desc"></p>
+                    </div>
+
+                </div>
+
+                <figcaption data-i18n="visual6.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <section class="article-summary-block">
+            <span class="summary-label" data-i18n="article.summaryLabel">
+                ONE-LINE SUMMARY
+            </span>
+            <p class="summary-line" data-i18n="article.summary"></p>
+        </section>
+
+
+        <footer class="article-footer">
+            <a href="articles.html" class="article-back" data-i18n="article.back">&#x2190; Back to Articles</a>
+            <span class="article-meta" data-i18n="article.meta">Student Research &#xb7; 2026</span>
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+    <script src="article-30.js"></script>
+
+</body>
+</html>

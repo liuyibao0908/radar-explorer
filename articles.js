@@ -110,7 +110,11 @@ const ARTICLES_I18N = {
         "row.29.title": "How Does the Beam Scan Electronically?",
         "row.29.desc":  "Changing the phase difference between elements steers the beam with no moving parts.",
         "row.29.date":  "Aug 12, 2026",
-    },
+    
+        "row.30.title": "Passive vs Active Phased Array",
+        "row.30.desc":  "Same antenna face; the difference is where the transmitter lives — central or per element.",
+        "row.30.date":  "Oct 4, 2026",
+},
 
     zh: {
         "page.title": "\u6587\u7ae0\u5217\u8868 \u2014 \u96f7\u8fbe\u63a2\u7d22\u8005",
@@ -212,7 +216,10 @@ const ARTICLES_I18N = {
 
         "row.29.title": "波束怎么“电子扫描”",
         "row.29.desc":  "改变阵元之间的相位差，波束方向就改变。",
-        "row.29.date":  "2026.08.12"
+        "row.29.date":  "2026.08.12",        "row.30.title": "无源相控阵 vs 有源相控阵",
+        "row.30.desc":  "一样的面板，发射机放在不同的位置——中大还是每个。",
+        "row.30.date":  "2026.10.04"
+
     }
 
 };
