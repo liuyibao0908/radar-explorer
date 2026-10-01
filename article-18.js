@@ -36,7 +36,7 @@ const ARTICLE_I18N = {
 
         "article.author": "By Editorial",
 
-        "article.date": "July 19, 2025",
+        "article.date": "Feb 2, 2025",
 
         "toc.title": "On this page",
 
@@ -292,7 +292,7 @@ const ARTICLE_I18N = {
 
         "article.author": "作者：小编",
 
-        "article.date": "2025年7月19日",
+        "article.date": "2025年2月2日",
 
         "toc.title": "本页目录",
 

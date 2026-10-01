@@ -28,7 +28,7 @@ const ARTICLE_I18N = {
         "nav.about": "About",
 
         "article.author": "By Editorial",
-        "article.date": "Sept 20, 2026",
+        "article.date": "Jul 22, 2024",
 
         "toc.title": "On this page",
         "toc.s1": "The round-trip formula",
@@ -151,7 +151,7 @@ const ARTICLE_I18N = {
         "nav.about": "\u5173\u4e8e",
 
         "article.author": "\u4f5c\u8005\uff1a\u5c0f\u7f16",
-        "article.date": "2026\u5e749\u670820\u65e5",
+        "article.date": "2024年7月22日",
 
         "toc.title": "\u672c\u9875\u76ee\u5f55",
         "toc.s1": "\u53cc\u7a0b\u516c\u5f0f",

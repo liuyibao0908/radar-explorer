@@ -28,7 +28,7 @@ const ARTICLE_I18N = {
         "nav.about": "About",
 
         "article.author": "By Editorial",
-        "article.date": "Sept 21, 2026",
+        "article.date": "Aug 5, 2024",
 
         "toc.title": "On this page",
         "toc.s1": "The antenna beam",
@@ -140,7 +140,7 @@ const ARTICLE_I18N = {
         "nav.about": "关于",
 
         "article.author": "作者：小编",
-        "article.date": "2026年9月21日",
+        "article.date": "2024年8月5日",
 
         "toc.title": "本页目录",
         "toc.s1": "天线波束",
