@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title data-i18n="page.title">Article 34: How to Spot Heavy Rain, Hail, and Tornadoes &#x2014; Radar Explorer</title>
+
+    <meta
+        name="description"
+        data-i18n-attr="content|page.description"
+        content="Article 34: How does a forecaster read a radar screen to spot heavy rain, hail, and tornadoes? Hook echoes, velocity couplets, three-body scatter. A bilingual student-friendly explainer."
+    >
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="article.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                RADAR<span>EXPLORER</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" data-i18n="nav.home">Home</a>
+                <a href="index.html#learn" data-i18n="nav.learn">Learn</a>
+                <a href="articles.html" class="active" data-i18n="nav.articles">Articles</a>
+                <a href="index.html#explore" data-i18n="nav.explore">Explore</a>
+                <a href="index.html#research" data-i18n="nav.research">Research</a>
+                <a href="index.html#about" data-i18n="nav.about">About</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button
+                    class="lang-toggle"
+                    type="button"
+                    aria-label="Switch language"
+                    data-lang-toggle
+                >
+                    <span data-lang-label>&#x4e2d;</span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main class="article-page has-toc">
+
+        <aside class="article-toc" aria-label="Table of contents">
+            <div class="article-toc-inner">
+                <h2 class="article-toc-title" data-i18n="toc.title">On this page</h2>
+                <nav class="article-toc-nav">
+                    <a href="#sec-rain"            data-toc="sec-rain"          ><span class="article-toc-num">01</span><span class="article-toc-label" data-i18n="toc.s1">Heavy rain</span></a>
+                    <a href="#sec-hail"            data-toc="sec-hail"          ><span class="article-toc-num">02</span><span class="article-toc-label" data-i18n="toc.s2">Hail signatures</span></a>
+                    <a href="#sec-loop-animation"  data-toc="sec-loop-animation"><span class="article-toc-num">03</span><span class="article-toc-label" data-i18n="toc.s3">Hook echo animation</span></a>
+                    <a href="#sec-worked-example"  data-toc="sec-worked-example"><span class="article-toc-num">04</span><span class="article-toc-label" data-i18n="toc.s4">Worked example</span></a>
+                    <a href="#sec-couplet"         data-toc="sec-couplet"        ><span class="article-toc-num">05</span><span class="article-toc-label" data-i18n="toc.s5">Velocity couplet and shear</span></a>
+                    <a href="#sec-applications"    data-toc="sec-applications"  ><span class="article-toc-num">06</span><span class="article-toc-label" data-i18n="toc.s6">From screen to warning</span></a>
+                </nav>
+            </div>
+        </aside>
+
+        <section class="article-hero">
+            <h1 class="article-title" data-i18n="article.title">
+                How to Spot Heavy Rain, Hail, and Tornadoes
+            </h1>
+
+            <div class="article-meta">
+                <span class="article-author" data-i18n="article.author">
+                    By Editorial
+                </span>
+                <span class="article-meta-sep">&#xb7;</span>
+                <time class="article-date" data-i18n="article.date">
+                    Jul 23, 2026
+                </time>
+            </div>
+
+            <p class="article-subtitle" data-i18n="article.subtitle">
+                The colors look the same. The shapes don't.
+            </p>
+        </section>
+
+
+        <section class="article-section article-body">
+            <p data-i18n="article.p1"></p>
+            <p data-i18n="article.p2"></p>
+            <p data-i18n="article.p3"></p>
+            <p data-i18n="article.p4"></p>
+        </section>
+
+
+        <section class="article-summary-block">
+            <span class="summary-label" data-i18n="article.summaryLabel">
+                ONE-LINE SUMMARY
+            </span>
+            <p class="summary-line" data-i18n="article.summary"></p>
+        </section>
+
+
+        <!-- Visual 1: Heavy rain -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual1.num">01</span> / <span data-i18n="visual1.name">HEAVY RAIN</span>
+            </div>
+
+            <h2 data-i18n="visual1.title">Strong Echo, Wide Area, Long Time</h2>
+
+            <p class="article-intro" data-i18n="visual1.intro"></p>
+
+            <figure class="article-figure">
+                <svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig1-title">
+                    <title id="fig1-title" data-i18n="fig1.title">Reflectivity field for heavy rain</title>
+
+                    <rect x="0" y="0" width="800" height="320" fill="#0F1A1F"/>
+
+                    <!-- color scale legend -->
+                    <g transform="translate(60, 60)">
+                        <text x="0" y="-12" fill="#888" font-size="11"
+                              font-family="Microsoft YaHei, Menlo, monospace"
+                              data-i18n="fig1.legend">dBZ</text>
+                        <rect x="0" y="0" width="50" height="14" fill="#0d3a0d"/>
+                        <rect x="50" y="0" width="50" height="14" fill="#1f7a1f"/>
+                        <rect x="100" y="0" width="50" height="14" fill="#3fc23f"/>
+                        <rect x="150" y="0" width="50" height="14" fill="#FFD93D"/>
+                        <rect x="200" y="0" width="50" height="14" fill="#FF8a3a"/>
+                        <rect x="250" y="0" width="50" height="14" fill="#d83838"/>
+                        <rect x="300" y="0" width="50" height="14" fill="#9b1ed1"/>
+                        <rect x="350" y="0" width="50" height="14" fill="#FFFFFF"/>
+                        <text x="0"   y="32" fill="#888" font-size="10" font-family="Menlo, monospace">5</text>
+                        <text x="50"  y="32" fill="#888" font-size="10" font-family="Menlo, monospace">20</text>
+                        <text x="100" y="32" fill="#888" font-size="10" font-family="Menlo, monospace">30</text>
+                        <text x="150" y="32" fill="#888" font-size="10" font-family="Menlo, monospace">40</text>
+                        <text x="200" y="32" fill="#888" font-size="10" font-family="Menlo, monospace">50</text>
+                        <text x="250" y="32" fill="#888" font-size="10" font-family="Menlo, monospace">55</text>
+                        <text x="300" y="32" fill="#888" font-size="10" font-family="Menlo, monospace">65</text>
+                        <text x="350" y="32" fill="#888" font-size="10" font-family="Menlo, monospace">75</text>
+                    </g>
+
+                    <!-- radar cell shape: large, soft edges -->
+                    <g transform="translate(440, 180)">
+                        <!-- outer green halo (light rain) -->
+                        <ellipse cx="0" cy="0" rx="220" ry="100" fill="#1f7a1f" fill_opacity="0.45"/>
+                        <ellipse cx="0" cy="0" rx="180" ry="80"  fill="#3fc23f" fill_opacity="0.55"/>
+                        <!-- core yellow -->
+                        <ellipse cx="-30" cy="-10" rx="110" ry="55" fill="#FFD93D" fill_opacity="0.55"/>
+                        <!-- heaviest red core -->
+                        <ellipse cx="-50" cy="-25" rx="55" ry="30" fill="#d83838" fill_opacity="0.65"/>
+                        <!-- purple high-end -->
+                        <ellipse cx="-60" cy="-35" rx="22" ry="14" fill="#9b1ed1" fill_opacity="0.65"/>
+                    </g>
+
+                    <!-- labels -->
+                    <text x="180" y="180" fill="#FFFFFF" font-size="13"
+                          font-family="Menlo, monospace" font-weight="bold"
+                          data-i18n="fig1.core">core</text>
+                    <text x="180" y="200" fill="#FFD93D" font-size="13"
+                          font-family="Menlo, monospace"
+                          data-i18n="fig1.heavy">heavy band</text>
+                    <text x="180" y="240" fill="#3fc23f" font-size="13"
+                          font-family="Menlo, monospace"
+                          data-i18n="fig1.wide">wide, soft edges</text>
+
+                    <text x="400" y="305" text-anchor="middle" fill="#888" font-size="11"
+                          font-family="Menlo, monospace"
+                          data-i18n="fig1.note">big yellow + red core, not pointy</text>
+                </svg>
+
+                <figcaption data-i18n="visual1.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 2: Hail signatures -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual2.num">02</span> / <span data-i18n="visual2.name">HAIL</span>
+            </div>
+
+            <h2 data-i18n="visual2.title">Three-Body Scatter and the Hail Spike</h2>
+
+            <p class="article-intro" data-i18n="visual2.intro"></p>
+
+            <figure class="article-figure">
+                <svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig2-title">
+                    <title id="fig2-title" data-i18n="fig2.title">Three-body scatter signature</title>
+
+                    <rect x="0" y="0" width="800" height="320" fill="#0F1A1F"/>
+
+                    <!-- the storm core (red + purple) -->
+                    <ellipse cx="380" cy="180" rx="120" ry="65" fill="#d83838" fill_opacity="0.7"/>
+                    <ellipse cx="380" cy="180" rx="80"  ry="45" fill="#9b1ed1" fill_opacity="0.7"/>
+                    <ellipse cx="380" cy="180" rx="40"  ry="22" fill="#FFFFFF" fill_opacity="0.85"/>
+
+                    <!-- 3-body scatter: beam goes to ground, scatter to hail, back to radar -->
+                    <!-- radar at bottom -->
+                    <circle cx="380" cy="310" r="6" fill="#FFD93D" stroke="#54A0FF" stroke-width="2"/>
+                    <text x="380" y="298" fill="#FFD93D" font-size="11"
+                          font-family="Microsoft YaHei, Menlo, monospace"
+                          text-anchor="middle" data-i18n="fig2.radar">radar</text>
+                    <!-- main beam to hail core -->
+                    <line x1="380" y1="304" x2="380" y2="200" stroke="#FFD93D" stroke-width="2.5"/>
+                    <polygon points="374,206 380,196 386,206" fill="#FFD93D"/>
+                    <!-- hail core label -->
+                    <text x="380" y="160" fill="#FFFFFF" font-size="12"
+                          font-family="Microsoft YaHei, Menlo, monospace"
+                          font-weight="bold" text-anchor="middle"
+                          data-i18n="fig2.hail">hail core</text>
+
+                    <!-- second bounce: hail to ground (right of core) -->
+                    <path d="M 470 180 L 560 270" stroke="#54FFB0" stroke-width="2"
+                          stroke-dasharray="6 4"/>
+                    <polygon points="556,266 564,266 560,278" fill="#54FFB0"/>
+                    <!-- ground echo blob (the spike tip) -->
+                    <ellipse cx="565" cy="278" rx="22" ry="6" fill="#54FFB0" fill_opacity="0.75"/>
+                    <text x="565" y="298" fill="#54FFB0" font-size="11"
+                          font-family="Microsoft YaHei, Menlo, monospace"
+                          text-anchor="middle" data-i18n="fig2.ground">ground</text>
+
+                    <!-- third leg: ground back to radar -->
+                    <path d="M 565 274 L 384 308" stroke="#FF6B6B" stroke-width="2"
+                          stroke-dasharray="4 3" stroke_opacity="0.7"/>
+
+                    <!-- spike arrow label -->
+                    <text x="500" y="220" fill="#54FFB0" font-size="12"
+                          font-family="Microsoft YaHei, Menlo, monospace"
+                          font-weight="bold" data-i18n="fig2.spike">spike</text>
+
+                    <!-- legend left -->
+                    <g transform="translate(60, 70)">
+                        <text x="0" y="0" fill="#54FFB0" font-size="11"
+                              font-family="Menlo, monospace" data-i18n="fig2.b1">beam</text>
+                        <text x="0" y="20" fill="#54FFB0" font-size="11"
+                              font-family="Menlo, monospace" data-i18n="fig2.b2">bounce</text>
+                        <text x="0" y="40" fill="#FF6B6B" font-size="11"
+                              font-family="Menlo, monospace" data-i18n="fig2.b3">return</text>
+                    </g>
+                </svg>
+
+                <figcaption data-i18n="visual2.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 3: Manim animation -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual3.num">03</span> / <span data-i18n="visual3.name">ANIMATION: HOOK ECHO</span>
+            </div>
+
+            <h2 data-i18n="visual3.title">Watching a Hook Echo Form</h2>
+
+            <p class="article-intro" data-i18n="visual3.intro"></p>
+
+            <figure class="article-figure">
+                <div class="video-wrap" id="radar-anim-wrap">
+                    <video
+                        id="radar-loop-video"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                        data-video-en="manim/media/videos/script/480p15/RadarArticle34.en.mp4"
+                        data-video-zh="manim/media/videos/script/480p15/RadarArticle34.zh.mp4"
+                        data-poster-en="manim/media/images/radar-article34-poster.png"
+                        data-poster-zh="manim/media/images/radar-article34-poster.png"
+                    >
+                        <p data-i18n="visual3.fallback"></p>
+                    </video>
+
+                    <div class="video-captions">
+                        <span data-i18n="visual3.cc1">1. RAIN  --  large yellow / red cell, no rotation</span>
+                        <span data-i18n="visual3.cc2">2. HOOK  --  a finger of red juts out of the cell</span>
+                        <span data-i18n="visual3.cc3">3. COUPLET  --  opposite winds on either side of the hook</span>
+                        <span data-i18n="visual3.cc4">4. WARN  --  the radar lights up a tornado warning</span>
+                    </div>
+                </div>
+
+                <figcaption data-i18n="visual3.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 4: Worked example -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual4.num">04</span> / <span data-i18n="visual4.name">WORKED EXAMPLE</span>
+            </div>
+
+            <h2 data-i18n="visual4.title">Reading One Storm Step by Step</h2>
+
+            <p class="article-intro" data-i18n="visual4.intro"></p>
+
+            <figure class="article-figure">
+                <div class="example-card">
+                    <div class="example-row">
+                        <span class="example-label" data-i18n="visual4.row1.label">Step 1 — echo shape</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row1.value">rounded cell, 50+ dBZ</span>
+                    </div>
+                    <div class="example-row">
+                        <span class="example-label" data-i18n="visual4.row2.label">Step 2 — spike</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row2.value">3-body scatter present</span>
+                    </div>
+                    <div class="example-row">
+                        <span class="example-label" data-i18n="visual4.row3.label">Step 3 — rotation</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row3.value">velocity couplet at edge</span>
+                    </div>
+                    <div class="example-row example-row-result">
+                        <span class="example-label" data-i18n="visual4.row4.label">Forecast call</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row4.value">possible tornado</span>
+                    </div>
+                </div>
+
+                <figcaption data-i18n="visual4.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 5: Velocity couplet -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual5.num">05</span> / <span data-i18n="visual5.name">VELOCITY COUPLET</span>
+            </div>
+
+            <h2 data-i18n="visual5.title">Velocity Couplet and Shear</h2>
+
+            <p class="article-intro" data-i18n="visual5.intro"></p>
+
+            <figure class="article-figure">
+                <div class="application-grid">
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app1.tag">COUPLET</div>
+                        <h3 data-i18n="visual5.app1.title">In vs Out</h3>
+                        <p data-i18n="visual5.app1.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app2.tag">HOOK</div>
+                        <h3 data-i18n="visual5.app2.title">Hook on the Echo</h3>
+                        <p data-i18n="visual5.app2.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app3.tag">TVS</div>
+                        <h3 data-i18n="visual5.app3.title">Tornado Vortex Signature</h3>
+                        <p data-i18n="visual5.app3.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app4.tag">SHEAR</div>
+                        <h3 data-i18n="visual5.app4.title">Wind Shear</h3>
+                        <p data-i18n="visual5.app4.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app5.tag">DIVERGENCE</div>
+                        <h3 data-i18n="visual5.app5.title">Outflow Aloft</h3>
+                        <p data-i18n="visual5.app5.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app6.tag">MESO</div>
+                        <h3 data-i18n="visual5.app6.title">Mesocyclone</h3>
+                        <p data-i18n="visual5.app6.desc"></p>
+                    </div>
+
+                </div>
+
+                <figcaption data-i18n="visual5.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 6: Applications -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual6.num">06</span> / <span data-i18n="visual6.name">APPLICATIONS</span>
+            </div>
+
+            <h2 data-i18n="visual6.title">From Screen to Warning</h2>
+
+            <p class="article-intro" data-i18n="visual6.intro"></p>
+
+            <figure class="article-figure">
+                <div class="application-grid">
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app1.tag">NWS</div>
+                        <h3 data-i18n="visual6.app1.title">Tornado Warning Flow</h3>
+                        <p data-i18n="visual6.app1.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app2.tag">RADAR ANALYST</div>
+                        <h3 data-i18n="visual6.app2.title">Shift Briefing</h3>
+                        <p data-i18n="visual6.app2.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app3.tag">STORM SPOTTER</div>
+                        <h3 data-i18n="visual6.app3.title">Visual Confirmation</h3>
+                        <p data-i18n="visual6.app3.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app4.tag">FLASH FLOOD</div>
+                        <h3 data-i18n="visual6.app4.title">QPE for Floods</h3>
+                        <p data-i18n="visual6.app4.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app5.tag">AVIATION</div>
+                        <h3 data-i18n="visual6.app5.title">Microburst on Approach</h3>
+                        <p data-i18n="visual6.app5.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app6.tag">RESEARCH</div>
+                        <h3 data-i18n="visual6.app6.title">AI-Assisted Nowcasting</h3>
+                        <p data-i18n="visual6.app6.desc"></p>
+                    </div>
+
+                </div>
+
+                <figcaption data-i18n="visual6.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <section class="article-summary-block">
+            <span class="summary-label" data-i18n="article.summaryLabel">
+                ONE-LINE SUMMARY
+            </span>
+            <p class="summary-line" data-i18n="article.summary"></p>
+        </section>
+
+
+        <footer class="article-footer">
+            <a href="articles.html" class="article-back" data-i18n="article.back">&#x2190; Back to Articles</a>
+            <span class="article-meta" data-i18n="article.meta">Student Research &#xb7; 2026</span>
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+    <script src="article-34.js"></script>
+
+</body>
+</html>

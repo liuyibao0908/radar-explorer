@@ -125,7 +125,11 @@ const ARTICLES_I18N = {
 
         "row.33.title": "What Is Dual Polarization?",
         "row.33.desc":  "Two polarizations at once reveal rain, snow, and hail from particle echoes alone.",
-        "row.33.date":  "Aug 21, 2025"
+        "row.33.date":  "Aug 21, 2025",
+
+        "row.34.title": "How to Spot Heavy Rain, Hail, and Tornadoes",
+        "row.34.desc":  "Forecasters read weather signals first. Hook echo, velocity couplet, three-body scatter.",
+        "row.34.date":  "Jul 23, 2026"
 },
 
     zh: {
@@ -243,6 +247,10 @@ const ARTICLES_I18N = {
         "row.33.title": "双偏振是什么",
         "row.33.desc":  "同时发送两种偏振波，仅从回波就能区分雨、雪、冰雹。",
         "row.33.date":  "2025.08.21"
+,
+        "row.34.title": "怎么看出曨雨、冰雹、龙卷",
+        "row.34.desc":  "预报员先读信号，后说接报。钩状回波、速度对、三体散射。",
+        "row.34.date":  "2026.07.23"
 
     }
 
