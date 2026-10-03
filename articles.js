@@ -121,7 +121,11 @@ const ARTICLES_I18N = {
 
         "row.32.title": "Why Does Weather Radar Need a Phased Array?",
         "row.32.desc":  "Phased-array weather radar scans electronically in tens of seconds, beating the minutes-long mechanical sweep.",
-        "row.32.date":  "Aug 22, 2024"
+        "row.32.date":  "Aug 22, 2024",
+
+        "row.33.title": "What Is Dual Polarization?",
+        "row.33.desc":  "Two polarizations at once reveal rain, snow, and hail from particle echoes alone.",
+        "row.33.date":  "Aug 21, 2025"
 },
 
     zh: {
@@ -235,6 +239,10 @@ const ARTICLES_I18N = {
         "row.32.title": "为什么天气雷达要相控阵",
         "row.32.desc":  "相控阵天气雷达电子扫描只需几十秒，比机械扫描的几分钟快多了。",
         "row.32.date":  "2024.08.22"
+,
+        "row.33.title": "双偏振是什么",
+        "row.33.desc":  "同时发送两种偏振波，仅从回波就能区分雨、雪、冰雹。",
+        "row.33.date":  "2025.08.21"
 
     }
 
