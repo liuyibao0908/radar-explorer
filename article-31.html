@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title data-i18n="page.title">Article 31: What Does Weather Radar Measure? &#x2014; Radar Explorer</title>
+
+    <meta
+        name="description"
+        data-i18n-attr="content|page.description"
+        content="Article 31: What is a weather radar actually measuring when it stares at the sky? Echo strength, radial velocity, spectrum width. A bilingual student-friendly explainer."
+    >
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="article.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                RADAR<span>EXPLORER</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" data-i18n="nav.home">Home</a>
+                <a href="index.html#learn" data-i18n="nav.learn">Learn</a>
+                <a href="articles.html" class="active" data-i18n="nav.articles">Articles</a>
+                <a href="index.html#explore" data-i18n="nav.explore">Explore</a>
+                <a href="index.html#research" data-i18n="nav.research">Research</a>
+                <a href="index.html#about" data-i18n="nav.about">About</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button
+                    class="lang-toggle"
+                    type="button"
+                    aria-label="Switch language"
+                    data-lang-toggle
+                >
+                    <span data-lang-label>&#x4e2d;</span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main class="article-page has-toc">
+
+        <aside class="article-toc" aria-label="Table of contents">
+            <div class="article-toc-inner">
+                <h2 class="article-toc-title" data-i18n="toc.title">On this page</h2>
+                <nav class="article-toc-nav">
+                    <a href="#sec-three"           data-toc="sec-three"          ><span class="article-toc-num">01</span><span class="article-toc-label" data-i18n="toc.s1">Three things it measures</span></a>
+                    <a href="#sec-echo"            data-toc="sec-echo"           ><span class="article-toc-num">02</span><span class="article-toc-label" data-i18n="toc.s2">Echo strength</span></a>
+                    <a href="#sec-loop-animation"  data-toc="sec-loop-animation" ><span class="article-toc-num">03</span><span class="article-toc-label" data-i18n="toc.s3">Reflectivity animation</span></a>
+                    <a href="#sec-worked-example"  data-toc="sec-worked-example" ><span class="article-toc-num">04</span><span class="article-toc-label" data-i18n="toc.s4">Worked example</span></a>
+                    <a href="#sec-velocity"        data-toc="sec-velocity"       ><span class="article-toc-num">05</span><span class="article-toc-label" data-i18n="toc.s5">Velocity, spectrum, products</span></a>
+                    <a href="#sec-applications"    data-toc="sec-applications"   ><span class="article-toc-num">06</span><span class="article-toc-label" data-i18n="toc.s6">Applications</span></a>
+                </nav>
+            </div>
+        </aside>
+
+        <section class="article-hero">
+            <h1 class="article-title" data-i18n="article.title">
+                What Does Weather Radar Measure?
+            </h1>
+
+            <div class="article-meta">
+                <span class="article-author" data-i18n="article.author">
+                    By Editorial
+                </span>
+                <span class="article-meta-sep">&#xb7;</span>
+                <time class="article-date" data-i18n="article.date">
+                    Feb 13, 2026
+                </time>
+            </div>
+
+            <p class="article-subtitle" data-i18n="article.subtitle">
+                Staring at the sky every day. Echo, not a thumb on the glass.
+            </p>
+        </section>
+
+
+        <section class="article-section article-body">
+            <p data-i18n="article.p1"></p>
+            <p data-i18n="article.p2"></p>
+            <p data-i18n="article.p3"></p>
+            <p data-i18n="article.p4"></p>
+        </section>
+
+
+        <section class="article-summary-block">
+            <span class="summary-label" data-i18n="article.summaryLabel">
+                ONE-LINE SUMMARY
+            </span>
+            <p class="summary-line" data-i18n="article.summary"></p>
+        </section>
+
+
+        <!-- Visual 1: Three things -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual1.num">01</span> / <span data-i18n="visual1.name">THREE THINGS</span>
+            </div>
+
+            <h2 data-i18n="visual1.title">Three Numbers per Pulse Volume</h2>
+
+            <p class="article-intro" data-i18n="visual1.intro"></p>
+
+            <figure class="article-figure">
+                <svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig1-title">
+                    <title id="fig1-title" data-i18n="fig1.title">Three quantities</title>
+
+                    <rect x="0" y="0" width="800" height="280" fill="#0F1A1F"/>
+
+                    <!-- Three card layout -->
+                    <!-- Card 1: echo strength (Z) -->
+                    <g transform="translate(140, 140)">
+                        <rect x="-110" y="-70" width="220" height="140" rx="8"
+                              fill="#152040" stroke="#54A0FF" stroke-width="2"/>
+                        <text x="0" y="-44" text-anchor="middle" fill="#54A0FF" font-size="14"
+                              font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig1.zname">ECHO STRENGTH</text>
+                        <text x="0" y="-12" text-anchor="middle" fill="#FFD93D" font-size="36"
+                              font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig1.zval">Z</text>
+                        <text x="0" y="20" text-anchor="middle" fill="#888" font-size="11"
+                              font-family="Menlo, monospace"
+                              data-i18n="fig1.zunit">dBZ</text>
+                        <text x="0" y="50" text-anchor="middle" fill="#FFF" font-size="11"
+                              font-family="Microsoft YaHei, Menlo, monospace"
+                              data-i18n="fig1.zhint">how dense is the rain</text>
+                    </g>
+
+                    <!-- Card 2: radial velocity (V) -->
+                    <g transform="translate(400, 140)">
+                        <rect x="-110" y="-70" width="220" height="140" rx="8"
+                              fill="#152040" stroke="#FFD93D" stroke-width="2"/>
+                        <text x="0" y="-44" text-anchor="middle" fill="#FFD93D" font-size="14"
+                              font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig1.vname">RADIAL VELOCITY</text>
+                        <text x="0" y="-12" text-anchor="middle" fill="#FFD93D" font-size="36"
+                              font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig1.vval">V</text>
+                        <text x="0" y="20" text-anchor="middle" fill="#888" font-size="11"
+                              font-family="Menlo, monospace"
+                              data-i18n="fig1.vunit">m/s</text>
+                        <text x="0" y="50" text-anchor="middle" fill="#FFF" font-size="11"
+                              font-family="Microsoft YaHei, Menlo, monospace"
+                              data-i18n="fig1.vhint">wind toward / away</text>
+                    </g>
+
+                    <!-- Card 3: spectrum width (W) -->
+                    <g transform="translate(660, 140)">
+                        <rect x="-110" y="-70" width="220" height="140" rx="8"
+                              fill="#152040" stroke="#FF6B6B" stroke-width="2"/>
+                        <text x="0" y="-44" text-anchor="middle" fill="#FF6B6B" font-size="14"
+                              font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig1.wname">SPECTRUM WIDTH</text>
+                        <text x="0" y="-12" text-anchor="middle" fill="#FF6B6B" font-size="36"
+                              font-family="Menlo, monospace" font-weight="bold"
+                              data-i18n="fig1.wval">W</text>
+                        <text x="0" y="20" text-anchor="middle" fill="#888" font-size="11"
+                              font-family="Menlo, monospace"
+                              data-i18n="fig1.wunit">m/s</text>
+                        <text x="0" y="50" text-anchor="middle" fill="#FFF" font-size="11"
+                              font-family="Microsoft YaHei, Menlo, monospace"
+                              data-i18n="fig1.whint">turbulence, spread</text>
+                    </g>
+
+                    <text x="400" y="262" text-anchor="middle" fill="#888" font-size="11"
+                          font-family="Menlo, monospace"
+                          data-i18n="fig1.foot">one &#x2715; three numbers per pulse volume</text>
+                </svg>
+
+                <figcaption data-i18n="visual1.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 2: Echo strength -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual2.num">02</span> / <span data-i18n="visual2.name">ECHO STRENGTH</span>
+            </div>
+
+            <h2 data-i18n="visual2.title">Light vs Fog: The Reflectivity Analogy</h2>
+
+            <p class="article-intro" data-i18n="visual2.intro"></p>
+
+            <figure class="article-figure">
+                <svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig2-title">
+                    <title id="fig2-title" data-i18n="fig2.title">Flashlight into fog analogy</title>
+
+                    <rect x="0" y="0" width="800" height="320" fill="#0F1A1F"/>
+
+                    <!-- LEFT: weak scatterer -->
+                    <text x="195" y="32" text-anchor="middle" fill="#FFD93D" font-size="13"
+                          font-family="Menlo, monospace" data-i18n="fig2.weak">WEAK RAIN</text>
+
+                    <!-- flashlight -->
+                    <g transform="translate(195, 200)">
+                        <circle cx="-60" cy="0" r="10" fill="#FFD93D" stroke="#54A0FF" stroke-width="2"/>
+                        <line x1="-50" y1="0" x2="80" y2="0" stroke="#54A0FF" stroke-width="2"/>
+                        <!-- 3 sparse raindrops -->
+                        <circle cx="20" cy="-15" r="3" fill="#FFD93D"/>
+                        <circle cx="40" cy="10" r="3" fill="#FFD93D"/>
+                        <circle cx="60" cy="-5" r="3" fill="#FFD93D"/>
+                        <!-- weak return -->
+                        <line x1="80" y1="0" x2="-50" y2="0" stroke="#FFD93D" stroke-width="1.5"
+                              stroke_opacity="0.4" stroke_dasharray="3 3"/>
+                    </g>
+
+                    <text x="195" y="245" text-anchor="middle" fill="#FFD93D" font-size="20"
+                          font-family="Menlo, monospace" font-weight="bold"
+                          data-i18n="fig2.weakval">10 dBZ</text>
+                    <text x="195" y="270" text-anchor="middle" fill="#888" font-size="11"
+                          font-family="Menlo, monospace"
+                          data-i18n="fig2.weakhint">light rain, sparse drops</text>
+
+                    <!-- divider -->
+                    <line x1="400" y1="22" x2="400" y2="298" stroke="#22323C" stroke-width="1"/>
+
+                    <!-- RIGHT: heavy scatterer -->
+                    <text x="605" y="32" text-anchor="middle" fill="#FF6B6B" font-size="13"
+                          font-family="Menlo, monospace" data-i18n="fig2.heavy">HEAVY RAIN</text>
+
+                    <g transform="translate(605, 200)">
+                        <circle cx="-60" cy="0" r="10" fill="#FFD93D" stroke="#54A0FF" stroke-width="2"/>
+                        <line x1="-50" y1="0" x2="80" y2="0" stroke="#54A0FF" stroke-width="2"/>
+                        <!-- dense drops -->
+                        <g fill="#FFD93D">
+                            <circle cx="5"  cy="-22" r="4"/>
+                            <circle cx="10" cy="-8"  r="4"/>
+                            <circle cx="18" cy="8"   r="4"/>
+                            <circle cx="22" cy="-18" r="4"/>
+                            <circle cx="28" cy="-2"  r="4"/>
+                            <circle cx="35" cy="14"  r="4"/>
+                            <circle cx="42" cy="-12" r="4"/>
+                            <circle cx="48" cy="2"   r="4"/>
+                            <circle cx="55" cy="-6"  r="4"/>
+                            <circle cx="60" cy="18"  r="4"/>
+                            <circle cx="68" cy="-4"  r="4"/>
+                            <circle cx="74" cy="6"   r="4"/>
+                        </g>
+                        <!-- strong return -->
+                        <line x1="80" y1="0" x2="-50" y2="0" stroke="#FFD93D" stroke-width="3"/>
+                    </g>
+
+                    <text x="605" y="245" text-anchor="middle" fill="#FF6B6B" font-size="20"
+                          font-family="Menlo, monospace" font-weight="bold"
+                          data-i18n="fig2.heavyval">50 dBZ</text>
+                    <text x="605" y="270" text-anchor="middle" fill="#888" font-size="11"
+                          font-family="Menlo, monospace"
+                          data-i18n="fig2.heavyhint">thunderstorm, large drops</text>
+
+                    <text x="400" y="305" text-anchor="middle" fill="#888" font-size="11"
+                          font-family="Menlo, monospace"
+                          data-i18n="fig2.bottom">flashlight &amp; fog &#x2192; more drops = stronger echo</text>
+                </svg>
+
+                <figcaption data-i18n="visual2.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 3: Manim animation -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual3.num">03</span> / <span data-i18n="visual3.name">ANIMATION: REFLECTIVITY</span>
+            </div>
+
+            <h2 data-i18n="visual3.title">Watching Reflectivity Build Up</h2>
+
+            <p class="article-intro" data-i18n="visual3.intro"></p>
+
+            <figure class="article-figure">
+                <div class="video-wrap" id="radar-anim-wrap">
+                    <video
+                        id="radar-loop-video"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                        data-video-en="manim/media/videos/script/480p15/RadarArticle31.en.mp4"
+                        data-video-zh="manim/media/videos/script/480p15/RadarArticle31.zh.mp4"
+                        data-poster-en="manim/media/images/radar-article31-poster.png"
+                        data-poster-zh="manim/media/images/radar-article31-poster.png"
+                    >
+                        <p data-i18n="visual3.fallback"></p>
+                    </video>
+
+                    <div class="video-captions">
+                        <span data-i18n="visual3.cc1">1. EMPTY  --  no drops, no return, low dBZ</span>
+                        <span data-i18n="visual3.cc2">2. LIGHT  --  a few drops appear, echo brightens</span>
+                        <span data-i18n="visual3.cc3">3. HEAVY  --  dense drops, the cell glows red</span>
+                        <span data-i18n="visual3.cc4">4. STORM  --  hailstones, the brightest core of all</span>
+                    </div>
+                </div>
+
+                <figcaption data-i18n="visual3.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 4: Worked example -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual4.num">04</span> / <span data-i18n="visual4.name">WORKED EXAMPLE</span>
+            </div>
+
+            <h2 data-i18n="visual4.title">From dBZ to Rain Rate</h2>
+
+            <p class="article-intro" data-i18n="visual4.intro"></p>
+
+            <figure class="article-figure">
+                <div class="example-card">
+                    <div class="example-row">
+                        <span class="example-label" data-i18n="visual4.row1.label">Reflectivity Z</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row1.value">40 dBZ</span>
+                    </div>
+                    <div class="example-row example-row-formula">
+                        <span class="example-label" data-i18n="visual4.row2.label">Marshall-Palmer</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row2.formula">R = (Z / 200)^(1/1.6)</span>
+                    </div>
+                    <div class="example-row">
+                        <span class="example-label" data-i18n="visual4.row3.label">Substituting</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row3.value">(200 / 200)^(0.625)</span>
+                    </div>
+                    <div class="example-row example-row-result">
+                        <span class="example-label" data-i18n="visual4.row4.label">Rain rate R</span>
+                        <span class="example-equals">=</span>
+                        <span class="example-value" data-i18n="visual4.row4.value">~ 5 mm/h</span>
+                    </div>
+                </div>
+
+                <figcaption data-i18n="visual4.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 5: Velocity & spectrum & products -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual5.num">05</span> / <span data-i18n="visual5.name">VELOCITY, SPECTRUM</span>
+            </div>
+
+            <h2 data-i18n="visual5.title">The Other Two: Velocity and Spectrum</h2>
+
+            <p class="article-intro" data-i18n="visual5.intro"></p>
+
+            <figure class="article-figure">
+                <div class="application-grid">
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app1.tag">VELOCITY</div>
+                        <h3 data-i18n="visual5.app1.title">Doppler Wind</h3>
+                        <p data-i18n="visual5.app1.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app2.tag">SPECTRUM</div>
+                        <h3 data-i18n="visual5.app2.title">Turbulence Map</h3>
+                        <p data-i18n="visual5.app2.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app3.tag">DUAL-POL</div>
+                        <h3 data-i18n="visual5.app3.title">Rain, Snow, or Hail</h3>
+                        <p data-i18n="visual5.app3.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app4.tag">DOPPLER</div>
+                        <h3 data-i18n="visual5.app4.title">Phase Shift</h3>
+                        <p data-i18n="visual5.app4.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app5.tag">SCAN</div>
+                        <h3 data-i18n="visual5.app5.title">3D Volume</h3>
+                        <p data-i18n="visual5.app5.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual5.app6.tag">SCAN HEIGHT</div>
+                        <h3 data-i18n="visual5.app6.title">Stacked Tilts</h3>
+                        <p data-i18n="visual5.app6.desc"></p>
+                    </div>
+
+                </div>
+
+                <figcaption data-i18n="visual5.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <!-- Visual 6: Applications -->
+        <section class="article-section">
+            <div class="section-label">
+                <span data-i18n="visual6.num">06</span> / <span data-i18n="visual6.name">APPLICATIONS</span>
+            </div>
+
+            <h2 data-i18n="visual6.title">What a Forecast Desk Reads Every Morning</h2>
+
+            <p class="article-intro" data-i18n="visual6.intro"></p>
+
+            <figure class="article-figure">
+                <div class="application-grid">
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app1.tag">RAIN</div>
+                        <h3 data-i18n="visual6.app1.title">Live Rain Map</h3>
+                        <p data-i18n="visual6.app1.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app2.tag">WARNING</div>
+                        <h3 data-i18n="visual6.app2.title">Severe Storm Watch</h3>
+                        <p data-i18n="visual6.app2.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app3.tag">SNOW</div>
+                        <h3 data-i18n="visual6.app3.title">Snowfall Rate</h3>
+                        <p data-i18n="visual6.app3.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app4.tag">HAIL</div>
+                        <h3 data-i18n="visual6.app4.title">Hail Detection</h3>
+                        <p data-i18n="visual6.app4.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app5.tag">WIND</div>
+                        <h3 data-i18n="visual6.app5.title">Wind Shear</h3>
+                        <p data-i18n="visual6.app5.desc"></p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-tag" data-i18n="visual6.app6.tag">AVIATION</div>
+                        <h3 data-i18n="visual6.app6.title">Microburst Alert</h3>
+                        <p data-i18n="visual6.app6.desc"></p>
+                    </div>
+
+                </div>
+
+                <figcaption data-i18n="visual6.caption"></figcaption>
+            </figure>
+        </section>
+
+
+        <section class="article-summary-block">
+            <span class="summary-label" data-i18n="article.summaryLabel">
+                ONE-LINE SUMMARY
+            </span>
+            <p class="summary-line" data-i18n="article.summary"></p>
+        </section>
+
+
+        <footer class="article-footer">
+            <a href="articles.html" class="article-back" data-i18n="article.back">&#x2190; Back to Articles</a>
+            <span class="article-meta" data-i18n="article.meta">Student Research &#xb7; 2026</span>
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+    <script src="article-31.js"></script>
+
+</body>
+</html>
