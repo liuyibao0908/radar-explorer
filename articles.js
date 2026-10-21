@@ -141,7 +141,10 @@ const ARTICLES_I18N = {
         "row.37.date":  "Jul 28, 2026",
         "row.38.title": "The Receiver — Finding Echoes in the Noise",
         "row.38.desc":  "Amplifying a whisper, filtering out noise, dynamic range, and why stealth loses at the receiver.",
-        "row.38.date":  "Jul 30, 2026"
+        "row.38.date":  "Jul 30, 2026",
+        "row.39.title": "The Duplexer — How One Antenna Does Both",
+        "row.39.desc":  "Gas discharge tubes and PIN diodes, recovery time and the blind zone, or two antennas instead.",
+        "row.39.date":  "Jul 31, 2026"
 },
 
     zh: {
@@ -274,7 +277,10 @@ const ARTICLES_I18N = {
         "row.37.date":  "2026.07.28",
         "row.38.title": "接收机——在噪声里找回声",
         "row.38.desc":  "放大耳语、滤掉噪声、动态范围，以及反隐身为什么在接收机这里失效。",
-        "row.38.date":  "2026.07.30"
+        "row.38.date":  "2026.07.30",
+        "row.39.title": "收发开关——一个天线怎么又发又收",
+        "row.39.desc":  "气体放电管与 PIN 二极管、恢复时间与盲区，或者干脆用两副天线。",
+        "row.39.date":  "2026.07.31"
 
     }
 

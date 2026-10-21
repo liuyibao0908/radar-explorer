@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="page.title">Article 39: The Duplexer — Radar Explorer</title>
+<meta name="description" content="page.description">
+<meta name="description" data-i18n="page.description" content="Article 39: How does one antenna send and receive without destroying itself? Gas discharge tubes, PIN diodes, recovery time, and the alternative of separate antennas.">
+<link rel="stylesheet" href="article.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo" data-i18n="nav.home">Radar Explorer</a>
+        <div class="nav-links">
+            <a href="articles.html" data-i18n="nav.articles">Articles</a>
+        </div>
+        <div class="nav-actions">
+            <button class="lang-toggle" data-lang-toggle type="button">
+                <span data-lang-label>中</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<article class="article-hero">
+    <div class="article-meta">
+        <span class="article-author" data-i18n="article.author">Editorial</span>
+        <span class="article-meta-sep">·</span>
+        <time class="article-date" datetime="2026-07-31" data-i18n="article.date">Jul 31, 2026</time>
+    </div>
+    <h1 class="article-title" data-i18n="article.title">The Duplexer — How One Antenna Does Both</h1>
+    <p class="article-subtitle" data-i18n="article.subtitle">A door that opens and closes a hundred times a second.</p>
+</article>
+
+<div class="article-toc">
+    <div class="article-toc-inner">
+        <div class="article-toc-label" data-i18n="toc.title">On this page</div>
+        <nav class="article-toc-nav">
+            <a href="#s1"><span class="article-toc-num">01</span><span data-i18n="toc.s1">The problem</span></a>
+            <a href="#s2"><span class="article-toc-num">02</span><span data-i18n="toc.s2">The door analogy</span></a>
+            <a href="#s3"><span class="article-toc-num">03</span><span data-i18n="toc.s3">Switching animation</span></a>
+            <a href="#s4"><span class="article-toc-num">04</span><span data-i18n="toc.s4">Worked example</span></a>
+            <a href="#s5"><span class="article-toc-num">05</span><span data-i18n="toc.s5">Two technologies</span></a>
+            <a href="#s6"><span class="article-toc-num">06</span><span data-i18n="toc.s6">The alternative</span></a>
+        </nav>
+    </div>
+</div>
+
+<main>
+
+<!-- ============ BODY ============ -->
+<section class="article-section article-body" id="body">
+    <p data-i18n="article.p1">A radar often uses just one antenna for both sending and receiving. How do they not clash?</p>
+    <p data-i18n="article.p2">When sending, the power is very high — it would burn out the receiver. The duplexer protects the receiver during sending, and connects the antenna to the receiver during receiving. Think of a door: it closes the receiver side while sending, and opens it while receiving.</p>
+    <p data-i18n="article.p3">Common types include gas discharge tubes and PIN diode switches. The switch must be fast, or it will miss close-range echoes. It also has to handle high power without breaking itself.</p>
+    <p data-i18n="article.p4">Some radars use separate antennas for sending and receiving, so no duplexer is needed. It is a small but critical part.</p>
+</section>
+
+<!-- ============ 01 ============ -->
+<section class="article-section" id="s1">
+    <div class="section-label">01 <span data-i18n="visual1.name">THE PROBLEM</span></div>
+    <h2 class="article-title" data-i18n="visual1.title">Two Numbers That Cannot Both Be True</h2>
+    <p class="article-intro" data-i18n="visual1.intro">The same wire carries a megawatt out and a trillionth of a watt back.</p>
+
+    <figure class="article-figure">
+        <svg viewBox="0 0 720 300" role="img" aria-labelledby="fig1-title">
+            <text id="fig1-title" data-i18n="fig1.title">The dynamic range problem in one picture</text>
+
+            <rect x="40" y="50" width="240" height="90" rx="8" fill="#0f2a44" stroke="#FFD93D" stroke-width="2"/>
+            <text x="160" y="86" text-anchor="middle" fill="#FFD93D" font-size="15" data-i18n="fig1.tx">TRANSMIT</text>
+            <text x="160" y="114" text-anchor="middle" fill="#FFD93D" font-size="20" font-weight="bold" data-i18n="fig1.txval">+80 dBm</text>
+
+            <rect x="440" y="50" width="240" height="90" rx="8" fill="#0f2a44" stroke="#3fc23f" stroke-width="2"/>
+            <text x="560" y="86" text-anchor="middle" fill="#3fc23f" font-size="15" data-i18n="fig1.rx">RECEIVE</text>
+            <text x="560" y="114" text-anchor="middle" fill="#3fc23f" font-size="20" font-weight="bold" data-i18n="fig1.rxval">−130 dBm</text>
+
+            <line x1="282" y1="95" x2="438" y2="95" stroke="#d83838" stroke-width="2.5" stroke-dasharray="7 5"/>
+            <polygon points="438,95 426,88 426,102" fill="#d83838"/>
+            <text x="360" y="76" text-anchor="middle" fill="#d83838" font-size="14" data-i18n="fig1.gap">210 dB apart</text>
+
+            <rect x="40" y="190" width="640" height="70" rx="8" fill="#0a1a2c" stroke="#22323C" stroke-width="1.4"/>
+            <text x="360" y="220" text-anchor="middle" fill="#8fa6bb" font-size="13" data-i18n="fig1.issue">if the transmit pulse reached the receiver input,</text>
+            <text x="360" y="244" text-anchor="middle" fill="#d83838" font-size="14" data-i18n="fig1.result">the receiver front end would be destroyed instantly</text>
+        </svg>
+        <figcaption class="visual-caption" data-i18n="visual1.caption">A duplexer is a device whose only job is to make those two numbers never meet on the same wire at the same time.</figcaption>
+    </figure>
+</section>
+
+<!-- ============ 02 ============ -->
+<section class="article-section" id="s2">
+    <div class="section-label">02 <span data-i18n="visual2.name">THE DOOR ANALOGY</span></div>
+    <h2 class="article-title" data-i18n="visual2.title">A Door, Not a Wall</h2>
+    <p class="article-intro" data-i18n="visual2.intro">It does not block the signal permanently — it switches, thousands of times a second.</p>
+
+    <figure class="article-figure">
+        <svg viewBox="0 0 720 320" role="img" aria-labelledby="fig2-title">
+            <text id="fig2-title" data-i18n="fig2.title">The duplexer as a switchable door</text>
+
+            <rect x="300" y="30" width="120" height="70" rx="8" fill="#0f2a44" stroke="#FFD93D" stroke-width="2"/>
+            <text x="360" y="62" text-anchor="middle" fill="#FFD93D" font-size="13" data-i18n="fig2.ant">ANTENNA</text>
+            <text x="360" y="84" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig2.oneport">one port</text>
+
+            <line x1="360" y1="100" x2="360" y2="140" stroke="#FFD93D" stroke-width="3"/>
+            <polygon points="360,140 354,130 366,130" fill="#FFD93D"/>
+
+            <rect x="250" y="140" width="220" height="66" rx="8" fill="#0d2038" stroke="#3fc23f" stroke-width="2"/>
+            <text x="360" y="170" text-anchor="middle" fill="#3fc23f" font-size="14" data-i18n="fig2.dup">DUPLEXER</text>
+            <text x="360" y="192" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig2.dupsub">routes the pulse</text>
+
+            <line x1="250" y1="173" x2="130" y2="173" stroke="#d83838" stroke-width="3"/>
+            <polygon points="130,173 142,167 142,179" fill="#d83838"/>
+            <rect x="20" y="140" width="110" height="66" rx="8" fill="#0f2a44" stroke="#d83838" stroke-width="2"/>
+            <text x="75" y="170" text-anchor="middle" fill="#d83838" font-size="12" data-i18n="fig2.tx">TX</text>
+            <text x="75" y="190" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig2.txsub">shut off</text>
+
+            <line x1="470" y1="173" x2="590" y2="173" stroke="#3fc23f" stroke-width="3"/>
+            <polygon points="590,173 578,167 578,179" fill="#3fc23f"/>
+            <rect x="590" y="140" width="110" height="66" rx="8" fill="#0f2a44" stroke="#3fc23f" stroke-width="2"/>
+            <text x="645" y="170" text-anchor="middle" fill="#3fc23f" font-size="12" data-i18n="fig2.rx">RX</text>
+            <text x="645" y="190" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig2.rxsub">open</text>
+
+            <text x="360" y="240" text-anchor="middle" fill="#FFD93D" font-size="12" data-i18n="fig2.state1">TRANSMIT: door to RX is closed</text>
+            <text x="360" y="266" text-anchor="middle" fill="#3fc23f" font-size="12" data-i18n="fig2.state2">RECEIVE: door opens, TX side terminated</text>
+            <text x="360" y="296" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig2.note">the TX side still needs an absorber — reflected power would bounce back into the amplifier</text>
+        </svg>
+        <figcaption class="visual-caption" data-i18n="visual2.caption">Blocking the receiver is only half the job. The transmitter side also needs somewhere to dump the power that does not leave the antenna.</figcaption>
+    </figure>
+</section>
+
+<!-- ============ 03 ============ -->
+<section class="article-section" id="s3">
+    <div class="section-label">03 <span data-i18n="visual3.name">ANIMATION: THE SWITCH CYCLE</span></div>
+    <h2 class="article-title" data-i18n="visual3.title">One Full Pulse Cycle</h2>
+    <p class="article-intro" data-i18n="visual3.intro">Watch the door open and close, and see how long the receiver stays deaf.</p>
+
+    <div class="video-wrap">
+        <video id="radar-loop-video" autoplay loop muted playsinline
+               data-video-en="manim/media/videos/script/480p15/RadarArticle39.en.mp4"
+               data-video-zh="manim/media/videos/script/480p15/RadarArticle39.zh.mp4"
+               poster="manim/media/images/radar-article39-poster.png">
+            <span data-i18n="visual3.fallback">Your browser does not support the video tag.</span>
+        </video>
+    </div>
+    <div class="video-captions">
+        <p class="caption-cc" data-i18n="visual3.cc1">1. TRANSMIT -- the RX door is shut, power goes out</p>
+        <p class="caption-cc" data-i18n="visual3.cc2">2. SWITCH -- the device changes state in microseconds</p>
+        <p class="caption-cc" data-i18n="visual3.cc3">3. LISTEN -- the RX door opens and the receiver recovers</p>
+        <p class="caption-cc" data-i18n="visual3.cc4">4. DEAF ZONE -- anything closer than recovery time is lost</p>
+    </div>
+    <p class="visual-caption" data-i18n="visual3.caption">Recovery time sets the minimum detectable range. A weather radar with 1 μs recovery simply cannot see the first 150 metres.</p>
+</section>
+
+<!-- ============ 04 ============ -->
+<section class="article-section" id="s4">
+    <div class="section-label">04 <span data-i18n="visual4.name">WORKED EXAMPLE</span></div>
+    <h2 class="article-title" data-i18n="visual4.title">What Recovery Time Costs You</h2>
+    <p class="article-intro" data-i18n="visual4.intro">Two radars with the same 300 km range, and very different blind spots.</p>
+
+    <div class="example-card">
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row1.label">Speed of light</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row1.value">300 000 km per second</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row2.label">Radar A recovery</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row2.value">1 μs — blind to the first 150 m</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row3.label">Radar B recovery</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row3.value">5 μs — blind to the first 750 m</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row4.label">Round trip</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row4.value">150 km out and back = 1 ms</span></div>
+    </div>
+    <p class="visual-caption" data-i18n="visual4.caption">Recovery is one round trip. A 1 μs device means anything inside 150 metres returns while the switch is still changing state.</p>
+</section>
+
+<!-- ============ 05 ============ -->
+<section class="article-section" id="s5">
+    <div class="section-label">05 <span data-i18n="visual5.name">TWO TECHNOLOGIES</span></div>
+    <h2 class="article-title" data-i18n="visual5.title">Gas Tube or PIN Diode</h2>
+    <p class="article-intro" data-i18n="visual5.intro">Two completely different ways to build the same switch.</p>
+
+    <div class="application-grid">
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app1.tag">GAS</span>
+            <h3 data-i18n="visual5.app1.title">Gas Discharge Tube</h3>
+            <p data-i18n="visual5.app1.desc">A small tube filled with low-pressure gas. In transmit mode the high voltage strikes an arc; the ionised gas becomes conducting and blocks the receiver. It extinguishes when the voltage drops.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app2.tag">PROS</span>
+            <h3 data-i18n="visual5.app2.title">Handles Huge Power</h3>
+            <p data-i18n="visual5.app2.desc">An arc will carry megawatts without complaint, so weather radars with very high peak power have used gas tubes for fifty years. The arc also carries the power the antenna does not radiate.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app3.tag">CONS</span>
+            <h3 data-i18n="visual5.app3.title">Slow and Wearful</h3>
+            <p data-i18n="visual5.app3.desc">Extinction and re-striking take microseconds, and the electrodes erode over time. Only a few hundred pulses per minute are practical.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app4.tag">PIN</span>
+            <h3 data-i18n="visual5.app4.title">PIN Diode</h3>
+            <p data-i18n="visual5.app4.desc">A silicon diode with a wide intrinsic region, used as a switch rather than a rectifier. Forward bias makes it conduct; reverse bias makes it block. No gas, no arc.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app5.tag">PROS</span>
+            <h3 data-i18n="visual5.app5.title">Fast and Reliable</h3>
+            <p data-i18n="visual5.app5.desc">Switching takes nanoseconds and the device has no moving parts or consumable electrodes. Tens of thousands of pulses per second are routine.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app6.tag">CONS</span>
+            <h3 data-i18n="visual5.app6.title">Limited by Current</h3>
+            <p data-i18n="visual5.app6.desc">A single diode carries only tens of amps. Megawatt systems use hundreds in parallel, which is why a phased array can afford them but a classic magnetron radar often could not.</p>
+        </div>
+    </div>
+    <p class="visual-caption" data-i18n="visual5.caption">Gas for raw power, silicon for speed. Most modern radars use PIN diodes in large arrays.</p>
+</section>
+
+<!-- ============ 06 ============ -->
+<section class="article-section" id="s6">
+    <div class="section-label">06 <span data-i18n="visual6.name">THE ALTERNATIVE</span></div>
+    <h2 class="article-title" data-i18n="visual6.title">Skip the Switch Entirely</h2>
+    <p class="article-intro" data-i18n="visual6.intro">If two antennas are affordable, the problem does not exist.</p>
+
+    <figure class="article-figure">
+        <svg viewBox="0 0 720 300" role="img" aria-labelledby="fig6-title">
+            <text id="fig6-title" data-i18n="fig6.title">Bistatic: separate transmit and receive antennas</text>
+
+            <rect x="40" y="60" width="150" height="60" rx="8" fill="#0f2a44" stroke="#FFD93D" stroke-width="2"/>
+            <text x="115" y="96" text-anchor="middle" fill="#FFD93D" font-size="13" data-i18n="fig6.tx">TX antenna</text>
+
+            <rect x="530" y="60" width="150" height="60" rx="8" fill="#0f2a44" stroke="#3fc23f" stroke-width="2"/>
+            <text x="605" y="96" text-anchor="middle" fill="#3fc23f" font-size="13" data-i18n="fig6.rx">RX antenna</text>
+
+            <circle cx="360" cy="220" r="12" fill="#FF8a3a"/>
+            <text x="360" y="256" text-anchor="middle" fill="#FF8a3a" font-size="12" data-i18n="fig6.target">target</text>
+
+            <path d="M 130 122 Q 300 130 348 210" fill="none" stroke="#FFD93D" stroke-width="2.5"/>
+            <polygon points="348,210 336,202 340,214" fill="#FFD93D"/>
+
+            <path d="M 372 208 Q 450 130 570 122" fill="none" stroke="#3fc23f" stroke-width="2.5" stroke-dasharray="6 4"/>
+            <polygon points="570,122 558,124 562,134" fill="#3fc23f"/>
+
+            <text x="360" y="34" text-anchor="middle" fill="#8fa6bb" font-size="12" data-i18n="fig6.note">no duplexer needed — the two never share a feed line</text>
+
+            <text x="240" y="176" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig6.one">one-way</text>
+            <text x="480" y="176" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig6.two">back to a different place</text>
+        </svg>
+        <figcaption class="visual-caption" data-i18n="visual6.caption">Bistatic radar: the receiver sits somewhere else entirely, so the transmit pulse can never reach it. Cost is a much harder geometry problem.</figcaption>
+    </figure>
+
+    <div class="application-grid">
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app1.tag">BISTATIC</span>
+            <h3 data-i18n="visual6.app1.title">Two Antennas</h3>
+            <p data-i18n="visual6.app1.desc">Transmit and receive on separate antennas far apart. No switching, no isolation problem, and the geometry itself hides the transmitter. Used for missile defence and over-the-horizon radar.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app2.tag">PASSIVE</span>
+            <h3 data-i18n="visual6.app2.title">Receive Only</h3>
+            <p data-i18n="visual6.app2.desc">With no transmitter at all there is nothing to switch. Passive radars listen for other people's energy and are extremely hard to detect themselves.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app3.tag">T/R MODULE</span>
+            <h3 data-i18n="visual6.app3.title">Switch Per Element</h3>
+            <p data-i18n="visual6.app3.desc">In a phased array every element has its own transmit/receive module containing a duplexer. Thousands of small PIN diode switches replace one big fragile one.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app4.tag">CIRCULATOR</span>
+            <h3 data-i18n="visual6.app4.title">The Passive Version</h3>
+            <p data-i18n="visual6.app4.desc">A ferrite circulator routes signals by direction rather than by switching. It needs no control voltage at all, but the isolation is lower and it handles less power.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app5.tag">WHY BOTH</span>
+            <h3 data-i18n="visual6.app5.title">Cost vs Capability</h3>
+            <p data-i18n="visual6.app5.desc">A duplexer is cheap, compact and keeps one antenna pointed at the sky. Bistatic is better physics but far harder to build. Most radars pick the duplexer.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app6.tag">SUMMARY</span>
+            <h3 data-i18n="visual6.app6.title">Small but Critical</h3>
+            <p data-i18n="visual6.app6.desc">Nobody photographs the duplexer, but without it the receiver burns up on the first pulse. It is the least glamorous part of the most expensive machine.</p>
+        </div>
+    </div>
+    <p class="visual-caption" data-i18n="visual6.caption">One switch, two antennas, or one PIN diode per array element — every radar solves this trade-off differently.</p>
+</section>
+
+</main>
+
+<div class="article-summary-block">
+    <span class="summary-label" data-i18n="article.summaryLabel">ONE-LINE SUMMARY</span>
+    <p class="summary-line" data-i18n="article.summary">The duplexer is the traffic controller — it keeps sending and receiving from clashing.</p>
+</div>
+
+<footer class="article-footer">
+    <span class="article-meta" data-i18n="article.meta">Student Research · 2026</span>
+    <a href="articles.html" class="article-back" data-i18n="article.back">← Back to Articles</a>
+</footer>
+
+<script src="script.js"></script>
+<script src="article-39.js"></script>
+
+</body>
+</html>
