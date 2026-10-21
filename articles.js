@@ -138,7 +138,10 @@ const ARTICLES_I18N = {
         "row.36.date":  "Jul 21, 2026",
         "row.37.title": "The Transmitter — The Radar's Voice",
         "row.37.desc":  "Peak power, the shout-pause-listen cycle, pulse width versus resolution, and the tubes that make it possible.",
-        "row.37.date":  "Jul 28, 2026"
+        "row.37.date":  "Jul 28, 2026",
+        "row.38.title": "The Receiver — Finding Echoes in the Noise",
+        "row.38.desc":  "Amplifying a whisper, filtering out noise, dynamic range, and why stealth loses at the receiver.",
+        "row.38.date":  "Jul 30, 2026"
 },
 
     zh: {
@@ -268,7 +271,10 @@ const ARTICLES_I18N = {
         "row.36.date":  "2026.07.21",
         "row.37.title": "发射机——雷达的嗓门",
         "row.37.desc":  "峰值功率、喊—停—听循环、脉冲宽度与分辨率，以及磁控管等器件。",
-        "row.37.date":  "2026.07.28"
+        "row.37.date":  "2026.07.28",
+        "row.38.title": "接收机——在噪声里找回声",
+        "row.38.desc":  "放大耳语、滤掉噪声、动态范围，以及反隐身为什么在接收机这里失效。",
+        "row.38.date":  "2026.07.30"
 
     }
 
