@@ -144,7 +144,10 @@ const ARTICLES_I18N = {
         "row.38.date":  "Jul 30, 2026",
         "row.39.title": "The Duplexer — How One Antenna Does Both",
         "row.39.desc":  "Gas discharge tubes and PIN diodes, recovery time and the blind zone, or two antennas instead.",
-        "row.39.date":  "Jul 31, 2026"
+        "row.39.date":  "Jul 31, 2026",
+        "row.40.title": "The Display — What Are Those Dots?",
+        "row.40.desc":  "A-scope versus PPI, range rings, colour and brightness coding, and the track overlays on top.",
+        "row.40.date":  "Aug 3, 2026"
 },
 
     zh: {
@@ -280,7 +283,10 @@ const ARTICLES_I18N = {
         "row.38.date":  "2026.07.30",
         "row.39.title": "收发开关——一个天线怎么又发又收",
         "row.39.desc":  "气体放电管与 PIN 二极管、恢复时间与盲区，或者干脆用两副天线。",
-        "row.39.date":  "2026.07.31"
+        "row.39.date":  "2026.07.31",
+        "row.40.title": "显示器——屏幕上的光点是什么",
+        "row.40.desc":  "A 显与 PPI 显、距离圈、颜色与亮度编码，以及叠加的航迹图层。",
+        "row.40.date":  "2026.08.03"
 
     }
 
