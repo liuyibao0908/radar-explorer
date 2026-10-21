@@ -147,7 +147,10 @@ const ARTICLES_I18N = {
         "row.39.date":  "Jul 31, 2026",
         "row.40.title": "The Display — What Are Those Dots?",
         "row.40.desc":  "A-scope versus PPI, range rings, colour and brightness coding, and the track overlays on top.",
-        "row.40.date":  "Aug 3, 2026"
+        "row.40.date":  "Aug 3, 2026",
+        "row.41.title": "The Signal Processor — The Radar's Brain",
+        "row.41.desc":  "Filtering, pulse-Doppler, integration and CFAR — how the raw return becomes a target list.",
+        "row.41.date":  "Aug 4, 2026"
 },
 
     zh: {
@@ -286,7 +289,10 @@ const ARTICLES_I18N = {
         "row.39.date":  "2026.07.31",
         "row.40.title": "显示器——屏幕上的光点是什么",
         "row.40.desc":  "A 显与 PPI 显、距离圈、颜色与亮度编码，以及叠加的航迹图层。",
-        "row.40.date":  "2026.08.03"
+        "row.40.date":  "2026.08.03",
+        "row.41.title": "信号处理机——雷达的大脑",
+        "row.41.desc":  "滤波、多普勒、积累与恒虚警检测——原始回波如何变成目标列表。",
+        "row.41.date":  "2026.08.04"
 
     }
 
