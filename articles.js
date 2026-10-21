@@ -135,7 +135,10 @@ const ARTICLES_I18N = {
         "row.35.date":  "Jul 16, 2026",
         "row.36.title": "The Antenna — Hands and Ears",
         "row.36.desc":  "How an antenna focuses the beam, why aperture sets beam width, and where side lobes come from.",
-        "row.36.date":  "Jul 21, 2026"
+        "row.36.date":  "Jul 21, 2026",
+        "row.37.title": "The Transmitter — The Radar's Voice",
+        "row.37.desc":  "Peak power, the shout-pause-listen cycle, pulse width versus resolution, and the tubes that make it possible.",
+        "row.37.date":  "Jul 28, 2026"
 },
 
     zh: {
@@ -262,7 +265,10 @@ const ARTICLES_I18N = {
         "row.35.date":  "2026.07.16",
         "row.36.title": "天线——雷达的手和耳朵",
         "row.36.desc":  "天线如何聚波束，口径为什么决定波束宽度，旁瓣又是从哪来的。",
-        "row.36.date":  "2026.07.21"
+        "row.36.date":  "2026.07.21",
+        "row.37.title": "发射机——雷达的嗓门",
+        "row.37.desc":  "峰值功率、喊—停—听循环、脉冲宽度与分辨率，以及磁控管等器件。",
+        "row.37.date":  "2026.07.28"
 
     }
 
