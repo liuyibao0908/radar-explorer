@@ -129,7 +129,13 @@ const ARTICLES_I18N = {
 
         "row.34.title": "How to Spot Heavy Rain, Hail, and Tornadoes",
         "row.34.desc":  "Forecasters read weather signals first. Hook echo, velocity couplet, three-body scatter.",
-        "row.34.date":  "Jul 23, 2026"
+        "row.34.date":  "Jul 23, 2026",
+        "row.35.title": "What Does a Radar Look Like?",
+        "row.35.desc":  "Antenna, transmitter, receiver, duplexer, processor, display, servo, power — the whole system in one diagram.",
+        "row.35.date":  "Jul 16, 2026",
+        "row.36.title": "The Antenna — Hands and Ears",
+        "row.36.desc":  "How an antenna focuses the beam, why aperture sets beam width, and where side lobes come from.",
+        "row.36.date":  "Jul 21, 2026"
 },
 
     zh: {
@@ -250,7 +256,13 @@ const ARTICLES_I18N = {
 ,
         "row.34.title": "怎么看出曨雨、冰雹、龙卷",
         "row.34.desc":  "预报员先读信号，后说接报。钩状回波、速度对、三体散射。",
-        "row.34.date":  "2026.07.23"
+        "row.34.date":  "2026.07.23",
+        "row.35.title": "雷达长什么样",
+        "row.35.desc":  "天线、发射机、接收机、收发开关、处理机、显示器、伺服、电源，一张图看懂整机。",
+        "row.35.date":  "2026.07.16",
+        "row.36.title": "天线——雷达的手和耳朵",
+        "row.36.desc":  "天线如何聚波束，口径为什么决定波束宽度，旁瓣又是从哪来的。",
+        "row.36.date":  "2026.07.21"
 
     }
 
