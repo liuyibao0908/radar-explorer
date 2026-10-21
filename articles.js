@@ -150,7 +150,10 @@ const ARTICLES_I18N = {
         "row.40.date":  "Aug 3, 2026",
         "row.41.title": "The Signal Processor — The Radar's Brain",
         "row.41.desc":  "Filtering, pulse-Doppler, integration and CFAR — how the raw return becomes a target list.",
-        "row.41.date":  "Aug 4, 2026"
+        "row.41.date":  "Aug 4, 2026",
+        "row.42.title": "The Servo System — How the Radar Turns",
+        "row.42.desc":  "Motor, drive and encoder; slew rate, inertia and tracking loops; why phased arrays keep a servo.",
+        "row.42.date":  "Aug 5, 2026"
 },
 
     zh: {
@@ -292,7 +295,10 @@ const ARTICLES_I18N = {
         "row.40.date":  "2026.08.03",
         "row.41.title": "信号处理机——雷达的大脑",
         "row.41.desc":  "滤波、多普勒、积累与恒虚警检测——原始回波如何变成目标列表。",
-        "row.41.date":  "2026.08.04"
+        "row.41.date":  "2026.08.04",
+        "row.42.title": "伺服系统——雷达怎么转头",
+        "row.42.desc":  "电机、传动、编码器；转速、惯性与跟踪环；以及相控阵为什么还留着伺服。",
+        "row.42.date":  "2026.08.05"
 
     }
 
