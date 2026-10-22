@@ -162,7 +162,10 @@ const ARTICLES_I18N = {
         "row.44.date":  "Aug 7, 2026",
         "row.45.title": "How Far Can Radar See?",
         "row.45.desc":  "The radar equation, the fourth root that makes power a weak lever, and the horizon that no power can beat.",
-        "row.45.date":  "Aug 10, 2026"
+        "row.45.date":  "Aug 10, 2026",
+        "row.46.title": "Weather Radar vs Normal Radar",
+        "row.46.desc":  "Same physics, opposite questions: a field versus an object, 40 000 cells versus forty targets, S band versus X band.",
+        "row.46.date":  "Aug 11, 2026"
 },
 
     zh: {
@@ -316,7 +319,10 @@ const ARTICLES_I18N = {
         "row.44.date":  "2026.08.07",
         "row.45.title": "雷达能看多远？",
         "row.45.desc":  "雷达方程、让功率变成弱杠杆的四次方根，以及功率再大也越不过的地平线。",
-        "row.45.date":  "2026.08.10"
+        "row.45.date":  "2026.08.10",
+        "row.46.title": "天气雷达和普通雷达差在哪？",
+        "row.46.desc":  "同样的物理，相反的问题：一个场对一个物体，四万个单元对四十个目标，S 波段对 X 波段。",
+        "row.46.date":  "2026.08.11"
 
     }
 
