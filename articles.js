@@ -165,7 +165,10 @@ const ARTICLES_I18N = {
         "row.45.date":  "Aug 10, 2026",
         "row.46.title": "Weather Radar vs Normal Radar",
         "row.46.desc":  "Same physics, opposite questions: a field versus an object, 40 000 cells versus forty targets, S band versus X band.",
-        "row.46.date":  "Aug 11, 2026"
+        "row.46.date":  "Aug 11, 2026",
+        "row.47.title": "Can Radar Be Jammed?",
+        "row.47.desc":  "Noise jamming versus deception, six countermeasures, and why weather radar is essentially never attacked.",
+        "row.47.date":  "Aug 13, 2026"
 },
 
     zh: {
@@ -322,7 +325,10 @@ const ARTICLES_I18N = {
         "row.45.date":  "2026.08.10",
         "row.46.title": "天气雷达和普通雷达差在哪？",
         "row.46.desc":  "同样的物理，相反的问题：一个场对一个物体，四万个单元对四十个目标，S 波段对 X 波段。",
-        "row.46.date":  "2026.08.11"
+        "row.46.date":  "2026.08.11",
+        "row.47.title": "雷达会被干扰吗？",
+        "row.47.desc":  "压制干扰对欺骗干扰、六种反制手段，以及天气雷达为什么基本不会被攻击。",
+        "row.47.date":  "2026.08.13"
 
     }
 
