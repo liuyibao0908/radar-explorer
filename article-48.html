@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="page.title">Article 48: Is Radar Radiation Harmful? — Radar Explorer</title>
+<meta name="description" content="page.description">
+<meta name="description" data-i18n="page.description" content="Article 48: Radar emits radio waves, but the intensity falls fast with distance. Where the exposure limits actually come from, what a radar looks like from outside, and why the microwave analogy misleads.">
+<link rel="stylesheet" href="article.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo" data-i18n="nav.home">Radar Explorer</a>
+        <div class="nav-links">
+            <a href="articles.html" data-i18n="nav.articles">Articles</a>
+        </div>
+        <div class="nav-actions">
+            <button class="lang-toggle" data-lang-toggle type="button">
+                <span data-lang-label>中</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<article class="article-hero">
+    <div class="article-meta">
+        <span class="article-author" data-i18n="article.author">Editorial</span>
+        <span class="article-meta-sep">·</span>
+        <time class="article-date" datetime="2026-08-14" data-i18n="article.date">Aug 14, 2026</time>
+    </div>
+    <h1 class="article-title" data-i18n="article.title">Is Radar Radiation Harmful?</h1>
+    <p class="article-subtitle" data-i18n="article.subtitle">The intensity falls off fast. The rules exist because it is not fast enough.</p>
+</article>
+
+<div class="article-toc">
+    <div class="article-toc-inner">
+        <div class="article-toc-label" data-i18n="toc.title">On this page</div>
+        <nav class="article-toc-nav">
+            <a href="#s1"><span class="article-toc-num">01</span><span data-i18n="toc.s1">The falloff problem</span></a>
+            <a href="#s2"><span class="article-toc-num">02</span><span data-i18n="toc.s2">Falloff animation</span></a>
+            <a href="#s3"><span class="article-toc-num">03</span><span data-i18n="toc.s3">The microwave analogy</span></a>
+            <a href="#s4"><span class="article-toc-num">04</span><span data-i18n="toc.s4">Worked example</span></a>
+            <a href="#s5"><span class="article-toc-num">05</span><span data-i18n="toc.s5">Where the limits come from</span></a>
+            <a href="#s6"><span class="article-toc-num">06</span><span data-i18n="toc.s6">What you actually see</span></a>
+        </nav>
+    </div>
+</div>
+
+<main>
+
+<!-- ============ BODY ============ -->
+<section class="article-section article-body" id="body">
+    <p data-i18n="article.p1">Radar uses a lot of power. Is it dangerous to stand next to one?</p>
+    <p data-i18n="article.p2">Radar does send out radio waves, but the strength drops quickly with distance. Proper radars have safety distances and rules. For everyday radar, as long as you don't stay very close for a long time, it's usually safe.</p>
+    <p data-i18n="article.p3">Think of a microwave — don't press your face against it while it's running, but normal use is fine. High-power radar stations set warning zones and keep people away. Whether radiation is harmful depends on frequency, power, distance, and time.</p>
+    <p data-i18n="article.p4">Military and civilian radars both have safety standards. So no need to panic, but do follow the rules.</p>
+</section>
+
+<!-- ============ 01 ============ -->
+<section class="article-section" id="s1">
+    <div class="section-label">01 <span data-i18n="visual1.name">THE FALLOFF PROBLEM</span></div>
+    <h2 class="article-title" data-i18n="visual1.title">Intensity Falls as One Over R Squared</h2>
+    <p class="article-intro" data-i18n="visual1.intro">Spreading a wave over a sphere is why a radar's own neighbourhood is safe but its mast is not.</p>
+
+    <figure class="article-figure">
+        <svg viewBox="0 0 720 340" role="img" aria-labelledby="fig1-title">
+            <text id="fig1-title" data-i18n="fig1.title">Why the field falls away so quickly</text>
+
+            <rect x="40" y="120" width="80" height="110" rx="8" fill="#0a1a2c" stroke="#2A3B4C" stroke-width="1.4"/>
+            <text x="80" y="106" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig1.shed">equipment</text>
+            <text x="80" y="248" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig1.inside">inside</text>
+
+            <g fill="none" stroke-width="1.6">
+                <circle cx="140" cy="175" r="42" stroke="#d83838"/>
+                <circle cx="140" cy="175" r="110" stroke="#FF8a3a"/>
+                <circle cx="140" cy="175" r="200" stroke="#FFD93D"/>
+                <circle cx="140" cy="175" r="310" stroke="#3fc23f"/>
+                <circle cx="140" cy="175" r="420" stroke="#7aa7d4"/>
+            </g>
+
+            <text x="188" y="178" fill="#d83838" font-size="11" data-i18n="fig1.z1">inside</text>
+            <text x="262" y="178" fill="#FF8a3a" font-size="11" data-i18n="fig1.z2">near</text>
+            <text x="352" y="178" fill="#FFD93D" font-size="11" data-i18n="fig1.z3">public</text>
+            <text x="462" y="178" fill="#3fc23f" font-size="11" data-i18n="fig1.z4">perimeter</text>
+
+            <line x1="140" y1="175" x2="560" y2="175" stroke="#8fa6bb" stroke-width="1.4"/>
+            <polygon points="560,175 548,170 548,180" fill="#8fa6bb"/>
+            <text x="350" y="322" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig1.axis">distance from the antenna</text>
+
+            <text x="140" y="306" text-anchor="middle" fill="#d83838" font-size="12" data-i18n="fig1.law">intensity ∝ 1 / R²</text>
+            <text x="420" y="306" fill="#8fa6bb" font-size="11" data-i18n="fig1.note">double the distance, one quarter the field</text>
+        </svg>
+        <figcaption class="visual-caption" data-i18n="visual1.caption">The wave leaves the antenna in every direction at once. Almost all of that energy is wasted, and that waste is exactly what keeps the perimeter safe.</figcaption>
+    </figure>
+</section>
+
+<!-- ============ 02 ============ -->
+<section class="article-section" id="s2">
+    <div class="section-label">02 <span data-i18n="visual2.name">FALLOFF ANIMATION</span></div>
+    <h2 class="article-title" data-i18n="visual2.title">Walking Away From the Mast</h2>
+    <p class="article-intro" data-i18n="visual2.intro">One antenna, one person, and a power level that falls by 100 dB in a short walk.</p>
+
+    <div class="video-wrap">
+        <video id="radar-loop-video" autoplay loop muted playsinline
+               data-video-en="manim/media/videos/script/480p15/RadarArticle48.en.mp4"
+               data-video-zh="manim/media/videos/script/480p15/RadarArticle48.zh.mp4"
+               poster="manim/media/images/radar-article48-poster.png">
+            <span data-i18n="visual2.fallback">Your browser does not support the video tag.</span>
+        </video>
+    </div>
+    <div class="video-captions">
+        <p class="caption-cc" data-i18n="visual2.cc1">1. AT THE MAST -- inside the controlled area, restricted</p>
+        <p class="caption-cc" data-i18n="visual2.cc2">2. WALKING OUT -- the field falls as one over R squared</p>
+        <p class="caption-cc" data-i18n="visual2.cc3">3. AT THE FENCE -- down 40 dB, far below the limit</p>
+        <p class="caption-cc" data-i18n="visual2.cc4">4. BEYOND -- the radar is still transmitting, still safe</p>
+    </div>
+    <p class="visual-caption" data-i18n="visual2.caption">The radar does not switch off when you leave. It is the distance doing the work.</p>
+</section>
+
+<!-- ============ 03 ============ -->
+<section class="article-section" id="s3">
+    <div class="section-label">03 <span data-i18n="visual3.name">THE MICROWAVE ANALOGY</span></div>
+    <h2 class="article-title" data-i18n="visual3.title">Why the Analogy Is Reasonable but Wrong</h2>
+    <p class="article-intro" data-i18n="visual3.intro">A microwave oven leaks 5 watts into a sealed steel box. A radar runs 100 kilowatts into open air.</p>
+
+    <div class="application-grid">
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual3.app1.tag">SAME</span>
+            <h3 data-i18n="visual3.app1.title">Why It Feels Right</h3>
+            <p data-i18n="visual3.app1.desc">Both are microwave-frequency devices. Both put an intense field inside a small space. Both have a power source you should not open while it runs.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual3.app2.tag">DIFFERENT</span>
+            <h3 data-i18n="visual3.app2.title">The Leak Is Backwards</h3>
+            <p data-i18n="visual3.app2.desc">A microwave oven leaks 5 watts outwards from a small cavity. A radar emits 100 kW into open space, and you are the small cavity standing in it.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual3.app3.tag">SHIELDED</span>
+            <h3 data-i18n="visual3.app3.title">The Oven Is Enclosed</h3>
+            <p data-i18n="visual3.app3.desc">A microwave oven is a Faraday cage. A radar has no cage at all — by design it must radiate into the sky, which is the entire point.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual3.app4.tag">PULSED</span>
+            <h3 data-i18n="visual3.app4.title">Duty Cycle Saves People</h3>
+            <p data-i18n="visual3.app4.desc">Radar transmits in microsecond bursts and listens between them. The time-averaged field is orders of magnitude below the peak, and exposure limits are averaged, not peak.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual3.app5.tag">WHY</span>
+            <h3 data-i18n="visual3.app5.title">Why There Are Fences</h3>
+            <p data-i18n="visual3.app5.desc">Not because a passer-by is in danger, but because someone standing at the mast for a whole shift is. The rules are about occupation, not about passing.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual3.app6.tag">RESULT</span>
+            <h3 data-i18n="visual3.app6.title">The Honest Summary</h3>
+            <p data-i18n="visual3.app6.desc">Radar fields are strong at the antenna and weak at the fence. There is no established mechanism by which a radar causes illness at legal exposure levels.</p>
+        </div>
+    </div>
+    <p class="visual-caption" data-i18n="visual3.caption">The microwave comparison is good for intuition and bad for physics. Keep the caution, drop the arithmetic.</p>
+</section>
+
+<!-- ============ 04 ============ -->
+<section class="article-section" id="s4">
+    <div class="section-label">04 <span data-i18n="visual4.name">WORKED EXAMPLE</span></div>
+    <h2 class="article-title" data-i18n="visual4.title">One Antenna, Four Distances</h2>
+    <p class="article-intro" data-i18n="visual4.intro">A 20 kW average-output radar antenna, and the field at a few distances from it.</p>
+
+    <div class="example-card">
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row1.label">At the mast, 2 m</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row1.value">well above the occupational limit — fenced off</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row2.label">At 20 m</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row2.value">down 20 dB, around the limit</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row3.label">At the perimeter, 100 m</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row3.value">down 34 dB — this is where the fence is</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row4.label">At 1 km</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row4.value">down 54 dB, far below any limit</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row5.label">At 10 km</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row5.value">down 74 dB — irrelevant to health</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row6.label">The arithmetic behind this</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row6.value">every doubling of distance costs 6 dB</span></div>
+    </div>
+    <p class="visual-caption" data-i18n="visual4.caption">The rule of thumb to remember: double the distance, lose 6 dB. Going from 2 m to 100 m is a factor of 50, which is 34 dB.</p>
+</section>
+
+<!-- ============ 05 ============ -->
+<section class="article-section" id="s5">
+    <div class="section-label">05 <span data-i18n="visual5.name">WHERE THE LIMITS COME FROM</span></div>
+    <h2 class="article-title" data-i18n="visual5.title">How a Number Is Decided</h2>
+    <p class="article-intro" data-i18n="visual5.intro">Exposure limits are not physics. They are the output of a long argument between evidence and precaution.</p>
+
+    <div class="application-grid">
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app1.tag">ICNIRP</span>
+            <h3 data-i18n="visual5.app1.title">The Guideline</h3>
+            <p data-i18n="visual5.app1.desc">International limits for workers and the public, derived from the levels at which established effects appear. Above the limit, thermal effects on tissue are the accepted mechanism.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app2.tag">BODY</span>
+            <h3 data-i18n="visual5.app2.title">SAR</h3>
+            <p data-i18n="visual5.app2.desc">Specific absorption rate, measured in watts per kilogram. Whole-body limits are far lower than local limits, because the whole body cannot shed heat anywhere.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app3.tag">AVERAGE</span>
+            <h3 data-i18n="visual5.app3.title">Time Matters</h3>
+            <p data-i18n="visual5.app3.desc">Limits apply to a time-averaged field. A radar transmitting 0.2 percent of the time is, for exposure purposes, transmitting at a fifth of its power.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app4.tag">BAND</span>
+            <h3 data-i18n="visual5.app4.title">Which Frequency</h3>
+            <p data-i18n="visual5.app4.desc">Radar bands sit in the microwave region, where absorbed energy heats tissue. At lower frequencies absorption is much weaker, at higher it is absorbed in the skin.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app5.tag">SIGN</span>
+            <h3 data-i18n="visual5.app5.title">The Unsettled Part</h3>
+            <p data-i18n="visual5.app5.desc">Long-term effects below the limits are still argued about. The mainstream position is that established evidence supports the limits, while some researchers disagree.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app6.tag">RULE</span>
+            <h3 data-i18n="visual5.app6.title">Why Precaution Persists</h3>
+            <p data-i18n="visual5.app6.desc">Because radar sites are easy to fence off and the cost of doing so is trivial. There is no engineering reason to expose anyone to a limit that can be avoided for free.</p>
+        </div>
+    </div>
+    <p class="visual-caption" data-i18n="visual5.caption">Two honest things at once: the limits are conservative, and there is no good reason to test them by standing in the field.</p>
+</section>
+
+<!-- ============ 06 ============ -->
+<section class="article-section" id="s6">
+    <div class="section-label">06 <span data-i18n="visual6.name">WHAT YOU ACTUALLY SEE</span></div>
+    <h2 class="article-title" data-i18n="visual6.title">Radar in Public Space</h2>
+    <p class="article-intro" data-i18n="visual6.intro">Radars sit beside roads, airports and sports grounds. Here is how they handle it.</p>
+
+    <div class="application-grid">
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app1.tag">FENCE</span>
+            <h3 data-i18n="visual6.app1.title">The Perimeter</h3>
+            <p data-i18n="visual6.app1.desc">A physical fence around the mast, sized so that the field at the boundary is comfortably below the public limit. Signs mark it as a controlled area.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app2.tag">RAIL</span>
+            <h3 data-i18n="visual6.app2.title">Height as Shielding</h3>
+            <p data-i18n="visual6.app2.desc">Mounting the antenna high on a mast or tower is the most effective measure available. Height is the cheapest way to buy distance.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app3.tag">PLUME</span>
+            <h3 data-i18n="visual6.app3.title">Waveguide above People</h3>
+            <p data-i18n="visual6.app3.desc">Where power is fed through the air — an airport surface radar, for instance — the waveguide is routed overhead and above head height, not across a walkway.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app4.tag">SHUTDOWN</span>
+            <h3 data-i18n="visual6.app4.title">Switch Off for Work</h3>
+            <p data-i18n="visual6.app4.desc">Maintenance inside the perimeter is done with the transmitter off or at reduced power. The rules are procedural as much as physical.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app5.tag">MONITOR</span>
+            <h3 data-i18n="visual6.app5.title">Measuring It</h3>
+            <p data-i18n="visual6.app5.desc">Field strength is measured at the perimeter as part of routine safety work. The result is recorded, and the fence is sized from that measurement.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app6.tag">BOTTOM</span>
+            <h3 data-i18n="visual6.app6.title">The Practical Answer</h3>
+            <p data-i18n="visual6.app6.desc">Fences, height, shutdown procedures and measurement. None of it implies that standing outside a radar fence is dangerous. It implies that the margin is worth keeping.</p>
+        </div>
+    </div>
+    <p class="visual-caption" data-i18n="visual6.caption">A fence around a radar says the field inside is managed, not that the machine is dangerous.</p>
+</section>
+
+</main>
+
+<div class="article-summary-block">
+    <span class="summary-label" data-i18n="article.summaryLabel">ONE-LINE SUMMARY</span>
+    <p class="summary-line" data-i18n="article.summary">Radar has radiation, but following safety distances usually keeps you safe.</p>
+</div>
+
+<footer class="article-footer">
+    <span class="article-meta" data-i18n="article.meta">Student Research · 2026</span>
+    <a href="articles.html" class="article-back" data-i18n="article.back">← Back to Articles</a>
+</footer>
+
+<script src="script.js"></script>
+<script src="article-48.js"></script>
+
+</body>
+</html>

@@ -168,7 +168,10 @@ const ARTICLES_I18N = {
         "row.46.date":  "Aug 11, 2026",
         "row.47.title": "Can Radar Be Jammed?",
         "row.47.desc":  "Noise jamming versus deception, six countermeasures, and why weather radar is essentially never attacked.",
-        "row.47.date":  "Aug 13, 2026"
+        "row.47.date":  "Aug 13, 2026",
+        "row.48.title": "Is Radar Radiation Harmful?",
+        "row.48.desc":  "Why the field falls as 1/R squared, where exposure limits come from, and why the microwave analogy misleads.",
+        "row.48.date":  "Aug 14, 2026"
 },
 
     zh: {
@@ -328,7 +331,10 @@ const ARTICLES_I18N = {
         "row.46.date":  "2026.08.11",
         "row.47.title": "雷达会被干扰吗？",
         "row.47.desc":  "压制干扰对欺骗干扰、六种反制手段，以及天气雷达为什么基本不会被攻击。",
-        "row.47.date":  "2026.08.13"
+        "row.47.date":  "2026.08.13",
+        "row.48.title": "雷达辐射对人体有害吗？",
+        "row.48.desc":  "场强为什么按距离平方反比下降、曝光限值从哪来，以及微波炉类比为什么会误导人。",
+        "row.48.date":  "2026.08.14"
 
     }
 
