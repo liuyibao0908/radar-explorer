@@ -153,7 +153,10 @@ const ARTICLES_I18N = {
         "row.41.date":  "Aug 4, 2026",
         "row.42.title": "The Servo System — How the Radar Turns",
         "row.42.desc":  "Motor, drive and encoder; slew rate, inertia and tracking loops; why phased arrays keep a servo.",
-        "row.42.date":  "Aug 5, 2026"
+        "row.42.date":  "Aug 5, 2026",
+        "row.43.title": "How the Whole Radar Works Together",
+        "row.43.desc":  "All ten steps of one cycle, where the time goes, and why a balanced radar beats a brilliant one.",
+        "row.43.date":  "Aug 6, 2026"
 },
 
     zh: {
@@ -298,7 +301,10 @@ const ARTICLES_I18N = {
         "row.41.date":  "2026.08.04",
         "row.42.title": "伺服系统——雷达怎么转头",
         "row.42.desc":  "电机、传动、编码器；转速、惯性与跟踪环；以及相控阵为什么还留着伺服。",
-        "row.42.date":  "2026.08.05"
+        "row.42.date":  "2026.08.05",
+        "row.43.title": "整机怎么协同工作",
+        "row.43.desc":  "一次循环的十个步骤、时间花在哪，以及为什么均衡的雷达胜过单科出色的雷达。",
+        "row.43.date":  "2026.08.06"
 
     }
 
