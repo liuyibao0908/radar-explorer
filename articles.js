@@ -159,7 +159,10 @@ const ARTICLES_I18N = {
         "row.43.date":  "Aug 6, 2026",
         "row.44.title": "Power and Cooling — The Radar's Backbone",
         "row.44.desc":  "Why 90% becomes heat, how the cooling loop carries it out, and what happens when the grid drops.",
-        "row.44.date":  "Aug 7, 2026"
+        "row.44.date":  "Aug 7, 2026",
+        "row.45.title": "How Far Can Radar See?",
+        "row.45.desc":  "The radar equation, the fourth root that makes power a weak lever, and the horizon that no power can beat.",
+        "row.45.date":  "Aug 10, 2026"
 },
 
     zh: {
@@ -310,7 +313,10 @@ const ARTICLES_I18N = {
         "row.43.date":  "2026.08.06",
         "row.44.title": "电源与冷却——雷达的后勤",
         "row.44.desc":  "为什么九成变成了热、冷却回路怎么把它搬出去，以及电网断电时会怎样。",
-        "row.44.date":  "2026.08.07"
+        "row.44.date":  "2026.08.07",
+        "row.45.title": "雷达能看多远？",
+        "row.45.desc":  "雷达方程、让功率变成弱杠杆的四次方根，以及功率再大也越不过的地平线。",
+        "row.45.date":  "2026.08.10"
 
     }
 
