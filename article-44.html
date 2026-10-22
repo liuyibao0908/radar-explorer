@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="page.title">Article 44: Power and Cooling — Radar Explorer</title>
+<meta name="description" content="page.description">
+<meta name="description" data-i18n="page.description" content="Article 44: A high-power radar draws as much electricity as a small town and dumps most of it as heat. Power supplies, cooling loops, generators and UPS — the part nobody photographs.">
+<link rel="stylesheet" href="article.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo" data-i18n="nav.home">Radar Explorer</a>
+        <div class="nav-links">
+            <a href="articles.html" data-i18n="nav.articles">Articles</a>
+        </div>
+        <div class="nav-actions">
+            <button class="lang-toggle" data-lang-toggle type="button">
+                <span data-lang-label>中</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<article class="article-hero">
+    <div class="article-meta">
+        <span class="article-author" data-i18n="article.author">Editorial</span>
+        <span class="article-meta-sep">·</span>
+        <time class="article-date" datetime="2026-08-07" data-i18n="article.date">Aug 7, 2026</time>
+    </div>
+    <h1 class="article-title" data-i18n="article.title">Power and Cooling — The Radar's Backbone</h1>
+    <p class="article-subtitle" data-i18n="article.subtitle">The part nobody photographs, and the part that decides whether it runs at all.</p>
+</article>
+
+<div class="article-toc">
+    <div class="article-toc-inner">
+        <div class="article-toc-label" data-i18n="toc.title">On this page</div>
+        <nav class="article-toc-nav">
+            <a href="#s1"><span class="article-toc-num">01</span><span data-i18n="toc.s1">Where the power goes</span></a>
+            <a href="#s2"><span class="article-toc-num">02</span><span data-i18n="toc.s2">The heat budget</span></a>
+            <a href="#s3"><span class="article-toc-num">03</span><span data-i18n="toc.s3">Cooling loop animation</span></a>
+            <a href="#s4"><span class="article-toc-num">04</span><span data-i18n="toc.s4">Worked example</span></a>
+            <a href="#s5"><span class="article-toc-num">05</span><span data-i18n="toc.s5">Why it gets big</span></a>
+            <a href="#s6"><span class="article-toc-num">06</span><span data-i18n="toc.s6">When the grid fails</span></a>
+        </nav>
+    </div>
+</div>
+
+<main>
+
+<!-- ============ BODY ============ -->
+<section class="article-section article-body" id="body">
+    <p data-i18n="article.p1">A radar uses a lot of power and creates a lot of heat. How does it keep going?</p>
+    <p data-i18n="article.p2">Power supply: feeds the transmitter, receiver, signal processor, and servo. Cooling: air or liquid cooling to stop parts from overheating. Think of a gaming PC — you need enough power and good cooling, or it lags and shuts down.</p>
+    <p data-i18n="article.p3">In high-power radars, power and cooling systems take up a lot of space. Power must be stable — voltage swings affect performance. Cooling must be reliable — overheating burns out parts.</p>
+    <p data-i18n="article.p4">Some radars also have generators and UPS systems to avoid power cuts. If the backbone fails, even the best radar can't perform.</p>
+</section>
+
+<!-- ============ 01 ============ -->
+<section class="article-section" id="s1">
+    <div class="section-label">01 <span data-i18n="visual1.name">WHERE THE POWER GOES</span></div>
+    <h2 class="article-title" data-i18n="visual1.title">Only a Tenth Comes Out as Radio</h2>
+    <p class="article-intro" data-i18n="visual1.intro">A radar draws far more from the grid than it puts into the air. The rest becomes heat.</p>
+
+    <figure class="article-figure">
+        <svg viewBox="0 0 720 320" role="img" aria-labelledby="fig1-title">
+            <text id="fig1-title" data-i18n="fig1.title">A megawatt from the grid, 100 kW into the air</text>
+
+            <rect x="40" y="70" width="150" height="80" rx="8" fill="#0f2a44" stroke="#3fc23f" stroke-width="2"/>
+            <text x="115" y="102" text-anchor="middle" fill="#3fc23f" font-size="13" data-i18n="fig1.grid">GRID</text>
+            <text x="115" y="126" text-anchor="middle" fill="#e8f0f7" font-size="14" font-weight="bold" data-i18n="fig1.in">1 MW</text>
+
+            <line x1="192" y1="110" x2="238" y2="110" stroke="#3fc23f" stroke-width="2.4"/>
+            <polygon points="238,110 230,104 230,116" fill="#3fc23f"/>
+
+            <rect x="240" y="60" width="170" height="100" rx="8" fill="#0f2a44" stroke="#d83838" stroke-width="2"/>
+            <text x="325" y="86" text-anchor="middle" fill="#d83838" font-size="12" data-i18n="fig1.tx">TRANSMITTER</text>
+            <text x="325" y="112" text-anchor="middle" fill="#3fc23f" font-size="15" font-weight="bold" data-i18n="fig1.rf">100 kW to air</text>
+            <text x="325" y="140" text-anchor="middle" fill="#d83838" font-size="12" data-i18n="fig1.heat">900 kW to heat</text>
+
+            <line x1="412" y1="110" x2="458" y2="110" stroke="#3fc23f" stroke-width="2.4"/>
+            <polygon points="458,110 450,104 450,116" fill="#3fc23f"/>
+
+            <rect x="460" y="70" width="150" height="80" rx="8" fill="#0f2a44" stroke="#8fa6bb" stroke-width="2"/>
+            <text x="535" y="102" text-anchor="middle" fill="#8fa6bb" font-size="12" data-i18n="fig1.rest">RX, DSP, SERVO</text>
+            <text x="535" y="126" text-anchor="middle" fill="#8fa6bb" font-size="12" data-i18n="fig1.rest2">~150 kW</text>
+
+            <rect x="40" y="200" width="570" height="60" rx="8" fill="#0a1a2c" stroke="#22323C" stroke-width="1.4"/>
+            <rect x="40" y="200" width="513" height="60" rx="8" fill="#d83838" fill-opacity="0.18" stroke="none"/>
+            <text x="325" y="226" text-anchor="middle" fill="#d83838" font-size="13" data-i18n="fig1.heat2">about 90% of everything drawn becomes heat</text>
+            <text x="325" y="248" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig1.heat3">cooling must remove roughly 1 MW continuously</text>
+
+            <text x="660" y="234" fill="#8fa6bb" font-size="11" data-i18n="fig1.note">peak, not average</text>
+        </svg>
+        <figcaption class="visual-caption" data-i18n="visual1.caption">The radar only gets to be brilliant for a few microseconds at a time. Everything else the machinery does is converting electricity into heat that has to be carried away.</figcaption>
+    </figure>
+</section>
+
+<!-- ============ 02 ============ -->
+<section class="article-section" id="s2">
+    <div class="section-label">02 <span data-i18n="visual2.name">THE HEAT BUDGET</span></div>
+    <h2 class="article-title" data-i18n="visual2.title">Removing a Megawatt of Heat</h2>
+    <p class="article-intro" data-i18n="visual2.intro">Heat has to go somewhere. The choice of where is the whole design.</p>
+
+    <div class="application-grid">
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual2.app1.tag">AIR</span>
+            <h3 data-i18n="visual2.app1.title">Forced Air</h3>
+            <p data-i18n="visual2.app1.desc">Fans move air through filters and heat exchangers. Simple, cheap and easy to maintain — but air carries far less heat per cubic metre than water, so it needs a lot of moving volume.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual2.app2.tag">WATER</span>
+            <h3 data-i18n="visual2.app2.title">Liquid Loop</h3>
+            <p data-i18n="visual2.app2.desc">Water carries about 4000 times more heat per unit volume than air. Most high-power installations use a water loop even though the final heat rejection is still often to air.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual2.app3.tag">SEALED</span>
+            <h3 data-i18n="visual2.app3.title">Closed Loop</h3>
+            <p data-i18n="visual2.app3.desc">The coolant never leaves the building; external radiators dump the heat to the atmosphere. This is what a modern weather radar does inside its radome.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual2.app4.tag">COLD</span>
+            <h3 data-i18n="visual2.app4.title">Why It Is Cold Outside</h3>
+            <p data-i18n="visual2.app4.desc">A radome is white for a reason. Sunlight on a dark dome of that size would add tens of kilowatts of heat on a still, clear day.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual2.app5.tag">LIMIT</span>
+            <h3 data-i18n="visual2.app5.title">Summer Peak</h3>
+            <p data-i18n="visual2.app5.desc">Cooling is sized for the hottest day of the year, not the average. On a hot still afternoon there is less margin than at any other time.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual2.app6.tag">BLOWN</span>
+            <h3 data-i18n="visual2.app6.title">When It Fails</h3>
+            <p data-i18n="visual2.app6.desc">A coolant pump stopping takes the radar down within minutes. Most stations watch coolant temperature as closely as they watch the transmitter.</p>
+        </div>
+    </div>
+    <p class="visual-caption" data-i18n="visual2.caption">Water in, air out. The loop exists because air is a poor conductor of heat and a radome is a very large surface to cool.</p>
+</section>
+
+<!-- ============ 03 ============ -->
+<section class="article-section" id="s3">
+    <div class="section-label">03 <span data-i18n="visual3.name">ANIMATION: THE COOLING LOOP</span></div>
+    <h2 class="article-title" data-i18n="visual3.title">Watching Heat Leave the Building</h2>
+    <p class="article-intro" data-i18n="visual3.intro">Follow a packet of heat from the transmitter to the outside air.</p>
+
+    <div class="video-wrap">
+        <video id="radar-loop-video" autoplay loop muted playsinline
+               data-video-en="manim/media/videos/script/480p15/RadarArticle44.en.mp4"
+               data-video-zh="manim/media/videos/script/480p15/RadarArticle44.zh.mp4"
+               poster="manim/media/images/radar-article44-poster.png">
+            <span data-i18n="visual3.fallback">Your browser does not support the video tag.</span>
+        </video>
+    </div>
+    <div class="video-captions">
+        <p class="caption-cc" data-i18n="visual3.cc1">1. GENERATED -- the transmitter makes heat, not just waves</p>
+        <p class="caption-cc" data-i18n="visual3.cc2">2. ABSORBED -- coolant picks it up at the cold plate</p>
+        <p class="caption-cc" data-i18n="visual3.cc3">3. CARRIED -- a pump moves it through the loop</p>
+        <p class="caption-cc" data-i18n="visual3.cc4">4. REJECTED -- radiators pass it into the open air</p>
+    </div>
+    <p class="visual-caption" data-i18n="visual3.caption">A closed loop does not consume water, but it does depend on pumps running. Every stage is a possible failure.</p>
+</section>
+
+<!-- ============ 04 ============ -->
+<section class="article-section" id="s4">
+    <div class="section-label">04 <span data-i18n="visual4.name">WORKED EXAMPLE</span></div>
+    <h2 class="article-title" data-i18n="visual4.title">One Radar's Power Bill</h2>
+    <p class="article-intro" data-i18n="visual4.intro">A typical high-power weather radar, and where every kilowatt goes.</p>
+
+    <div class="example-card">
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row1.label">Transmitter, peak</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row1.value">800 kW</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row2.label">Duty cycle</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row2.value">0.2% — it is on for 2 ms, off for 1 s</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row3.label">Transmitter, average</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row3.value">1.6 kW</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row4.label">Electronics + servo</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row4.value">40 kW continuous</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row5.label">Cooling and losses</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row5.value">25 kW continuous</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row6.label">Site total</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row6.value">about 65 kW → 570 MWh a year</span></div>
+    </div>
+    <p class="visual-caption" data-i18n="visual4.caption">The peak is what the cooling must handle instantly. The average is what the electricity bill looks like. They differ by a factor of two thousand.</p>
+</section>
+
+<!-- ============ 05 ============ -->
+<section class="article-section" id="s5">
+    <div class="section-label">05 <span data-i18n="visual5.name">WHY IT GETS BIG</span></div>
+    <h2 class="article-title" data-i18n="visual5.title">Quality Has a Physical Size</h2>
+    <p class="article-intro" data-i18n="visual5.intro">Nothing in a radar can be made perfect, because perfection would need infinite mass.</p>
+
+    <div class="application-grid">
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app1.tag">UPS</span>
+            <h3 data-i18n="visual5.app1.title">Ride-Through</h3>
+            <p data-i18n="visual5.app1.desc">A radar cannot be stopped and restarted casually; the tube warms up over minutes and the crew lose the picture. Batteries hold the site for roughly ten minutes.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app2.tag">GEN</span>
+            <h3 data-i18n="visual5.app2.title">Generator</h3>
+            <p data-i18n="visual5.app2.desc">A diesel set on site takes over when the grid fails. It must start, fuel and run unattended for hours, and it is tested on a schedule for that reason.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app3.tag">REG</span>
+            <h3 data-i18n="visual5.app3.title">Voltage Regulation</h3>
+            <p data-i18n="visual5.app3.desc">A magnetron's output frequency and power depend on its anode voltage. Grid sag of a few per cent becomes a measurable shift in the transmitted wave.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app4.tag">TRANSIENT</span>
+            <h3 data-i18n="visual5.app4.title">Switching Surges</h3>
+            <p data-i18n="visual5.app4.desc">Striking a magnetron draws a very short, very large pulse of current. Supply gear is sized for that surge, not for the average load.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app5.tag">GROUND</span>
+            <h3 data-i18n="visual5.app5.title">Earthing</h3>
+            <p data-i18n="visual5.app5.desc">The radome is on a concrete foundation with its own earth. It protects the structure, and it keeps the RF ground plane consistent.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app6.tag">SPACE</span>
+            <h3 data-i18n="visual5.app6.title">The Hidden Half</h3>
+            <p data-i18n="visual5.app6.desc">In a high-power radar, the support building is often larger than the tower. It holds the feeder, the cooling plant, the generator and the spares.</p>
+        </div>
+    </div>
+    <p class="visual-caption" data-i18n="visual5.caption">The most advanced part of a radar is often not in the tower at all. It is in the hut beside it.</p>
+</section>
+
+<!-- ============ 06 ============ -->
+<section class="article-section" id="s6">
+    <div class="section-label">06 <span data-i18n="visual6.name">WHEN THE GRID FAILS</span></div>
+    <h2 class="article-title" data-i18n="visual6.title">The Priority Order</h2>
+    <p class="article-intro" data-i18n="visual6.intro">Not everything can keep running. Something has to be chosen.</p>
+
+    <div class="application-grid">
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app1.tag">T+0</span>
+            <h3 data-i18n="visual6.app1.title">Grid Drops</h3>
+            <p data-i18n="visual6.app1.desc">The switchgear transfers to the generator or the UPS within seconds. The transmitter is the first thing switched off, because it is the biggest load and the least needed for a moment.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app2.tag">T+1min</span>
+            <h3 data-i18n="visual6.app2.title">Survival Mode</h3>
+            <p data-i18n="visual6.app2.desc">On battery or generator power the radar reduces to the receiver, processor and display. No transmission, but the site still sees whatever is already in the air.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app3.tag">T+10min</span>
+            <h3 data-i18n="visual6.app3.title">Shutdown</h3>
+            <p data-i18n="visual6.app3.desc">If the outage continues the site shuts down in a controlled order, cooling stopped last so the electronics can cool down as they go.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app4.tag">SAFE</span>
+            <h3 data-i18n="visual6.app4.title">Why This Order</h3>
+            <p data-i18n="visual6.app4.desc">A warm magnetron is far harder to restart than a cold one, but damaging it is worse than losing coverage. The sequence is always built around not breaking hardware.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app5.tag">SITE</span>
+            <h3 data-i18n="visual6.app5.title">Remote Sites</h3>
+            <p data-i18n="visual6.app5.desc">Offshore or mountain stations may have no grid at all, so a generator is the normal supply and a large battery bridges the start delay.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app6.tag">COST</span>
+            <h3 data-i18n="visual6.app6.title">The Expensive Part</h3>
+            <p data-i18n="visual6.app6.desc">In many procurements the power, cooling and shelter cost more than the radar itself. That ratio is not widely known outside the industry.</p>
+        </div>
+    </div>
+    <p class="visual-caption" data-i18n="visual6.caption">The backbone is invisible during normal operation, which is exactly why it is easy to under-budget.</p>
+</section>
+
+</main>
+
+<div class="article-summary-block">
+    <span class="summary-label" data-i18n="article.summaryLabel">ONE-LINE SUMMARY</span>
+    <p class="summary-line" data-i18n="article.summary">Power and cooling are the radar's backbone — they keep it running.</p>
+</div>
+
+<footer class="article-footer">
+    <span class="article-meta" data-i18n="article.meta">Student Research · 2026</span>
+    <a href="articles.html" class="article-back" data-i18n="article.back">← Back to Articles</a>
+</footer>
+
+<script src="script.js"></script>
+<script src="article-44.js"></script>
+
+</body>
+</html>

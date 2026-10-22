@@ -156,7 +156,10 @@ const ARTICLES_I18N = {
         "row.42.date":  "Aug 5, 2026",
         "row.43.title": "How the Whole Radar Works Together",
         "row.43.desc":  "All ten steps of one cycle, where the time goes, and why a balanced radar beats a brilliant one.",
-        "row.43.date":  "Aug 6, 2026"
+        "row.43.date":  "Aug 6, 2026",
+        "row.44.title": "Power and Cooling — The Radar's Backbone",
+        "row.44.desc":  "Why 90% becomes heat, how the cooling loop carries it out, and what happens when the grid drops.",
+        "row.44.date":  "Aug 7, 2026"
 },
 
     zh: {
@@ -304,7 +307,10 @@ const ARTICLES_I18N = {
         "row.42.date":  "2026.08.05",
         "row.43.title": "整机怎么协同工作",
         "row.43.desc":  "一次循环的十个步骤、时间花在哪，以及为什么均衡的雷达胜过单科出色的雷达。",
-        "row.43.date":  "2026.08.06"
+        "row.43.date":  "2026.08.06",
+        "row.44.title": "电源与冷却——雷达的后勤",
+        "row.44.desc":  "为什么九成变成了热、冷却回路怎么把它搬出去，以及电网断电时会怎样。",
+        "row.44.date":  "2026.08.07"
 
     }
 
