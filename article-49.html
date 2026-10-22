@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="page.title">Article 49: Why Some Radar Antennas Spin — Radar Explorer</title>
+<meta name="description" content="page.description">
+<meta name="description" data-i18n="page.description" content="Article 49: Mechanical-scan radar versus phased array, compared across dwell time, tracks at once, cost, failure modes — and why the spinning dish is not going away.">
+<link rel="stylesheet" href="article.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo" data-i18n="nav.home">Radar Explorer</a>
+        <div class="nav-links">
+            <a href="articles.html" data-i18n="nav.articles">Articles</a>
+        </div>
+        <div class="nav-actions">
+            <button class="lang-toggle" data-lang-toggle type="button">
+                <span data-lang-label>中</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<article class="article-hero">
+    <div class="article-meta">
+        <span class="article-author" data-i18n="article.author">Editorial</span>
+        <span class="article-meta-sep">·</span>
+        <time class="article-date" datetime="2026-08-17" data-i18n="article.date">Aug 17, 2026</time>
+    </div>
+    <h1 class="article-title" data-i18n="article.title">Why Some Antennas Spin and Others Don't</h1>
+    <p class="article-subtitle" data-i18n="article.subtitle">Two ways to point a beam. One costs a motor; the other costs a computer.</p>
+</article>
+
+<div class="article-toc">
+    <div class="article-toc-inner">
+        <div class="article-toc-label" data-i18n="toc.title">On this page</div>
+        <nav class="article-toc-nav">
+            <a href="#s1"><span class="article-toc-num">01</span><span data-i18n="toc.s1">The two architectures</span></a>
+            <a href="#s2"><span class="article-toc-num">02</span><span data-i18n="toc.s2">Dwell time is the difference</span></a>
+            <a href="#s3"><span class="article-toc-num">03</span><span data-i18n="toc.s3">Fan versus lights animation</span></a>
+            <a href="#s4"><span class="article-toc-num">04</span><span data-i18n="toc.s4">Worked example</span></a>
+            <a href="#s5"><span class="article-toc-num">05</span><span data-i18n="toc.s5">The trade-offs</span></a>
+            <a href="#s6"><span class="article-toc-num">06</span><span data-i18n="toc.s6">Why the dish survives</span></a>
+        </nav>
+    </div>
+</div>
+
+<main>
+
+<!-- ============ BODY ============ -->
+<section class="article-section article-body" id="body">
+    <p data-i18n="article.p1">Some radar antennas spin all the time. Others never move. Why?</p>
+    <p data-i18n="article.p2">Spinning ones: mechanical-scan radar, which turns the antenna to change beam direction. Still ones: phased-array radar, which steers the beam electronically. Mechanical scanning is simple and cheap, but slow. Phased array is fast and flexible, but complex and expensive.</p>
+    <p data-i18n="article.p3">Mechanical scanning is like an oscillating fan; phased array is like many small lights working together. Phased array can track many targets at once; mechanical scanning looks at one direction at a time. Modern warships and fighter jets use phased array more and more.</p>
+    <p data-i18n="article.p4">But mechanical-scan radar still has its own uses and advantages.</p>
+</section>
+
+<!-- ============ 01 ============ -->
+<section class="article-section" id="s1">
+    <div class="section-label">01 <span data-i18n="visual1.name">THE TWO ARCHITECTURES</span></div>
+    <h2 class="article-title" data-i18n="visual1.title">One Beam, Two Ways to Move It</h2>
+    <p class="article-intro" data-i18n="visual1.intro">In both cases there is exactly one beam. The difference is what carries it across the sky.</p>
+
+    <figure class="article-figure">
+        <svg viewBox="0 0 720 320" role="img" aria-labelledby="fig1-title">
+            <text id="fig1-title" data-i18n="fig1.title">A dish that turns, and a face that does not</text>
+
+            <!-- mechanical -->
+            <rect x="30" y="40" width="300" height="250" rx="8" fill="#0a1626" stroke="#FFD93D" stroke-width="2"/>
+            <text x="180" y="66" text-anchor="middle" fill="#FFD93D" font-size="13" font-weight="bold" data-i18n="fig1.mech">MECHANICAL SCAN</text>
+
+            <path d="M 130 150 Q 180 108 230 150" fill="none" stroke="#FFD93D" stroke-width="4"/>
+            <line x1="180" y1="126" x2="180" y2="150" stroke="#8fa6bb" stroke-width="2"/>
+            <rect x="168" y="150" width="24" height="52" fill="#0f2a44" stroke="#8fa6bb" stroke-width="1.4"/>
+            <line x1="180" y1="202" x2="180" y2="230" stroke="#8fa6bb" stroke-width="2"/>
+            <line x1="140" y1="230" x2="220" y2="230" stroke="#8fa6bb" stroke-width="3"/>
+
+            <path d="M 186 130 Q 250 108 272 86" fill="none" stroke="#FFD93D" stroke-width="2.4"/>
+            <polygon points="272,86 262,90 266,97" fill="#FFD93D"/>
+            <text x="255" y="76" text-anchor="middle" fill="#FFD93D" font-size="10" data-i18n="fig1.beam">the beam</text>
+
+            <path d="M 130 118 Q 116 138 128 152" fill="none" stroke="#8fa6bb" stroke-width="1.6"/>
+            <polygon points="128,152 122,146 134,145" fill="#8fa6bb"/>
+            <text x="108" y="176" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig1.turn">it turns</text>
+
+            <text x="180" y="262" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig1.mech1">the whole dish is the aiming mechanism</text>
+            <text x="180" y="280" text-anchor="middle" fill="#6b8299" font-size="10" data-i18n="fig1.mech2">mass, wind load, a motor, a bearing</text>
+
+            <!-- electronic -->
+            <rect x="390" y="40" width="300" height="250" rx="8" fill="#0a1626" stroke="#3fc23f" stroke-width="2"/>
+            <text x="540" y="66" text-anchor="middle" fill="#3fc23f" font-size="13" font-weight="bold" data-i18n="fig1.elec">ELECTRONIC SCAN</text>
+
+            <rect x="420" y="118" width="240" height="74" rx="4" fill="#0f2a44" stroke="#3fc23f" stroke-width="1.6"/>
+            <g fill="#3fc23f">
+                <rect x="432" y="130" width="16" height="16"/>
+                <rect x="468" y="130" width="16" height="16"/>
+                <rect x="504" y="130" width="16" height="16"/>
+                <rect x="540" y="130" width="16" height="16"/>
+                <rect x="576" y="130" width="16" height="16"/>
+                <rect x="612" y="130" width="16" height="16"/>
+                <rect x="432" y="164" width="16" height="16"/>
+                <rect x="468" y="164" width="16" height="16"/>
+                <rect x="504" y="164" width="16" height="16"/>
+                <rect x="540" y="164" width="16" height="16"/>
+                <rect x="576" y="164" width="16" height="16"/>
+                <rect x="612" y="164" width="16" height="16"/>
+            </g>
+
+            <path d="M 668 140 Q 690 120 700 96" fill="none" stroke="#FFD93D" stroke-width="2.4"/>
+            <polygon points="700,96 690,100 694,107" fill="#FFD93D"/>
+
+            <text x="540" y="96" text-anchor="middle" fill="#FFD93D" font-size="10" data-i18n="fig1.phase">phase shifts, not motion</text>
+
+            <text x="540" y="262" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig1.elec1">phase shifters are the aiming mechanism</text>
+            <text x="540" y="280" text-anchor="middle" fill="#6b8299" font-size="10" data-i18n="fig1.elec2">no moving parts, but far more electronics</text>
+        </svg>
+        <figcaption class="visual-caption" data-i18n="visual1.caption">The array face has no moving parts at all. It does not aim anything — it changes the phase of the wave leaving each element, and the beam goes somewhere else.</figcaption>
+    </figure>
+</section>
+
+<!-- ============ 02 ============ -->
+<section class="article-section" id="s2">
+    <div class="section-label">02 <span data-i18n="visual2.name">DWELL TIME IS THE DIFFERENCE</span></div>
+    <h2 class="article-title" data-i18n="visual2.title">One Number Explains Almost Everything</h2>
+    <p class="article-intro" data-i18n="visual2.intro">How long the beam rests on one direction decides what the radar can know.</p>
+
+    <div class="example-card">
+        <div class="example-row"><span class="example-label" data-i18n="visual2.row1.label">A 1° beam on a 36°/s sweep</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual2.row1.value">28 ms per direction</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual2.row2.label">Pulses you can spend there</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual2.row2.value">about 16 at 600 Hz</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual2.row3.label">Needed to integrate</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual2.row3.value">32 pulses — so the scan must slow</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual2.row4.label">A phased array at 1 ms</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual2.row4.value">600 pulses in the same 1 ms</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual2.row5.label">It can dwell on three</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual2.row5.value">targets at once and still integrate fully</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual2.row6.label">Then jump to a fourth</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual2.row6.value">in the time the dish has not finished 2°</span></div>
+    </div>
+    <p class="visual-caption" data-i18n="visual2.caption">This is the whole argument in one line: the array does not scan faster, it does many things at once. The dish can only ever be looking at one thing.</p>
+</section>
+
+<!-- ============ 03 ============ -->
+<section class="article-section" id="s3">
+    <div class="section-label">03 <span data-i18n="visual3.name">ANIMATION: FAN VERSUS LIGHTS</span></div>
+    <h2 class="article-title" data-i18n="visual3.title">The Oscillating Fan and the Panel of Lights</h2>
+    <p class="article-intro" data-i18n="visual3.intro">Same job, same sky. Watch how each one covers it.</p>
+
+    <div class="video-wrap">
+        <video id="radar-loop-video" autoplay loop muted playsinline
+               data-video-en="manim/media/videos/script/480p15/RadarArticle49.en.mp4"
+               data-video-zh="manim/media/videos/script/480p15/RadarArticle49.zh.mp4"
+               poster="manim/media/images/radar-article49-poster.png">
+            <span data-i18n="visual3.fallback">Your browser does not support the video tag.</span>
+        </video>
+    </div>
+    <div class="video-captions">
+        <p class="caption-cc" data-i18n="visual3.cc1">1. DISH -- one beam, sweeping, never in two places at once</p>
+        <p class="caption-cc" data-i18n="visual3.cc2">2. ARRAY -- one beam, jumping instantly to a new bearing</p>
+        <p class="caption-cc" data-i18n="visual3.cc3">3. THREE TARGETS -- the array holds all three simultaneously</p>
+        <p class="caption-cc" data-i18n="visual3.cc4">4. THE SAME THREE -- the dish reaches them one at a time</p>
+    </div>
+    <p class="visual-caption" data-i18n="visual3.caption">Neither is better at pointing. The difference is that a point of light stays lit while you look at something else.</p>
+</section>
+
+<!-- ============ 04 ============ -->
+<section class="article-section" id="s4">
+    <div class="section-label">04 <span data-i18n="visual4.name">WORKED EXAMPLE</span></div>
+    <h2 class="article-title" data-i18n="visual4.title">Missile Defence and Air Traffic Control</h2>
+    <p class="article-intro" data-i18n="visual4.intro">The same physics, sized for two very different jobs.</p>
+
+    <div class="example-card">
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row1.label">ATC wants</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row1.value">fresh data on 20 aircraft within 60 km</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row2.label">Missile defence wants</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row2.value">many high-speed targets, guided continuously</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row3.label">A dish at 60 km</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row3.value">updates every 1–2 s — fine for the first, useless for the second</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row4.label">A rotating array</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row4.value">updates every 0.1 s — the reason arrays took over this role</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row5.label">A fixed array</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row5.value">10 Hz or better, and it can hold several interceptors at once</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row6.label">Consequence</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row6.value">every modern fighter radar is a fixed array</span></div>
+    </div>
+    <p class="visual-caption" data-i18n="visual4.caption">A fighter cannot rely on a radar that looks away for two seconds while it is closing on a missile. That single requirement decided the design.</p>
+</section>
+
+<!-- ============ 05 ============ -->
+<section class="article-section" id="s5">
+    <div class="section-label">05 <span data-i18n="visual5.name">THE TRADE-OFFS</span></div>
+    <h2 class="article-title" data-i18n="visual5.title">What Each One Is Bad At</h2>
+    <p class="article-intro" data-i18n="visual5.intro">A fair comparison has to name both sides' weaknesses.</p>
+
+    <div class="application-grid">
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app1.tag">DISH SLOW</span>
+            <h3 data-i18n="visual5.app1.title">One Direction at a Time</h3>
+            <p data-i18n="visual5.app1.desc">A fast, close target can cross the beam between two visits. The radar knows it was there once, and not where it went.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app2.tag">DISH SLOW</span>
+            <h3 data-i18n="visual5.app2.title">No Elevation Without Tilting</h3>
+            <p data-i18n="visual5.app2.desc">A single-axis dish covers only one elevation band per pass. Pointing up means nothing is being watched below.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app3.tag">DISH SLOW</span>
+            <h3 data-i18n="visual5.app3.title">Wear and Storm Loading</h3>
+            <p data-i18n="visual5.app3.desc">A bearing takes wear, ice loads the radome, and a gust pushes the beam off. A 25 m dish needs a real maintenance regime.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app4.tag">ARRAY BAD</span>
+            <h3 data-i18n="visual5.app4.title">Cost and Heat</h3>
+            <p data-i18n="visual5.app4.desc">Thousands of modules, each needing power and cooling. The support building often costs more than the antenna face.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app5.tag">ARRAY BAD</span>
+            <h3 data-i18n="visual5.app5.title">Scan Angle Is Not Free</h3>
+            <p data-i18n="visual5.app5.desc">A flat face steers poorly far off axis, so a real system still mounts the array on a slow-drive pedestal to face the working hemisphere.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app6.tag">ARRAY BAD</span>
+            <h3 data-i18n="visual5.app6.title">Failure Adds Up</h3>
+            <p data-i18n="visual5.app6.desc">Losing one element degrades the beam slightly; losing a whole subarray leaves a notch in it. Faults have to be found and worked around.</p>
+        </div>
+    </div>
+    <p class="visual-caption" data-i18n="visual5.caption">Neither architecture wins on merit. Each one is bad at the thing the other one is good at, which is exactly why both are still in service.</p>
+</section>
+
+<!-- ============ 06 ============ -->
+<section class="article-section" id="s6">
+    <div class="section-label">06 <span data-i18n="visual6.name">WHY THE DISH SURVIVES</span></div>
+    <h2 class="article-title" data-i18n="visual6.title">Cases Where Mechanical Still Wins</h2>
+    <p class="article-intro" data-i18n="visual6.intro">A rotating antenna is not a legacy technology. It is the right answer to several questions.</p>
+
+    <div class="application-grid">
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app1.tag">COST</span>
+            <h3 data-i18n="visual6.app1.title">Long Range, Low Budget</h3>
+            <p data-i18n="visual6.app1.desc">Range needs aperture and power, not electronics. A big dish on open ground covers 400 km for a fraction of an array's cost.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app2.tag">BEAM</span>
+            <h3 data-i18n="visual6.app2.title">High Gain per Watt</h3>
+            <p data-i18n="visual6.app2.desc">A parabolic dish is inherently efficient, with no phase-shifter losses. For a fixed long-range warning role, that is decisive.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app3.tag">SECTOR</span>
+            <h3 data-i18n="visual6.app3.title">A Deliberate Gap</h3>
+            <p data-i18n="visual6.app3.desc">Sometimes you want a radar that is blind over your own city. A rotating dish is naturally blanked in a fixed sector.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app4.tag">WIDEBAND</span>
+            <h3 data-i18n="visual6.app4.title">Several Wavelengths</h3>
+            <p data-i18n="visual6.app4.desc">A dish works across a broad band, so it can be switched between frequencies for different jobs. An array's modules are built for one band.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app5.tag">REPAIR</span>
+            <h3 data-i18n="visual6.app5.title">Simple to Understand</h3>
+            <p data-i18n="visual6.app5.desc">When a rotating radar stops, the cause is usually mechanical and visible. Array diagnostics are genuinely harder in the field.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app6.tag">BOTH</span>
+            <h3 data-i18n="visual6.app6.title">The Hybrid</h3>
+            <p data-i18n="visual6.app6.desc">Many modern weather radars are arrays on slow pedestals: electronic beam steering for the weather, with a servo keeping the face pointed at the storms.</p>
+        </div>
+    </div>
+    <p class="visual-caption" data-i18n="visual6.caption">The spinning dish is not obsolete. It is simply no longer the only sensible answer, and it never will be.</p>
+</section>
+
+</main>
+
+<div class="article-summary-block">
+    <span class="summary-label" data-i18n="article.summaryLabel">ONE-LINE SUMMARY</span>
+    <p class="summary-line" data-i18n="article.summary">Whether it spins depends on mechanical or electronic scanning.</p>
+</div>
+
+<footer class="article-footer">
+    <span class="article-meta" data-i18n="article.meta">Student Research · 2026</span>
+    <a href="articles.html" class="article-back" data-i18n="article.back">← Back to Articles</a>
+</footer>
+
+<script src="script.js"></script>
+<script src="article-49.js"></script>
+
+</body>
+</html>

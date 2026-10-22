@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="page.title">Article 40: The Display — Radar Explorer</title>
+<meta name="description" data-i18n="page.description" content="Article 40: What do the dots on a radar screen mean? A-scope versus PPI, range rings, brightness and colour coding, track overlays and how operators actually read it.">
+<link rel="stylesheet" href="article.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo" data-i18n="nav.home">Radar Explorer</a>
+        <div class="nav-links">
+            <a href="articles.html" data-i18n="nav.articles">Articles</a>
+        </div>
+        <div class="nav-actions">
+            <button class="lang-toggle" data-lang-toggle type="button">
+                <span data-lang-label>中</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<article class="article-hero">
+    <div class="article-meta">
+        <span class="article-author" data-i18n="article.author">Editorial</span>
+        <span class="article-meta-sep">·</span>
+        <time class="article-date" datetime="2026-08-03" data-i18n="article.date">Aug 3, 2026</time>
+    </div>
+    <h1 class="article-title" data-i18n="article.title">The Display — What Are Those Dots?</h1>
+    <p class="article-subtitle" data-i18n="article.subtitle">Position is distance and bearing. Brightness is strength. Everything else is an overlay.</p>
+</article>
+
+<div class="article-toc">
+    <div class="article-toc-inner">
+        <div class="article-toc-label" data-i18n="toc.title">On this page</div>
+        <nav class="article-toc-nav">
+            <a href="#s1"><span class="article-toc-num">01</span><span data-i18n="toc.s1">Two ways to plot</span></a>
+            <a href="#s2"><span class="article-toc-num">02</span><span data-i18n="toc.s2">Reading a PPI</span></a>
+            <a href="#s3"><span class="article-toc-num">03</span><span data-i18n="toc.s3">Sweep animation</span></a>
+            <a href="#s4"><span class="article-toc-num">04</span><span data-i18n="toc.s4">Worked example</span></a>
+            <a href="#s5"><span class="article-toc-num">05</span><span data-i18n="toc.s5">Colour and brightness</span></a>
+            <a href="#s6"><span class="article-toc-num">06</span><span data-i18n="toc.s6">Layers on top</span></a>
+        </nav>
+    </div>
+</div>
+
+<main>
+
+<!-- ============ BODY ============ -->
+<section class="article-section article-body" id="body">
+    <p data-i18n="article.p1">What do those dots and lines on a radar screen really mean?</p>
+    <p data-i18n="article.p2">The display turns processed signals into something people can read. A-scope: distance on the horizontal axis, signal strength on the vertical. PPI: like a map, with you at the center and targets around you.</p>
+    <p data-i18n="article.p3">A dot's position shows distance and direction; its brightness shows echo strength. Think of a mini-map in a video game — you at the center, bright dots are enemies. Modern radars often use color displays, where different colors mean different strengths.</p>
+    <p data-i18n="article.p4">The display also overlays maps, tracks, and warnings. Operators use it to judge targets and make decisions.</p>
+</section>
+
+<!-- ============ 01 ============ -->
+<section class="article-section" id="s1">
+    <div class="section-label">01 <span data-i18n="visual1.name">TWO WAYS TO PLOT</span></div>
+    <h2 class="article-title" data-i18n="visual1.title">A-Scope vs PPI</h2>
+    <p class="article-intro" data-i18n="visual1.intro">The same data, two very different pictures. One answers "how far", the other answers "where".</p>
+
+    <figure class="article-figure">
+        <svg viewBox="0 0 720 340" role="img" aria-labelledby="fig1-title">
+            <text id="fig1-title" data-i18n="fig1.title">A-scope on the left, PPI on the right</text>
+
+            <!-- A-scope -->
+            <rect x="30" y="50" width="290" height="220" fill="#0a1626" stroke="#22323C" stroke-width="1.4"/>
+            <line x1="60" y1="240" x2="300" y2="240" stroke="#8fa6bb" stroke-width="1.4"/>
+            <line x1="60" y1="240" x2="60" y2="70" stroke="#8fa6bb" stroke-width="1.4"/>
+            <text x="180" y="268" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig1.ax">range →</text>
+            <text x="48" y="60" fill="#8fa6bb" font-size="11" data-i18n="fig1.ay">strength</text>
+            <text x="46" y="74" fill="#8fa6bb" font-size="11" data-i18n="fig1.ay2">↑</text>
+
+            <path d="M 60 236 L 96 232 L 108 226 L 140 222 L 168 224 L 178 232 L 210 234 L 232 228 L 244 190 L 252 106 L 258 128 L 264 226 L 284 230 L 300 234"
+                  fill="none" stroke="#3fc23f" stroke-width="2"/>
+            <text x="180" y="40" text-anchor="middle" fill="#3fc23f" font-size="13" data-i18n="fig1.aTitle">A-SCOPE</text>
+            <text x="256" y="98" fill="#3fc23f" font-size="10" data-i18n="fig1.peak1">peak A</text>
+            <text x="180" y="216" fill="#8fa6bb" font-size="10" data-i18n="fig1.floor">clutter + noise</text>
+
+            <!-- PPI -->
+            <circle cx="540" cy="160" r="108" fill="#0a1626" stroke="#22323C" stroke-width="1.4"/>
+            <circle cx="540" cy="160" r="81" fill="none" stroke="#22323C" stroke-width="1" stroke-dasharray="3 3"/>
+            <circle cx="540" cy="160" r="54" fill="none" stroke="#22323C" stroke-width="1" stroke-dasharray="3 3"/>
+            <circle cx="540" cy="160" r="27" fill="none" stroke="#22323C" stroke-width="1" stroke-dasharray="3 3"/>
+            <line x1="432" y1="160" x2="648" y2="160" stroke="#22323C" stroke-width="1"/>
+            <line x1="540" y1="52" x2="540" y2="268" stroke="#22323C" stroke-width="1"/>
+
+            <line x1="540" y1="160" x2="625" y2="100" stroke="#3fc23f" stroke-width="2.5"/>
+            <circle cx="625" cy="100" r="5" fill="#FFD93D"/>
+            <circle cx="573" cy="213" r="3.4" fill="#3fc23f"/>
+            <circle cx="479" cy="124" r="4.2" fill="#FF8a3a"/>
+            <circle cx="585" cy="131" r="2.6" fill="#3fc23f"/>
+            <circle cx="492" cy="196" r="2.6" fill="#8fa6bb"/>
+
+            <circle cx="540" cy="160" r="4" fill="#3fc23f"/>
+            <text x="540" y="290" text-anchor="middle" fill="#3fc23f" font-size="13" data-i18n="fig1.pTitle">PPI (plan position)</text>
+            <text x="540" y="308" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig1.pYou">you are here</text>
+        </svg>
+        <figcaption class="visual-caption" data-i18n="visual1.caption">The A-scope answers "how strong and how far along this one beam". The PPI answers "where, all around me, at once".</figcaption>
+    </figure>
+</section>
+
+<!-- ============ 02 ============ -->
+<section class="article-section" id="s2">
+    <div class="section-label">02 <span data-i18n="visual2.name">READING A PPI</span></div>
+    <h2 class="article-title" data-i18n="visual2.title">Polar to Cartesian</h2>
+    <p class="article-intro" data-i18n="visual2.intro">A dot is stored as one number for distance and one for angle. The screen converts them to a position.</p>
+
+    <figure class="article-figure">
+        <svg viewBox="0 0 720 300" role="img" aria-labelledby="fig2-title">
+            <text id="fig2-title" data-i18n="fig2.title">How one blip becomes a pixel</text>
+
+            <circle cx="150" cy="160" r="110" fill="none" stroke="#22323C" stroke-width="1.4"/>
+            <line x1="150" y1="34" x2="150" y2="286" stroke="#22323C" stroke-width="1"/>
+            <line x1="40" y1="160" x2="260" y2="160" stroke="#22323C" stroke-width="1"/>
+
+            <line x1="150" y1="160" x2="240" y2="80" stroke="#3fc23f" stroke-width="2.5"/>
+            <circle cx="240" cy="80" r="6" fill="#FFD93D"/>
+
+            <path d="M 150 160 L 190 160 A 40 40 0 0 0 175 128" fill="none" stroke="#FF8a3a" stroke-width="1.6"/>
+            <text x="204" y="152" fill="#FF8a3a" font-size="12" data-i18n="fig2.bearing">bearing</text>
+            <text x="196" y="240" fill="#3fc23f" font-size="12" data-i18n="fig2.range">range</text>
+            <text x="150" y="292" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig2.center">radar at the centre</text>
+
+            <rect x="330" y="60" width="160" height="50" rx="6" fill="#0f2a44" stroke="#3fc23f" stroke-width="1.4"/>
+            <text x="410" y="90" text-anchor="middle" fill="#e8f0f7" font-size="12" data-i18n="fig2.box1">range = 42 km</text>
+
+            <rect x="330" y="130" width="160" height="50" rx="6" fill="#0f2a44" stroke="#3fc23f" stroke-width="1.4"/>
+            <text x="410" y="160" text-anchor="middle" fill="#e8f0f7" font-size="12" data-i18n="fig2.box2">bearing = 037°</text>
+
+            <rect x="330" y="200" width="160" height="50" rx="6" fill="#0f2a44" stroke="#FF8a3a" stroke-width="1.4"/>
+            <text x="410" y="230" text-anchor="middle" fill="#e8f0f7" font-size="12" data-i18n="fig2.box3">x = 37, y = 23</text>
+
+            <line x1="496" y1="85" x2="596" y2="85" stroke="#8fa6bb" stroke-width="1.4"/>
+            <polygon points="596,85 586,80 586,90" fill="#8fa6bb"/>
+            <line x1="496" y1="155" x2="596" y2="155" stroke="#8fa6bb" stroke-width="1.4"/>
+            <polygon points="596,155 586,150 586,160" fill="#8fa6bb"/>
+            <line x1="496" y1="225" x2="596" y2="225" stroke="#8fa6bb" stroke-width="1.4"/>
+            <polygon points="596,225 586,220 586,230" fill="#8fa6bb"/>
+
+            <text x="640" y="90" fill="#3fc23f" font-size="11" data-i18n="fig2.plot">plot</text>
+            <text x="640" y="160" fill="#3fc23f" font-size="11" data-i18n="fig2.cart">Cartesian</text>
+            <text x="640" y="230" fill="#FF8a3a" font-size="11" data-i18n="fig2.screen">to the screen</text>
+        </svg>
+        <figcaption class="visual-caption" data-i18n="visual2.caption">Range rings exist so you can read distance by eye without doing arithmetic. That is the only reason they are there.</figcaption>
+    </figure>
+</section>
+
+<!-- ============ 03 ============ -->
+<section class="article-section" id="s3">
+    <div class="section-label">03 <span data-i18n="visual3.name">ANIMATION: THE SWEEP</span></div>
+    <h2 class="article-title" data-i18n="visual3.title">Watch the Sweep Paint the Picture</h2>
+    <p class="article-intro" data-i18n="visual3.intro">A PPI builds one picture out of thousands of individual measurements, one per pulse.</p>
+
+    <div class="video-wrap">
+        <video id="radar-loop-video" autoplay loop muted playsinline
+               data-video-en="manim/media/videos/script/480p15/RadarArticle40.en.mp4"
+               data-video-zh="manim/media/videos/script/480p15/RadarArticle40.zh.mp4"
+               poster="manim/media/images/radar-article40-poster.png">
+            <span data-i18n="visual3.fallback">Your browser does not support the video tag.</span>
+        </video>
+    </div>
+    <div class="video-captions">
+        <p class="caption-cc" data-i18n="visual3.cc1">1. ONE PULSE -- a single line, one direction only</p>
+        <p class="caption-cc" data-i18n="visual3.cc2">2. MANY PULSES -- rotate, and blips appear at each target</p>
+        <p class="caption-cc" data-i18n="visual3.cc3">3. PAINTED -- the accumulated picture builds up</p>
+        <p class="caption-cc" data-i18n="visual3.cc4">4. FADING -- old echoes decay so the display stays current</p>
+    </div>
+    <p class="visual-caption" data-i18n="visual3.caption">Nothing is stored as a picture. Each blip is a single measurement, placed by its own range and bearing, and the picture is an illusion of accumulation.</p>
+</section>
+
+<!-- ============ 04 ============ -->
+<section class="article-section" id="s4">
+    <div class="section-label">04 <span data-i18n="visual4.name">WORKED EXAMPLE</span></div>
+    <h2 class="article-title" data-i18n="visual4.title">Reading One Blip Out Loud</h2>
+    <p class="article-intro" data-i18n="visual4.intro">An operator sees this and says one sentence. Here is every step behind it.</p>
+
+    <div class="example-card">
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row1.label">Where on screen</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row1.value">upper right, third ring out</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row2.label">Converting to numbers</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row2.value">42 km, bearing 037°</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row3.label">Brightness says</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row3.value">large — a metal aircraft, not a bird</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row4.label">Track behaviour</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row4.value">moving 240 m/s, inbound, closing</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row5.label">Decision</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row5.value">vector the interceptor, arm the ranges</span></div>
+    </div>
+    <p class="visual-caption" data-i18n="visual4.caption">A display is a decision instrument, not a picture. Every pixel exists because somebody might have to act on it.</p>
+</section>
+
+<!-- ============ 05 ============ -->
+<section class="article-section" id="s5">
+    <div class="section-label">05 <span data-i18n="visual5.name">COLOUR AND BRIGHTNESS</span></div>
+    <h2 class="article-title" data-i18n="visual5.title">Encoding Strength</h2>
+    <p class="article-intro" data-i18n="visual5.intro">Echo strength spans 100 dB. The screen has to compress that into something an eye can rank.</p>
+
+    <figure class="article-figure">
+        <svg viewBox="0 0 720 260" role="img" aria-labelledby="fig5-title">
+            <text id="fig5-title" data-i18n="fig5.title">How a 100 dB span becomes a colour scale</text>
+
+            <rect x="40" y="70" width="120" height="80" fill="#1b2838" stroke="#22323C" stroke-width="1.2"/>
+            <rect x="170" y="70" width="120" height="80" fill="#3fc23f"/>
+            <rect x="300" y="70" width="120" height="80" fill="#FFD93D"/>
+            <rect x="430" y="70" width="120" height="80" fill="#FF8a3a"/>
+            <rect x="560" y="70" width="120" height="80" fill="#d83838"/>
+
+            <text x="100" y="62" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig5.b0">below noise</text>
+            <text x="230" y="62" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig5.b1">small</text>
+            <text x="360" y="62" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig5.b2">medium</text>
+            <text x="490" y="62" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig5.b3">large</text>
+            <text x="620" y="62" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig5.b4">very large</text>
+
+            <line x1="40" y1="180" x2="680" y2="180" stroke="#22323C" stroke-width="1.4"/>
+            <text x="40" y="204" fill="#8fa6bb" font-size="11" data-i18n="fig5.lin">−110 dBm</text>
+            <text x="680" y="204" text-anchor="end" fill="#8fa6bb" font-size="11" data-i18n="fig5.hin">−10 dBm</text>
+            <text x="360" y="232" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig5.span">logarithmic — each colour step is roughly 10 dB</text>
+        </svg>
+        <figcaption class="visual-caption" data-i18n="visual5.caption">The scale is logarithmic, so equal colour steps mean equal ratios of power, not equal differences. That matches how radar figures are quoted.</figcaption>
+    </figure>
+
+    <div class="application-grid">
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app1.tag">MONO</span>
+            <h3 data-i18n="visual5.app1.title">Black and Green</h3>
+            <p data-i18n="visual5.app1.desc">The original phosphor display. Brightness alone carried the strength, and green was the easiest colour for a long-persistence tube. Still used where colour is unavailable.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app2.tag">COLOUR</span>
+            <h3 data-i18n="visual5.app2.title">False Colour</h3>
+            <p data-i18n="visual5.app2.desc">A rainbow ramp where hue means strength. Far easier to rank at a glance than brightness, but it wastes a channel — most displays keep one colour reserved for alarms.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app3.tag">ALARM</span>
+            <h3 data-i18n="visual5.app3.title">Reserved Red</h3>
+            <p data-i18n="visual5.app3.desc">Red is removed from the strength ramp and used only for a priority target or a warning. If everything can be red, nothing is.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app4.tag">GRAIN</span>
+            <h3 data-i18n="visual5.app4.title">Speckle</h3>
+            <p data-i18n="visual5.app4.desc">Below a threshold, a blip is shown as speckle rather than a solid mark. Speckle is usually noise or clutter; a solid return has persisted across several pulses.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app5.tag">VIDEO</span>
+            <h3 data-i18n="visual5.app5.title">Integration</h3>
+            <p data-i18n="visual5.app5.desc">Enlarging each pixel to cover several range-azimuth cells averages neighbouring noise. The picture gets smoother and weak targets survive, at the cost of resolution.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app6.tag">HISTOGRAM</span>
+            <h3 data-i18n="visual5.app6.title">Side Panel</h3>
+            <p data-i18n="visual5.app6.desc">Because position is now in polar coordinates, vertical stripes are clutter, lines are interference and isolated dots are noise. The side panel turns those into a shape you can recognise.</p>
+        </div>
+    </div>
+    <p class="visual-caption" data-i18n="visual5.caption">Colour is a ranking device. The operator's job is to spot which blip is in the wrong place on the scale.</p>
+</section>
+
+<!-- ============ 06 ============ -->
+<section class="article-section" id="s6">
+    <div class="section-label">06 <span data-i18n="visual6.name">LAYERS ON TOP</span></div>
+    <h2 class="article-title" data-i18n="visual6.title">Everything Except the Radar</h2>
+    <p class="article-intro" data-i18n="visual6.intro">Most of what is drawn is not raw echo at all.</p>
+
+    <div class="application-grid">
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app1.tag">COAST</span>
+            <h3 data-i18n="visual6.app1.title">The Shoreline</h3>
+            <p data-i18n="visual6.app1.desc">Drawn from a chart or satellite image. It gives every other mark a fixed reference, which is how an operator knows whether a target is over water or inland.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app2.tag">TRACK</span>
+            <h3 data-i18n="visual6.app2.title">The History</h3>
+            <p data-i18n="visual6.app2.desc">Past positions of the same target joined by a line, with a short line showing its velocity. This is drawn by the tracker, not the radar.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app3.tag">LEAD</span>
+            <h3 data-i18n="visual6.app3.title">The Prediction</h3>
+            <p data-i18n="visual6.app3.desc">A marker extrapolating where the track will be in a chosen time. This is the single most important symbol on the screen and it is pure arithmetic.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app4.tag">VECTORS</span>
+            <h3 data-i18n="visual6.app4.title">Assigned Targets</h3>
+            <p data-i18n="visual6.app4.desc">A line from a friendly unit to its assigned target, or from a missile to the point it is predicted to intercept. Most dots acquire a vector only after a decision is made.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app5.tag">TACGRID</span>
+            <h3 data-i18n="visual6.app5.title">The Tactical Grid</h3>
+            <p data-i18n="visual6.app5.desc">A coordinate grid laid over the picture so a position can be reported as a grid reference rather than a pixel. The bridge between what is seen and what can be said on a radio.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app6.tag">SCAN</span>
+            <h3 data-i18n="visual6.app6.title">The Sweep Itself</h3>
+            <p data-i18n="visual6.app6.desc">A rotating line showing where the antenna points right now. Data outside the sector is stale, and an operator must know which parts of the picture are fresh.</p>
+        </div>
+    </div>
+    <p class="visual-caption" data-i18n="visual6.caption">The raw radar picture is a minority of the pixels. The rest is chart data, arithmetic and decisions.</p>
+</section>
+
+</main>
+
+<div class="article-summary-block">
+    <span class="summary-label" data-i18n="article.summaryLabel">ONE-LINE SUMMARY</span>
+    <p class="summary-line" data-i18n="article.summary">The display turns radar signals into readable dots on a screen.</p>
+</div>
+
+<footer class="article-footer">
+    <span class="article-meta" data-i18n="article.meta">Student Research · 2026</span>
+    <a href="articles.html" class="article-back" data-i18n="article.back">← Back to Articles</a>
+</footer>
+
+<script src="script.js"></script>
+<script src="article-40.js"></script>
+
+</body>
+</html>

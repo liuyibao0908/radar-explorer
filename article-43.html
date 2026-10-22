@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="page.title">Article 43: How the Whole Radar Works Together — Radar Explorer</title>
+<meta name="description" content="page.description">
+<meta name="description" data-i18n="page.description" content="Article 43: All ten steps of one complete radar cycle, from the transmitter firing to the display drawing a blip — and why the whole system matters more than any single part.">
+<link rel="stylesheet" href="article.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo" data-i18n="nav.home">Radar Explorer</a>
+        <div class="nav-links">
+            <a href="articles.html" data-i18n="nav.articles">Articles</a>
+        </div>
+        <div class="nav-actions">
+            <button class="lang-toggle" data-lang-toggle type="button">
+                <span data-lang-label>中</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<article class="article-hero">
+    <div class="article-meta">
+        <span class="article-author" data-i18n="article.author">Editorial</span>
+        <span class="article-meta-sep">·</span>
+        <time class="article-date" datetime="2026-08-06" data-i18n="article.date">Aug 6, 2026</time>
+    </div>
+    <h1 class="article-title" data-i18n="article.title">How the Whole Radar Works Together</h1>
+    <p class="article-subtitle" data-i18n="article.subtitle">Ten steps, repeated thousands of times a second.</p>
+</article>
+
+<div class="article-toc">
+    <div class="article-toc-inner">
+        <div class="article-toc-label" data-i18n="toc.title">On this page</div>
+        <nav class="article-toc-nav">
+            <a href="#s1"><span class="article-toc-num">01</span><span data-i18n="toc.s1">The ten steps</span></a>
+            <a href="#s2"><span class="article-toc-num">02</span><span data-i18n="toc.s2">The loop closes</span></a>
+            <a href="#s3"><span class="article-toc-num">03</span><span data-i18n="toc.s3">Cycle animation</span></a>
+            <a href="#s4"><span class="article-toc-num">04</span><span data-i18n="toc.s4">Where the time goes</span></a>
+            <a href="#s5"><span class="article-toc-num">05</span><span data-i18n="toc.s5">The weakest link</span></a>
+            <a href="#s6"><span class="article-toc-num">06</span><span data-i18n="toc.s6">Radar networks</span></a>
+        </nav>
+    </div>
+</div>
+
+<main>
+
+<!-- ============ BODY ============ -->
+<section class="article-section article-body" id="body">
+    <p data-i18n="article.p1">In the last nine articles, we looked at each part of a radar one by one. Now let's put them together and see how one full detection happens.</p>
+    <p data-i18n="article.p2">One full cycle: transmitter creates the signal → duplexer switches to send → antenna sends the wave out → wave bounces off the target → antenna receives the echo → duplexer switches to receive → receiver amplifies the signal → signal processor picks out the target → display shows it → servo keeps the antenna scanning.</p>
+    <p data-i18n="article.p3">These ten steps repeat over and over, sometimes thousands of times per second. If any step fails, detection suffers. If the transmitter is too weak, the radar can't see far. If the receiver is not sensitive enough, it misses small targets. If the processor is too slow, it can't track fast targets.</p>
+    <p data-i18n="article.p4">Think of a radar like a sports team: every position does its job to score. A radar is not one amazing part — it is the whole system working together.</p>
+</section>
+
+<!-- ============ 01 ============ -->
+<section class="article-section" id="s1">
+    <div class="section-label">01 <span data-i18n="visual1.name">THE TEN STEPS</span></div>
+    <h2 class="article-title" data-i18n="visual1.title">One Cycle, Part by Part</h2>
+    <p class="article-intro" data-i18n="visual1.intro">Five steps send the wave out, five bring it back and turn it into a mark on a screen.</p>
+
+    <figure class="article-figure">
+        <svg viewBox="0 0 720 460" role="img" aria-labelledby="fig1-title">
+            <text id="fig1-title" data-i18n="fig1.title">The ten steps of one complete cycle</text>
+
+            <!-- OUTBOUND column -->
+            <text x="150" y="30" text-anchor="middle" fill="#FFD93D" font-size="13" font-weight="bold" data-i18n="fig1.out">OUTBOUND</text>
+
+            <rect x="30" y="46" width="240" height="34" rx="6" fill="#0f2a44" stroke="#FFD93D" stroke-width="1.4"/>
+            <text x="46" y="68" fill="#FFD93D" font-size="12" data-i18n="fig1.s1">1. Transmitter makes a pulse</text>
+
+            <rect x="30" y="88" width="240" height="34" rx="6" fill="#0f2a44" stroke="#FFD93D" stroke-width="1.4"/>
+            <text x="46" y="110" fill="#FFD93D" font-size="12" data-i18n="fig1.s2">2. Duplexer switches to TX</text>
+
+            <rect x="30" y="130" width="240" height="34" rx="6" fill="#0f2a44" stroke="#FFD93D" stroke-width="1.4"/>
+            <text x="46" y="152" fill="#FFD93D" font-size="12" data-i18n="fig1.s3">3. Antenna focuses it into a beam</text>
+
+            <rect x="30" y="172" width="240" height="34" rx="6" fill="#0f2a44" stroke="#FFD93D" stroke-width="1.4"/>
+            <text x="46" y="194" fill="#FFD93D" font-size="12" data-i18n="fig1.s4">4. The wave travels out</text>
+
+            <rect x="30" y="214" width="240" height="34" rx="6" fill="#0f2a44" stroke="#FFD93D" stroke-width="1.4"/>
+            <text x="46" y="236" fill="#FFD93D" font-size="12" data-i18n="fig1.s5">5. It bounces off the target</text>
+
+            <!-- INBOUND column -->
+            <text x="560" y="30" text-anchor="middle" fill="#3fc23f" font-size="13" font-weight="bold" data-i18n="fig1.back">INBOUND</text>
+
+            <rect x="440" y="46" width="250" height="34" rx="6" fill="#0f2a44" stroke="#3fc23f" stroke-width="1.4"/>
+            <text x="456" y="68" fill="#3fc23f" font-size="12" data-i18n="fig1.s6">6. Antenna catches the echo</text>
+
+            <rect x="440" y="88" width="250" height="34" rx="6" fill="#0f2a44" stroke="#3fc23f" stroke-width="1.4"/>
+            <text x="456" y="110" fill="#3fc23f" font-size="12" data-i18n="fig1.s7">7. Duplexer switches to RX</text>
+
+            <rect x="440" y="130" width="250" height="34" rx="6" fill="#0f2a44" stroke="#3fc23f" stroke-width="1.4"/>
+            <text x="456" y="152" fill="#3fc23f" font-size="12" data-i18n="fig1.s8">8. Receiver amplifies it 80 dB</text>
+
+            <rect x="440" y="172" width="250" height="34" rx="6" fill="#0f2a44" stroke="#3fc23f" stroke-width="1.4"/>
+            <text x="456" y="194" fill="#3fc23f" font-size="12" data-i18n="fig1.s9">9. Processor separates target from clutter</text>
+
+            <rect x="440" y="214" width="250" height="34" rx="6" fill="#0f2a44" stroke="#3fc23f" stroke-width="1.4"/>
+            <text x="456" y="236" fill="#3fc23f" font-size="12" data-i18n="fig1.s10">10. Display draws one pixel</text>
+
+            <!-- the loop -->
+            <path d="M 150 254 L 150 292 L 565 292" fill="none" stroke="#8fa6bb" stroke-width="1.6" stroke-dasharray="5 4"/>
+            <polygon points="565,292 555,287 555,297" fill="#8fa6bb"/>
+
+            <rect x="30" y="292" width="120" height="46" rx="6" fill="#0a1a2c" stroke="#8fa6bb" stroke-width="1.4"/>
+            <text x="90" y="312" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig1.servo">11. Servo</text>
+            <text x="90" y="329" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig1.servosub">turns the antenna</text>
+
+            <path d="M 150 315 L 150 292" fill="none" stroke="#8fa6bb" stroke-width="1.6"/>
+            <polygon points="150,292 145,302 155,302" fill="#8fa6bb"/>
+            <path d="M 30 315 L 10 315 L 10 63 L 28 63" fill="none" stroke="#8fa6bb" stroke-width="1.6"/>
+            <polygon points="28,63 19,58 19,68" fill="#8fa6bb"/>
+            <text x="360" y="318" fill="#8fa6bb" font-size="11" text-anchor="middle" data-i18n="fig1.loop">back to step 1 — this loop is the radar</text>
+
+            <!-- timing -->
+            <rect x="30" y="358" width="660" height="76" rx="6" fill="#0a1a2c" stroke="#22323C" stroke-width="1.4"/>
+            <text x="360" y="380" text-anchor="middle" fill="#FFD93D" font-size="13" data-i18n="fig1.timing">but the wave itself takes 66 ms to come back from 100 km</text>
+            <text x="360" y="404" text-anchor="middle" fill="#8fa6bb" font-size="12" data-i18n="fig1.timing2">the electrical work around it takes about 200 nanoseconds</text>
+            <text x="360" y="424" text-anchor="middle" fill="#6b8299" font-size="11" data-i18n="fig1.timing3">a radar is mostly waiting</text>
+        </svg>
+        <figcaption class="visual-caption" data-i18n="visual1.caption">Step 11 is not part of the cycle — it is what makes the cycle repeat in a different direction.</figcaption>
+    </figure>
+</section>
+
+<!-- ============ 02 ============ -->
+<section class="article-section" id="s2">
+    <div class="section-label">02 <span data-i18n="visual2.name">THE LOOP CLOSES</span></div>
+    <h2 class="article-title" data-i18n="visual2.title">Why It Has to Loop</h2>
+    <p class="article-intro" data-i18n="visual2.intro">One measurement gives you one direction. You need a whole circle to know where anything is.</p>
+
+    <div class="example-card">
+        <div class="example-row"><span class="example-label" data-i18n="visual2.row1.label">Pulse repetition frequency</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual2.row1.value">600 pulses per second</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual2.row2.label">Measurements per sweep</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual2.row2.value">600 × 0.04 s = 24 pulses per degree</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual2.row3.label">Pulses needed to integrate</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual2.row3.value">32 — so 12 pulses per degree</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual2.row4.label">Result</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual2.row4.value">360° covered in 0.03 s → 20 sweeps per second</span></div>
+    </div>
+    <p class="visual-caption" data-i18n="visual2.caption">The loop exists because a target is only well measured after enough pulses have hit it from the same direction.</p>
+</section>
+
+<!-- ============ 03 ============ -->
+<section class="article-section" id="s3">
+    <div class="section-label">03 <span data-i18n="visual3.name">ANIMATION: THE CYCLE</span></div>
+    <h2 class="article-title" data-i18n="visual3.title">Watching Ten Steps Run</h2>
+    <p class="article-intro" data-i18n="visual3.intro">The whole loop, compressed. Watch which block lights up at each stage.</p>
+
+    <div class="video-wrap">
+        <video id="radar-loop-video" autoplay loop muted playsinline
+               data-video-en="manim/media/videos/script/480p15/RadarArticle43.en.mp4"
+               data-video-zh="manim/media/videos/script/480p15/RadarArticle43.zh.mp4"
+               poster="manim/media/images/radar-article43-poster.png">
+            <span data-i18n="visual3.fallback">Your browser does not support the video tag.</span>
+        </video>
+    </div>
+    <div class="video-captions">
+        <p class="caption-cc" data-i18n="visual3.cc1">1-3. TRANSMIT -- power, switch, focused beam</p>
+        <p class="caption-cc" data-i18n="visual3.cc2">4-5. OUT AND BACK -- the wave leaves and returns</p>
+        <p class="caption-cc" data-i18n="visual3.cc3">6-8. RECEIVE -- switch, amplify, listen</p>
+        <p class="caption-cc" data-i18n="visual3.cc4">9-10. DECIDE -- separate the target, draw the pixel</p>
+    </div>
+    <p class="visual-caption" data-i18n="visual3.caption">The cycle is identical every time. Only the bearing changes, and that change comes from the servo.</p>
+</section>
+
+<!-- ============ 04 ============ -->
+<section class="article-section" id="s4">
+    <div class="section-label">04 <span data-i18n="visual4.name">WHERE THE TIME GOES</span></div>
+    <h2 class="article-title" data-i18n="visual4.title">One Round Trip, Broken Down</h2>
+    <p class="article-intro" data-i18n="visual4.intro">A radar at 100 km has 66 milliseconds of physics and 200 nanoseconds of electronics.</p>
+
+    <div class="example-card">
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row1.label">Wave travels 100 km out</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row1.value">333 μs</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row2.label">Wave travels 100 km back</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row2.value">333 μs</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row3.label">Total round trip</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row3.value">666 μs → 100 km in 667 μs</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row4.label">Duplexer switching</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row4.value">1–5 μs</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row5.label">Receiver + processing</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row5.value">1–10 μs</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row6.label">Servo moves on</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row6.value">the remaining 1.7 ms of the PRF</span></div>
+    </div>
+    <p class="visual-caption" data-i18n="visual4.caption">This is why every microsecond of electronics matters: the wave is out of your control for 666 of the 700 microseconds.</p>
+</section>
+
+<!-- ============ 05 ============ -->
+<section class="article-section" id="s5">
+    <div class="section-label">05 <span data-i18n="visual5.name">THE WEAKEST LINK</span></div>
+    <h2 class="article-title" data-i18n="visual5.title">Where the Budget Goes Wrong</h2>
+    <p class="article-intro" data-i18n="visual5.intro">Improve one part and the limit simply moves somewhere else.</p>
+
+    <div class="application-grid">
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app1.tag">TX</span>
+            <h3 data-i18n="visual5.app1.title">Not Enough Power</h3>
+            <p data-i18n="visual5.app1.desc">Range grows as the fourth root of power. Quadrupling the transmitter buys only about 1.4 times the distance — a very expensive improvement.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app2.tag">RX</span>
+            <h3 data-i18n="visual5.app2.title">Not Sensitive Enough</h3>
+            <p data-i18n="visual5.app2.desc">A receiver that is 3 dB worse than it should be loses real detection range outright. Unlike power, this is not recoverable later.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app3.tag">PROC</span>
+            <h3 data-i18n="visual5.app3.title">Too Slow</h3>
+            <p data-i18n="visual5.app3.desc">If processing lags behind the sweep, the display shows a picture of where things were, not where they are. Track prediction papers over the gap.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app4.tag">SERVO</span>
+            <h3 data-i18n="visual5.app4.title">Too Slow to Point</h3>
+            <p data-i18n="visual5.app4.desc">A faster transmitter does nothing if the beam passes a target before the processor has finished with the previous direction.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app5.tag">DUPLEXER</span>
+            <h3 data-i18n="visual5.app5.title">Too Slow to Switch</h3>
+            <p data-i18n="visual5.app5.desc">Recovery time sets a blind zone at close range. Everything inside it is simply not observed, no matter how good the rest of the radar is.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app6.tag">TEAM</span>
+            <h3 data-i18n="visual5.app6.title">The Real Answer</h3>
+            <p data-i18n="visual5.app6.desc">Designs are limited by the tightest part, so engineers balance them rather than maximising any one. A balanced radar beats a brilliant one.</p>
+        </div>
+    </div>
+    <p class="visual-caption" data-i18n="visual5.caption">The chain has no weakest link in the usual sense — it has a limiting link, and moving it requires redesigning everything around it.</p>
+</section>
+
+<!-- ============ 06 ============ -->
+<section class="article-section" id="s6">
+    <div class="section-label">06 <span data-i18n="visual6.name">RADAR NETWORKS</span></div>
+    <h2 class="article-title" data-i18n="visual6.title">Many Radars, One Picture</h2>
+    <p class="article-intro" data-i18n="visual6.intro">Two radars cover the gaps the other one cannot see.</p>
+
+    <div class="application-grid">
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app1.tag">COVERAGE</span>
+            <h3 data-i18n="visual6.app1.title">Filling the Gaps</h3>
+            <p data-i18n="visual6.app1.desc">A target hidden by terrain from one site is often visible from another. Several sites together see continuously where one site sees in patches.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app2.tag">DOPPLER</span>
+            <h3 data-i18n="visual6.app2.title">Two Look Rates</h3>
+            <p data-i18n="visual6.app2.desc">A slow radar sees far but measures speed poorly; a fast one is the reverse. A network combining both gets long range and accurate speed at once.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app3.tag">STEALTH</span>
+            <h3 data-i18n="visual6.app3.title">Different Aspects</h3>
+            <p data-i18n="visual6.app3.desc">A shape designed to be invisible from the front is usually visible from the side. Sites at different angles cover each other's blind aspects.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app4.tag">TRACK</span>
+            <h3 data-i18n="visual6.app4.title">Shared Tracks</h3>
+            <p data-i18n="visual6.app4.desc">Each radar passes its detections to a fusion centre, which correlates them into one track. Two confirmations from different sites are worth far more than two from one.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app5.tag">COST</span>
+            <h3 data-i18n="visual6.app5.title">The Price</h3>
+            <p data-i18n="visual6.app5.desc">Several installations, several sets of buildings, and a communications network that itself needs protecting. Networks buy coverage with capital and complexity.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app6.tag">SCALE</span>
+            <h3 data-i18n="visual6.app6.title">The Two Extremes</h3>
+            <p data-i18n="visual6.app6.desc">A chain of cheap short-range radars covering one building, and a national network of long-range radars. Same ten steps, thirty times over.</p>
+        </div>
+    </div>
+    <p class="visual-caption" data-i18n="visual6.caption">Networking does not change the physics of any single radar. It changes what the operator sees by combining many incomplete pictures into one.</p>
+</section>
+
+</main>
+
+<div class="article-summary-block">
+    <span class="summary-label" data-i18n="article.summaryLabel">ONE-LINE SUMMARY</span>
+    <p class="summary-line" data-i18n="article.summary">A radar works only when all its parts work together.</p>
+</div>
+
+<footer class="article-footer">
+    <span class="article-meta" data-i18n="article.meta">Student Research · 2026</span>
+    <a href="articles.html" class="article-back" data-i18n="article.back">← Back to Articles</a>
+</footer>
+
+<script src="script.js"></script>
+<script src="article-43.js"></script>
+
+</body>
+</html>

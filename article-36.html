@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="page.title">Article 36: The Antenna — Radar Explorer</title>
+<meta name="description" data-i18n="page.description" content="Article 36: What does a radar antenna do? Transmit and receive, beam width versus aperture, dish versus array, mechanical versus electronic scanning, and side lobes.">
+<link rel="stylesheet" href="article.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo" data-i18n="nav.home">Radar Explorer</a>
+        <div class="nav-links">
+            <a href="articles.html" data-i18n="nav.articles">Articles</a>
+        </div>
+        <div class="nav-actions">
+            <button class="lang-toggle" data-lang-toggle type="button">
+                <span data-lang-label>中</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<article class="article-hero">
+    <div class="article-meta">
+        <span class="article-author" data-i18n="article.author">Editorial</span>
+        <span class="article-meta-sep">·</span>
+        <time class="article-date" datetime="2026-07-21" data-i18n="article.date">Jul 21, 2026</time>
+    </div>
+    <h1 class="article-title" data-i18n="article.title">The Antenna — Hands and Ears</h1>
+    <p class="article-subtitle" data-i18n="article.subtitle">The reflector is the difference between a bulb and a flashlight.</p>
+</article>
+
+<div class="article-toc">
+    <div class="article-toc-inner">
+        <div class="article-toc-label" data-i18n="toc.title">On this page</div>
+        <nav class="article-toc-nav">
+            <a href="#s1"><span class="article-toc-num">01</span><span data-i18n="toc.s1">Two jobs</span></a>
+            <a href="#s2"><span class="article-toc-num">02</span><span data-i18n="toc.s2">Bulb vs flashlight</span></a>
+            <a href="#s3"><span class="article-toc-num">03</span><span data-i18n="toc.s3">Aperture and beam</span></a>
+            <a href="#s4"><span class="article-toc-num">04</span><span data-i18n="toc.s4">Worked example</span></a>
+            <a href="#s5"><span class="article-toc-num">05</span><span data-i18n="toc.s5">Shapes and scanning</span></a>
+            <a href="#s6"><span class="article-toc-num">06</span><span data-i18n="toc.s6">Side lobes</span></a>
+        </nav>
+    </div>
+</div>
+
+<main>
+
+<!-- ============ BODY ============ -->
+<section class="article-section article-body" id="body">
+    <p data-i18n="article.p1">The antenna is the most visible part of a radar. Some look like dishes, some like flat panels, some like walls. What does it actually do?</p>
+    <p data-i18n="article.p2">The antenna does two jobs: when sending, it focuses radio waves in one direction; when receiving, it catches the weak waves coming back. Think of a flashlight: a plain bulb shines everywhere, but a flashlight has a reflector that sends light far and focused.</p>
+    <p data-i18n="article.p3">A bigger antenna means a narrower beam and better accuracy, but a smaller search area. Different shapes serve different uses: parabolic, flat panel, array. Some antennas spin — that's mechanical scanning. Some don't — that's electronic scanning.</p>
+    <p data-i18n="article.p4">Antennas also have parameters like polarization, gain, and side lobes. Side lobes are like light leaking from a flashlight — they cause interference and clutter. The antenna is the radar's first gate, and it directly affects detection.</p>
+</section>
+
+<!-- ============ 01 ============ -->
+<section class="article-section" id="s1">
+    <div class="section-label">01 <span data-i18n="visual1.name">TWO JOBS</span></div>
+    <h2 class="article-title" data-i18n="visual1.title">Hands and Ears</h2>
+    <p class="article-intro" data-i18n="visual1.intro">The same metal surface radiates on transmit and collects on receive. Reciprocity is the whole trick.</p>
+
+    <figure class="article-figure">
+        <svg viewBox="0 0 720 300" role="img" aria-labelledby="fig1-title">
+            <text id="fig1-title" data-i18n="fig1.title">Antenna transmit and receive</text>
+
+            <!-- transmit side -->
+            <path d="M 180 60 Q 260 20 340 60" fill="none" stroke="#3fc23f" stroke-width="5"/>
+            <circle cx="260" cy="42" r="6" fill="#3fc23f"/>
+            <line x1="260" y1="42" x2="500" y2="42" stroke="#FFD93D" stroke-width="3"/>
+            <polygon points="500,42 490,36 490,48" fill="#FFD93D"/>
+            <circle cx="530" cy="42" r="14" fill="none" stroke="#FFD93D" stroke-width="2"/>
+            <text x="260" y="88" text-anchor="middle" fill="#3fc23f" font-size="13" data-i18n="fig1.hands">TRANSMIT — hands</text>
+            <text x="530" y="20" text-anchor="middle" fill="#FFD93D" font-size="12" data-i18n="fig1.target">target</text>
+
+            <!-- receive side -->
+            <line x1="530" y1="190" x2="260" y2="190" stroke="#FF8a3a" stroke-width="2.5"/>
+            <polygon points="260,190 270,184 270,196" fill="#FF8a3a"/>
+            <circle cx="530" cy="190" r="14" fill="none" stroke="#FF8a3a" stroke-width="2"/>
+            <path d="M 180 230 Q 260 190 340 230" fill="none" stroke="#3fc23f" stroke-width="5"/>
+            <circle cx="260" cy="212" r="6" fill="#3fc23f"/>
+            <text x="260" y="266" text-anchor="middle" fill="#3fc23f" font-size="13" data-i18n="fig1.ears">RECEIVE — ears</text>
+            <text x="530" y="222" text-anchor="middle" fill="#FF8a3a" font-size="12" data-i18n="fig1.echo">weak echo</text>
+
+            <text x="360" y="146" text-anchor="middle" fill="#8fa6bb" font-size="12" data-i18n="fig1.same">same surface, both jobs</text>
+        </svg>
+        <figcaption class="visual-caption" data-i18n="visual1.caption">One reflector, two directions. On transmit it focuses energy outward; on receive it gathers energy inward.</figcaption>
+    </figure>
+</section>
+
+<!-- ============ 02 ============ -->
+<section class="article-section" id="s2">
+    <div class="section-label">02 <span data-i18n="visual2.name">BULB VS FLASHLIGHT</span></div>
+    <h2 class="article-title" data-i18n="visual2.title">Why a Reflector Changes Everything</h2>
+    <p class="article-intro" data-i18n="visual2.intro">A bare radiator wastes almost all its power. The reflector recovers it.</p>
+
+    <figure class="article-figure">
+        <svg viewBox="0 0 720 300" role="img" aria-labelledby="fig2-title">
+            <text id="fig2-title" data-i18n="fig2.title">Bare bulb vs reflector</text>
+
+            <!-- bare bulb -->
+            <circle cx="110" cy="80" r="13" fill="#FFD93D"/>
+            <g stroke="#FFD93D" stroke-width="1.6" opacity="0.55">
+                <line x1="110" y1="52" x2="110" y2="24"/>
+                <line x1="86" y1="80" x2="58" y2="80"/>
+                <line x1="134" y1="80" x2="162" y2="80"/>
+                <line x1="92" y1="62" x2="72" y2="42"/>
+                <line x1="128" y1="62" x2="148" y2="42"/>
+                <line x1="92" y1="98" x2="72" y2="118"/>
+                <line x1="128" y1="98" x2="148" y2="118"/>
+                <line x1="110" y1="108" x2="110" y2="136"/>
+            </g>
+            <text x="110" y="164" text-anchor="middle" fill="#FFD93D" font-size="13" data-i18n="fig2.bulb">Bare bulb</text>
+            <text x="110" y="184" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig2.bulbSub">radiates everywhere</text>
+            <text x="110" y="212" text-anchor="middle" fill="#d83838" font-size="12" data-i18n="fig2.wasted">almost nothing forward</text>
+
+            <!-- reflector -->
+            <path d="M 420 40 Q 500 96 580 40" fill="none" stroke="#3fc23f" stroke-width="5"/>
+            <circle cx="500" cy="76" r="12" fill="#FFD93D"/>
+            <path d="M 500 76 L 610 34 L 610 118 Z" fill="#3fc23f" opacity="0.22"/>
+            <line x1="500" y1="76" x2="610" y2="76" stroke="#3fc23f" stroke-width="3.4"/>
+            <polygon points="610,76 598,68 598,84" fill="#3fc23f"/>
+            <text x="500" y="164" text-anchor="middle" fill="#3fc23f" font-size="13" data-i18n="fig2.flash">Flashlight</text>
+            <text x="500" y="184" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig2.flashSub">all power into the beam</text>
+            <text x="500" y="212" text-anchor="middle" fill="#3fc23f" font-size="12" data-i18n="fig2.concentrated">narrow, strong, long range</text>
+
+            <line x1="330" y1="40" x2="330" y2="220" stroke="#22323C" stroke-width="1.4" stroke-dasharray="5 5"/>
+        </svg>
+        <figcaption class="visual-caption" data-i18n="visual2.caption">Same bulb, same power. The reflector aims it. A radar antenna is exactly this reflector, scaled to radio wavelengths.</figcaption>
+    </figure>
+</section>
+
+<!-- ============ 03 ============ -->
+<section class="article-section" id="s3">
+    <div class="section-label">03 <span data-i18n="visual3.name">ANIMATION: APERTURE VS BEAM</span></div>
+    <h2 class="article-title" data-i18n="visual3.title">Watch the Beam Narrow</h2>
+    <p class="article-intro" data-i18n="visual3.intro">Grow the dish and the beam gets thinner. Thin beam means better angle accuracy and a slower sweep.</p>
+
+    <div class="video-wrap">
+        <video id="radar-loop-video" autoplay loop muted playsinline
+               data-video-en="manim/media/videos/script/480p15/RadarArticle36.en.mp4"
+               data-video-zh="manim/media/videos/script/480p15/RadarArticle36.zh.mp4"
+               poster="manim/media/images/radar-article36-poster.png">
+            <span data-i18n="visual3.fallback">Your browser does not support the video tag.</span>
+        </video>
+    </div>
+    <div class="video-captions">
+        <p class="caption-cc" data-i18n="visual3.cc1">1. SMALL DISH -- wide beam, weak and blunt</p>
+        <p class="caption-cc" data-i18n="visual3.cc2">2. MEDIUM DISH -- beam tightens, gain rises</p>
+        <p class="caption-cc" data-i18n="visual3.cc3">3. LARGE DISH -- narrow beam, sharp edges</p>
+        <p class="caption-cc" data-i18n="visual3.cc4">4. TRADE-OFF -- precision up, scan speed down</p>
+    </div>
+    <p class="visual-caption" data-i18n="visual3.caption">Beam width and aperture trade against each other. That is the central design choice in every antenna.</p>
+</section>
+
+<!-- ============ 04 ============ -->
+<section class="article-section" id="s4">
+    <div class="section-label">04 <span data-i18n="visual4.name">WORKED EXAMPLE</span></div>
+    <h2 class="article-title" data-i18n="visual4.title">Trade the Trade-Off</h2>
+    <p class="article-intro" data-i18n="visual4.intro">Two radars, same band, different dishes. Here is what each one is good at.</p>
+
+    <div class="example-card">
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row1.label">Radar A aperture</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row1.value">3 m — airport approach</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row2.label">Radar A beam</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row2.value">wide, updates every 1 s</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row3.label">Radar B aperture</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row3.value">25 m — weather radar</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row4.label">Radar B beam</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row4.value">narrow, full sweep in 4 min</span></div>
+    </div>
+    <p class="visual-caption" data-i18n="visual4.caption">Airport radars want fresh data; weather radars want sharp angles. Different dishes, same physics.</p>
+</section>
+
+<!-- ============ 05 ============ -->
+<section class="article-section" id="s5">
+    <div class="section-label">05 <span data-i18n="visual5.name">SHAPES AND SCANNING</span></div>
+    <h2 class="article-title" data-i18n="visual5.title">Dish, Panel, Array</h2>
+    <p class="article-intro" data-i18n="visual5.intro">Three common shapes, three scanning styles, six words worth knowing.</p>
+
+    <div class="application-grid">
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app1.tag">PARABOLIC</span>
+            <h3 data-i18n="visual5.app1.title">The Classic Dish</h3>
+            <p data-i18n="visual5.app1.desc">A curved surface with one feed. Excellent gain, simple to build, high wind load. Needs a motor to turn.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app2.tag">ARRAY</span>
+            <h3 data-i18n="visual5.app2.title">The Phased Array</h3>
+            <p data-i18n="visual5.app2.desc">Hundreds of small radiators, each with its own phase shifter. Steers the beam in microseconds without moving anything.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app3.tag">FLAT PANEL</span>
+            <h3 data-i18n="visual5.app3.title">The Wall</h3>
+            <p data-i18n="visual5.app3.desc">Low profile, low wind load, installable on rooftops and masts. Usually a small array with fixed electronic steering.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app4.tag">MECHANICAL</span>
+            <h3 data-i18n="visual5.app4.title">It Turns</h3>
+            <p data-i18n="visual5.app4.desc">One beam, one direction at a time. The sweep rate is set by how fast the motor can turn the whole structure.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app5.tag">ELECTRONIC</span>
+            <h3 data-i18n="visual5.app5.title">It Doesn't</h3>
+            <p data-i18n="visual5.app5.desc">Many beams at once. The radar can dwell on a storm for a second, then jump 30 degrees, without any moving parts.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app6.tag">HYBRID</span>
+            <h3 data-i18n="visual5.app6.title">Best of Both</h3>
+            <p data-i18n="visual5.app6.desc">Today’s weather radars turn slowly just to keep the antenna facing the weather, while the array does the actual scanning.</p>
+        </div>
+    </div>
+    <p class="visual-caption" data-i18n="visual5.caption">Shape decides the beam; the scanning method decides how fast you can move that beam.</p>
+</section>
+
+<!-- ============ 06 ============ -->
+<section class="article-section" id="s6">
+    <div class="section-label">06 <span data-i18n="visual6.name">SIDE LOBES</span></div>
+    <h2 class="article-title" data-i18n="visual6.title">The Light That Leaks Out</h2>
+    <p class="article-intro" data-i18n="visual6.intro">No antenna is perfect. Some energy always escapes sideways, and that energy comes back as clutter.</p>
+
+    <figure class="article-figure">
+        <svg viewBox="0 0 720 260" role="img" aria-labelledby="fig6-title">
+            <text id="fig6-title" data-i18n="fig6.title">Main lobe and side lobes</text>
+            <line x1="60" y1="150" x2="660" y2="150" stroke="#22323C" stroke-width="1.4"/>
+            <text x="360" y="238" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig6.angle">angle</text>
+
+            <line x1="80" y1="150" x2="640" y2="150" stroke="#3fc23f" stroke-width="2.4" opacity="0.35"/>
+            <line x1="80" y1="150" x2="640" y2="34" stroke="#3fc23f" stroke-width="3"/>
+            <polygon points="640,34 628,40 628,30" fill="#3fc23f"/>
+            <text x="360" y="26" text-anchor="middle" fill="#3fc23f" font-size="13" data-i18n="fig6.main">main lobe — where you point</text>
+
+            <line x1="80" y1="150" x2="250" y2="112" stroke="#FF8a3a" stroke-width="2"/>
+            <text x="168" y="102" text-anchor="middle" fill="#FF8a3a" font-size="11" data-i18n="fig6.sl1">side lobe</text>
+            <line x1="80" y1="150" x2="420" y2="124" stroke="#FF8a3a" stroke-width="1.8"/>
+            <text x="330" y="116" text-anchor="middle" fill="#FF8a3a" font-size="11" data-i18n="fig6.sl2">side lobe</text>
+
+            <text x="360" y="176" text-anchor="middle" fill="#d83838" font-size="13" data-i18n="fig6.clutter">strong ground clutter returns through the side lobes</text>
+            <text x="360" y="200" text-anchor="middle" fill="#8fa6bb" font-size="12" data-i18n="fig6.blank">blanking, tapering and sidelobe cancellation are used to fight it</text>
+        </svg>
+        <figcaption class="visual-caption" data-i18n="visual6.caption">The pattern is never one clean lobe. The small side lobes pick up the ground and the buildings, which is where most clutter comes from.</figcaption>
+    </figure>
+</section>
+
+</main>
+
+<div class="article-summary-block">
+    <span class="summary-label" data-i18n="article.summaryLabel">ONE-LINE SUMMARY</span>
+    <p class="summary-line" data-i18n="article.summary">The antenna is the radar's hands and ears — it sends and receives waves.</p>
+</div>
+
+<footer class="article-footer">
+    <span class="article-meta" data-i18n="article.meta">Student Research · 2026</span>
+    <a href="articles.html" class="article-back" data-i18n="article.back">← Back to Articles</a>
+</footer>
+
+<script src="script.js"></script>
+<script src="article-36.js"></script>
+
+</body>
+</html>

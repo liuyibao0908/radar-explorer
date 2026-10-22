@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="page.title">Article 46: Weather Radar vs Normal Radar — Radar Explorer</title>
+<meta name="description" content="page.description">
+<meta name="description" data-i18n="page.description" content="Article 46: Weather radar and air-traffic radar send the same kind of wave and do almost opposite jobs. Targets versus fields, detection versus description, and why the antenna keeps turning.">
+<link rel="stylesheet" href="article.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo" data-i18n="nav.home">Radar Explorer</a>
+        <div class="nav-links">
+            <a href="articles.html" data-i18n="nav.articles">Articles</a>
+        </div>
+        <div class="nav-actions">
+            <button class="lang-toggle" data-lang-toggle type="button">
+                <span data-lang-label>中</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<article class="article-hero">
+    <div class="article-meta">
+        <span class="article-author" data-i18n="article.author">Editorial</span>
+        <span class="article-meta-sep">·</span>
+        <time class="article-date" datetime="2026-08-11" data-i18n="article.date">Aug 11, 2026</time>
+    </div>
+    <h1 class="article-title" data-i18n="article.title">Weather Radar vs Normal Radar</h1>
+    <p class="article-subtitle" data-i18n="article.subtitle">Same physics, opposite jobs. One wants a list, the other wants a picture.</p>
+</article>
+
+<div class="article-toc">
+    <div class="article-toc-inner">
+        <div class="article-toc-label" data-i18n="toc.title">On this page</div>
+        <nav class="article-toc-nav">
+            <a href="#s1"><span class="article-toc-num">01</span><span data-i18n="toc.s1">Targets versus fields</span></a>
+            <a href="#s2"><span class="article-toc-num">02</span><span data-i18n="toc.s2">The same wave</span></a>
+            <a href="#s3"><span class="article-toc-num">03</span><span data-i18n="toc.s3">Two pictures</span></a>
+            <a href="#s4"><span class="article-toc-num">04</span><span data-i18n="toc.s4">Worked example</span></a>
+            <a href="#s5"><span class="article-toc-num">05</span><span data-i18n="toc.s5">Eight differences</span></a>
+            <a href="#s6"><span class="article-toc-num">06</span><span data-i18n="toc.s6">Same system, different aim</span></a>
+        </nav>
+    </div>
+</div>
+
+<main>
+
+<!-- ============ BODY ============ -->
+<section class="article-section article-body" id="body">
+    <p data-i18n="article.p1">Weather radar also sends and receives waves. How is it different from normal radar?</p>
+    <p data-i18n="article.p2">Normal radar looks mainly at hard targets like aircraft and ships. Weather radar looks mainly at precipitation particles like raindrops, hail, and snow. Weather radar cares more about echo strength, speed, and distribution. Think of the same flashlight — one shines at people, one shines at fog.</p>
+    <p data-i18n="article.p3">Weather radar often uses Doppler to measure wind speed. Dual-polarization weather radar can tell apart rain, snow, and hail. Weather radars work in networks to cover large areas.</p>
+    <p data-i18n="article.p4">Normal radar wants to find targets; weather radar wants to describe the weather.</p>
+</section>
+
+<!-- ============ 01 ============ -->
+<section class="article-section" id="s1">
+    <div class="section-label">01 <span data-i18n="visual1.name">TARGETS VERSUS FIELDS</span></div>
+    <h2 class="article-title" data-i18n="visual1.title">A Dot or a Cloud</h2>
+    <p class="article-intro" data-i18n="visual1.intro">The single biggest difference is what counts as something worth seeing.</p>
+
+    <figure class="article-figure">
+        <svg viewBox="0 0 720 300" role="img" aria-labelledby="fig1-title">
+            <text id="fig1-title" data-i18n="fig1.title">Hard targets and precipitation fields</text>
+
+            <!-- left: PPI with hard targets -->
+            <circle cx="170" cy="150" r="100" fill="#0a1626" stroke="#22323C" stroke-width="1.4"/>
+            <circle cx="170" cy="150" r="66" fill="none" stroke="#22323C" stroke-width="1" stroke-dasharray="3 3"/>
+            <circle cx="170" cy="150" r="33" fill="none" stroke="#22323C" stroke-width="1" stroke-dasharray="3 3"/>
+            <line x1="70" y1="150" x2="270" y2="150" stroke="#22323C" stroke-width="1"/>
+            <line x1="170" y1="50" x2="170" y2="250" stroke="#22323C" stroke-width="1"/>
+
+            <circle cx="232" cy="106" r="5" fill="#FFD93D"/>
+            <circle cx="120" cy="96" r="4" fill="#3fc23f"/>
+            <circle cx="198" cy="205" r="4.5" fill="#FF8a3a"/>
+            <circle cx="105" cy="196" r="3.5" fill="#3fc23f"/>
+
+            <text x="170" y="278" text-anchor="middle" fill="#8fa6bb" font-size="12" data-i18n="fig1.hard">HARD TARGETS</text>
+            <text x="170" y="294" text-anchor="middle" fill="#6b8299" font-size="10" data-i18n="fig1.hard2">a few dots, each one an aircraft</text>
+
+            <!-- divider -->
+            <line x1="360" y1="50" x2="360" y2="250" stroke="#22323C" stroke-width="1.4"/>
+
+            <!-- right: reflectivity blob -->
+            <circle cx="550" cy="150" r="100" fill="#0a1626" stroke="#22323C" stroke-width="1.4"/>
+            <circle cx="550" cy="150" r="66" fill="none" stroke="#22323C" stroke-width="1" stroke-dasharray="3 3"/>
+            <circle cx="550" cy="150" r="33" fill="none" stroke="#22323C" stroke-width="1" stroke-dasharray="3 3"/>
+            <line x1="450" y1="150" x2="650" y2="150" stroke="#22323C" stroke-width="1"/>
+            <line x1="550" y1="50" x2="550" y2="250" stroke="#22323C" stroke-width="1"/>
+
+            <g>
+                <circle cx="520" cy="118" r="42" fill="#3fc23f" fill-opacity="0.55"/>
+                <circle cx="556" cy="146" r="36" fill="#FFD93D" fill-opacity="0.55"/>
+                <circle cx="540" cy="130" r="22" fill="#FF8a3a" fill-opacity="0.6"/>
+                <circle cx="576" cy="178" r="26" fill="#3fc23f" fill-opacity="0.45"/>
+                <circle cx="508" cy="182" r="20" fill="#FFD93D" fill-opacity="0.45"/>
+            </g>
+
+            <text x="550" y="278" text-anchor="middle" fill="#8fa6bb" font-size="12" data-i18n="fig1.soft">PRECIPITATION</text>
+            <text x="550" y="294" text-anchor="middle" fill="#6b8299" font-size="10" data-i18n="fig1.soft2">a field, no edges worth drawing around</text>
+        </svg>
+        <figcaption class="visual-caption" data-i18n="visual1.caption">A flight radar gets a handful of dots and draws a track on each. A weather radar gets a continuous field and has to decide where the storm begins.</figcaption>
+    </figure>
+</section>
+
+<!-- ============ 02 ============ -->
+<section class="article-section" id="s2">
+    <div class="section-label">02 <span data-i18n="visual2.name">THE SAME WAVE</span></div>
+    <h2 class="article-title" data-i18n="visual2.title">Identical Physics, Different Job</h2>
+    <p class="article-intro" data-i18n="visual2.intro">Both send X- or S-band pulses, bounce them off something, and listen. Everything after that diverges.</p>
+
+    <figure class="article-figure">
+        <svg viewBox="0 0 720 280" role="img" aria-labelledby="fig2-title">
+            <text id="fig2-title" data-i18n="fig2.title">Shared chain, different settings</text>
+
+            <!-- shared chain -->
+            <rect x="20" y="110" width="90" height="50" rx="6" fill="#0f2a44" stroke="#3fc23f" stroke-width="1.6"/>
+            <text x="65" y="140" text-anchor="middle" fill="#3fc23f" font-size="11" data-i18n="fig2.pulse">pulse out</text>
+
+            <rect x="140" y="110" width="90" height="50" rx="6" fill="#0f2a44" stroke="#3fc23f" stroke-width="1.6"/>
+            <text x="185" y="140" text-anchor="middle" fill="#3fc23f" font-size="11" data-i18n="fig2.echo">echoes back</text>
+
+            <rect x="260" y="110" width="90" height="50" rx="6" fill="#0f2a44" stroke="#3fc23f" stroke-width="1.6"/>
+            <text x="305" y="140" text-anchor="middle" fill="#3fc23f" font-size="11" data-i18n="fig2.rx">receiver</text>
+
+            <rect x="380" y="110" width="90" height="50" rx="6" fill="#0f2a44" stroke="#3fc23f" stroke-width="1.6"/>
+            <text x="425" y="140" text-anchor="middle" fill="#3fc23f" font-size="11" data-i18n="fig2.proc">processor</text>
+
+            <line x1="112" y1="135" x2="138" y2="135" stroke="#3fc23f" stroke-width="2"/>
+            <polygon points="138,135 130,130 130,140" fill="#3fc23f"/>
+            <line x1="232" y1="135" x2="258" y2="135" stroke="#3fc23f" stroke-width="2"/>
+            <polygon points="258,135 250,130 250,140" fill="#3fc23f"/>
+            <line x1="352" y1="135" x2="378" y2="135" stroke="#3fc23f" stroke-width="2"/>
+            <polygon points="378,135 370,130 370,140" fill="#3fc23f"/>
+
+            <text x="245" y="92" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig2.same">identical in both</text>
+
+            <!-- branches -->
+            <path d="M 425 162 L 425 190 L 545 190" fill="none" stroke="#FFD93D" stroke-width="2"/>
+            <polygon points="545,190 537,185 537,195" fill="#FFD93D"/>
+            <path d="M 305 162 L 305 226 L 545 226" fill="none" stroke="#3fc23f" stroke-width="2"/>
+            <polygon points="545,226 537,221 537,231" fill="#3fc23f"/>
+
+            <rect x="550" y="165" width="150" height="50" rx="6" fill="#0f2a44" stroke="#FFD93D" stroke-width="1.6"/>
+            <text x="625" y="186" text-anchor="middle" fill="#FFD93D" font-size="11" data-i18n="fig2.air">flight radar</text>
+            <text x="625" y="204" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig2.air2">is that aircraft there?</text>
+
+            <rect x="550" y="201" width="150" height="50" rx="6" fill="#0f2a44" stroke="#3fc23f" stroke-width="1.6"/>
+            <text x="625" y="222" text-anchor="middle" fill="#3fc23f" font-size="11" data-i18n="fig2.wx">weather radar</text>
+            <text x="625" y="240" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig2.wx2">how hard is it raining there?</text>
+        </svg>
+        <figcaption class="visual-caption" data-i18n="visual2.caption">The hardware is closer than people expect. The difference is what the processor is asked to produce: a list of objects, or a map of intensity.</figcaption>
+    </figure>
+</section>
+
+<!-- ============ 03 ============ -->
+<section class="article-section" id="s3">
+    <div class="section-label">03 <span data-i18n="visual3.name">TWO PICTURES</span></div>
+    <h2 class="article-title" data-i18n="visual3.title">What the Screen Actually Shows</h2>
+    <p class="article-intro" data-i18n="visual3.intro">One display answers "where is it". The other answers "how much, how fast, and what kind".</p>
+
+    <div class="video-wrap">
+        <video id="radar-loop-video" autoplay loop muted playsinline
+               data-video-en="manim/media/videos/script/480p15/RadarArticle46.en.mp4"
+               data-video-zh="manim/media/videos/script/480p15/RadarArticle46.zh.mp4"
+               poster="manim/media/images/radar-article46-poster.png">
+            <span data-i18n="visual3.fallback">Your browser does not support the video tag.</span>
+        </video>
+    </div>
+    <div class="video-captions">
+        <p class="caption-cc" data-i18n="visual3.cc1">1. REFLECTIVITY -- where the water is, and how heavy</p>
+        <p class="caption-cc" data-i18n="visual3.cc2">3. DOPPLER VELOCITY -- is it moving toward or away</p>
+        <p class="caption-cc" data-i18n="visual3.cc3">5. DUAL POL -- is it rain, snow or hail</p>
+        <p class="caption-cc" data-i18n="visual3.cc4">7. THE WARNING -- the picture becomes a polygon</p>
+    </div>
+    <p class="visual-caption" data-i18n="visual3.caption">Weather radar is really three radars in one housing. A flight radar is usually one, because one answer is enough.</p>
+</section>
+
+<!-- ============ 04 ============ -->
+<section class="article-section" id="s4">
+    <div class="section-label">04 <span data-i18n="visual4.name">WORKED EXAMPLE</span></div>
+    <h2 class="article-title" data-i18n="visual4.title">Same Reflectivity, Different Meaning</h2>
+    <p class="article-intro" data-i18n="visual4.intro">The number on the scale does not say what fell. It says how much came back.</p>
+
+    <div class="example-card">
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row1.label">A ship returns 20 dBZ</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row1.value">alarming on a flight radar</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row2.label">20 dBZ of rain</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row2.value">light drizzle, below any warning threshold</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row3.label">A flock of birds</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row3.value">weak but very close, so very strong</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row4.label">Hail 5 cm across</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row4.value">very high dBZ and a polarimetric signature</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row5.label">Ground clutter</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row5.value">static, zero Doppler velocity</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row6.label">A tornado</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row6.value">adjacent reds and greens — that is rotation</span></div>
+    </div>
+    <p class="visual-caption" data-i18n="visual4.caption">This is why weather radar cannot stop at one product. A single number is ambiguous in a way an aircraft's echo never is.</p>
+</section>
+
+<!-- ============ 05 ============ -->
+<section class="article-section" id="s5">
+    <div class="section-label">05 <span data-i18n="visual5.name">EIGHT DIFFERENCES</span></div>
+    <h2 class="article-title" data-i18n="visual5.title">The List Worth Knowing</h2>
+    <p class="article-intro" data-i18n="visual5.intro">Everything that makes a weather radar a different machine from an air traffic radar.</p>
+
+    <div class="application-grid">
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app1.tag">WHAT</span>
+            <h3 data-i18n="visual5.app1.title">Targets or Fields</h3>
+            <p data-i18n="visual5.app1.desc">A flight radar assumes a small number of discrete objects. A weather radar receives returns from everywhere inside its beam at once and must treat them as one continuous medium.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app2.tag">SCALE</span>
+            <h3 data-i18n="visual5.app2.title">Metres or Centimetres</h3>
+            <p data-i18n="visual5.app2.desc">Aircraft radar wants centimetre wavelengths for resolution. Weather radar uses decimetre wavelengths because longer waves penetrate rain instead of being smothered by it.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app3.tag">POWER</span>
+            <h3 data-i18n="visual5.app3.title">Kilowatts or Megawatts</h3>
+            <p data-i18n="visual5.app3.desc">A flight radar only needs to see aircraft with enormous radar cross sections. Hail is a poor reflector, so weather radar pushes hundreds of kilowatts to see rain at all.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app4.tag">RANGE</span>
+            <h3 data-i18n="visual5.app4.title">Kilometres or Hundred</h3>
+            <p data-i18n="visual5.app4.desc">Warning lead time is the point. A flight radar needs a few minutes; a weather radar needs an hour, so it sees ten times further and accepts far worse resolution.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app5.tag">DOPPLER</span>
+            <h3 data-i18n="visual5.app5.title">Optional or Essential</h3>
+            <p data-i18n="visual5.app5.desc">An aircraft's speed is found by tracking it between scans. Wind speed is only available from the Doppler shift inside a single pulse, so weather radar cannot work without it.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app6.tag">POLAR</span>
+            <h3 data-i18n="visual5.app6.title">Rare or Routine</h3>
+            <p data-i18n="visual5.app6.desc">Dual polarization tells a flight radar nothing extra about an aircraft. For rain it is the difference between rain, snow and hail — a routine requirement, not a feature.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app7.tag">SCAN</span>
+            <h3 data-i18n="visual5.app7.title">Fast or Slow</h3>
+            <p data-i18n="visual5.app7.desc">A flight radar spins quickly for a fresh picture of a fast-moving threat. A weather radar spins slowly because a storm changes more slowly than an aircraft does.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app8.tag">NET</span>
+            <h3 data-i18n="visual5.app8.title">Standalone or Networked</h3>
+            <p data-i18n="visual5.app8.desc">One air traffic radar guards one airfield. A storm crosses hundreds of kilometres, so national coverage only works as a network of stations sharing data.</p>
+        </div>
+    </div>
+    <p class="visual-caption" data-i18n="visual5.caption">Two of these are opposite: a flight radar trades resolution for speed, a weather radar trades resolution for range.</p>
+</section>
+
+<!-- ============ 06 ============ -->
+<section class="article-section" id="s6">
+    <div class="section-label">06 <span data-i18n="visual6.name">SAME SYSTEM, DIFFERENT AIM</span></div>
+    <h2 class="article-title" data-i18n="visual6.title">Detect or Describe</h2>
+    <p class="article-intro" data-i18n="visual6.intro">The cleanest way to hold both in your head.</p>
+
+    <div class="application-grid">
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app1.tag">OUTPUT</span>
+            <h3 data-i18n="visual6.app1.title">A List or a Map</h3>
+            <p data-i18n="visual6.app1.desc">A flight radar produces a track file: identifiers, positions, velocities, intentions. A weather radar produces a grid of numbers covering every cell inside the beam.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app2.tag">ERRORS</span>
+            <h3 data-i18n="visual6.app2.title">Missed or Overcalled</h3>
+            <p data-i18n="visual6.app2.desc">A flight radar's failure mode is a missed aircraft, which is catastrophic and rare. A weather radar's failure is a false alarm, which is common and embarrassing.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app3.tag">ALARM</span>
+            <h3 data-i18n="visual6.app3.title">Per Target</h3>
+            <p data-i18n="visual6.app3.desc">Warnings attach to one aircraft and one interceptor. Weather warnings are polygons covering ground, because the danger is a region of wind and rain, not an object.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app4.tag">CLUTTER</span>
+            <h3 data-i18n="visual6.app4.title">Everything Else</h3>
+            <p data-i18n="visual6.app4.desc">For an aircraft radar birds, clouds and rain are noise to be filtered out. For a weather radar much of that noise is the signal, and ground clutter is the enemy instead.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app5.tag">HORIZON</span>
+            <h3 data-i18n="visual6.app5.title">Dome or Patch</h3>
+            <p data-i18n="visual6.app5.desc">Low-level flight radar covers a local cone. A weather radar sees the whole atmosphere out to the horizon, and is limited by curvature and beam height, not by the aircraft it serves.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app6.tag">MESSAGE</span>
+            <h3 data-i18n="visual6.app6.title">One Number or Many</h3>
+            <p data-i18n="visual6.app6.desc">A flight controller asks one question: is it safe to land? A forecaster asks six at once: how much, how fast, which direction, what type, how tall, and how long.</p>
+        </div>
+    </div>
+    <p class="visual-caption" data-i18n="visual6.caption">Same transmitter, same receiver, same mathematics. What differs is the question being asked of the result.</p>
+</section>
+
+</main>
+
+<div class="article-summary-block">
+    <span class="summary-label" data-i18n="article.summaryLabel">ONE-LINE SUMMARY</span>
+    <p class="summary-line" data-i18n="article.summary">Weather radar watches precipitation; normal radar watches hard targets.</p>
+</div>
+
+<footer class="article-footer">
+    <span class="article-meta" data-i18n="article.meta">Student Research · 2026</span>
+    <a href="articles.html" class="article-back" data-i18n="article.back">← Back to Articles</a>
+</footer>
+
+<script src="script.js"></script>
+<script src="article-46.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="page.title">Article 45: How Far Can Radar See? — Radar Explorer</title>
+<meta name="description" content="page.description">
+<meta name="description" data-i18n="page.description" content="Article 45: There is no fixed answer to how far a radar can see. Power, antenna size, receiver noise figure, radar cross section, atmospheric loss and the horizon all pull in different directions.">
+<link rel="stylesheet" href="article.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo" data-i18n="nav.home">Radar Explorer</a>
+        <div class="nav-links">
+            <a href="articles.html" data-i18n="nav.articles">Articles</a>
+        </div>
+        <div class="nav-actions">
+            <button class="lang-toggle" data-lang-toggle type="button">
+                <span data-lang-label>中</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<article class="article-hero">
+    <div class="article-meta">
+        <span class="article-author" data-i18n="article.author">Editorial</span>
+        <span class="article-meta-sep">·</span>
+        <time class="article-date" datetime="2026-08-10" data-i18n="article.date">Aug 10, 2026</time>
+    </div>
+    <h1 class="article-title" data-i18n="article.title">How Far Can Radar See?</h1>
+    <p class="article-subtitle" data-i18n="article.subtitle">There is no number. There is a budget, and everything spends from it.</p>
+</article>
+
+<div class="article-toc">
+    <div class="article-toc-inner">
+        <div class="article-toc-label" data-i18n="toc.title">On this page</div>
+        <nav class="article-toc-nav">
+            <a href="#s1"><span class="article-toc-num">01</span><span data-i18n="toc.s1">The shouted conversation</span></a>
+            <a href="#s2"><span class="article-toc-num">02</span><span data-i18n="toc.s2">The radar equation</span></a>
+            <a href="#s3"><span class="article-toc-num">03</span><span data-i18n="toc.s3">Range animation</span></a>
+            <a href="#s4"><span class="article-toc-num">04</span><span data-i18n="toc.s4">Worked example</span></a>
+            <a href="#s5"><span class="article-toc-num">05</span><span data-i18n="toc.s5">The horizon</span></a>
+            <a href="#s6"><span class="article-toc-num">06</span><span data-i18n="toc.s6">What the air does</span></a>
+        </nav>
+    </div>
+</div>
+
+<main>
+
+<!-- ============ BODY ============ -->
+<section class="article-section article-body" id="body">
+    <p data-i18n="article.p1">Is farther always better for radar? How far can it actually see?</p>
+    <p data-i18n="article.p2">It depends on power, antenna size, and receiver sensitivity. More power, a bigger antenna, and a more sensitive receiver all mean longer range. The Earth's curvature also limits it: targets too low get hidden by the horizon.</p>
+    <p data-i18n="article.p3">Bigger targets with stronger reflections are easier to find. Think of shouting — your voice, the environment, and the listener's ears all affect how far you can be heard. Atmospheric refraction, rain, and fog also affect wave travel.</p>
+    <p data-i18n="article.p4">The radar equation can estimate range, but real conditions matter. So "how far" has no fixed answer — it depends on the situation.</p>
+</section>
+
+<!-- ============ 01 ============ -->
+<section class="article-section" id="s1">
+    <div class="section-label">01 <span data-i18n="visual1.name">THE SHOUTED CONVERSATION</span></div>
+    <h2 class="article-title" data-i18n="visual1.title">Radar Is a Shout Across a Valley</h2>
+    <p class="article-intro" data-i18n="visual1.intro">Both sides of the exchange are limited, and both are limited independently.</p>
+
+    <figure class="article-figure">
+        <svg viewBox="0 0 720 300" role="img" aria-labelledby="fig1-title">
+            <text id="fig1-title" data-i18n="fig1.title">Radar range as a shouting conversation</text>
+
+            <rect x="30" y="60" width="150" height="90" rx="8" fill="#0f2a44" stroke="#FFD93D" stroke-width="2"/>
+            <text x="105" y="88" text-anchor="middle" fill="#FFD93D" font-size="12" data-i18n="fig1.voice">YOUR VOICE</text>
+            <text x="105" y="110" text-anchor="middle" fill="#e8f0f7" font-size="11" data-i18n="fig1.voice2">power, beam width</text>
+            <text x="105" y="128" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig1.voice3">transmitter + antenna</text>
+
+            <rect x="540" y="60" width="150" height="90" rx="8" fill="#0f2a44" stroke="#3fc23f" stroke-width="2"/>
+            <text x="615" y="88" text-anchor="middle" fill="#3fc23f" font-size="12" data-i18n="fig1.ears">THEIR EARS</text>
+            <text x="615" y="110" text-anchor="middle" fill="#e8f0f7" font-size="11" data-i18n="fig1.ears2">gain, noise figure</text>
+            <text x="615" y="128" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig1.ears3">receiver + antenna</text>
+
+            <rect x="240" y="60" width="240" height="90" rx="8" fill="#0f2a44" stroke="#FF8a3a" stroke-width="2"/>
+            <text x="360" y="88" text-anchor="middle" fill="#FF8a3a" font-size="12" data-i18n="fig1.wall">THE VALLEY</text>
+            <text x="360" y="110" text-anchor="middle" fill="#e8f0f7" font-size="11" data-i18n="fig1.wall2">rain, fog, earth curve</text>
+            <text x="360" y="128" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig1.wall3">propagation loss</text>
+
+            <line x1="182" y1="105" x2="238" y2="105" stroke="#FFD93D" stroke-width="2"/>
+            <polygon points="238,105 230,100 230,110" fill="#FFD93D"/>
+            <line x1="482" y1="105" x2="538" y2="105" stroke="#3fc23f" stroke-width="2"/>
+            <polygon points="538,105 530,100 530,110" fill="#3fc23f"/>
+
+            <rect x="240" y="185" width="240" height="52" rx="8" fill="#0a1a2c" stroke="#8fa6bb" stroke-width="1.4"/>
+            <text x="360" y="207" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig1.who">AND WHO IS LISTENING</text>
+            <text x="360" y="226" text-anchor="middle" fill="#e8f0f7" font-size="11" data-i18n="fig1.rcs">radar cross section</text>
+
+            <line x1="480" y1="186" x2="600" y2="152" stroke="#8fa6bb" stroke-width="1.4"/>
+            <polygon points="600,152 588,154 592,163" fill="#8fa6bb"/>
+
+            <text x="360" y="270" text-anchor="middle" fill="#6b8299" font-size="11" data-i18n="fig1.note">range depends on all four — changing any one moves the answer</text>
+        </svg>
+        <figcaption class="visual-caption" data-i18n="visual1.caption">The shouting analogy is exactly right, and it is worth taking seriously: the loudness of your voice, the size of your ears and the size of the person answering all contribute.</figcaption>
+    </figure>
+</section>
+
+<!-- ============ 02 ============ -->
+<section class="article-section" id="s2">
+    <div class="section-label">02 <span data-i18n="visual2.name">THE RADAR EQUATION</span></div>
+    <h2 class="article-title" data-i18n="visual2.title">One Line That Contains Everything</h2>
+    <p class="article-intro" data-i18n="visual2.intro">The radar equation is the whole of radar theory compressed into a single relationship.</p>
+
+    <figure class="article-figure">
+        <svg viewBox="0 0 720 280" role="img" aria-labelledby="fig2-title">
+            <text id="fig2-title" data-i18n="fig2.title">The radar equation and what each term does</text>
+
+            <rect x="30" y="50" width="660" height="72" rx="8" fill="#0d2038" stroke="#3fc23f" stroke-width="1.6"/>
+            <text x="360" y="80" text-anchor="middle" fill="#e8f0f7" font-size="17" font-family="monospace" data-i18n="fig2.eq">Rmax = ( Pt G² σ² λ² σ τ )²⁴ / ( (4π)^3 L κ² F N k T B )</text>
+            <text x="360" y="106" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig2.eqsub">fourth root of the numerator, square root of the denominator</text>
+
+            <rect x="30" y="150" width="160" height="60" rx="6" fill="#0a1a2c" stroke="#22323C" stroke-width="1.2"/>
+            <text x="110" y="172" text-anchor="middle" fill="#3fc23f" font-size="12" data-i18n="fig2.num">IN THE NUMERATOR</text>
+            <text x="110" y="194" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig2.num2">all of it is your fault</text>
+
+            <rect x="530" y="150" width="160" height="60" rx="6" fill="#0a1a2c" stroke="#22323C" stroke-width="1.2"/>
+            <text x="610" y="172" text-anchor="middle" fill="#d83838" font-size="12" data-i18n="fig2.den">IN THE DENOMINATOR</text>
+            <text x="610" y="194" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig2.den2">all of it is the target's</text>
+
+            <text x="230" y="176" fill="#3fc23f" font-size="11" data-i18n="fig2.terms1">Pt power, G² antenna gain, σ wavelength</text>
+            <text x="230" y="196" fill="#3fc23f" font-size="11" data-i18n="fig2.terms2">σ target area, λ wavelength, τ pulse width</text>
+
+            <text x="500" y="176" fill="#d83838" font-size="11" text-anchor="end" data-i18n="fig2.terms3">L loss, κ target area</text>
+            <text x="500" y="196" fill="#d83838" font-size="11" text-anchor="end" data-i18n="fig2.terms4">F noise figure, k T B thermal noise</text>
+
+            <text x="360" y="248" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig2.note">doubling any single term changes range by a small power — that is why radar builds get enormous rather than merely powerful</text>
+        </svg>
+        <figcaption class="visual-caption" data-i18n="visual2.caption">Range is a fourth root of the numerator and a square root of the denominator. That exponent is the single most important number in radar design.</figcaption>
+    </figure>
+</section>
+
+<!-- ============ 03 ============ -->
+<section class="article-section" id="s3">
+    <div class="section-label">03 <span data-i18n="visual3.name">ANIMATION: RANGE SCALES</span></div>
+    <h2 class="article-title" data-i18n="visual3.title">Why Doubling Power Barely Helps</h2>
+    <p class="article-intro" data-i18n="visual3.intro">Four identical radars, four different power levels. Watch the range move.</p>
+
+    <div class="video-wrap">
+        <video id="radar-loop-video" autoplay loop muted playsinline
+               data-video-en="manim/media/videos/script/480p15/RadarArticle45.en.mp4"
+               data-video-zh="manim/media/videos/script/480p15/RadarArticle45.zh.mp4"
+               poster="manim/media/images/radar-article45-poster.png">
+            <span data-i18n="visual3.fallback">Your browser does not support the video tag.</span>
+        </video>
+    </div>
+    <div class="video-captions">
+        <p class="caption-cc" data-i18n="visual3.cc1">1. 1 kW -- a short reach, a bird or a small boat</p>
+        <p class="caption-cc" data-i18n="visual3.cc2">2. 10 kW -- ten times the power, only 1.8 times the range</p>
+        <p class="caption-cc" data-i18n="visual3.cc3">3. 100 kW -- a long-range military or weather radar</p>
+        <p class="caption-cc" data-i18n="visual3.cc4">4. 1 MW -- for a helicopter you would need about 1000 MW</p>
+    </div>
+    <p class="visual-caption" data-i18n="visual3.caption">This is the reason a radar is built the size it is. Power alone cannot buy range, so the aperture grows instead.</p>
+</section>
+
+<!-- ============ 04 ============ -->
+<section class="article-section" id="s4">
+    <div class="section-label">04 <span data-i18n="visual4.name">WORKED EXAMPLE</span></div>
+    <h2 class="article-title" data-i18n="visual4.title">Two Targets at the Same Range</h2>
+    <p class="article-intro" data-i18n="visual4.intro">Same radar, same distance. One is seen, the other is not.</p>
+
+    <div class="example-card">
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row1.label">Radar</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row1.value">100 kW, 30 dB gain, 2 dB loss</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row2.label">Detection threshold</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row2.value">0.1 m² at 30 km</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row3.label">A gull</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row3.value">0.005 m² — missed at 30 km</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row4.label">A fighter aircraft</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row4.value">5 m² — seen well past 300 km</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row5.label">A stealth shape</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row5.value">0.01 m² front-on — missed at 30 km</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row6.label">Same ship, beam aspect</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row6.value">10 000 m² — seen at 600 km</span></div>
+    </div>
+    <p class="visual-caption" data-i18n="visual4.caption">Detection range scales as the fourth root of cross section. Multiply the target area by ten thousand and you only quadruple the range.</p>
+</section>
+
+<!-- ============ 05 ============ -->
+<section class="article-section" id="s5">
+    <div class="section-label">05 <span data-i18n="visual5.name">THE HORIZON</span></div>
+    <h2 class="article-title" data-i18n="visual5.title">The Earth Gets in the Way</h2>
+    <p class="article-intro" data-i18n="visual5.intro">Before any equation matters, the geometry has to work.</p>
+
+    <figure class="article-figure">
+        <svg viewBox="0 0 720 300" role="img" aria-labelledby="fig5-title">
+            <text id="fig5-title" data-i18n="fig5.title">Line-of-sight and radar horizon</text>
+
+            <path d="M 40 240 Q 360 320 680 240" fill="none" stroke="#2A3B4C" stroke-width="3"/>
+            <text x="360" y="284" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig5.earth">earth surface</text>
+
+            <rect x="60" y="90" width="90" height="80" rx="6" fill="#0f2a44" stroke="#3fc23f" stroke-width="2"/>
+            <text x="105" y="122" text-anchor="middle" fill="#3fc23f" font-size="12" data-i18n="fig5.radar">Radar</text>
+            <text x="105" y="142" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig5.h">100 m</text>
+
+            <line x1="150" y1="120" x2="600" y2="212" stroke="#FFD93D" stroke-width="2" stroke-dasharray="6 4"/>
+            <text x="380" y="152" fill="#FFD93D" font-size="11" data-i18n="fig5.rfl">refracted beam — bends down with the earth</text>
+
+            <line x1="150" y1="120" x2="420" y2="238" stroke="#8fa6bb" stroke-width="1.6" stroke-dasharray="3 3"/>
+            <text x="300" y="224" fill="#8fa6bb" font-size="10" data-i18n="fig5.straight">straight line — hits the ground</text>
+
+            <circle cx="600" cy="212" r="9" fill="#d83838"/>
+            <text x="600" y="200" text-anchor="middle" fill="#d83838" font-size="11" data-i18n="fig5.aircraft">aircraft</text>
+
+            <text x="360" y="42" text-anchor="middle" fill="#3fc23f" font-size="12" data-i18n="fig5.formula">4.12 (√h in metres)</text>
+            <text x="360" y="62" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig5.both">geometric horizon, radar added to each end</text>
+        </svg>
+        <figcaption class="visual-caption" data-i18n="visual5.caption">A radar can see its own horizon plus the target's height. A 100 m radar sees a target 25 m high about 81 km away, and refraction adds roughly 8%.</figcaption>
+    </figure>
+</section>
+
+<!-- ============ 06 ============ -->
+<section class="article-section" id="s6">
+    <div class="section-label">06 <span data-i18n="visual6.name">WHAT THE AIR DOES</span></div>
+    <h2 class="article-title" data-i18n="visual6.title">The Valley Is Not Empty</h2>
+    <p class="article-intro" data-i18n="visual6.intro">Between radar and target there is always air, water and sometimes a storm.</p>
+
+    <div class="application-grid">
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app1.tag">RAIN</span>
+            <h3 data-i18n="visual6.app1.title">Attenuation</h3>
+            <p data-i18n="visual6.app1.desc">Rain scatters and absorbs. At X-band in heavy rain, loss grows so steeply with range that a short-wavelength radar can be blinded at 30 km by a storm it is looking through.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app2.tag">WAVELENGTH</span>
+            <h3 data-i18n="visual6.app2.title">The Rain Problem</h3>
+            <p data-i18n="visual6.app2.desc">Longer wavelengths suffer less, which is why weather radars for the 10 cm band see through storms that stop an X-band airborne radar entirely.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app3.tag">FOG</span>
+            <h3 data-i18n="visual6.app3.title">Fog and Cloud</h3>
+            <p data-i18n="visual6.app3.desc">Radar was invented partly to see through weather. Fog has almost no effect on radio waves, which is exactly why radar penetrates it and light does not.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app4.tag">BEND</span>
+            <h3 data-i18n="visual6.app4.title">Refraction</h3>
+            <p data-i18n="visual6.app4.desc">Radio waves bend slightly downward through the atmosphere, extending the radio horizon beyond the geometric one. Temperature inversions can extend it far enough to see ships beyond the horizon.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app5.tag">CLUTTER</span>
+            <h3 data-i18n="visual6.app5.title">Sea and Land Clutter</h3>
+            <p data-i18n="visual6.app5.desc">Over the sea, ground clutter stops close to the radar, so a ship near the horizon may still be seen above it. Over land, buildings clutter the near range and hide everything low.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app6.tag">ASPECT</span>
+            <h3 data-i18n="visual6.app6.title">Which Side You See</h3>
+            <p data-i18n="visual6.app6.desc">A ship seen broadside has an enormous cross section. The same ship seen bow-on can be a hundred times smaller. Aspect alone can double or halve the detection range.</p>
+        </div>
+    </div>
+    <p class="visual-caption" data-i18n="visual6.caption">This is why a published range figure is a best case: one radar, one target, clear air, beam aspect.</p>
+</section>
+
+</main>
+
+<div class="article-summary-block">
+    <span class="summary-label" data-i18n="article.summaryLabel">ONE-LINE SUMMARY</span>
+    <p class="summary-line" data-i18n="article.summary">Radar range depends on power, sensitivity, and the Earth's curvature.</p>
+</div>
+
+<footer class="article-footer">
+    <span class="article-meta" data-i18n="article.meta">Student Research · 2026</span>
+    <a href="articles.html" class="article-back" data-i18n="article.back">← Back to Articles</a>
+</footer>
+
+<script src="script.js"></script>
+<script src="article-45.js"></script>
+
+</body>
+</html>

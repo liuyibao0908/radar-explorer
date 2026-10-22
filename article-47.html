@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="page.title">Article 47: Can Radar Be Jammed? — Radar Explorer</title>
+<meta name="description" content="page.description">
+<meta name="description" data-i18n="page.description" content="Article 47: Jamming, deception and every technique a radar uses to fight back — frequency agility, sidelobe rejection, home-on-jam and why no counter defeats every jammer.">
+<link rel="stylesheet" href="article.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo" data-i18n="nav.home">Radar Explorer</a>
+        <div class="nav-links">
+            <a href="articles.html" data-i18n="nav.articles">Articles</a>
+        </div>
+        <div class="nav-actions">
+            <button class="lang-toggle" data-lang-toggle type="button">
+                <span data-lang-label>中</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<article class="article-hero">
+    <div class="article-meta">
+        <span class="article-author" data-i18n="article.author">Editorial</span>
+        <span class="article-meta-sep">·</span>
+        <time class="article-date" datetime="2026-08-13" data-i18n="article.date">Aug 13, 2026</time>
+    </div>
+    <h1 class="article-title" data-i18n="article.title">Can Radar Be Jammed?</h1>
+    <p class="article-subtitle" data-i18n="article.subtitle">Yes. That is the entire reason half of this website exists.</p>
+</article>
+
+<div class="article-toc">
+    <div class="article-toc-inner">
+        <div class="article-toc-label" data-i18n="toc.title">On this page</div>
+        <nav class="article-toc-nav">
+            <a href="#s1"><span class="article-toc-num">01</span><span data-i18n="toc.s1">Two kinds of attack</span></a>
+            <a href="#s2"><span class="article-toc-num">02</span><span data-i18n="toc.s2">Noise jamming</span></a>
+            <a href="#s3"><span class="article-toc-num">03</span><span data-i18n="toc.s3">Jamming animation</span></a>
+            <a href="#s4"><span class="article-toc-num">04</span><span data-i18n="toc.s4">Worked example</span></a>
+            <a href="#s5"><span class="article-toc-num">05</span><span data-i18n="toc.s5">How radar fights back</span></a>
+            <a href="#s6"><span class="article-toc-num">06</span><span data-i18n="toc.s6">Deception</span></a>
+        </nav>
+    </div>
+</div>
+
+<main>
+
+<!-- ============ BODY ============ -->
+<section class="article-section article-body" id="body">
+    <p data-i18n="article.p1">Yes. A radar can be jammed — and this is one of the most contested parts of electronic warfare.</p>
+    <p data-i18n="article.p2">There are two very different ways to attack a radar. One floods it with noise so the real echoes disappear underneath. The other sends it fake echoes that look exactly like real ones. Both work, and they are countered in completely different ways.</p>
+    <p data-i18n="article.p3">Noise jamming is brute force: raise the noise floor until the signal sits inside it. Deception is subtler — return a pulse at the right moment with the right shape, so the radar plots an aircraft that isn't there.</p>
+    <p data-i18n="article.p4">Every counter has a counter-counter. That is why radar and electronic warfare have advanced together for a century.</p>
+</section>
+
+<!-- ============ 01 ============ -->
+<section class="article-section" id="s1">
+    <div class="section-label">01 <span data-i18n="visual1.name">TWO KINDS OF ATTACK</span></div>
+    <h2 class="article-title" data-i18n="visual1.title">Brawl Versus Bluff</h2>
+    <p class="article-intro" data-i18n="visual1.intro">One attack hides your signal. The other fabricates one.</p>
+
+    <figure class="article-figure">
+        <svg viewBox="0 0 720 330" role="img" aria-labelledby="fig1-title">
+            <text id="fig1-title" data-i18n="fig1.title">Noise jamming and deception, side by side</text>
+
+            <rect x="30" y="50" width="310" height="240" rx="8" fill="#0a1626" stroke="#d83838" stroke-width="2"/>
+            <text x="185" y="76" text-anchor="middle" fill="#d83838" font-size="14" font-weight="bold" data-i18n="fig1.noise">NOISE JAMMING</text>
+            <text x="185" y="98" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig1.noiseSub">make your echo invisible</text>
+
+            <line x1="60" y1="230" x2="310" y2="230" stroke="#22323C" stroke-width="1.2"/>
+            <text x="185" y="252" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig1.strength">signal strength</text>
+
+            <g stroke="#3fc23f" stroke-width="1.6">
+                <line x1="60" y1="212" x2="78" y2="206"/>
+                <line x1="60" y1="222" x2="78" y2="216"/>
+                <line x1="60" y1="202" x2="78" y2="196"/>
+            </g>
+            <text x="70" y="184" text-anchor="middle" fill="#3fc23f" font-size="10" data-i18n="fig1.echo">echo</text>
+
+            <g stroke="#d83838" stroke-width="1">
+                <line x1="70" y1="180" x2="96" y2="170"/>
+                <line x1="86" y1="186" x2="112" y2="176"/>
+                <line x1="102" y1="192" x2="128" y2="182"/>
+                <line x1="118" y1="188" x2="144" y2="178"/>
+                <line x1="134" y1="196" x2="160" y2="186"/>
+                <line x1="150" y1="190" x2="176" y2="180"/>
+                <line x1="166" y1="198" x2="192" y2="188"/>
+                <line x1="182" y1="192" x2="208" y2="182"/>
+                <line x1="198" y1="200" x2="224" y2="190"/>
+                <line x1="214" y1="194" x2="240" y2="184"/>
+                <line x1="230" y1="202" x2="256" y2="192"/>
+                <line x1="246" y1="196" x2="272" y2="186"/>
+            </g>
+            <text x="185" y="166" text-anchor="middle" fill="#d83838" font-size="10" data-i18n="fig1.floor">noise floor pushed up</text>
+            <text x="185" y="276" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig1.f1">signal buried → nothing detected</text>
+            <text x="185" y="292" text-anchor="middle" fill="#6b8299" font-size="10" data-i18n="fig1.f2">counter: filtering, frequency agility</text>
+
+            <rect x="380" y="50" width="310" height="240" rx="8" fill="#0a1626" stroke="#FF8a3a" stroke-width="2"/>
+            <text x="535" y="76" text-anchor="middle" fill="#FF8a3a" font-size="14" font-weight="bold" data-i18n="fig1.decep">DECEPTION</text>
+            <text x="535" y="98" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig1.decepSub">make a phantom appear</text>
+
+            <circle cx="455" cy="215" r="7" fill="#3fc23f"/>
+            <text x="455" y="238" text-anchor="middle" fill="#3fc23f" font-size="10" data-i18n="fig1.real">real</text>
+
+            <circle cx="590" cy="160" r="11" fill="none" stroke="#FF8a3a" stroke-width="2" stroke-dasharray="4 3"/>
+            <text x="590" y="188" text-anchor="middle" fill="#FF8a3a" font-size="10" data-i18n="fig1.ghost">phantom</text>
+
+            <line x1="590" y1="150" x2="590" y2="204" stroke="#FF8a3a" stroke-width="1" stroke-dasharray="3 3"/>
+
+            <rect x="415" y="120" width="55" height="30" rx="5" fill="#0f2a44" stroke="#8fa6bb" stroke-width="1.2"/>
+            <text x="442" y="140" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig1.scope">scope</text>
+
+            <text x="535" y="276" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig1.f3">false track drawn where nothing is</text>
+            <text x="535" y="292" text-anchor="middle" fill="#6b8299" font-size="10" data-i18n="fig1.f4">counter: you cannot filter what looks real</text>
+        </svg>
+        <figcaption class="visual-caption" data-i18n="visual1.caption">Noise jamming is an argument about signal-to-noise ratio, and it can be won by filtering. Deception is not: a well-formed echo survives every filter you have.</figcaption>
+    </figure>
+</section>
+
+<!-- ============ 02 ============ -->
+<section class="article-section" id="s2">
+    <div class="section-label">02 <span data-i18n="visual2.name">NOISE JAMMING</span></div>
+    <h2 class="article-title" data-i18n="visual2.title">Raising the Floor</h2>
+    <p class="article-intro" data-i18n="visual2.intro">You do not need to overpower the radar. You only need to be louder than the echoes.</p>
+
+    <div class="example-card">
+        <div class="example-row"><span class="example-label" data-i18n="visual2.row1.label">Radar peak transmit power</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual2.row1.value">+77 dBm</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual2.row2.label">Return from a fighter at 200 km</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual2.row2.value">−116 dBm</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual2.row3.label">Thermal noise in that cell</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual2.row3.value">−113 dBm</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual2.row4.label">A 1 kW jammer only needs</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual2.row4.value">about −100 dBm at the radar antenna</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual2.row5.label">That is a margin of</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual2.row5.value">16 dB over the signal — a 40× jammer</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual2.row6.label">Jammer effective range</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual2.row6.value">hundreds of km, because the path loss is shared</span></div>
+    </div>
+    <p class="visual-caption" data-i18n="visual2.caption">This is the asymmetry that makes noise jamming cheap: the radar has to win 190 dB of round-trip path loss before it sees anything, and the jammer only faces one-way loss.</p>
+</section>
+
+<!-- ============ 03 ============ -->
+<section class="article-section" id="s3">
+    <div class="section-label">03 <span data-i18n="visual3.name">ANIMATION: THE FLOOR RISES</span></div>
+    <h2 class="article-title" data-i18n="visual3.title">Watch the Target Disappear Into Noise</h2>
+    <p class="article-intro" data-i18n="visual3.intro">The signal never changes. Only the floor underneath it does.</p>
+
+    <div class="video-wrap">
+        <video id="radar-loop-video" autoplay loop muted playsinline
+               data-video-en="manim/media/videos/script/480p15/RadarArticle47.en.mp4"
+               data-video-zh="manim/media/videos/script/480p15/RadarArticle47.zh.mp4"
+               poster="manim/media/images/radar-article47-poster.png">
+            <span data-i18n="visual3.fallback">Your browser does not support the video tag.</span>
+        </video>
+    </div>
+    <div class="video-captions">
+        <p class="caption-cc" data-i18n="visual3.cc1">1. CLEAN -- the echo sits above the noise floor</p>
+        <p class="caption-cc" data-i18n="visual3.cc2">2. JAMMED -- the floor rises and swallows the echo</p>
+        <p class="caption-cc" data-i18n="visual3.cc3">3. FILTERED -- the radar narrows its bandwidth and recovers</p>
+        <p class="caption-cc" data-i18n="visual3.cc4">4. RE-JAMMED -- the jammer moves to the new frequency</p>
+    </div>
+    <p class="visual-caption" data-i18n="visual3.caption">That last step is why counters and counter-counters exist: every defence narrows the frequency the attacker can use, and the attacker then has to find another one.</p>
+</section>
+
+<!-- ============ 04 ============ -->
+<section class="article-section" id="s4">
+    <div class="section-label">04 <span data-i18n="visual4.name">WORKED EXAMPLE</span></div>
+    <h2 class="article-title" data-i18n="visual4.title">Why Weather Radar Is Hard to Jam</h2>
+    <p class="article-intro" data-i18n="visual4.intro">The same physics that makes a search radar vulnerable makes a weather radar awkward to attack.</p>
+
+    <div class="example-card">
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row1.label">A jammer would have to cover</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row1.value">a 400 km disc, continuously, in the right band</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row2.label">Available spectrum is</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row2.value">narrow — the S band is a small slice</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row3.label">Frequency agility defeats</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row3.value">a jammer tuned to one frequency</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row4.label">Striking radars are</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row4.value">hardened, shielded and self-protected</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row5.label">But weather data is public</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row5.value">no reason to attack — jamming it helps nobody</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row6.label">Result</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row6.value">weather radar is essentially never jammed</span></div>
+    </div>
+    <p class="visual-caption" data-i18n="visual4.caption">Countermeasures are aimed at radars whose output matters to somebody. A weather radar's output matters to everybody, which is its own kind of protection.</p>
+</section>
+
+<!-- ============ 05 ============ -->
+<section class="article-section" id="s5">
+    <div class="section-label">05 <span data-i18n="visual5.name">HOW RADAR FIGHTS BACK</span></div>
+    <h2 class="article-title" data-i18n="visual5.title">Six Countermeasures</h2>
+    <p class="article-intro" data-i18n="visual5.intro">Each one attacks a specific weakness of a specific jammer.</p>
+
+    <div class="application-grid">
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app1.tag">FREQ</span>
+            <h3 data-i18n="visual5.app1.title">Frequency Agility</h3>
+            <p data-i18n="visual5.app1.desc">Change frequency between pulses. A jammer tuned to one frequency is now wasting its power, and it must retune fast enough to matter.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app2.tag">POWER</span>
+            <h3 data-i18n="visual5.app2.title">More Peak Power</h3>
+            <p data-i18n="visual5.app2.desc">Raise the signal above the floor. Simple and effective, but it costs size, cost and electricity — which is why power is a blunt counter.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app3.tag">FILTER</span>
+            <h3 data-i18n="visual5.app3.title">Narrow Bandwidth</h3>
+            <p data-i18n="visual5.app3.desc">Match the filter tightly to the transmitted pulse. Noise spread thinly across a wide band is cut hard; the signal inside the passband is not.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app4.tag">BEAM</span>
+            <h3 data-i18n="visual5.app4.title">Sidelobe Rejection</h3>
+            <p data-i18n="visual5.app4.desc">A jammer arriving off the main axis enters through the antenna's sidelobes. Directing the antenna at the jammer and nulling it is a well-established technique.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app5.tag">SPACE</span>
+            <h3 data-i18n="visual5.app5.title">Diverse Installations</h3>
+            <p data-i18n="visual5.app5.desc">Spread several radars around a site. A jammer close enough to silence one has to be silent against all of them at once.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app6.tag">HOME</span>
+            <h3 data-i18n="visual5.app6.title">Home on Jam</h3>
+            <p data-i18n="visual5.app6.desc">Locate the jammer directly, then turn the radar into a sensor that points at it and fires. The attacker's own transmitter becomes the target.</p>
+        </div>
+    </div>
+    <p class="visual-caption" data-i18n="visual5.caption">Notice that five of the six narrow what the attacker can do. Real radars combine several, because the jammer is not stupid.</p>
+</section>
+
+<!-- ============ 06 ============ -->
+<section class="article-section" id="s6">
+    <div class="section-label">06 <span data-i18n="visual6.name">DECEPTION</span></div>
+    <h2 class="article-title" data-i18n="visual6.title">The Attack You Cannot Filter</h2>
+    <p class="article-intro" data-i18n="visual6.intro">Noise jamming loses to a filter. A well-formed false echo does not.</p>
+
+    <div class="application-grid">
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app1.tag">RANGE</span>
+            <h3 data-i18n="visual6.app1.title">Range Gate Stealing</h3>
+            <p data-i18n="visual6.app1.desc">The jammer receives the radar's pulse, delays it, and returns a stronger echo at a chosen range. The aircraft vanishes and a ghost appears behind it.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app2.tag">ANGLE</span>
+            <h3 data-i18n="visual6.app2.title">Angle Deception</h3>
+            <p data-i18n="visual6.app2.desc">By controlling the phase across a antenna array, a jammer can make the return appear to come from a different bearing entirely.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app3.tag">TRACK</span>
+            <h3 data-i18n="visual6.app3.title">False Tracks</h3>
+            <p data-i18n="visual6.app3.desc">Multiple false returns pulled slowly across the display form a plausible track with a plausible speed. The operator has to decide it is false.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app4.tag">TGT</span>
+            <h3 data-i18n="visual6.app4.title">False Targets</h3>
+            <p data-i18n="visual6.app4.desc">A drone that mimics a missile's radar signature is now a real and widely deployed threat — the deception idea has become physical.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app5.tag">TELL</span>
+            <h3 data-i18n="visual6.app5.title">Telling Them Apart</h3>
+            <p data-i18n="visual6.app5.desc">Deception is usually detected by inconsistencies: a track that appears from nowhere, moves at impossible speed, or appears from exactly the radar's own bearing.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app6.tag">LIMIT</span>
+            <h3 data-i18n="visual6.app6.title">The Fundamental Limit</h3>
+            <p data-i18n="visual6.app6.desc">Radar cannot prove an echo is genuine. It can only look for reasons to doubt it — which is why the operator stays in the loop.</p>
+        </div>
+    </div>
+    <p class="visual-caption" data-i18n="visual6.caption">Noise jamming asks the radar to see better. Deception asks it to doubt what it sees. The second question is much harder.</p>
+</section>
+
+</main>
+
+<div class="article-summary-block">
+    <span class="summary-label" data-i18n="article.summaryLabel">ONE-LINE SUMMARY</span>
+    <p class="summary-line" data-i18n="article.summary">Yes — radar can be jammed, and no counter defeats every jammer.</p>
+</div>
+
+<footer class="article-footer">
+    <span class="article-meta" data-i18n="article.meta">Student Research · 2026</span>
+    <a href="articles.html" class="article-back" data-i18n="article.back">← Back to Articles</a>
+</footer>
+
+<script src="script.js"></script>
+<script src="article-47.js"></script>
+
+</body>
+</html>

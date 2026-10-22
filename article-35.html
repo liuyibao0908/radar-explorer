@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="page.title">Article 35: What Does a Radar Look Like? — Radar Explorer</title>
+<meta name="description" content="page.description">
+<meta name="description" data-i18n="page.description" content="Article 35: What does a radar look like? Antenna, transmitter, receiver, duplexer, signal processor, display, servo, power supply — the whole system in one cross-section diagram.">
+<link rel="stylesheet" href="article.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo" data-i18n="nav.home">Radar Explorer</a>
+        <div class="nav-links">
+            <a href="articles.html" data-i18n="nav.articles">Articles</a>
+        </div>
+        <div class="nav-actions">
+            <button class="lang-toggle" data-lang-toggle type="button">
+                <span data-lang-label>中</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<article class="article-hero">
+    <div class="article-meta">
+        <span class="article-author" data-i18n="article.author">Editorial</span>
+        <span class="article-meta-sep">·</span>
+        <time class="article-date" datetime="2026-07-16" data-i18n="article.date">Jul 16, 2026</time>
+    </div>
+    <h1 class="article-title" data-i18n="article.title">What Does a Radar Look Like?</h1>
+    <p class="article-subtitle" data-i18n="article.subtitle">One diagram, eight parts, one complete cycle.</p>
+</article>
+
+<div class="article-toc">
+    <div class="article-toc-inner">
+        <div class="article-toc-label" data-i18n="toc.title">On this page</div>
+        <nav class="article-toc-nav">
+            <a href="#s1"><span class="article-toc-num">01</span><span data-i18n="toc.s1">The parts list</span></a>
+            <a href="#s2"><span class="article-toc-num">02</span><span data-i18n="toc.s2">The radar body</span></a>
+            <a href="#s3"><span class="article-toc-num">03</span><span data-i18n="toc.s3">One full cycle</span></a>
+            <a href="#s4"><span class="article-toc-num">04</span><span data-i18n="toc.s4">Worked example</span></a>
+            <a href="#s5"><span class="article-toc-num">05</span><span data-i18n="toc.s5">Why split it up?</span></a>
+            <a href="#s6"><span class="article-toc-num">06</span><span data-i18n="toc.s6">Where these live</span></a>
+        </nav>
+    </div>
+</div>
+
+<main>
+
+<!-- ============ BODY ============ -->
+<section class="article-section article-body" id="body">
+    <p data-i18n="article.p1">Have you ever seen a radar? That spinning "dish" on top of an airport, a ship, or a weather station — that's a radar. But a radar is not just one antenna. It is a whole team of machines.</p>
+    <p data-i18n="article.p2">A radar has these main parts: antenna, transmitter, receiver, duplexer, signal processor, display, servo system, and power supply. Think of it like a person: the antenna is the eyes and mouth, the transmitter is the voice, the receiver is the ears, the signal processor is the brain, the display is the face, the servo is the neck, and power and cooling are the backbone.</p>
+    <p data-i18n="article.p3">Why split it up like this? Because a radar does something very complex: it sends out waves, receives them back, finds targets in the noise, and shows the result in a way people can understand. Each part handles one step, and none can be missing.</p>
+    <p data-i18n="article.p4">One full cycle: send out, receive back, calculate, and show. It sounds simple, but every step involves precise timing and high-speed processing. Radars come in many sizes — some as small as a box, some as tall as a building — but the basic structure is the same.</p>
+</section>
+
+<!-- ============ 01 ============ -->
+<section class="article-section" id="s1">
+    <div class="section-label">01 <span data-i18n="visual1.name">THE PARTS LIST</span></div>
+    <h2 class="article-title" data-i18n="visual1.title">Eight Parts, One Machine</h2>
+    <p class="article-intro" data-i18n="visual1.intro">Every radar — airport, ship, weather — is built from the same eight blocks. Here they are.</p>
+
+    <figure class="article-figure">
+        <svg viewBox="0 0 720 300" role="img" aria-labelledby="fig1-title">
+            <text id="fig1-title" data-i18n="fig1.title">Radar block diagram</text>
+            <rect x="20" y="40" width="110" height="46" rx="6" fill="#0f2a44" stroke="#3fc23f" stroke-width="1.4"/>
+            <text x="75" y="60" text-anchor="middle" fill="#e8f0f7" font-size="12" data-i18n="fig1.tx">Transmitter</text>
+            <text x="75" y="76" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig1.power">power</text>
+
+            <rect x="165" y="40" width="110" height="46" rx="6" fill="#0f2a44" stroke="#3fc23f" stroke-width="1.4"/>
+            <text x="220" y="60" text-anchor="middle" fill="#e8f0f7" font-size="12" data-i18n="fig1.ant">Antenna</text>
+            <text x="220" y="76" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig1.tp">tx + rx</text>
+
+            <rect x="310" y="40" width="110" height="46" rx="6" fill="#0f2a44" stroke="#3fc23f" stroke-width="1.4"/>
+            <text x="365" y="60" text-anchor="middle" fill="#e8f0f7" font-size="12" data-i18n="fig1.rx">Receiver</text>
+            <text x="365" y="76" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig1.sens">sensitive</text>
+
+            <rect x="455" y="40" width="110" height="46" rx="6" fill="#0f2a44" stroke="#3fc23f" stroke-width="1.4"/>
+            <text x="510" y="60" text-anchor="middle" fill="#e8f0f7" font-size="12" data-i18n="fig1.proc">Processor</text>
+            <text x="510" y="76" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig1.fft">FFT, filter</text>
+
+            <rect x="600" y="40" width="100" height="46" rx="6" fill="#0f2a44" stroke="#3fc23f" stroke-width="1.4"/>
+            <text x="650" y="60" text-anchor="middle" fill="#e8f0f7" font-size="12" data-i18n="fig1.disp">Display</text>
+            <text x="650" y="76" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig1.pic">picture</text>
+
+            <rect x="165" y="150" width="110" height="46" rx="6" fill="#0f2a44" stroke="#3fc23f" stroke-width="1.4"/>
+            <text x="220" y="170" text-anchor="middle" fill="#e8f0f7" font-size="12" data-i18n="fig1.dup">Duplexer</text>
+            <text x="220" y="186" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig1.gate">one path</text>
+
+            <rect x="310" y="150" width="110" height="46" rx="6" fill="#0f2a44" stroke="#3fc23f" stroke-width="1.4"/>
+            <text x="365" y="170" text-anchor="middle" fill="#e8f0f7" font-size="12" data-i18n="fig1.servo">Servo</text>
+            <text x="365" y="186" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig1.aim">aim</text>
+
+            <rect x="455" y="150" width="110" height="46" rx="6" fill="#0f2a44" stroke="#3fc23f" stroke-width="1.4"/>
+            <text x="510" y="170" text-anchor="middle" fill="#e8f0f7" font-size="12" data-i18n="fig1.psu">Power</text>
+            <text x="510" y="186" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig1.cool">cooling</text>
+
+            <line x1="130" y1="63" x2="163" y2="63" stroke="#3fc23f" stroke-width="1.6"/>
+            <polygon points="163,63 156,59 156,67" fill="#3fc23f"/>
+            <line x1="275" y1="63" x2="308" y2="63" stroke="#3fc23f" stroke-width="1.6"/>
+            <polygon points="308,63 301,59 301,67" fill="#3fc23f"/>
+            <line x1="420" y1="63" x2="453" y2="63" stroke="#3fc23f" stroke-width="1.6"/>
+            <polygon points="453,63 446,59 446,67" fill="#3fc23f"/>
+            <line x1="565" y1="63" x2="598" y2="63" stroke="#3fc23f" stroke-width="1.6"/>
+            <polygon points="598,63 591,59 591,67" fill="#3fc23f"/>
+
+            <line x1="220" y1="88" x2="220" y2="148" stroke="#3fc23f" stroke-width="1.6"/>
+            <polygon points="220,148 216,141 224,141" fill="#3fc23f"/>
+            <line x1="365" y1="88" x2="365" y2="148" stroke="#3fc23f" stroke-width="1.6"/>
+            <polygon points="365,148 361,141 369,141" fill="#3fc23f"/>
+        </svg>
+        <figcaption class="visual-caption" data-i18n="visual1.caption">The eight blocks. The duplexer is what lets one antenna both transmit and receive at the same time.</figcaption>
+    </figure>
+</section>
+
+<!-- ============ 02 ============ -->
+<section class="article-section" id="s2">
+    <div class="section-label">02 <span data-i18n="visual2.name">THE RADAR BODY</span></div>
+    <h2 class="article-title" data-i18n="visual2.title">Cross-Section of the Whole Machine</h2>
+    <p class="article-intro" data-i18n="visual2.intro">Cut a radar open and you find the same stack: dish on top, electronics in the middle, power and cooling at the bottom.</p>
+
+    <figure class="article-figure">
+        <svg viewBox="0 0 720 380" role="img" aria-labelledby="fig2-title">
+            <text id="fig2-title" data-i18n="fig2.title">Radar cross-section</text>
+
+            <!-- dish -->
+            <path d="M 250 70 Q 360 20 470 70" fill="none" stroke="#3fc23f" stroke-width="5"/>
+            <line x1="360" y1="52" x2="360" y2="86" stroke="#8fa6bb" stroke-width="2"/>
+            <circle cx="360" cy="92" r="7" fill="#3fc23f"/>
+            <text x="360" y="24" text-anchor="middle" fill="#3fc23f" font-size="12" data-i18n="fig2.dish">Antenna / dish</text>
+
+            <!-- neck -->
+            <rect x="345" y="92" width="30" height="42" fill="#0f2a44" stroke="#3fc23f" stroke-width="1.4"/>
+            <text x="395" y="118" fill="#8fa6bb" font-size="11" data-i18n="fig2.servo">Servo (neck)</text>
+
+            <!-- pedestal -->
+            <rect x="250" y="134" width="220" height="150" rx="6" fill="#0d2038" stroke="#3fc23f" stroke-width="1.4"/>
+
+            <rect x="270" y="152" width="90" height="34" rx="4" fill="#12304f" stroke="#7aa7d4" stroke-width="1"/>
+            <text x="315" y="174" text-anchor="middle" fill="#e8f0f7" font-size="11" data-i18n="fig2.tx">Transmitter</text>
+
+            <rect x="372" y="152" width="80" height="34" rx="4" fill="#12304f" stroke="#7aa7d4" stroke-width="1"/>
+            <text x="412" y="174" text-anchor="middle" fill="#e8f0f7" font-size="11" data-i18n="fig2.rx">Receiver</text>
+
+            <rect x="270" y="198" width="90" height="34" rx="4" fill="#12304f" stroke="#7aa7d4" stroke-width="1"/>
+            <text x="315" y="220" text-anchor="middle" fill="#e8f0f7" font-size="11" data-i18n="fig2.dup">Duplexer</text>
+
+            <rect x="372" y="198" width="80" height="34" rx="4" fill="#12304f" stroke="#7aa7d4" stroke-width="1"/>
+            <text x="412" y="220" text-anchor="middle" fill="#e8f0f7" font-size="11" data-i18n="fig2.proc">Processor</text>
+
+            <rect x="270" y="244" width="182" height="30" rx="4" fill="#12304f" stroke="#7aa7d4" stroke-width="1"/>
+            <text x="361" y="264" text-anchor="middle" fill="#e8f0f7" font-size="11" data-i18n="fig2.disp">Display / console</text>
+
+            <!-- base -->
+            <rect x="250" y="284" width="220" height="60" rx="6" fill="#0a1a2c" stroke="#3fc23f" stroke-width="1.4"/>
+            <text x="360" y="312" text-anchor="middle" fill="#8fa6bb" font-size="12" data-i18n="fig2.psu">Power + cooling</text>
+            <text x="360" y="330" text-anchor="middle" fill="#6b8299" font-size="10" data-i18n="fig2.shed">shed / shelter</text>
+
+            <!-- beam -->
+            <path d="M 360 92 Q 500 130 560 250" fill="none" stroke="#FFD93D" stroke-width="2" stroke-dasharray="6 4"/>
+            <circle cx="560" cy="250" r="9" fill="#FFD93D"/>
+            <text x="585" y="254" fill="#FFD93D" font-size="11" data-i18n="fig2.target">target</text>
+        </svg>
+        <figcaption class="visual-caption" data-i18n="visual2.caption">Dish on top, electronics in the middle, power and cooling at the bottom. A small airport radar and a five-storey weather radar share this layout.</figcaption>
+    </figure>
+</section>
+
+<!-- ============ 03 ============ -->
+<section class="article-section" id="s3">
+    <div class="section-label">03 <span data-i18n="visual3.name">ANIMATION: ONE FULL CYCLE</span></div>
+    <h2 class="article-title" data-i18n="visual3.title">Watching a Pulse Go Out and Come Back</h2>
+    <p class="article-intro" data-i18n="visual3.intro">The animation sends a pulse to a target, brings the echo back, filters it, and paints the result.</p>
+
+    <div class="video-wrap">
+        <video id="radar-loop-video" autoplay loop muted playsinline
+               data-video-en="manim/media/videos/script/480p15/RadarArticle35.en.mp4"
+               data-video-zh="manim/media/videos/script/480p15/RadarArticle35.zh.mp4"
+               poster="manim/media/images/radar-article35-poster.png">
+            <span data-i18n="visual3.fallback">Your browser does not support the video tag.</span>
+        </video>
+    </div>
+    <div class="video-captions">
+        <p class="caption-cc" data-i18n="visual3.cc1">1. TRANSMIT -- the transmitter sends a short pulse</p>
+        <p class="caption-cc" data-i18n="visual3.cc2">2. REFLECT -- the pulse bounces off the target</p>
+        <p class="caption-cc" data-i18n="visual3.cc3">3. PROCESS -- the processor pulls the target out of the noise</p>
+        <p class="caption-cc" data-i18n="visual3.cc4">4. DISPLAY -- the console paints the result</p>
+    </div>
+    <p class="visual-caption" data-i18n="visual3.caption">Send, receive, calculate, show. The whole loop takes milliseconds; only the antenna turn takes seconds.</p>
+</section>
+
+<!-- ============ 04 ============ -->
+<section class="article-section" id="s4">
+    <div class="section-label">04 <span data-i18n="visual4.name">WORKED EXAMPLE</span></div>
+    <h2 class="article-title" data-i18n="visual4.title">Which Part Does What?</h2>
+    <p class="article-intro" data-i18n="visual4.intro">Match each step of one cycle to the part that does it.</p>
+
+    <div class="example-card">
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row1.label">Produce the pulse</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row1.value">Transmitter</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row2.label">Send it into space</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row2.value">Antenna</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row3.label">Hear it come back</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row3.value">Receiver</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row4.label">Separate out and in</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row4.value">Duplexer</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row5.label">Find it in the noise</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row5.value">Signal processor</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row6.label">Show it to a human</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row6.value">Display</span></div>
+    </div>
+    <p class="visual-caption" data-i18n="visual4.caption">Six steps, six parts. Change one and the chain breaks.</p>
+</section>
+
+<!-- ============ 05 ============ -->
+<section class="article-section" id="s5">
+    <div class="section-label">05 <span data-i18n="visual5.name">THE HUMAN ANALOGY</span></div>
+    <h2 class="article-title" data-i18n="visual5.title">Radar as a Person</h2>
+    <p class="article-intro" data-i18n="visual5.intro">The easiest way to remember eight parts is to borrow a body.</p>
+
+    <div class="application-grid">
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app1.tag">ANTENNA</span>
+            <h3 data-i18n="visual5.app1.title">Eyes and Mouth</h3>
+            <p data-i18n="visual5.app1.desc">The dish radiates the outgoing wave and catches the incoming echo. Same surface, two jobs.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app2.tag">TX / RX</span>
+            <h3 data-i18n="visual5.app2.title">Voice and Ears</h3>
+            <p data-i18n="visual5.app2.desc">The transmitter shouts, the receiver listens. The receiver is far more sensitive than the transmitter is loud.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app3.tag">PROCESSOR</span>
+            <h3 data-i18n="visual5.app3.title">The Brain</h3>
+            <p data-i18n="visual5.app3.desc">Thousands of pulses arrive at once, drowned in noise. The processor runs an FFT per pulse and decides what is a target.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app4.tag">DISPLAY</span>
+            <h3 data-i18n="visual5.app4.title">The Face</h3>
+            <p data-i18n="visual5.app4.desc">Raw numbers are useless to a human. The display turns them into a picture you can read in a second.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app5.tag">SERVO</span>
+            <h3 data-i18n="visual5.app5.title">The Neck</h3>
+            <p data-i18n="visual5.app5.desc">The servo turns the dish so it points where the operator wants. With a phased array the neck barely moves.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app6.tag">POWER</span>
+            <h3 data-i18n="visual5.app6.title">The Backbone</h3>
+            <p data-i18n="visual5.app6.desc">A big weather radar draws as much power as a small town. Cooling is not optional; it is part of the design.</p>
+        </div>
+    </div>
+    <p class="visual-caption" data-i18n="visual5.caption">Dish, throat, ears, brain, face, neck, backbone. Once you can picture it, the block diagram is obvious.</p>
+</section>
+
+<!-- ============ 06 ============ -->
+<section class="article-section" id="s6">
+    <div class="section-label">06 <span data-i18n="visual6.name">WHERE THESE LIVE</span></div>
+    <h2 class="article-title" data-i18n="visual6.title">Same Parts, Different Sizes</h2>
+    <p class="article-intro" data-i18n="visual6.intro">From a box on a drone to a building on a hill, the block list never changes.</p>
+
+    <div class="application-grid">
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app1.tag">AIRPORT</span>
+            <h3 data-i18n="visual6.app1.title">Approach Radar</h3>
+            <p data-i18n="visual6.app1.desc">A rotating dish about 3 m across, on a small tower. Short range, high update rate, tracks aircraft on final approach.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app2.tag">MARINE</span>
+            <h3 data-i18n="visual6.app2.title">Naval Surface Search</h3>
+            <p data-i18n="visual6.app2.desc">Slower rotation, very long range, built to survive salt and vibration. Often several radars stacked on one mast.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app3.tag">WEATHER</span>
+            <h3 data-i18n="visual6.app3.title">WSR-88D / PAR</h3>
+            <p data-i18n="visual6.app3.desc">A radome about 25 m across on a hardened tower. The whole structure is the shelter; electronics sit inside it.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app4.tag">SPACE</span>
+            <h3 data-i18n="visual6.app4.title">Synthetic Aperture</h3>
+            <p data-i18n="visual6.app4.desc">No dish at all. A moving antenna records successive pulses and the processor does the focusing after the fact.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app5.tag">GROUND</span>
+            <h3 data-i18n="visual6.app5.title">GPR and Through-Wall</h3>
+            <p data-i18n="visual6.app5.desc">Small enough to carry. Same eight blocks, but the transmitter is a pistol and the display is a laptop screen.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app6.tag">SMALLEST</span>
+            <h3 data-i18n="visual6.app6.title">Millimetre-Wave Modules</h3>
+            <p data-i18n="visual6.app6.desc">On a chip, the antenna and the power stage share the same few square millimetres. Range drops to tens of metres.</p>
+        </div>
+    </div>
+    <p class="visual-caption" data-i18n="visual6.caption">Size changes, structure does not. That is why one diagram can describe a hundred different radars.</p>
+</section>
+
+</main>
+
+<div class="article-summary-block">
+    <span class="summary-label" data-i18n="article.summaryLabel">ONE-LINE SUMMARY</span>
+    <p class="summary-line" data-i18n="article.summary">A radar is a whole team of machines working together, not just one big antenna.</p>
+</div>
+
+<footer class="article-footer">
+    <span class="article-meta" data-i18n="article.meta">Student Research · 2026</span>
+    <a href="articles.html" class="article-back" data-i18n="article.back">← Back to Articles</a>
+</footer>
+
+<script src="script.js"></script>
+<script src="article-35.js"></script>
+
+</body>
+</html>

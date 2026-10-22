@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="page.title">Article 42: The Servo System — Radar Explorer</title>
+<meta name="description" content="page.description">
+<meta name="description" data-i18n="page.description" content="Article 42: How does a radar antenna turn? Motors, drives, encoders and tracking loops, why big antennas are hard to slew, and why phased arrays still keep a servo.">
+<link rel="stylesheet" href="article.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo" data-i18n="nav.home">Radar Explorer</a>
+        <div class="nav-links">
+            <a href="articles.html" data-i18n="nav.articles">Articles</a>
+        </div>
+        <div class="nav-actions">
+            <button class="lang-toggle" data-lang-toggle type="button">
+                <span data-lang-label>中</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<article class="article-hero">
+    <div class="article-meta">
+        <span class="article-author" data-i18n="article.author">Editorial</span>
+        <span class="article-meta-sep">·</span>
+        <time class="article-date" datetime="2026-08-05" data-i18n="article.date">Aug 5, 2026</time>
+    </div>
+    <h1 class="article-title" data-i18n="article.title">The Servo System — How the Radar Turns</h1>
+    <p class="article-subtitle" data-i18n="article.subtitle">The neck. It carries a dish that can weigh thirty tonnes.</p>
+</article>
+
+<div class="article-toc">
+    <div class="article-toc-inner">
+        <div class="article-toc-label" data-i18n="toc.title">On this page</div>
+        <nav class="article-toc-nav">
+            <a href="#s1"><span class="article-toc-num">01</span><span data-i18n="toc.s1">The three parts</span></a>
+            <a href="#s2"><span class="article-toc-num">02</span><span data-i18n="toc.s2">Why inertia hurts</span></a>
+            <a href="#s3"><span class="article-toc-num">03</span><span data-i18n="toc.s3">Tracking animation</span></a>
+            <a href="#s4"><span class="article-toc-num">04</span><span data-i18n="toc.s4">Worked example</span></a>
+            <a href="#s5"><span class="article-toc-num">05</span><span data-i18n="toc.s5">Speed and accuracy</span></a>
+            <a href="#s6"><span class="article-toc-num">06</span><span data-i18n="toc.s6">Why arrays keep a servo</span></a>
+        </nav>
+    </div>
+</div>
+
+<main>
+
+<!-- ============ BODY ============ -->
+<section class="article-section article-body" id="body">
+    <p data-i18n="article.p1">Many radar antennas spin all the time. How do they turn?</p>
+    <p data-i18n="article.p2">The servo system = motor + gears + control system. Its job: turn the antenna to a given direction at a given speed. Mechanical-scan radars use it to spin the antenna; phased-array radars don't spin the antenna, but some still turn their base.</p>
+    <p data-i18n="article.p3">Think of a camera gimbal that can pan and tilt. The servo must be steady and precise — if it shakes, the target is lost. It also has to track targets: when the target moves, the antenna follows.</p>
+    <p data-i18n="article.p4">Big antennas are heavy, so the servo needs enough power and a strong structure. If the servo fails, the radar "tilts its head."</p>
+</section>
+
+<!-- ============ 01 ============ -->
+<section class="article-section" id="s1">
+    <div class="section-label">01 <span data-i18n="visual1.name">THE THREE PARTS</span></div>
+    <h2 class="article-title" data-i18n="visual1.title">Motor, Drive, Control</h2>
+    <p class="article-intro" data-i18n="visual1.intro">A motor alone would spin. Three things together make it point.</p>
+
+    <figure class="article-figure">
+        <svg viewBox="0 0 720 320" role="img" aria-labelledby="fig1-title">
+            <text id="fig1-title" data-i18n="fig1.title">Servo loop: command in, antenna out</text>
+
+            <rect x="40" y="70" width="150" height="80" rx="8" fill="#0f2a44" stroke="#3fc23f" stroke-width="1.8"/>
+            <text x="115" y="102" text-anchor="middle" fill="#3fc23f" font-size="12" data-i18n="fig1.cmd">Command</text>
+            <text x="115" y="126" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig1.cmd2">where to point</text>
+
+            <rect x="240" y="70" width="150" height="80" rx="8" fill="#0f2a44" stroke="#3fc23f" stroke-width="1.8"/>
+            <text x="315" y="102" text-anchor="middle" fill="#3fc23f" font-size="12" data-i18n="fig1.ctl">Controller</text>
+            <text x="315" y="126" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig1.ctl2">the loop</text>
+
+            <rect x="440" y="70" width="150" height="80" rx="8" fill="#0f2a44" stroke="#3fc23f" stroke-width="1.8"/>
+            <text x="515" y="102" text-anchor="middle" fill="#3fc23f" font-size="12" data-i18n="fig1.drv">Drive</text>
+            <text x="515" y="126" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig1.drv2">motor + gears</text>
+
+            <rect x="610" y="60" width="90" height="100" rx="8" fill="#0a1a2c" stroke="#FFD93D" stroke-width="1.8"/>
+            <text x="655" y="90" text-anchor="middle" fill="#FFD93D" font-size="12" data-i18n="fig1.ant">Antenna</text>
+            <path d="M 630 130 Q 655 112 680 130" fill="none" stroke="#FFD93D" stroke-width="3"/>
+
+            <line x1="192" y1="110" x2="238" y2="110" stroke="#3fc23f" stroke-width="2"/>
+            <polygon points="238,110 230,105 230,115" fill="#3fc23f"/>
+            <line x1="392" y1="110" x2="438" y2="110" stroke="#3fc23f" stroke-width="2"/>
+            <polygon points="438,110 430,105 430,115" fill="#3fc23f"/>
+            <line x1="592" y1="110" x2="608" y2="110" stroke="#3fc23f" stroke-width="2"/>
+            <polygon points="608,110 600,105 600,115" fill="#3fc23f"/>
+
+            <rect x="240" y="220" width="150" height="66" rx="8" fill="#0f2a44" stroke="#FF8a3a" stroke-width="1.8"/>
+            <text x="315" y="248" text-anchor="middle" fill="#FF8a3a" font-size="12" data-i18n="fig1.enc">Encoder</text>
+            <text x="315" y="270" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig1.enc2">where it really is</text>
+
+            <path d="M 655 165 L 655 205 L 315 205 L 315 218" fill="none" stroke="#FF8a3a" stroke-width="2" stroke-dasharray="5 4"/>
+            <polygon points="315,218 310,208 320,208" fill="#FF8a3a"/>
+            <path d="M 240 253 L 130 253 L 130 152" fill="none" stroke="#FF8a3a" stroke-width="2" stroke-dasharray="5 4"/>
+            <polygon points="130,152 125,162 135,162" fill="#FF8a3a"/>
+            <text x="470" y="200" fill="#FF8a3a" font-size="11" data-i18n="fig1.fb">feedback — closes the loop</text>
+
+            <text x="360" y="308" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig1.note">without the encoder the motor only knows where it was told to go, not where it ended up</text>
+        </svg>
+        <figcaption class="visual-caption" data-i18n="visual1.caption">The encoder is what makes it a servo rather than a motor. Without a measured position, wind and friction push the antenna off and nobody notices.</figcaption>
+    </figure>
+</section>
+
+<!-- ============ 02 ============ -->
+<section class="article-section" id="s2">
+    <div class="section-label">02 <span data-i18n="visual2.name">WHY INERTIA HURTS</span></div>
+    <h2 class="article-title" data-i18n="visual2.title">A Thirty-Tonne Problem</h2>
+    <p class="article-intro" data-i18n="visual2.intro">The bigger the antenna, the harder it is to start, stop, and turn accurately.</p>
+
+    <div class="example-card">
+        <div class="example-row"><span class="example-label" data-i18n="visual2.row1.label">Radar A dish</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual2.row1.value">3 m airport antenna, ~2 t</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual2.row2.label">Radar A slew</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual2.row2.value">fast, can stop within a degree</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual2.row3.label">Radar B dish</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual2.row3.value">25 m weather antenna, ~30 t</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual2.row4.label">Radar B slew</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual2.row4.value">one full revolution takes minutes</span></div>
+    </div>
+    <p class="visual-caption" data-i18n="visual2.caption">Torque has to overcome inertia before anything moves, and braking has to absorb it after. Between those two limits sits the whole design problem.</p>
+</section>
+
+<!-- ============ 03 ============ -->
+<section class="article-section" id="s3">
+    <div class="section-label">03 <span data-i18n="visual3.name">ANIMATION: TRACKING</span></div>
+    <h2 class="article-title" data-i18n="visual3.title">Watching the Antenna Follow</h2>
+    <p class="article-intro" data-i18n="visual3.intro">The target drifts. The servo has to catch up without overshooting.</p>
+
+    <div class="video-wrap">
+        <video id="radar-loop-video" autoplay loop muted playsinline
+               data-video-en="manim/media/videos/script/480p15/RadarArticle42.en.mp4"
+               data-video-zh="manim/media/videos/script/480p15/RadarArticle42.zh.mp4"
+               poster="manim/media/images/radar-article42-poster.png">
+            <span data-i18n="visual3.fallback">Your browser does not support the video tag.</span>
+        </video>
+    </div>
+    <div class="video-captions">
+        <p class="caption-cc" data-i18n="visual3.cc1">1. STEADY -- the servo holds a fixed bearing</p>
+        <p class="caption-cc" data-i18n="visual3.cc2">2. MOVE -- the target drifts and the command follows</p>
+        <p class="caption-cc" data-i18n="visual3.cc3">3. LAG -- the heavy antenna trails behind</p>
+        <p class="caption-cc" data-i18n="visual3.cc4">4. CORRECT -- the loop damps out the overshoot</p>
+    </div>
+    <p class="visual-caption" data-i18n="visual3.caption">Tracking is a control problem. Too little gain and the antenna lags; too much and it oscillates around the target.</p>
+</section>
+
+<!-- ============ 04 ============ -->
+<section class="article-section" id="s4">
+    <div class="section-label">04 <span data-i18n="visual4.name">WORKED EXAMPLE</span></div>
+    <h2 class="article-title" data-i18n="visual4.title">How Fast Can It Turn?</h2>
+    <p class="article-intro" data-i18n="visual4.intro">Full revolution, degrees per second, and the beam width that makes it useful.</p>
+
+    <div class="example-card">
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row1.label">Sweep rate</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row1.value">6 rpm — one revolution in 10 s</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row2.label">Angular speed</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row2.value">360° in 10 s = 36°/s</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row3.label">Beam width</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row3.value">1° — time on one target</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row4.label">Illuminating a target</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row4.value">1° ÷ 36°/s = 28 ms per pulse</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row5.label">Pulses at 600 Hz</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row5.value">16 pulses hit one target</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row6.label">Integration needs 32</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row6.value">the scan rate drops to 3 rpm</span></div>
+    </div>
+    <p class="visual-caption" data-i18n="visual4.caption">Slew rate is not a free parameter. It is set by how many pulses you can afford to spend on one target before the whole sky has been swept once.</p>
+</section>
+
+<!-- ============ 05 ============ -->
+<section class="article-section" id="s5">
+    <div class="section-label">05 <span data-i18n="visual5.name">SPEED AND ACCURACY</span></div>
+    <h2 class="article-title" data-i18n="visual5.title">Six Words Worth Knowing</h2>
+    <p class="article-intro" data-i18n="visual5.intro">The vocabulary of pointing a very large object at a small angle.</p>
+
+    <div class="application-grid">
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app1.tag">SLEW</span>
+            <h3 data-i18n="visual5.app1.title">Scan Rate</h3>
+            <p data-i18n="visual5.app1.desc">How many degrees per second the antenna can move. It sets the update rate for everything, because nothing is measured until the beam passes over it.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app2.tag">ACCURACY</span>
+            <h3 data-i18n="visual5.app2.title">Pointing Error</h3>
+            <p data-i18n="visual5.app2.desc">How far the beam actually points from where the computer believes. A tenth of a degree error is a kilometre of position error at long range.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app3.tag">WIND</span>
+            <h3 data-i18n="visual5.app3.title">Torque Compensation</h3>
+            <p data-i18n="visual5.app3.desc">Wind load on a large dish changes constantly. The controller measures it and biases the servo to hold the beam exactly where it was commanded.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app4.tag">BACKLASH</span>
+            <h3 data-i18n="visual5.app4.title">Gear Gap</h3>
+            <p data-i18n="visual5.app4.desc">A worn gear takes up slack one way and not the other, so the encoder disagrees with the command depending on direction. It is why precision drives are sealed.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app5.tag">DAMPING</span>
+            <h3 data-i18n="visual5.app5.title">Oscillation Control</h3>
+            <p data-i18n="visual5.app5.desc">A thirty-tonne mass on a bearing is a spring. Rate feedback is added so the loop damps the motion instead of ringing when it arrives.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app6.tag">ENCODER</span>
+            <h3 data-i18n="visual5.app6.title">Absolute Position</h3>
+            <p data-i18n="visual5.app6.desc">An optical encoder on the axis knows the bearing even after a power cut. Without it the antenna has to slew slowly home to find out where it is.</p>
+        </div>
+    </div>
+    <p class="visual-caption" data-i18n="visual5.caption">Every one of these exists because a dish is a large mass being asked to point at a precise angle.</p>
+</section>
+
+<!-- ============ 06 ============ -->
+<section class="article-section" id="s6">
+    <div class="section-label">06 <span data-i18n="visual6.name">WHY ARRAYS KEEP A SERVO</span></div>
+    <h2 class="article-title" data-i18n="visual6.title">No Beam Rotation, Still a Motor</h2>
+    <p class="article-intro" data-i18n="visual6.intro">A phased array steers electronically. The pedestal still moves — just very slowly.</p>
+
+    <figure class="article-figure">
+        <svg viewBox="0 0 720 300" role="img" aria-labelledby="fig6-title">
+            <text id="fig6-title" data-i18n="fig6.title">Array elements steer the beam; the pedestal follows the weather</text>
+
+            <rect x="280" y="40" width="160" height="70" rx="8" fill="#0a1a2c" stroke="#3fc23f" stroke-width="2"/>
+            <text x="360" y="70" text-anchor="middle" fill="#3fc23f" font-size="12" data-i18n="fig6.face">radome / array face</text>
+            <text x="360" y="92" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig6.face2">does not rotate fast</text>
+
+            <g>
+                <rect x="296" y="46" width="14" height="14" fill="#3fc23f"/>
+                <rect x="320" y="46" width="14" height="14" fill="#3fc23f"/>
+                <rect x="344" y="46" width="14" height="14" fill="#3fc23f"/>
+                <rect x="368" y="46" width="14" height="14" fill="#3fc23f"/>
+                <rect x="392" y="46" width="14" height="14" fill="#3fc23f"/>
+                <rect x="416" y="46" width="14" height="14" fill="#3fc23f"/>
+            </g>
+
+            <path d="M 430 90 Q 540 130 590 210" fill="none" stroke="#FFD93D" stroke-width="2.4"/>
+            <circle cx="590" cy="210" r="9" fill="#FFD93D"/>
+            <text x="600" y="214" fill="#FFD93D" font-size="11" data-i18n="fig6.storm">storm</text>
+
+            <path d="M 285 90 Q 250 150 250 250" fill="none" stroke="#8fa6bb" stroke-width="1.8" stroke-dasharray="5 4"/>
+            <polygon points="250,250 245,238 255,238" fill="#8fa6bb"/>
+            <text x="196" y="170" fill="#8fa6bb" font-size="11" data-i18n="fig6.tilt">slow tilt</text>
+
+            <rect x="330" y="130" width="60" height="56" rx="6" fill="#0f2a44" stroke="#FF8a3a" stroke-width="1.8"/>
+            <text x="360" y="164" text-anchor="middle" fill="#FF8a3a" font-size="12" data-i18n="fig6.ped">pedestal</text>
+
+            <rect x="300" y="230" width="120" height="50" rx="6" fill="#0f2a44" stroke="#FF8a3a" stroke-width="1.8"/>
+            <text x="360" y="252" text-anchor="middle" fill="#FF8a3a" font-size="11" data-i18n="fig6.servo">servo</text>
+            <text x="360" y="270" text-anchor="middle" fill="#8fa6bb" font-size="9" data-i18n="fig6.servosub">1 turn / few min</text>
+
+            <text x="560" y="42" text-anchor="middle" fill="#3fc23f" font-size="11" data-i18n="fig6.elec">beam steered electronically: microseconds</text>
+        </svg>
+        <figcaption class="visual-caption" data-i18n="visual6.caption">Electronic scanning handles the beam. The servo only keeps the whole face pointed into the hemisphere where the weather is, so the array has the widest possible field of view there.</figcaption>
+    </figure>
+
+    <div class="application-grid">
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app1.tag">WHY</span>
+            <h3 data-i18n="visual6.app1.title">Steering Limits</h3>
+            <p data-i18n="visual6.app1.desc">A flat array can only steer away from its own face. Rolling the whole structure extends the reachable hemisphere and costs nothing electronically.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app2.tag">WHY</span>
+            <h3 data-i18n="visual6.app2.title">Sun and Ice</h3>
+            <p data-i18n="visual6.app2.desc">Over years the tower settles and ice accumulates. A slow continuous correction keeps the face true, and the encoder makes it verifiable.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app3.tag">TRACK</span>
+            <h3 data-i18n="visual6.app3.title">Storm Centroid</h3>
+            <p data-i18n="visual6.app3.desc">The servo is driven by where the significant weather actually is, not by a schedule. On a clear day it barely moves.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app4.tag">MODE</span>
+            <h3 data-i18n="visual6.app4.title">Sector Scan</h3>
+            <p data-i18n="visual6.app4.desc">Some arrays rotate slowly for a full-volume sweep and can instead park and dwell on a small sector when a storm needs continuous attention.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app5.tag">LOAD</span>
+            <h3 data-i18n="visual6.app5.title">Still Heavy</h3>
+            <p data-i18n="visual6.app5.desc">A 25 m radome on a tower is still tens of tonnes. Electronic steering removed the speed problem, not the structural one.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app6.tag">FAILURE</span>
+            <h3 data-i18n="visual6.app6.title">Tilt and Hold</h3>
+            <p data-i18n="visual6.app6.desc">If the servo fails on a fixed array, electronic steering usually stops too — a mispointed array is useless. Hydraulics park and hold the face as a last resort.</p>
+        </div>
+    </div>
+    <p class="visual-caption" data-i18n="visual6.caption">The phased array replaced the fast motor, not the motor. It just gets to be slow now.</p>
+</section>
+
+</main>
+
+<div class="article-summary-block">
+    <span class="summary-label" data-i18n="article.summaryLabel">ONE-LINE SUMMARY</span>
+    <p class="summary-line" data-i18n="article.summary">The servo system is the radar's neck — it turns the antenna.</p>
+</div>
+
+<footer class="article-footer">
+    <span class="article-meta" data-i18n="article.meta">Student Research · 2026</span>
+    <a href="articles.html" class="article-back" data-i18n="article.back">← Back to Articles</a>
+</footer>
+
+<script src="script.js"></script>
+<script src="article-42.js"></script>
+
+</body>
+</html>

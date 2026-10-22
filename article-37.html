@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="page.title">Article 37: The Transmitter — Radar Explorer</title>
+<meta name="description" data-i18n="page.description" content="Article 37: How does a radar transmit? Peak power, the shout-pause-listen cycle, pulse width versus range resolution, and the devices that make it possible.">
+<link rel="stylesheet" href="article.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo" data-i18n="nav.home">Radar Explorer</a>
+        <div class="nav-links">
+            <a href="articles.html" data-i18n="nav.articles">Articles</a>
+        </div>
+        <div class="nav-actions">
+            <button class="lang-toggle" data-lang-toggle type="button">
+                <span data-lang-label>中</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<article class="article-hero">
+    <div class="article-meta">
+        <span class="article-author" data-i18n="article.author">Editorial</span>
+        <span class="article-meta-sep">·</span>
+        <time class="article-date" datetime="2026-07-28" data-i18n="article.date">Jul 28, 2026</time>
+    </div>
+    <h1 class="article-title" data-i18n="article.title">The Transmitter — The Radar's Voice</h1>
+    <p class="article-subtitle" data-i18n="article.subtitle">Shout, pause, listen. The pause is the whole trick.</p>
+</article>
+
+<div class="article-toc">
+    <div class="article-toc-inner">
+        <div class="article-toc-label" data-i18n="toc.title">On this page</div>
+        <nav class="article-toc-nav">
+            <a href="#s1"><span class="article-toc-num">01</span><span data-i18n="toc.s1">Why power is hard</span></a>
+            <a href="#s2"><span class="article-toc-num">02</span><span data-i18n="toc.s2">Shout, pause, listen</span></a>
+            <a href="#s3"><span class="article-toc-num">03</span><span data-i18n="toc.s3">Pulse width animation</span></a>
+            <a href="#s4"><span class="article-toc-num">04</span><span data-i18n="toc.s4">Worked example</span></a>
+            <a href="#s5"><span class="article-toc-num">05</span><span data-i18n="toc.s5">The devices</span></a>
+            <a href="#s6"><span class="article-toc-num">06</span><span data-i18n="toc.s6">Self-interference</span></a>
+        </nav>
+    </div>
+</div>
+
+<main>
+
+<!-- ============ BODY ============ -->
+<section class="article-section article-body" id="body">
+    <p data-i18n="article.p1">A radar has to "shout" to hear an echo. The transmitter is its voice.</p>
+    <p data-i18n="article.p2">The transmitter creates high-frequency radio waves. More power means longer range. But power can't be infinite — it uses electricity, creates heat, and takes up space. Think of shouting in a valley: a louder voice travels farther, but it tires you out.</p>
+    <p data-i18n="article.p3">A pulse radar shouts, pauses, and listens — it doesn't shout non-stop. Shorter pulses give better range resolution; longer pulses carry more energy. Common devices include magnetrons, klystrons, traveling wave tubes, and solid-state amplifiers.</p>
+    <p data-i18n="article.p4">The transmitter also has to work with the receiver without interfering with itself. Its efficiency and stability directly affect radar performance.</p>
+</section>
+
+<!-- ============ 01 ============ -->
+<section class="article-section" id="s1">
+    <div class="section-label">01 <span data-i18n="visual1.name">WHY POWER IS HARD</span></div>
+    <h2 class="article-title" data-i18n="visual1.title">The Valley Metaphor</h2>
+    <p class="article-intro" data-i18n="visual1.intro">More power buys range, and charges you in electricity, heat and volume.</p>
+
+    <figure class="article-figure">
+        <svg viewBox="0 0 720 320" role="img" aria-labelledby="fig1-title">
+            <text id="fig1-title" data-i18n="fig1.title">Power buys range but costs heat</text>
+
+            <text x="20" y="30" fill="#8fa6bb" font-size="12" data-i18n="fig1.power">power</text>
+            <text x="620" y="30" fill="#8fa6bb" font-size="12" data-i18n="fig1.range">range</text>
+            <text x="300" y="30" fill="#d83838" font-size="12" data-i18n="fig1.heat">heat / size</text>
+
+            <line x1="60" y1="270" x2="680" y2="270" stroke="#22323C" stroke-width="1.4"/>
+            <line x1="60" y1="50" x2="60" y2="270" stroke="#22323C" stroke-width="1.4"/>
+
+            <path d="M 60 262 Q 220 250 340 170 Q 460 90 668 58" fill="none" stroke="#3fc23f" stroke-width="3.4"/>
+            <text x="470" y="80" fill="#3fc23f" font-size="11" data-i18n="fig1.p1">1 kW</text>
+
+            <path d="M 60 262 Q 240 262 380 236 Q 520 210 668 196" fill="none" stroke="#FF8a3a" stroke-width="3.4"/>
+            <text x="490" y="216" fill="#FF8a3a" font-size="11" data-i18n="fig1.p2">100 kW</text>
+
+            <path d="M 60 262 Q 270 264 420 258 Q 560 252 668 250" fill="none" stroke="#d83838" stroke-width="3.4"/>
+            <text x="500" y="272" fill="#d83838" font-size="11" data-i18n="fig1.p3">1 MW</text>
+
+            <text x="360" y="306" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig1.note">100x power buys a bit more range, not 100x the range</text>
+        </svg>
+        <figcaption class="visual-caption" data-i18n="visual1.caption">Range grows like the fourth root of power, not linearly. Ten times the power buys roughly 1.8 times the range — which is why radars stay small.</figcaption>
+    </figure>
+</section>
+
+<!-- ============ 02 ============ -->
+<section class="article-section" id="s2">
+    <div class="section-label">02 <span data-i18n="visual2.name">SHOUT, PAUSE, LISTEN</span></div>
+    <h2 class="article-title" data-i18n="visual2.title">Why a Radar Stops Shouting</h2>
+    <p class="article-intro" data-i18n="visual2.intro">If it shouted continuously it would drown out the very echo it is waiting for.</p>
+
+    <figure class="article-figure">
+        <svg viewBox="0 0 720 300" role="img" aria-labelledby="fig2-title">
+            <text id="fig2-title" data-i18n="fig2.title">Pulse timing: shout, pause, listen</text>
+
+            <text x="20" y="34" fill="#FFD93D" font-size="13" data-i18n="fig2.shout">TRANSMIT</text>
+            <text x="270" y="34" fill="#8fa6bb" font-size="13" data-i18n="fig2.pause">PAUSE</text>
+            <text x="470" y="34" fill="#3fc23f" font-size="13" data-i18n="fig2.listen">LISTEN</text>
+
+            <line x1="40" y1="140" x2="680" y2="140" stroke="#22323C" stroke-width="1.4"/>
+            <rect x="40" y="112" width="52" height="56" rx="4" fill="#FFD93D" fill-opacity="0.85" stroke="#FFD93D" stroke-width="1.5"/>
+            <rect x="92" y="126" width="196" height="28" rx="3" fill="#0F1A1F" stroke="#22323C" stroke-width="1"/>
+            <rect x="288" y="112" width="86" height="56" rx="4" fill="#3fc23f" fill-opacity="0.8" stroke="#3fc23f" stroke-width="1.5"/>
+
+            <text x="66" y="200" text-anchor="middle" fill="#FFD93D" font-size="11" data-i18n="fig2.t1">1 μs</text>
+            <text x="190" y="200" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig2.t2">1.5 ms</text>
+            <text x="331" y="200" text-anchor="middle" fill="#3fc23f" font-size="11" data-i18n="fig2.t3">0.7 ms</text>
+
+            <text x="66" y="230" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig2.blip1">near</text>
+            <text x="331" y="230" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig2.blip2">far</text>
+
+            <line x1="92" y1="250" x2="288" y2="250" stroke="#8fa6bb" stroke-width="1.2" stroke-dasharray="4 3"/>
+            <text x="190" y="268" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig2.sw">same pulse repetition frequency</text>
+
+            <text x="360" y="292" text-anchor="middle" fill="#d83838" font-size="12" data-i18n="fig2.rule">rule of thumb: PRF limits the unambiguous range</text>
+        </svg>
+        <figcaption class="visual-caption" data-i18n="visual2.caption">Transmit for a microsecond, then go deaf for a millisecond. That silence is what lets the receiver hear echoes at all.</figcaption>
+    </figure>
+</section>
+
+<!-- ============ 03 ============ -->
+<section class="article-section" id="s3">
+    <div class="section-label">03 <span data-i18n="visual3.name">ANIMATION: PULSE WIDTH</span></div>
+    <h2 class="article-title" data-i18n="visual3.title">Short Pulse or Long Pulse</h2>
+    <p class="article-intro" data-i18n="visual3.intro">Two targets walk toward the radar. See what the pulse length does to them.</p>
+
+    <div class="video-wrap">
+        <video id="radar-loop-video" autoplay loop muted playsinline
+               data-video-en="manim/media/videos/script/480p15/RadarArticle37.en.mp4"
+               data-video-zh="manim/media/videos/script/480p15/RadarArticle37.zh.mp4"
+               poster="manim/media/images/radar-article37-poster.png">
+            <span data-i18n="visual3.fallback">Your browser does not support the video tag.</span>
+        </video>
+    </div>
+    <div class="video-captions">
+        <p class="caption-cc" data-i18n="visual3.cc1">1. LONG PULSE -- strong echo, two targets blur into one</p>
+        <p class="caption-cc" data-i18n="visual3.cc2">2. SHORT PULSE -- weaker, but the two targets separate</p>
+        <p class="caption-cc" data-i18n="visual3.cc3">3. RESOLUTION -- spacing sets the shortest gap you can see</p>
+        <p class="caption-cc" data-i18n="visual3.cc4">4. TRADE-OFF -- energy and clarity pull in opposite directions</p>
+    </div>
+    <p class="visual-caption" data-i18n="visual3.caption">Range resolution is roughly half the pulse length. A 1 μs pulse can separate targets 150 m apart; a 10 μs pulse needs 1.5 km.</p>
+</section>
+
+<!-- ============ 04 ============ -->
+<section class="article-section" id="s4">
+    <div class="section-label">04 <span data-i18n="visual4.name">WORKED EXAMPLE</span></div>
+    <h2 class="article-title" data-i18n="visual4.title">Two Pulses, Two Radars</h2>
+    <p class="article-intro" data-i18n="visual4.intro">Same target range, same band. Only the pulse length differs.</p>
+
+    <div class="example-card">
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row1.label">Pulse A length</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row1.value">1 μs</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row2.label">Pulse A resolution</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row2.value">150 m — sees two aircraft separately</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row3.label">Pulse B length</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row3.value">10 μs</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row4.label">Pulse B resolution</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row4.value">1.5 km — they merge into one blob</span></div>
+    </div>
+    <p class="visual-caption" data-i18n="visual4.caption">Long pulses are for weather (where features are kilometres wide). Short pulses are for air traffic (where aircraft are hundreds of metres).</p>
+</section>
+
+<!-- ============ 05 ============ -->
+<section class="article-section" id="s5">
+    <div class="section-label">05 <span data-i18n="visual5.name">THE DEVICES</span></div>
+    <h2 class="article-title" data-i18n="visual5.title">What Actually Makes the Power</h2>
+    <p class="article-intro" data-i18n="visual5.intro">Four technologies, in the order they appeared.</p>
+
+    <div class="application-grid">
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app1.tag">1940s</span>
+            <h3 data-i18n="visual5.app1.title">Magnetron</h3>
+            <p data-i18n="visual5.app1.desc">A tube where electrons spiral through a magnetic field and excite a resonant cavity. Cheap, rugged, still the standard for weather radar peak power.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app2.tag">1950s</span>
+            <h3 data-i18n="visual5.app2.title">Klystron</h3>
+            <p data-i18n="visual5.app2.desc">Electrons pass through a series of cavities, first bunched then decelerated. Amplifies an input signal instead of generating it. Very high gain, very expensive.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app3.tag">1960s</span>
+            <h3 data-i18n="visual5.app3.title">Traveling Wave Tube</h3>
+            <p data-i18n="visual5.app3.desc">An electron beam travels along a helix slower than light, so it keeps interacting and growing. Broad bandwidth, mostly used on radar and satellite ground stations.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app4.tag">1970s</span>
+            <h3 data-i18n="visual5.app4.title">Solid-State Amplifier</h3>
+            <p data-i18n="visual5.app4.desc">Many transistor modules combined in parallel. No vacuum, no warm-up, long life — but power per module is limited, so hundreds are needed for megawatts.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app5.tag">GaN</span>
+            <h3 data-i18n="visual5.app5.title">Modern Modules</h3>
+            <p data-i18n="visual5.app5.desc">Gallium nitride switches handle far more power than silicon at radio frequencies. This is what makes compact solid-state weather radars practical today.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app6.tag">EFFICIENCY</span>
+            <h3 data-i18n="visual5.app6.title">Why It Matters</h3>
+            <p data-i18n="visual5.app6.desc">A magnetron runs near 10 percent efficiency. That means for every 100 kW of RF output it draws about 1 MW from the grid, and dumps the rest as heat.</p>
+        </div>
+    </div>
+    <p class="visual-caption" data-i18n="visual5.caption">Tubes generate, amplifiers grow. The modern trend is thousands of tiny solid-state modules replacing one big tube.</p>
+</section>
+
+<!-- ============ 06 ============ -->
+<section class="article-section" id="s6">
+    <div class="section-label">06 <span data-i18n="visual6.name">SELF-INTERFERENCE</span></div>
+    <h2 class="article-title" data-i18n="visual6.title">How to Not Hear Yourself</h2>
+    <p class="article-intro" data-i18n="visual6.intro">The transmitter is the loudest thing in the building. The receiver must survive it.</p>
+
+    <figure class="article-figure">
+        <svg viewBox="0 0 720 280" role="img" aria-labelledby="fig6-title">
+            <text id="fig6-title" data-i18n="fig6.title">Protecting the receiver from the transmitter</text>
+
+            <rect x="30" y="90" width="140" height="80" rx="6" fill="#0f2a44" stroke="#FFD93D" stroke-width="2"/>
+            <text x="100" y="124" text-anchor="middle" fill="#FFD93D" font-size="13" data-i18n="fig6.tx">TX</text>
+            <text x="100" y="144" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig6.txsub">100 kW</text>
+
+            <rect x="290" y="90" width="140" height="80" rx="6" fill="#0f2a44" stroke="#3fc23f" stroke-width="2"/>
+            <text x="360" y="124" text-anchor="middle" fill="#3fc23f" font-size="13" data-i18n="fig6.rx">RX</text>
+            <text x="360" y="144" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig6.rxsub">−130 dBm</text>
+
+            <line x1="172" y1="130" x2="288" y2="130" stroke="#FFD93D" stroke-width="3" opacity="0.5"/>
+            <polygon points="288,130 278,124 278,136" fill="#FFD93D" opacity="0.5"/>
+
+            <polygon points="230,105 250,130 230,155" fill="#3fc23f" stroke="#3fc23f" stroke-width="1.5"/>
+            <text x="230" y="180" text-anchor="middle" fill="#3fc23f" font-size="11" data-i18n="fig6.dup">duplexer</text>
+            <text x="230" y="196" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig6.dupsub">blocks TX</text>
+
+            <path d="M 230 112 L 190 84 L 150 84" fill="none" stroke="#3fc23f" stroke-width="2.4"/>
+            <polygon points="148,84 158,78 158,90" fill="#3fc23f"/>
+            <text x="190" y="70" text-anchor="middle" fill="#3fc23f" font-size="11" data-i18n="fig6.ant">antenna</text>
+
+            <path d="M 190 92 L 190 132 L 218 132" fill="none" stroke="#FF8a3a" stroke-width="2" stroke-dasharray="4 3"/>
+            <polygon points="220,132 210,127 210,137" fill="#FF8a3a"/>
+
+            <text x="360" y="220" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig6.gap">about 230 dB of isolation needed</text>
+            <text x="360" y="244" text-anchor="middle" fill="#d83838" font-size="12" data-i18n="fig6.rule">recovery time sets the minimum range</text>
+        </svg>
+        <figcaption class="visual-caption" data-i18n="visual6.caption">The receiver must survive a signal roughly a hundred billion billion times stronger than what it is trying to detect. That is what the duplexer and the blanking are for.</figcaption>
+    </figure>
+</section>
+
+</main>
+
+<div class="article-summary-block">
+    <span class="summary-label" data-i18n="article.summaryLabel">ONE-LINE SUMMARY</span>
+    <p class="summary-line" data-i18n="article.summary">The transmitter is the radar's voice — it sends the signal out.</p>
+</div>
+
+<footer class="article-footer">
+    <span class="article-meta" data-i18n="article.meta">Student Research · 2026</span>
+    <a href="articles.html" class="article-back" data-i18n="article.back">← Back to Articles</a>
+</footer>
+
+<script src="script.js"></script>
+<script src="article-37.js"></script>
+
+</body>
+</html>

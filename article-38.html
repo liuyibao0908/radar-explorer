@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="page.title">Article 38: The Receiver — Radar Explorer</title>
+<meta name="description" content="page.description">
+<meta name="description" data-i18n="page.description" content="Article 38: How does a radar hear a whisper? Amplifying a weak echo, filtering out noise, dynamic range, and the low-noise amplifier chain.">
+<link rel="stylesheet" href="article.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo" data-i18n="nav.home">Radar Explorer</a>
+        <div class="nav-links">
+            <a href="articles.html" data-i18n="nav.articles">Articles</a>
+        </div>
+        <div class="nav-actions">
+            <button class="lang-toggle" data-lang-toggle type="button">
+                <span data-lang-label>中</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<article class="article-hero">
+    <div class="article-meta">
+        <span class="article-author" data-i18n="article.author">Editorial</span>
+        <span class="article-meta-sep">·</span>
+        <time class="article-date" datetime="2026-07-30" data-i18n="article.date">Jul 30, 2026</time>
+    </div>
+    <h1 class="article-title" data-i18n="article.title">The Receiver — Finding Echoes in the Noise</h1>
+    <p class="article-subtitle" data-i18n="article.subtitle">Hearing one voice across a crowded playground.</p>
+</article>
+
+<div class="article-toc">
+    <div class="article-toc-inner">
+        <div class="article-toc-label" data-i18n="toc.title">On this page</div>
+        <nav class="article-toc-nav">
+            <a href="#s1"><span class="article-toc-num">01</span><span data-i18n="toc.s1">How weak is weak</span></a>
+            <a href="#s2"><span class="article-toc-num">02</span><span data-i18n="toc.s2">The signal chain</span></a>
+            <a href="#s3"><span class="article-toc-num">03</span><span data-i18n="toc.s3">Noise vs signal</span></a>
+            <a href="#s4"><span class="article-toc-num">04</span><span data-i18n="toc.s4">Worked example</span></a>
+            <a href="#s5"><span class="article-toc-num">05</span><span data-i18n="toc.s5">Dynamic range</span></a>
+            <a href="#s6"><span class="article-toc-num">06</span><span data-i18n="toc.s6">Stealth detection</span></a>
+        </nav>
+    </div>
+</div>
+
+<main>
+
+<!-- ============ BODY ============ -->
+<section class="article-section article-body" id="body">
+    <p data-i18n="article.p1">The wave a radar sends out comes back very, very weak after bouncing off a target. How can it still be heard?</p>
+    <p data-i18n="article.p2">The receiver's job: amplify the weak echo and pick it out from the noise. Think of hearing a friend call your name across a noisy playground. The more sensitive the receiver, the better it finds small or distant targets.</p>
+    <p data-i18n="article.p3">Too much sensitivity also amplifies noise, so filtering is needed. The receiver also handles dynamic range: strong signals must not saturate, weak signals must not be lost. Common parts include low-noise amplifiers, mixers, intermediate-frequency amplifiers, and detectors.</p>
+    <p data-i18n="article.p4">When one antenna both sends and receives, a duplexer protects the receiver. Receiver performance directly affects whether a radar can detect stealth targets.</p>
+</section>
+
+<!-- ============ 01 ============ -->
+<section class="article-section" id="s1">
+    <div class="section-label">01 <span data-i18n="visual1.name">HOW WEAK IS WEAK</span></div>
+    <h2 class="article-title" data-i18n="visual1.title">Four Round Trips of Loss</h2>
+    <p class="article-intro" data-i18n="visual1.intro">The echo crosses the same distance twice, and spreads its energy over a sphere.</p>
+
+    <figure class="article-figure">
+        <svg viewBox="0 0 720 320" role="img" aria-labelledby="fig1-title">
+            <text id="fig1-title" data-i18n="fig1.title">Why the echo is so weak</text>
+
+            <circle cx="150" cy="180" r="10" fill="#FFD93D"/>
+            <text x="150" y="212" text-anchor="middle" fill="#FFD93D" font-size="12" data-i18n="fig1.radar">radar</text>
+
+            <circle cx="600" cy="90" r="10" fill="#FF8a3a"/>
+            <text x="600" y="72" text-anchor="middle" fill="#FF8a3a" font-size="12" data-i18n="fig1.target">target</text>
+
+            <line x1="162" y1="176" x2="588" y2="94" stroke="#FFD93D" stroke-width="2"/>
+            <polygon points="588,94 578,98 584,104" fill="#FFD93D"/>
+            <text x="380" y="126" fill="#FFD93D" font-size="11" data-i18n="fig1.out">out</text>
+
+            <line x1="600" y1="102" x2="174" y2="184" stroke="#3fc23f" stroke-width="2"/>
+            <polygon points="174,184 184,178 178,172" fill="#3fc23f"/>
+            <text x="380" y="176" fill="#3fc23f" font-size="11" data-i18n="fig1.back">back (1 / R⁴)</text>
+
+            <circle cx="150" cy="180" r="60" fill="none" stroke="#22323C" stroke-width="1" stroke-dasharray="4 4"/>
+            <circle cx="150" cy="180" r="120" fill="none" stroke="#22323C" stroke-width="1" stroke-dasharray="4 4"/>
+            <circle cx="150" cy="180" r="180" fill="none" stroke="#22323C" stroke-width="1" stroke-dasharray="4 4"/>
+            <text x="150" y="288" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig1.spread">energy spreads over a sphere</text>
+
+            <rect x="380" y="230" width="300" height="56" rx="6" fill="#0f2a44" stroke="#d83838" stroke-width="1.4"/>
+            <text x="530" y="252" text-anchor="middle" fill="#d83838" font-size="13" data-i18n="fig1.result">echo is roughly 1 / R⁴ of what was sent</text>
+            <text x="530" y="274" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig1.resultsub">double the distance, one hundredth the power</text>
+        </svg>
+        <figcaption class="visual-caption" data-i18n="visual1.caption">Because energy spreads as the inverse fourth power of distance, radar is a one-way loss budget. Detecting a stealth aircraft means finding the few photons that come back.</figcaption>
+    </figure>
+</section>
+
+<!-- ============ 02 ============ -->
+<section class="article-section" id="s2">
+    <div class="section-label">02 <span data-i18n="visual2.name">THE SIGNAL CHAIN</span></div>
+    <h2 class="article-title" data-i18n="visual2.title">Four Boxes That Save the Signal</h2>
+    <p class="article-intro" data-i18n="visual2.intro">Each stage adds gain, but the first one decides how much noise comes along.</p>
+
+    <figure class="article-figure">
+        <svg viewBox="0 0 720 260" role="img" aria-labelledby="fig2-title">
+            <text id="fig2-title" data-i18n="fig2.title">Receiver signal chain</text>
+
+            <rect x="20" y="80" width="140" height="72" rx="6" fill="#0f2a44" stroke="#3fc23f" stroke-width="1.8"/>
+            <text x="90" y="110" text-anchor="middle" fill="#e8f0f7" font-size="12" data-i18n="fig2.lna">LNA</text>
+            <text x="90" y="130" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig2.lnasub">low-noise amp</text>
+            <text x="90" y="172" text-anchor="middle" fill="#3fc23f" font-size="11" data-i18n="fig2.g1">+20 dB</text>
+
+            <rect x="200" y="80" width="140" height="72" rx="6" fill="#0f2a44" stroke="#3fc23f" stroke-width="1.8"/>
+            <text x="270" y="110" text-anchor="middle" fill="#e8f0f7" font-size="12" data-i18n="fig2.mix">Mixer</text>
+            <text x="270" y="130" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig2.mixsub">down to IF</text>
+            <text x="270" y="172" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig2.g2">0 dB</text>
+
+            <rect x="380" y="80" width="140" height="72" rx="6" fill="#0f2a44" stroke="#3fc23f" stroke-width="1.8"/>
+            <text x="450" y="110" text-anchor="middle" fill="#e8f0f7" font-size="12" data-i18n="fig2.if">IF amp</text>
+            <text x="450" y="130" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig2.ifsub">fixed frequency</text>
+            <text x="450" y="172" text-anchor="middle" fill="#3fc23f" font-size="11" data-i18n="fig2.g3">+60 dB</text>
+
+            <rect x="560" y="80" width="140" height="72" rx="6" fill="#0f2a44" stroke="#3fc23f" stroke-width="1.8"/>
+            <text x="630" y="110" text-anchor="middle" fill="#e8f0f7" font-size="12" data-i18n="fig2.det">Detector</text>
+            <text x="630" y="130" text-anchor="middle" fill="#8fa6bb" font-size="10" data-i18n="fig2.detsub">to video / I / Q</text>
+            <text x="630" y="172" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig2.g4">output</text>
+
+            <line x1="162" y1="116" x2="198" y2="116" stroke="#3fc23f" stroke-width="2"/>
+            <polygon points="198,116 190,111 190,121" fill="#3fc23f"/>
+            <line x1="342" y1="116" x2="378" y2="116" stroke="#3fc23f" stroke-width="2"/>
+            <polygon points="378,116 370,111 370,121" fill="#3fc23f"/>
+            <line x1="522" y1="116" x2="558" y2="116" stroke="#3fc23f" stroke-width="2"/>
+            <polygon points="558,116 550,111 550,121" fill="#3fc23f"/>
+
+            <text x="360" y="46" text-anchor="middle" fill="#FFD93D" font-size="12" data-i18n="fig2.rule">the LNA decides the noise floor for everything downstream</text>
+            <text x="360" y="222" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig2.note">80 dB of total gain turns microwatts into something a digitiser can sample</text>
+        </svg>
+        <figcaption class="visual-caption" data-i18n="visual2.caption">Adding gain after the LNA cannot remove noise already mixed in. The first amplifier sets the limit for the whole chain.</figcaption>
+    </figure>
+</section>
+
+<!-- ============ 03 ============ -->
+<section class="article-section" id="s3">
+    <div class="section-label">03 <span data-i18n="visual3.name">ANIMATION: SIGNAL VS NOISE</span></div>
+    <h2 class="article-title" data-i18n="visual3.title">Amplify, Then Filter</h2>
+    <p class="article-intro" data-i18n="visual3.intro">Turn the gain up too far and the target drowns along with everything else.</p>
+
+    <div class="video-wrap">
+        <video id="radar-loop-video" autoplay loop muted playsinline
+               data-video-en="manim/media/videos/script/480p15/RadarArticle38.en.mp4"
+               data-video-zh="manim/media/videos/script/480p15/RadarArticle38.zh.mp4"
+               poster="manim/media/images/radar-article38-poster.png">
+            <span data-i18n="visual3.fallback">Your browser does not support the video tag.</span>
+        </video>
+    </div>
+    <div class="video-captions">
+        <p class="caption-cc" data-i18n="visual3.cc1">1. INCOMING -- one weak echo buried in noise</p>
+        <p class="caption-cc" data-i18n="visual3.cc2">2. AMPLIFY -- everything grows, signal and noise alike</p>
+        <p class="caption-cc" data-i18n="visual3.cc3">3. FILTER -- the noise floor drops away</p>
+        <p class="caption-cc" data-i18n="visual3.cc4">4. CLEAN -- a clear pulse you can actually use</p>
+    </div>
+    <p class="visual-caption" data-i18n="visual3.caption">Amplification raises signal and noise together. Only filtering separates them — that is why a receiver is far more than a bigger amp.</p>
+</section>
+
+<!-- ============ 04 ============ -->
+<section class="article-section" id="s4">
+    <div class="section-label">04 <span data-i18n="visual4.name">WORKED EXAMPLE</span></div>
+    <h2 class="article-title" data-i18n="visual4.title">Putting the Numbers Together</h2>
+    <p class="article-intro" data-i18n="visual4.intro">One stealth aircraft, one radar, and the arithmetic that decides detection.</p>
+
+    <div class="example-card">
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row1.label">Transmit power</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row1.value">100 kW peak</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row2.label">Range</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row2.value">100 km</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row3.label">Radar cross section</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row3.value">0.01 m² (stealth-shaped)</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row4.label">Received power</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row4.value">about −140 dBm</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row5.label">Thermal noise there</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row5.value">about −128 dBm</span></div>
+        <div class="example-row"><span class="example-label" data-i18n="visual4.row6.label">Signal below noise</span><span class="example-equals">=</span><span class="example-value" data-i18n="visual4.row6.value">integration over thousands of pulses recovers it</span></div>
+    </div>
+    <p class="visual-caption" data-i18n="visual4.caption">A single pulse is invisible. Averaging thousands of them raises the target above the noise without raising the noise floor.</p>
+</section>
+
+<!-- ============ 05 ============ -->
+<section class="article-section" id="s5">
+    <div class="section-label">05 <span data-i18n="visual5.name">DYNAMIC RANGE</span></div>
+    <h2 class="article-title" data-i18n="visual5.title">Loud and Quiet at Once</h2>
+    <p class="article-intro" data-i18n="visual5.intro">A ground return and a distant bird arrive at the same input, differing by 100 dB.</p>
+
+    <figure class="article-figure">
+        <svg viewBox="0 0 720 280" role="img" aria-labelledby="fig5-title">
+            <text id="fig5-title" data-i18n="fig5.title">Dynamic range: strong returns must not saturate</text>
+
+            <rect x="70" y="60" width="30" height="180" fill="#FFD93D" fill-opacity="0.9" stroke="#FFD93D" stroke-width="1.4"/>
+            <text x="85" y="50" text-anchor="middle" fill="#FFD93D" font-size="11" data-i18n="fig5.ground">ground</text>
+
+            <rect x="300" y="140" width="30" height="100" fill="#3fc23f" fill-opacity="0.85" stroke="#3fc23f" stroke-width="1.4"/>
+            <text x="315" y="130" text-anchor="middle" fill="#3fc23f" font-size="11" data-i18n="fig5.target">aircraft</text>
+
+            <rect x="530" y="215" width="30" height="25" fill="#FF8a3a" fill-opacity="0.85" stroke="#FF8a3a" stroke-width="1.4"/>
+            <text x="545" y="205" text-anchor="middle" fill="#FF8a3a" font-size="11" data-i18n="fig5.bird">bird</text>
+
+            <line x1="50" y1="240" x2="690" y2="240" stroke="#22323C" stroke-width="1.4"/>
+            <text x="370" y="264" text-anchor="middle" fill="#8fa6bb" font-size="11" data-i18n="fig5.axis">input level</text>
+
+            <text x="660" y="86" text-anchor="end" fill="#d83838" font-size="12" data-i18n="fig5.warn">if the amp saturates on the ground return, the bird is lost</text>
+        </svg>
+    </figure>
+
+    <div class="application-grid">
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app1.tag">STC</span>
+            <h3 data-i18n="visual5.app1.title">Sensitivity Time Control</h3>
+            <p data-i18n="visual5.app1.desc">Turn the gain up only while listening to echoes, after the transmit pulse ends. Close returns are quiet, far returns are loud — the gain rises with time.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app2.tag">AGC</span>
+            <h3 data-i18n="visual5.app2.title">Automatic Gain Control</h3>
+            <p data-i18n="visual5.app2.desc">A feedback loop measures the average output and adjusts the gain. It keeps a storm from pinning the display while a weak target still gets recorded.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app3.tag">LOG</span>
+            <h3 data-i18n="visual5.app3.title">Logarithmic Amplifier</h3>
+            <p data-i18n="visual5.app3.desc">A 100 dB span is far too much for a linear display. Logarithmic compression fits the whole range on one screen by turning dB into millimetres.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app4.tag">NOISE FIGURE</span>
+            <h3 data-i18n="visual5.app4.title">How Much You Added</h3>
+            <p data-i18n="visual5.app4.desc">Noise figure measures the extra noise an amplifier contributes. A low-noise amplifier has a figure near 1 dB; a cheap wideband one might be 6 dB, which is a real detection loss.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app5.tag">FILTER</span>
+            <h3 data-i18n="visual5.app5.title">Matched Filtering</h3>
+            <p data-i18n="visual5.app5.desc">The filter is shaped to the pulse the transmitter actually sent. This maximises the signal-to-noise ratio at the instant the echo arrives.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual5.app6.tag">INTEGRATE</span>
+            <h3 data-i18n="visual5.app6.title">Many Pulses, One Target</h3>
+            <p data-i18n="visual5.app6.desc">A real target stays put in range and azimuth across many pulses; noise does not. Summing N pulses raises the signal as N but the noise only as the square root of N.</p>
+        </div>
+    </div>
+    <p class="visual-caption" data-i18n="visual5.caption">STC, AGC and integration are the three ways a real receiver copes with a 100 dB spread of return strengths.</p>
+</section>
+
+<!-- ============ 06 ============ -->
+<section class="article-section" id="s6">
+    <div class="section-label">06 <span data-i18n="visual6.name">STEALTH DETECTION</span></div>
+    <h2 class="article-title" data-i18n="visual6.title">The Receiver Is Where Stealth Dies</h2>
+    <p class="article-intro" data-i18n="visual6.intro">A stealth aircraft does not defeat the wave. It just gives the receiver almost nothing to work with.</p>
+
+    <div class="application-grid">
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app1.tag">LONG WAVE</span>
+            <h3 data-i18n="visual6.app1.title">Low Frequency</h3>
+            <p data-i18n="visual6.app1.desc">Longer wavelengths need a smaller aircraft to be stealthy. VHF and UHF radars therefore see stealth shapes more easily than X-band does.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app2.tag">PASSIVE</span>
+            <h3 data-i18n="visual6.app2.title">Listening Only</h3>
+            <p data-i18n="visual6.app2.desc">A passive radar emits nothing, so it is not a target itself. It picks up the energy the aircraft already reflects from other transmitters.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app3.tag">INTEGRATION</span>
+            <h3 data-i18n="visual6.app3.title">Long Dwell</h3>
+            <p data-i18n="visual6.app3.desc">Stealth relies on being small in a single pulse. Dwelling on one spot for thousands of pulses brings the signal back above the noise floor.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app4.tag">NETWORK</span>
+            <h3 data-i18n="visual6.app4.title">More Eyes</h3>
+            <p data-i18n="visual6.app4.desc">No single radar sees it, but four receivers sharing detections often do. A stealth shape that hides from one angle is usually visible from another.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app5.tag">IR / EO</span>
+            <h3 data-i18n="visual6.app5.title">Other Sensors</h3>
+            <p data-i18n="visual6.app5.desc">Infrared and electro-optical sensors ignore radar cross section entirely. They trade weather independence for a very different view of the sky.</p>
+        </div>
+        <div class="application-card">
+            <span class="application-tag" data-i18n="visual6.app6.tag">CONCLUSION</span>
+            <h3 data-i18n="visual6.app6.title">Not a Force Field</h3>
+            <p data-i18n="visual6.app6.desc">Stealth reduces detection range; it does not make an aircraft invisible. Better receiver processing closes part of that gap every decade.</p>
+        </div>
+    </div>
+    <p class="visual-caption" data-i18n="visual6.caption">A radar that cannot hear a whisper still finds it by listening longer, at a longer wavelength, with more receivers.</p>
+</section>
+
+</main>
+
+<div class="article-summary-block">
+    <span class="summary-label" data-i18n="article.summaryLabel">ONE-LINE SUMMARY</span>
+    <p class="summary-line" data-i18n="article.summary">The receiver finds echoes in the noise — the more sensitive, the better.</p>
+</div>
+
+<footer class="article-footer">
+    <span class="article-meta" data-i18n="article.meta">Student Research · 2026</span>
+    <a href="articles.html" class="article-back" data-i18n="article.back">← Back to Articles</a>
+</footer>
+
+<script src="script.js"></script>
+<script src="article-38.js"></script>
+
+</body>
+</html>
