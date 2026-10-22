@@ -171,7 +171,10 @@ const ARTICLES_I18N = {
         "row.47.date":  "Aug 13, 2026",
         "row.48.title": "Is Radar Radiation Harmful?",
         "row.48.desc":  "Why the field falls as 1/R squared, where exposure limits come from, and why the microwave analogy misleads.",
-        "row.48.date":  "Aug 14, 2026"
+        "row.48.date":  "Aug 14, 2026",
+        "row.49.title": "Why Some Antennas Spin and Others Don't",
+        "row.49.desc":  "Dwell time explains almost everything: the array does not scan faster, it does many things at once.",
+        "row.49.date":  "Aug 17, 2026"
 },
 
     zh: {
@@ -334,7 +337,10 @@ const ARTICLES_I18N = {
         "row.47.date":  "2026.08.13",
         "row.48.title": "雷达辐射对人体有害吗？",
         "row.48.desc":  "场强为什么按距离平方反比下降、曝光限值从哪来，以及微波炉类比为什么会误导人。",
-        "row.48.date":  "2026.08.14"
+        "row.48.date":  "2026.08.14",
+        "row.49.title": "为什么雷达天线有的转、有的不转？",
+        "row.49.desc":  "停留时间解释了几乎所有事：相控阵不是扫得更快，而是一次做很多事。",
+        "row.49.date":  "2026.08.17"
 
     }
 
